@@ -140,7 +140,63 @@ const PERSONA_REACTIONS = {
   G: ["차차 털 다 서있다냥! 이건 예측 불가다냥!", "고양이 세계에서도 금지된 상상이다냥!", "뇌 구조 궁금하다냥… 엉뚱함 1등이다냥!"],
 };
 
-// ─── 엣지 케이스 ───
+// ─── 1라운드 고정 질문 (장르별) ───
+const FIRST_ROUND = {
+  adventure: {
+    chacha_says: ["나 그 장면 읽다가 심장 쫄렸다냥!", "너는 어땠어?"],
+    choices: ["엄청 긴장됐어!", "별로 안 무서웠어", "나도 심장 쫄렸어!"]
+  },
+  mystery: {
+    chacha_says: ["차차는 범인 딱 감 왔는데...", "너는 누구라고 생각했어?"],
+    choices: ["나도 맞췄어!", "완전 몰랐어", "중간에 바꿨어"]
+  },
+  comedy: {
+    chacha_says: ["나 여기서 웃다가 책 떨어뜨림 ㅋㅋ", "제일 웃겼던 장면이 어디야?"],
+    choices: ["처음부터 웃겼어!", "중간에 빵 터졌어", "끝이 제일 웃겼어"]
+  },
+  emotion: {
+    chacha_says: ["차차도 이상하게 마음이 좀 묵직해졌어...", "너는 어떤 장면이 제일 마음에 걸렸어?"],
+    choices: ["처음 장면!", "중간 장면!", "마지막 장면!"]
+  },
+};
+
+const SECOND_ROUND = {
+  adventure: {
+    chacha_says: ["오~ 그 장면이 그렇게 느껴졌구나냥", "근데 왜 그랬을 것 같아?"],
+    choices: ["주인공이 용감해서!", "위험해 보여서", "나도 모르겠어"]
+  },
+  mystery: {
+    chacha_says: ["흠... 차차는 그 부분이 좀 이상하더라냥", "왜 그렇게 생각했어?"],
+    choices: ["단서가 있었어!", "그냥 느낌!", "다른 캐릭터 때문에"]
+  },
+  comedy: {
+    chacha_says: ["ㅋㅋ 차차도 거기서 웃겼냥", "근데 왜 그게 그렇게 웃겼어?"],
+    choices: ["너무 황당해서!", "주인공이 바보 같아서", "예상 밖이라서"]
+  },
+  emotion: {
+    chacha_says: ["그 장면... 차차도 좀 마음이 쓰였다냥", "왜 그 장면이 마음에 걸렸어?"],
+    choices: ["주인공이 불쌍해서", "나도 비슷한 적 있어서", "결말이 슬퍼서"]
+  },
+};
+
+const THIRD_ROUND = {
+  adventure: {
+    chacha_says: ["차차는 사실 겁쟁이라 못 했을 것 같은데냥 ㅠ", "너라면 어떻게 했을 것 같아?"],
+    choices: ["나도 용감하게 했을 거야!", "솔직히 도망갔을 것 같아", "친구랑 같이 했을 거야"]
+  },
+  mystery: {
+    chacha_says: ["차차가 탐정이었으면 완전 틀렸을 것 같다냥 ㅋㅋ", "너라면 범인 맞출 수 있었을 것 같아?"],
+    choices: ["응 나 맞출 수 있었어!", "아마 틀렸을 것 같아", "더 단서 모았을 거야"]
+  },
+  comedy: {
+    chacha_says: ["차차라면 거기서 완전 뻘쭘했을 것 같은데냥", "너라면 어떻게 했을 것 같아?"],
+    choices: ["나도 웃겼을 것 같아!", "나는 안 그랬을 것 같은데", "더 웃기게 했을 거야"]
+  },
+  emotion: {
+    chacha_says: ["차차는 그 상황에서 어떻게 해야 할지 몰랐을 것 같다냥...", "너라면 어떻게 했을 것 같아?"],
+    choices: ["옆에 있어줬을 거야", "뭔가 해주려고 했을 거야", "나도 어떻게 할지 몰랐을 것 같아"]
+  },
+};
 function getEdgeResponse(input) {
   if (!input || input.trim() === "") return "어? 말하려다 멈췄냥? 괜찮아. 천천히냥.";
   if (/똥|방귀|poop/.test(input)) return "야! 그건 방귀어잖아 ㅋㅋ 진짜 버전도 들려줘냥!";
@@ -334,12 +390,22 @@ export default function ReadingChachaV2() {
     const mode = GENRE_CONFIG[selectedBook.genre] || GENRE_CONFIG.adventure;
     const opening = mode.openings[Math.floor(Math.random()*mode.openings.length)];
     setBubbles([opening]);
-    const dialogue = await generateDialogue(selectedBook, childName, "", 1, rounds);
+
+    const firstRound = FIRST_ROUND[selectedBook.genre] || FIRST_ROUND.adventure;
     setTimeout(() => {
-      setBubbles([opening, ...(dialogue.chacha_says||[])]);
-      setCurrentDialogue({...dialogue, question: dialogue.chacha_says?.slice(-1)[0]||opening});
+      setBubbles([opening, ...(firstRound.chacha_says||[])]);
+      setCurrentDialogue({...firstRound, question: firstRound.chacha_says?.slice(-1)[0]||opening});
       setLoading(false);
     }, 800);
+  };
+
+  // 라운드별 하드코딩 가져오기
+  const getHardcodedRound = (roundNum, genre) => {
+    const g = genre || "adventure";
+    if (roundNum === 1) return FIRST_ROUND[g] || FIRST_ROUND.adventure;
+    if (roundNum === 2) return SECOND_ROUND[g] || SECOND_ROUND.adventure;
+    if (roundNum === 3) return THIRD_ROUND[g] || THIRD_ROUND.adventure;
+    return null;
   };
 
   // 선택지 선택
@@ -376,13 +442,25 @@ export default function ReadingChachaV2() {
     const nextRound = roundNum + 1;
     const reaction = edgeRes || `"${choice}" 냥~`;
     setBubbles([reaction]);
-    const next = await generateDialogue(selectedBook, childName, choice, nextRound, totalRounds);
-    setTimeout(() => {
-      setBubbles([reaction, ...(next.chacha_says||[])]);
-      setCurrentDialogue({...next, question: next.chacha_says?.slice(-1)[0]||""});
-      setRoundNum(nextRound);
-      setLoading(false);
-    }, 600);
+
+    // 1~3라운드는 하드코딩, 4라운드부터 AI
+    const hardcoded = getHardcodedRound(nextRound, selectedBook.genre);
+    if (hardcoded) {
+      setTimeout(() => {
+        setBubbles([reaction, ...(hardcoded.chacha_says||[])]);
+        setCurrentDialogue({...hardcoded, question: hardcoded.chacha_says?.slice(-1)[0]||""});
+        setRoundNum(nextRound);
+        setLoading(false);
+      }, 600);
+    } else {
+      const next = await generateDialogue(selectedBook, childName, choice, nextRound, totalRounds);
+      setTimeout(() => {
+        setBubbles([reaction, ...(next.chacha_says||[])]);
+        setCurrentDialogue({...next, question: next.chacha_says?.slice(-1)[0]||""});
+        setRoundNum(nextRound);
+        setLoading(false);
+      }, 600);
+    }
   };
 
   // 츄르 먹이기
