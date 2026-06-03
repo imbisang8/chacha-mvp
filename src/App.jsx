@@ -1,3 +1,4 @@
+
 import { useState, useEffect, useRef } from "react";
 
 // ─── 차차 오늘 한마디 시스템 ───
@@ -247,11 +248,14 @@ function getEdgeResponse(input) {
 }
 
 // ─── AI 대화 생성 (Claude Haiku) ───
-async function generateDialogue(book, childName, prevAnswer, roundNum, totalRounds) {
+async function generateDialogue(book, childName, prevAnswer, roundNum, totalRounds, allConversations = []) {
   const persona = detectPersona(prevAnswer);
   const reaction = PERSONA_REACTIONS[persona]?.[Math.floor(Math.random() * 3)] || "";
   const isLast = roundNum === totalRounds;
   const isSecondLast = roundNum === totalRounds - 1;
+  const convHistory = allConversations.length > 0
+    ? `\n[지금까지 대화 기록]\n${allConversations.map((c,i) => `Q${i+1}: ${c.q}\n아이: ${c.a}`).join("\n")}\n→ 위 질문들과 겹치지 않는 새로운 질문을 만들어.`
+    : "";
 
   const res = await fetch("/api/chat", {
     method: "POST",
@@ -269,7 +273,7 @@ async function generateDialogue(book, childName, prevAnswer, roundNum, totalRoun
 - 짧고 경쾌하게
 - 가끔 ~냥 사용
 - 금지: 틀렸어 / 정답은 / 좋은 생각이네 / 훌륭해
-
+${convHistory}
 [이전 답변]: "${prevAnswer}"
 [차차 페르소나 반응 힌트]: "${reaction}"
 [라운드]: ${roundNum}/${totalRounds}
@@ -542,7 +546,7 @@ export default function ReadingChachaV2() {
         setLoading(false);
       }, 600);
     } else {
-      const next = await generateDialogue(selectedBook, childName, choice, nextRound, totalRounds);
+      const next = await generateDialogue(selectedBook, childName, choice, nextRound, totalRounds, newConvs);
       setTimeout(() => {
         setBubbles([reaction, ...(next.chacha_says||[])]);
         setCurrentDialogue({...next, question: next.chacha_says?.slice(-1)[0]||""});
@@ -1097,4 +1101,3 @@ export default function ReadingChachaV2() {
 
   return null;
 }
-
