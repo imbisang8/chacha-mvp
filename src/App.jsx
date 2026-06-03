@@ -948,7 +948,6 @@ export default function ReadingChachaV2() {
         <div style={{fontSize:13,color:"#888",marginBottom:4}}>
           "나 이제 낮잠 자러 갈게냥! Zzz"
         </div>
-        <div style={{fontSize:12,color:"#aaa",marginTop:16}}>엄마한테 🔒 버튼 보여드려요</div>
         <button onClick={()=>setScreen("home")} style={{...S.btn(warm,dark),marginTop:24,width:"auto",padding:"14px 32px"}}>
           차차 방으로 돌아가기
         </button>
@@ -983,7 +982,7 @@ export default function ReadingChachaV2() {
           <div style={{fontSize:14,color:dark,lineHeight:1.7}}>{report.discovery_insight}</div>
         </div>
 
-        {/* 🛡️ 관찰 기록 */}
+        {/* 📝 오늘의 기록 */}
         <div style={{...S.card("#F3F4F6"),border:"1px solid #E5E7EB"}}>
           <div style={{fontSize:11,color:"#6B7280",fontWeight:800,marginBottom:6}}>📝 오늘의 기록</div>
           <div style={{fontSize:13,color:"#374151",lineHeight:1.7}}>{report.observation_record}</div>
@@ -999,6 +998,26 @@ export default function ReadingChachaV2() {
             🐱 {report.chacha_memo}
           </div>
         </div>
+
+        {/* 📸 폴라로이드 앨범 */}
+        {polaroids.length > 0 && (
+          <div style={{marginTop:8}}>
+            <div style={{fontSize:12,color:"#795548",fontWeight:700,marginBottom:12}}>
+              📸 차차의 서재 — {childName}의 생각 흔적
+            </div>
+            <div style={{display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:8}}>
+              {polaroids.map((p,i)=>(
+                <div key={i}
+                  onClick={()=>alert(`📖 ${p.book}\n\n"${p.text}"`)}
+                  style={{background:"#fff",borderRadius:12,padding:"10px 8px",boxShadow:"0 2px 8px rgba(0,0,0,0.1)",cursor:"pointer",textAlign:"center"}}>
+                  <div style={{fontSize:22,marginBottom:4}}>{p.emotion}</div>
+                  <div style={{fontSize:8,color:"#aaa",marginBottom:4,overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{p.book}</div>
+                  <div style={{fontSize:9,color:dark,fontStyle:"italic",lineHeight:1.3,overflow:"hidden",display:"-webkit-box",WebkitLineClamp:3,WebkitBoxOrient:"vertical"}}>"{p.text}"</div>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
 
       </div>
     </div>
@@ -1041,3 +1060,4 @@ export default function ReadingChachaV2() {
 
   return null;
 }
+
