@@ -1,6 +1,47 @@
 import { useState, useEffect, useRef } from "react";
 
-// ─── 차차 하드코딩 대사 ───
+// ─── 차차 오늘 한마디 시스템 ───
+const DAILY_MSGS = {
+  monday:    { morning: ["월요일이라 아직 눈이 반쯤 감겼다냥...", "주말이 어디로 사라졌는지 모르겠다냥...", "하품이 벌써 스물세 번째다냥..."], afternoon: ["오후가 되니까 좀 살 것 같다냥...", "점심 먹고 나니까 또 졸리다냥..."], evening: ["오늘 하루 어떻게 버텼는지 모르겠다냥...", "월요일 저녁은 특별히 더 피곤하다냥..."] },
+  tuesday:   { morning: ["화요일... 아직 주중이 많이 남았다냥...", "월요일보다는 낫다냥. 조금."], afternoon: ["오후 햇살이 차차 눈을 자꾸 감기게 한다냥...", "오늘 오후는 좀 나른하다냥..."], evening: ["저녁이 되니까 살 것 같다냥...", "이제 중간은 왔다냥..."] },
+  wednesday: { morning: ["딱 중간이다냥. 조금만 더 버티면 된다냥!", "수요일이라 살짝 기운이 난다냥..."], afternoon: ["오늘 반 왔다냥. 차차 할 수 있다냥!", "수요일 오후는 뭔가 여유롭다냥..."], evening: ["이번 주 절반 완료다냥!", "내일부터는 내리막이라냥..."] },
+  thursday:  { morning: ["내일이 금요일이라는 게 차차한테 힘이 된다냥...", "목요일 아침... 거의 다 왔다냥!"], afternoon: ["금요일 냄새가 살짝 난다냥...", "내일만 버티면 된다냥!"], evening: ["오늘 하루도 잘 버텼다냥...", "내일은 금요일이다냥!"] },
+  friday:    { morning: ["드디어 금요일이다냥!!!", "이번 주도 살아남았다냥..."], afternoon: ["금요일 오후는 공기가 다르다냥...", "퇴근... 아니 방과 후가 기다려진다냥!"], evening: ["오늘은 츄르 꿈 꿀 예정이다냥...", "괜히 기분이 들뜬다냥...", "이번 주도 살아남았다냥..."] },
+  saturday:  { morning: ["주말이다냥!!!", "오늘은 늦잠 자도 되는 날이다냥..."], afternoon: ["토요일 오후는 차차가 제일 좋아하는 시간이다냥...", "오늘은 뭐 할까냥?"], evening: ["주말 저녁... 아직 내일이 있다냥!", "오늘 하루 어땠냥?"] },
+  sunday:    { morning: ["일요일이다냥... 내일이 살짝 걱정되기 시작하는 날이다냥...", "오늘은 최대한 여유롭게 있을 예정이다냥."], afternoon: ["일요일 오후는 묘하게 쓸쓸하다냥...", "오늘을 최대한 즐겨야 한다냥!"], evening: ["내일 또 월요일이다냥... 그래도 괜찮다냥.", "일요일 저녁... 차차는 벌써 눈이 감긴다냥..."] },
+};
+
+const RAIN_MSGS = [
+  "비가 와서 수염이 축 처지는 것 같다냥...",
+  "빗소리 들으니까 박스 안에 숨고 싶다냥...",
+  "오늘은 낮잠 자기에 딱 좋은 날이다냥...",
+  "비 오는 날엔 츄르가 두 배로 맛있다냥...",
+];
+
+const SMALLTALK = [
+  { q: "평생 투명인간 되기 vs 평생 날아다니기 중 뭐가 좋냥?", a: "차차는 아직도 고민 중이다냥..." },
+  { q: "초콜릿 산 만들기 vs 젤리 바다 만들기 뭐가 좋냥?", a: "둘 다 먹고 싶다냥..." },
+  { q: "고양이가 말을 할 수 있으면 제일 먼저 뭐라고 할 것 같냥?", a: "츄르 달라고 할 것 같다냥..." },
+  { q: "하루 종일 잠만 자기 vs 하루 종일 놀기 중 뭐가 좋냥?", a: "차차는 둘 다 좋다냥..." },
+  { q: "책 속으로 들어갈 수 있으면 어디 가고 싶냥?", a: "차차는 마법 나무집 가보고 싶다냥..." },
+];
+
+function getDailyMsg() {
+  const now = new Date();
+  const days = ["sunday","monday","tuesday","wednesday","thursday","friday","saturday"];
+  const day = days[now.getDay()];
+  const hour = now.getHours();
+  const timeOfDay = hour < 12 ? "morning" : hour < 18 ? "afternoon" : "evening";
+  const msgs = DAILY_MSGS[day]?.[timeOfDay] || ["오늘도 왔구나냥..."];
+  return msgs[Math.floor(Math.random() * msgs.length)];
+}
+
+// ─── 츄르 반응 (MVP 3개) ───
+const CHURU_REACTIONS = [
+  "휴우... 오늘도 굶을 뻔했다냥!",
+  "이걸로 하루 더 버틴다냥!",
+  "차차 생존 성공이다냥!",
+];
 const CHACHA_WAKE = [
   "앗 깜짝이야!", "으음... 누구냐냥", "벌써 왔어?",
   "조금만 더 자면 안 되냥...", "헉! 나 침 흘렸냥?",
@@ -247,9 +288,56 @@ JSON만:
 }
 
 // ─── 리포트 생성 (Claude Sonnet) ───
-async function generateReport(book, childName, conversations) {
+async function generateReport(book, childName, conversations, mailboxNote = "") {
   const convText = conversations.map((c,i) => `Q${i+1}: ${c.q}\n${childName}: ${c.a}`).join("\n");
+  const mailboxSection = mailboxNote ? `\n[비밀 우체통 쪽지 - 아이가 직접 쓴 말]\n"${mailboxNote}"\n→ 이 문장을 child_quote에 우선 반영하고 리포트에 자연스럽게 녹여주세요.` : "";
+
   const res = await fetch("/api/chat", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      model: "claude-sonnet-4-6",
+      max_tokens: 1000,
+      messages: [{ role: "user", content:
+`당신은 아이의 생각을 엄마에게 따뜻하게 번역해 주는 '차차의 관찰 노트' 작성자입니다.
+
+원칙:
+1. 심리 진단/과도한 해석 금지
+2. 실제 아이의 말을 가장 중요한 가치로
+3. 아이의 성장보다 생각과 감정을 보여줌
+4. 엄마가 "어? 우리 아이가 이런 생각을 했구나" 느끼게
+5. 따뜻하고 구체적으로
+${mailboxSection}
+
+[대화 기록]
+책: ${book.title} / 아이: ${childName}
+${convText}
+
+JSON만 반환:
+{
+  "child_quote": "가장 인상 깊은 한 문장 (비밀 쪽지 있으면 우선 반영)",
+  "discovery_insight": "아이가 고른 선택의 성격을 구체적 예시로 이야기화 (2문장)",
+  "observation_record": "완주와 집중의 가치로 변환 (1문장, 숫자 없이)",
+  "action_guide": "오늘 저녁 식탁 슬링샷 질문 1개",
+  "chacha_memo": "차차 말투 따뜻한 관찰 한 줄",
+  "polaroid_text": "차차 기억 한 줄 (~냥으로 끝)",
+  "polaroid_emotion": "😹 또는 🤔 또는 🥺 또는 😳 또는 ❤️"
+}`
+      }]
+    })
+  });
+  const data = await res.json();
+  try { return JSON.parse(data.content[0].text.replace(/```json|```/g,"").trim()); }
+  catch { return {
+    child_quote: mailboxNote || "재밌었어!",
+    discovery_insight: "이야기 속 인물들에게 자연스럽게 관심을 보였어요.",
+    observation_record: "끝까지 차차와 대화를 이어갔어요.",
+    action_guide: "주인공이 너라면 어떻게 했을 것 같아?",
+    chacha_memo: "오늘 꽤 오래 생각했어. 차차는 그게 좋더라 ㅋㅋ",
+    polaroid_text: "오늘 이야기 들으면서 나도 좀 설렜다냥",
+    polaroid_emotion: "❤️",
+  }; }
+}
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
@@ -304,13 +392,16 @@ JSON만 반환:
 // ══════════════════════════════
 export default function ReadingChachaV2() {
   const [screen, setScreen] = useState("home");
-  const [childName, setChildName] = useState("");
+  const [childName, setChildName] = useState(() => localStorage.getItem("rcChildName") || "");
   const [selectedBook, setSelectedBook] = useState(null);
   const [searchQuery, setSearchQuery] = useState("");
   const [showAllBooks, setShowAllBooks] = useState(false);
   const [tapCount, setTapCount] = useState(0);
   const [chachaMsg, setChachaMsg] = useState("zzz... 츄르... zzz...");
   const [wakeMsg, setWakeMsg] = useState("");
+  const [dailyMsg, setDailyMsg] = useState("");
+  const [smalltalk, setSmalltalk] = useState(null);
+  const [showSmalltalk, setShowSmalltalk] = useState(false);
   const [bubbles, setBubbles] = useState([]);
   const [currentDialogue, setCurrentDialogue] = useState(null);
   const [conversations, setConversations] = useState([]);
@@ -324,6 +415,9 @@ export default function ReadingChachaV2() {
   const [showReward, setShowReward] = useState(false);
   const [churu, setChuru] = useState(null);
   const [churuFed, setChuruFed] = useState(false);
+  const [churuReaction, setChuruReaction] = useState("");
+  const [showMailbox, setShowMailbox] = useState(false);
+  const [mailboxText, setMailboxText] = useState("");
   const [pin, setPin] = useState(() => localStorage.getItem("rcPin") || "");
   const [pinInput, setPinInput] = useState("");
   const [pinScreen, setPinScreen] = useState(false);
@@ -354,6 +448,19 @@ export default function ReadingChachaV2() {
     if (saved) setPolaroids(JSON.parse(saved));
     const savedInv = localStorage.getItem("rcInventory");
     if (savedInv) setInventory(JSON.parse(savedInv));
+
+    // 오프라인 감지
+    if (!navigator.onLine) {
+      setChachaMsg("오늘은 인터넷이 없다냥... 나중에 다시 와줘냥 🐱");
+    }
+
+    // 오늘 한마디
+    setDailyMsg(getDailyMsg());
+
+    // 스몰토크 (25% 확률)
+    if (Math.random() < 0.25) {
+      setSmalltalk(SMALLTALK[Math.floor(Math.random() * SMALLTALK.length)]);
+    }
   }, []);
 
   // 책 필터
@@ -418,7 +525,7 @@ export default function ReadingChachaV2() {
     if (roundNum >= totalRounds) {
       setLoading(true);
       setBubbles(["으아앙! 네 덕분에 오늘 츄르값을 벌었다냥!", "잠깐 기다려봐냥... 뭔가 만들고 있어..."]);
-      const rep = await generateReport(selectedBook, childName, newConvs);
+      const rep = await generateReport(selectedBook, childName, newConvs, mailboxText);
       setReport(rep);
       // 폴라로이드
       if (rep.polaroid_text) {
@@ -472,6 +579,8 @@ export default function ReadingChachaV2() {
     const newInv = [...inventory, item];
     setInventory(newInv);
     localStorage.setItem("rcInventory", JSON.stringify(newInv));
+    const reaction = CHURU_REACTIONS[Math.floor(Math.random() * CHURU_REACTIONS.length)];
+    setChuruReaction(reaction);
     setTimeout(() => setShowReward(true), 800);
   };
 
@@ -498,7 +607,8 @@ export default function ReadingChachaV2() {
     setScreen("home"); setSelectedBook(null); setSearchQuery(""); setShowAllBooks(false);
     setBubbles([]); setCurrentDialogue(null); setConversations([]); setRoundNum(1);
     setReport(null); setLoading(false); setChuru(null); setChuruFed(false);
-    setRewardItem(null); setShowReward(false);
+    setRewardItem(null); setShowReward(false); setChuruReaction("");
+    setShowMailbox(false); setMailboxText("");
   };
 
   // ─── STYLES ───
@@ -547,6 +657,25 @@ export default function ReadingChachaV2() {
           <span style={{fontSize:80,userSelect:"none",cursor:"pointer"}}>🐱</span>
         </div>
         {wakeMsg && <div style={{fontSize:15,fontWeight:700,color:dark,marginTop:8}}>{wakeMsg}</div>}
+
+        {/* 오늘 한마디 */}
+        {dailyMsg && (
+          <div style={{marginTop:16,padding:"12px 16px",background:"#fff",borderRadius:16,boxShadow:"0 2px 8px rgba(0,0,0,0.08)",fontSize:13,color:dark,lineHeight:1.6}}>
+            🐱 {dailyMsg}
+            {smalltalk && !showSmalltalk && (
+              <div onClick={()=>setShowSmalltalk(true)}
+                style={{marginTop:8,fontSize:12,color:warm,cursor:"pointer",fontWeight:700}}>
+                💬 차차가 궁금한 게 있다냥 →
+              </div>
+            )}
+            {smalltalk && showSmalltalk && (
+              <div style={{marginTop:8,padding:"10px 12px",background:"#FFF3E0",borderRadius:12,fontSize:12,color:dark}}>
+                "{smalltalk.q}"
+                <div style={{marginTop:6,color:"#aaa",fontStyle:"italic"}}>{smalltalk.a}</div>
+              </div>
+            )}
+          </div>
+        )}
         <div style={{display:"flex",justifyContent:"center",gap:6,marginTop:16,marginBottom:20}}>
           {[1,2,3,4,5].map(i=>(
             <div key={i} style={{width:8,height:8,borderRadius:"50%",background:i<=tapCount?warm:"#ddd",transition:"background 0.2s"}} />
@@ -564,6 +693,14 @@ export default function ReadingChachaV2() {
               ))}
             </div>
             <div style={{fontSize:10,color:"#aaa",marginTop:6}}>총 {inventory.length}개 수집</div>
+
+            {/* 캣타워 페이크 도어 */}
+            <div onClick={()=>alert("캣타워는 아직 준비 중이다냥...\n츄르를 더 모아야 한다냥! 🐱")}
+              style={{marginTop:12,padding:"10px 12px",background:"rgba(0,0,0,0.05)",borderRadius:12,border:"2px dashed #ddd",cursor:"pointer",textAlign:"center"}}>
+              <div style={{fontSize:20,marginBottom:4}}>🔒</div>
+              <div style={{fontSize:11,color:"#aaa",fontWeight:700}}>차차의 꿈: 캣타워</div>
+              <div style={{fontSize:10,color:"#ccc"}}>아직 츄르가 부족하다냥!</div>
+            </div>
           </div>
         )}
 
@@ -605,7 +742,7 @@ export default function ReadingChachaV2() {
       <div style={S.body}>
         <div style={S.card()}>
           <div style={{fontSize:13,color:"#888",marginBottom:8}}>차차가 이름으로 부를게! 아이 이름만 알려줘 😊</div>
-          <input value={childName} onChange={e=>setChildName(e.target.value)} placeholder="예: 민준"
+          <input value={childName} onChange={e=>{setChildName(e.target.value);localStorage.setItem("rcChildName",e.target.value);}} placeholder="예: 민준"
             style={{width:"100%",padding:"14px",borderRadius:12,border:`2px solid ${warm}`,fontSize:16,fontWeight:700,textAlign:"center",outline:"none",boxSizing:"border-box"}} />
         </div>
 
@@ -657,7 +794,7 @@ export default function ReadingChachaV2() {
 
         <button onClick={startDialog} disabled={!childName||!selectedBook}
           style={S.btn(warm,dark,!childName||!selectedBook)}>
-          [다 읽었어요!] 차차랑 수다 시작! 🐱
+          이제 차차랑 놀래! 🐾
         </button>
       </div>
     </div>
@@ -710,7 +847,7 @@ export default function ReadingChachaV2() {
       <div style={{textAlign:"center",padding:32}}>
         <span style={{fontSize:80}}>🐱</span>
         <div style={{fontSize:16,fontWeight:800,color:dark,marginTop:16,marginBottom:8}}>
-          "으아앙! 네 덕분에 오늘 츄르값 벌었다냥!"
+          "{churuReaction || "으아앙! 네 덕분에 오늘 츄르값 벌었다냥!"}"
         </div>
 
         {!churuFed ? (
@@ -740,12 +877,63 @@ export default function ReadingChachaV2() {
         )}
 
         {showReward && (
-          <button onClick={()=>setScreen("handback")} style={{...S.btn(warm,dark),marginTop:16}}>
+          <button onClick={()=>setScreen("mailbox")} style={{...S.btn(warm,dark),marginTop:16}}>
             계속하기
           </button>
         )}
       </div>
       <style>{`@keyframes bounce{from{transform:translateY(0)}to{transform:translateY(-10px)}}`}</style>
+    </div>
+  );
+
+  // ══ MAILBOX (비밀 우체통) ══
+  if (screen === "mailbox") return (
+    <div style={{...S.app,display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center",minHeight:"100vh"}}>
+      <div style={{textAlign:"center",padding:32,width:"100%",maxWidth:340}}>
+        <div style={{fontSize:48,marginBottom:16}}>📮</div>
+        <div style={{fontSize:16,fontWeight:800,color:dark,marginBottom:8}}>
+          차차 우체통
+        </div>
+        <div style={{fontSize:13,color:"#888",marginBottom:24}}>
+          "하고 싶은 말이 있으면 넣어도 된다냥!"
+        </div>
+
+        {!showMailbox ? (
+          <>
+            <button onClick={()=>setShowMailbox(true)}
+              style={{...S.btn(warm,dark),marginBottom:8}}>
+              📝 비밀 쪽지 남기기
+            </button>
+            <button onClick={()=>setScreen("handback")}
+              style={S.btn("#f5f5f5","#666")}>
+              그냥 종료하기
+            </button>
+          </>
+        ) : (
+          <>
+            <textarea
+              value={mailboxText}
+              onChange={e=>setMailboxText(e.target.value)}
+              placeholder="차차한테만 보이는 비밀 쪽지야..."
+              style={{width:"100%",height:120,padding:"12px",borderRadius:12,border:`2px solid ${warm}`,fontSize:14,resize:"none",outline:"none",boxSizing:"border-box",fontFamily:"'Noto Sans KR',sans-serif",marginBottom:12}}
+            />
+            <button onClick={()=>{
+              if (mailboxText) {
+                const saved = JSON.parse(localStorage.getItem("rcMailbox")||"[]");
+                saved.push({ text: mailboxText, book: selectedBook?.title, date: new Date().toLocaleDateString() });
+                localStorage.setItem("rcMailbox", JSON.stringify(saved));
+              }
+              setScreen("handback");
+            }} style={S.btn(warm,dark)}>
+              📮 우체통에 넣기
+            </button>
+            <button onClick={()=>setScreen("handback")}
+              style={S.btn("#f5f5f5","#666")}>
+              그냥 종료하기
+            </button>
+          </>
+        )}
+      </div>
     </div>
   );
 
