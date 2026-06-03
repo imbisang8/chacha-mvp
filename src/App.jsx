@@ -338,54 +338,6 @@ JSON만 반환:
     polaroid_emotion: "❤️",
   }; }
 }
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({
-      model: "claude-sonnet-4-6",
-      max_tokens: 1000,
-      messages: [{ role: "user", content:
-`당신은 아이의 생각을 엄마에게 따뜻하게 번역해 주는 '차차의 관찰 노트' 작성자입니다.
-
-원칙:
-1. 심리 진단/과도한 해석 금지
-2. 실제 아이의 말을 가장 중요한 가치로
-3. 아이의 성장보다 생각과 감정을 보여줌
-4. 엄마가 "어? 우리 아이가 이런 생각을 했구나" 느끼게
-5. 따뜻하고 구체적으로
-
-[대화 기록]
-책: ${book.title} / 아이: ${childName}
-${convText}
-
-JSON만 반환:
-{
-  "child_quote": "가장 인상 깊은 한 문장",
-  "discovery_insight": "아이가 고른 선택의 성격을 구체적 예시로 이야기화 (2문장)",
-  "observation_record": "완주와 집중의 가치로 변환 (1문장, 숫자 없이)",
-  "action_guide": "오늘 저녁 식탁 슬링샷 질문 1개",
-  "chacha_memo": "차차 말투 따뜻한 관찰 한 줄",
-  "polaroid_text": "차차 기억 한 줄 (~냥으로 끝)",
-  "polaroid_emotion": "😹 또는 🤔 또는 🥺 또는 😳 또는 ❤️",
-  "mom_cafe_title": "맘카페 제목 (자연스럽게 어색한 느낌)",
-  "mom_cafe_body": "맘카페 본문 (사람 냄새, 2~3줄)"
-}`
-      }]
-    })
-  });
-  const data = await res.json();
-  try { return JSON.parse(data.content[0].text.replace(/```json|```/g,"").trim()); }
-  catch { return {
-    child_quote: "재밌었어!",
-    discovery_insight: "이야기 속 인물들에게 자연스럽게 관심을 보였어요.",
-    observation_record: "끝까지 차차와 대화를 이어갔어요.",
-    action_guide: "주인공이 너라면 어떻게 했을 것 같아?",
-    chacha_memo: "오늘 꽤 오래 생각했어. 차차는 그게 좋더라 ㅋㅋ",
-    polaroid_text: "오늘 이야기 들으면서 나도 좀 설렜다냥",
-    polaroid_emotion: "❤️",
-    mom_cafe_title: "오늘 애가 이런 말을 했는데..",
-    mom_cafe_body: "리딩차차 하고 있는데 애가 오늘 이런 생각을 했어요ㅠㅠ 다들 이럴 때 어떻게 반응해 주시나요?"
-  }; }
-}
 
 // ══════════════════════════════
 // 메인 앱
@@ -1060,4 +1012,3 @@ export default function ReadingChachaV2() {
 
   return null;
 }
-
