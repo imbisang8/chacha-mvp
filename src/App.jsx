@@ -1,4 +1,3 @@
-
 import { useState, useEffect, useRef } from "react";
 
 // ─── 차차 오늘 한마디 시스템 ───
@@ -520,24 +519,10 @@ export default function ReadingChachaV2() {
     setConversations(newConvs);
 
     if (roundNum >= totalRounds) {
-      setLoading(true);
+      const newConvs = [...conversations, newConv];
+      setConversations(newConvs);
       setBubbles(["으아앙! 네 덕분에 오늘 츄르값을 벌었다냥!", "잠깐 기다려봐냥... 뭔가 만들고 있어..."]);
-      const rep = await generateReport(selectedBook, childName, newConvs, mailboxText);
-      setReport(rep);
-      // 폴라로이드
-      if (rep.polaroid_text) {
-        const newP = { book: selectedBook.title, text: rep.polaroid_text, emotion: rep.polaroid_emotion||"❤️", date: new Date().toLocaleDateString("ko-KR") };
-        const newPolaroids = [...polaroids, newP];
-        setPolaroids(newPolaroids);
-        localStorage.setItem("rcPolaroids", JSON.stringify(newPolaroids));
-      }
-      // 읽은 책 저장
-      const newRead = [...new Set([...readBooks, selectedBook.title])];
-      setReadBooks(newRead);
-      localStorage.setItem("rcReadBooks", JSON.stringify(newRead));
-      // 츄르 보상
       setChuru(true);
-      setLoading(false);
       setScreen("reward");
       return;
     }
@@ -760,10 +745,9 @@ export default function ReadingChachaV2() {
             style={{width:"100%",padding:"14px",borderRadius:12,border:`2px solid ${warm}`,fontSize:16,fontWeight:700,textAlign:"center",outline:"none",boxSizing:"border-box"}} />
         </div>
 
-        <div style={{fontSize:13,color:dark,fontWeight:700,marginBottom:8}}>🐱 차차가 고른 책</div>
-
         {!showAllBooks ? (
           <>
+            <div style={{fontSize:13,color:dark,fontWeight:700,marginBottom:8}}>🐱 차차가 고른 책</div>
             {displayBooks().map(book=>(
               <div key={book.id} onClick={()=>setSelectedBook(book)}
                 style={{...S.card(selectedBook?.id===book.id?"#FFF3E0":"#fff",selectedBook?.id===book.id?warm:"transparent"),cursor:"pointer",display:"flex",alignItems:"center",gap:12}}>
@@ -784,20 +768,34 @@ export default function ReadingChachaV2() {
         ) : (
           <>
             <input value={searchQuery} onChange={e=>setSearchQuery(e.target.value)}
-              placeholder="🔍 책 제목 검색..."
-              style={{width:"100%",padding:"12px 16px",borderRadius:12,border:"2px solid #FFE082",fontSize:14,outline:"none",boxSizing:"border-box",marginBottom:12}} />
-            <div style={{maxHeight:280,overflowY:"auto"}}>
-              {displayBooks().map(book=>(
-                <div key={book.id} onClick={()=>setSelectedBook(book)}
-                  style={{...S.card(selectedBook?.id===book.id?"#FFF3E0":"#fff",selectedBook?.id===book.id?warm:"transparent"),cursor:"pointer",display:"flex",alignItems:"center",gap:12}}>
-                  <div style={{fontSize:24}}>{book.emoji}</div>
-                  <div style={{flex:1}}>
-                    <div style={{fontSize:13,fontWeight:700}}>{book.title}</div>
-                    <div style={{fontSize:11,color:"#888"}}>{book.author} · AR {book.ar}</div>
+              placeholder="🔍 책 제목 또는 저자 검색..."
+              autoFocus
+              style={{width:"100%",padding:"12px 16px",borderRadius:12,border:`2px solid ${warm}`,fontSize:14,outline:"none",boxSizing:"border-box",marginBottom:12}} />
+            <div style={{maxHeight:320,overflowY:"auto"}}>
+              {(() => {
+                const notRead = PRESET_BOOKS.filter(b => !readBooks.includes(b.title));
+                const filtered = searchQuery
+                  ? notRead.filter(b =>
+                      b.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                      b.author.toLowerCase().includes(searchQuery.toLowerCase())
+                    )
+                  : notRead;
+                return filtered.length > 0 ? filtered.map(book=>(
+                  <div key={book.id} onClick={()=>setSelectedBook(book)}
+                    style={{...S.card(selectedBook?.id===book.id?"#FFF3E0":"#fff",selectedBook?.id===book.id?warm:"transparent"),cursor:"pointer",display:"flex",alignItems:"center",gap:12}}>
+                    <div style={{fontSize:24}}>{book.emoji}</div>
+                    <div style={{flex:1}}>
+                      <div style={{fontSize:13,fontWeight:700}}>{book.title}</div>
+                      <div style={{fontSize:11,color:"#888"}}>{book.author} · AR {book.ar}</div>
+                    </div>
+                    {selectedBook?.id===book.id && <div>✅</div>}
                   </div>
-                  {selectedBook?.id===book.id && <div>✅</div>}
-                </div>
-              ))}
+                )) : (
+                  <div style={{textAlign:"center",padding:20,color:"#aaa",fontSize:13}}>
+                    검색 결과가 없어요.<br/>다른 제목으로 찾아봐요!
+                  </div>
+                );
+              })()}
             </div>
             <button onClick={()=>{setShowAllBooks(false);setSearchQuery("");}}
               style={{background:"none",border:"none",color:"#888",fontSize:12,cursor:"pointer",width:"100%",padding:"8px"}}>
@@ -918,8 +916,22 @@ export default function ReadingChachaV2() {
               style={{...S.btn(warm,dark),marginBottom:8}}>
               📝 비밀 쪽지 남기기
             </button>
-            <button onClick={()=>setScreen("handback")}
-              style={S.btn("#f5f5f5","#666")}>
+            <button onClick={async()=>{
+              setLoading(true);
+              setScreen("handback");
+              const rep = await generateReport(selectedBook, childName, conversations, "");
+              setReport(rep);
+              if (rep.polaroid_text) {
+                const newP = { book: selectedBook.title, text: rep.polaroid_text, emotion: rep.polaroid_emotion||"❤️", date: new Date().toLocaleDateString("ko-KR") };
+                const newPolaroids = [...polaroids, newP];
+                setPolaroids(newPolaroids);
+                localStorage.setItem("rcPolaroids", JSON.stringify(newPolaroids));
+              }
+              const newRead = [...new Set([...readBooks, selectedBook.title])];
+              setReadBooks(newRead);
+              localStorage.setItem("rcReadBooks", JSON.stringify(newRead));
+              setLoading(false);
+            }} style={S.btn("#f5f5f5","#666")}>
               그냥 종료하기
             </button>
           </>
@@ -931,13 +943,26 @@ export default function ReadingChachaV2() {
               placeholder="차차한테만 보이는 비밀 쪽지야..."
               style={{width:"100%",height:120,padding:"12px",borderRadius:12,border:`2px solid ${warm}`,fontSize:14,resize:"none",outline:"none",boxSizing:"border-box",fontFamily:"'Noto Sans KR',sans-serif",marginBottom:12}}
             />
-            <button onClick={()=>{
+            <button onClick={async()=>{
               if (mailboxText) {
                 const saved = JSON.parse(localStorage.getItem("rcMailbox")||"[]");
                 saved.push({ text: mailboxText, book: selectedBook?.title, date: new Date().toLocaleDateString() });
                 localStorage.setItem("rcMailbox", JSON.stringify(saved));
               }
+              setLoading(true);
               setScreen("handback");
+              const rep = await generateReport(selectedBook, childName, conversations, mailboxText);
+              setReport(rep);
+              if (rep.polaroid_text) {
+                const newP = { book: selectedBook.title, text: rep.polaroid_text, emotion: rep.polaroid_emotion||"❤️", date: new Date().toLocaleDateString("ko-KR") };
+                const newPolaroids = [...polaroids, newP];
+                setPolaroids(newPolaroids);
+                localStorage.setItem("rcPolaroids", JSON.stringify(newPolaroids));
+              }
+              const newRead = [...new Set([...readBooks, selectedBook.title])];
+              setReadBooks(newRead);
+              localStorage.setItem("rcReadBooks", JSON.stringify(newRead));
+              setLoading(false);
             }} style={S.btn(warm,dark)}>
               📮 우체통에 넣기
             </button>
@@ -1072,3 +1097,4 @@ export default function ReadingChachaV2() {
 
   return null;
 }
+
