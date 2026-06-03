@@ -1,3 +1,4 @@
+
 import { useState, useEffect, useRef } from "react";
 
 // ─── 차차 오늘 한마디 시스템 ───
@@ -380,17 +381,61 @@ export default function ReadingChachaV2() {
   const [readBooks, setReadBooks] = useState(() => { try { return JSON.parse(localStorage.getItem("rcReadBooks") || "[]"); } catch { return []; }});
   const [lastVisit] = useState(() => localStorage.getItem("rcLastVisit") || "");
   const [visitCount, setVisitCount] = useState(() => parseInt(localStorage.getItem("rcVisitCount") || "0"));
+  const [streak, setStreak] = useState(() => parseInt(localStorage.getItem("rcStreak") || "0"));
+  const [firstVisitDate] = useState(() => localStorage.getItem("rcFirstVisit") || new Date().toDateString());
   const [copied, setCopied] = useState(false);
   const [copiedCafe, setCopiedCafe] = useState(false);
+  const [showSpecialDay, setShowSpecialDay] = useState(false);
+  const [specialDayMsg, setSpecialDayMsg] = useState("");
+
+  // 차차 방 성장 단계
+  const getRoomStage = (inv) => {
+    const count = inv.length;
+    if (count >= 15) return { stage: 4, name: "아늑한 방 🏠", emoji: "🏠" };
+    if (count >= 10) return { stage: 3, name: "캣타워 🗼", emoji: "🗼" };
+    if (count >= 6)  return { stage: 2, name: "쿠션 🛋", emoji: "🛋" };
+    if (count >= 3)  return { stage: 1, name: "종이박스 📦", emoji: "📦" };
+    return { stage: 0, name: "빈 방", emoji: "🕳️" };
+  };
 
   // 접속 상태
   useEffect(() => {
     const count = visitCount + 1;
     setVisitCount(count);
     localStorage.setItem("rcVisitCount", count);
+    if (!localStorage.getItem("rcFirstVisit")) {
+      localStorage.setItem("rcFirstVisit", new Date().toDateString());
+    }
+
+    // 연속 출석 계산
+    const today = new Date().toDateString();
+    const last = lastVisit;
+    const diff = last ? (new Date() - new Date(last)) / (1000*60*60*24) : 0;
+    let newStreak = streak;
+    if (!last || diff < 1) { /* 같은 날 */ }
+    else if (diff < 2) { newStreak = streak + 1; }
+    else { newStreak = 1; }
+    setStreak(newStreak);
+    localStorage.setItem("rcStreak", newStreak);
+
+    // 특별 날 감지
+    if (newStreak === 3) {
+      setSpecialDayMsg("3일째다냥!!! 뭔가 이상한 느낌 난다냥!!! 🌟");
+      setShowSpecialDay(true);
+    } else if (newStreak === 7) {
+      setSpecialDayMsg("7일째다냥... 너 진짜 꾸준하다냥! 다락방이 더 자랄 것 같다냥! 🏠");
+      setShowSpecialDay(true);
+    }
+
+    // Paywall (30일 후)
+    const firstDate = new Date(firstVisitDate);
+    const daysSinceFirst = (new Date() - firstDate) / (1000*60*60*24);
+    if (daysSinceFirst >= 30) {
+      setShowFakeDoor(true);
+    }
+
     if (!lastVisit) { setChachaMsg("처음 왔구나냥... 반가워!"); }
     else {
-      const diff = (new Date() - new Date(lastVisit)) / (1000*60*60*24);
       if (diff >= 3) setChachaMsg(CHACHA_REUNION[Math.floor(Math.random()*CHACHA_REUNION.length)]);
       else if (count > 1) setChachaMsg(CHACHA_DAILY[Math.floor(Math.random()*CHACHA_DAILY.length)]);
       else setChachaMsg(CHACHA_WAIT[Math.floor(Math.random()*CHACHA_WAIT.length)]);
@@ -481,7 +526,7 @@ export default function ReadingChachaV2() {
       setReport(rep);
       // 폴라로이드
       if (rep.polaroid_text) {
-        const newP = { book: selectedBook.title, text: rep.polaroid_text, emotion: rep.polaroid_emotion||"❤️" };
+        const newP = { book: selectedBook.title, text: rep.polaroid_text, emotion: rep.polaroid_emotion||"❤️", date: new Date().toLocaleDateString("ko-KR") };
         const newPolaroids = [...polaroids, newP];
         setPolaroids(newPolaroids);
         localStorage.setItem("rcPolaroids", JSON.stringify(newPolaroids));
@@ -602,6 +647,22 @@ export default function ReadingChachaV2() {
       )}
 
       <div style={{...S.body,textAlign:"center",paddingTop:32}}>
+
+        {/* 특별 날 팝업 */}
+        {showSpecialDay && (
+          <div style={{background:"linear-gradient(135deg,#FFE082,#FFB300)",borderRadius:16,padding:"12px 16px",marginBottom:16,position:"relative"}}>
+            <div style={{fontSize:13,fontWeight:800,color:"#5D4037"}}>{specialDayMsg}</div>
+            <button onClick={()=>setShowSpecialDay(false)}
+              style={{position:"absolute",top:8,right:12,background:"none",border:"none",fontSize:16,cursor:"pointer"}}>✕</button>
+          </div>
+        )}
+
+        {/* 차차 방 성장 단계 */}
+        <div style={{fontSize:11,color:"#aaa",marginBottom:4}}>
+          {getRoomStage(inventory).emoji} {getRoomStage(inventory).name}
+          {streak > 1 && <span style={{marginLeft:8,color:warm}}>🔥 {streak}일 연속</span>}
+        </div>
+
         <div style={{fontSize:13,color:"#888",marginBottom:12,minHeight:20}}>{chachaMsg}</div>
         <div onClick={tapChacha} style={{display:"inline-block",transition:"transform 0.1s"}}
           onMouseDown={e=>e.currentTarget.style.transform="scale(0.9)"}
@@ -669,7 +730,8 @@ export default function ReadingChachaV2() {
               {polaroids.map((p,i)=>(
                 <div key={i} style={{minWidth:120,background:"#fff",borderRadius:12,padding:10,boxShadow:"0 2px 8px rgba(0,0,0,0.1)",flexShrink:0}}>
                   <div style={{fontSize:20,marginBottom:4}}>{p.emotion}</div>
-                  <div style={{fontSize:9,color:"#aaa",marginBottom:4}}>{p.book}</div>
+                  <div style={{fontSize:9,color:"#aaa",marginBottom:2}}>{p.book}</div>
+                  <div style={{fontSize:8,color:"#ccc",marginBottom:4}}>{p.date}</div>
                   <div style={{fontSize:11,color:dark,fontStyle:"italic",lineHeight:1.4}}>"{p.text}"</div>
                 </div>
               ))}
@@ -942,12 +1004,9 @@ export default function ReadingChachaV2() {
 
         {/* 💬 오늘 저녁 */}
         <div style={{...S.card("linear-gradient(135deg,#1a1a2e,#16213e)")}}>
-          <div style={{fontSize:11,color:warm,fontWeight:800,marginBottom:12,textAlign:"center"}}>💬 오늘 저녁 한마디</div>
+          <div style={{fontSize:11,color:warm,fontWeight:800,marginBottom:12,textAlign:"center"}}>💬 오늘 저녁, 아이에게 건네볼 한마디</div>
           <div style={{background:"rgba(255,255,255,0.1)",borderRadius:14,padding:14,borderLeft:`3px solid ${warm}`}}>
             <div style={{fontSize:14,color:"#fff",fontStyle:"italic",lineHeight:1.6}}>"{report.action_guide}"</div>
-          </div>
-          <div style={{fontSize:11,color:"#aaa",marginTop:10,textAlign:"center",fontStyle:"italic"}}>
-            🐱 {report.chacha_memo}
           </div>
         </div>
 
@@ -963,7 +1022,8 @@ export default function ReadingChachaV2() {
                   onClick={()=>alert(`📖 ${p.book}\n\n"${p.text}"`)}
                   style={{background:"#fff",borderRadius:12,padding:"10px 8px",boxShadow:"0 2px 8px rgba(0,0,0,0.1)",cursor:"pointer",textAlign:"center"}}>
                   <div style={{fontSize:22,marginBottom:4}}>{p.emotion}</div>
-                  <div style={{fontSize:8,color:"#aaa",marginBottom:4,overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{p.book}</div>
+                  <div style={{fontSize:8,color:"#aaa",marginBottom:2,overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{p.book}</div>
+                  <div style={{fontSize:8,color:"#ccc",marginBottom:4}}>{p.date}</div>
                   <div style={{fontSize:9,color:dark,fontStyle:"italic",lineHeight:1.3,overflow:"hidden",display:"-webkit-box",WebkitLineClamp:3,WebkitBoxOrient:"vertical"}}>"{p.text}"</div>
                 </div>
               ))}
