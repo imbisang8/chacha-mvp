@@ -156,11 +156,9 @@ async function generateDialogue(book, childName, prevAnswer, roundNum, totalRoun
   const isLast = roundNum === totalRounds;
   const isSecondLast = roundNum === totalRounds - 1;
 
-  const res = await fetch("https://api.anthropic.com/v1/messages", {
+  const res = await fetch("/api/chat", {
     method: "POST",
-    headers: { "Content-Type": "application/json",
-  "x-api-key": "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",
-  "anthropic-version": "2023-06-01" },
+    headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
       model: "claude-haiku-4-5-20251001",
       max_tokens: 400,
@@ -195,11 +193,9 @@ JSON만:
 // ─── 리포트 생성 (Claude Sonnet) ───
 async function generateReport(book, childName, conversations) {
   const convText = conversations.map((c,i) => `Q${i+1}: ${c.q}\n${childName}: ${c.a}`).join("\n");
-  const res = await fetch("https://api.anthropic.com/v1/messages", {
+  const res = await fetch("/api/chat", {
     method: "POST",
-    headers: { "Content-Type": "application/json",
-  "x-api-key": "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",
-  "anthropic-version": "2023-06-01" },
+    headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
       model: "claude-sonnet-4-6",
       max_tokens: 1000,
