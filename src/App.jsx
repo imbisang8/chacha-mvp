@@ -482,6 +482,20 @@ export default function ReadingChachaV2() {
     if (tapCount === 4) return "😺";
     return "😺";
   };
+
+  // 차차 깨우기
+  const tapChacha = () => {
+    if (screen !== "home") return;
+    const n = tapCount + 1;
+    setTapCount(n);
+    const msgs = ["으음... 츄르 더 줘...", "누구야... zzz...", "잠깐만...", "...거의 다 깼어..."];
+    if (n < 5) setChachaMsg(msgs[n-1] || msgs[0]);
+    if (n >= 5) {
+      setWakeMsg(CHACHA_WAKE[Math.floor(Math.random()*CHACHA_WAKE.length)]);
+      setTimeout(() => setScreen("setup"), 900);
+      setTapCount(0);
+    }
+  };
     if (screen !== "home") return;
     const n = tapCount + 1;
     setTapCount(n);
