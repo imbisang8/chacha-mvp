@@ -321,10 +321,12 @@ JSON만 반환:
   "child_quote": "가장 인상 깊은 한 문장 (비밀 쪽지 있으면 우선 반영)",
   "discovery_insight": "아이가 고른 선택의 성격을 구체적 예시로 이야기화 (2문장)",
   "observation_record": "완주와 집중의 가치로 변환 (1문장, 숫자 없이)",
-  "action_guide": "오늘 저녁 엄마가 아이에게 건넬 한 문장. 아래 4가지 패턴 중 하나를 랜덤으로 선택해서 생성해. 직전과 같은 패턴 피하기. 반드시 물음표로 끝내야 함. 책의 구체적인 캐릭터 이름을 1개 이상 포함해야 함. 설명/가르침 금지. 딱 한 문장만.\n패턴1: '차차가 몰래 알려줬는데, [캐릭터]가 [상황]에서 네가 떠올랐대, 너는 그때 어떻게 했을 것 같아?'\n패턴2: '엄마가 어릴 때 [비슷한 상황] 나오면 꼭 [감정/행동]했거든, 너는 [캐릭터] 보면서 어땠어?'\n패턴3: '만약 네가 [캐릭터] 대신 그 장면에 있었다면, 제일 먼저 뭐 했을 것 같아?'\n패턴4: '[캐릭터]가 사실 [엉뚱한 상상]이었다면 어땠을까, 유니는 어떻게 생각해?'"
+  "action_guide": "오늘 저녁 엄마가 아이에게 건넬 한 문장. 아래 4가지 패턴 중 하나를 랜덤으로 선택해서 생성해. 직전과 같은 패턴 피하기. 반드시 물음표로 끝내야 함. 책의 구체적인 캐릭터 이름을 1개 이상 포함해야 함. 설명/가르침 금지. 딱 한 문장만.\n패턴1: '차차가 몰래 알려줬는데, [캐릭터]가 [상황]에서 네가 떠올랐대, 너는 그때 어떻게 했을 것 같아?'\n패턴2: '엄마가 어릴 때 [비슷한 상황] 나오면 꼭 [감정/행동]했거든, 너는 [캐릭터] 보면서 어땠어?'\n패턴3: '만약 네가 [캐릭터] 대신 그 장면에 있었다면, 제일 먼저 뭐 했을 것 같아?'\n패턴4: '[캐릭터]가 사실 [엉뚱한 상상]이었다면 어땠을까, 유니는 어떻게 생각해?'",
   "chacha_memo": "차차 말투 따뜻한 관찰 한 줄",
   "polaroid_text": "차차 기억 한 줄 (~냥으로 끝)",
-  "polaroid_emotion": "😹 또는 🤔 또는 🥺 또는 😳 또는 ❤️"
+  "polaroid_emotion": "😹 또는 🤔 또는 🥺 또는 😳 또는 ❤️",
+  "mom_cafe_title": "맘카페에 올릴 만한 시선을 끄는 제목 한 줄",
+  "mom_cafe_body": "아이와의 독서 대화 경험을 나누는 따뜻한 본문 작성"
 }`
       }]
     })
@@ -339,6 +341,8 @@ JSON만 반환:
     chacha_memo: "오늘 꽤 오래 생각했어. 차차는 그게 좋더라 ㅋㅋ",
     polaroid_text: "오늘 이야기 들으면서 나도 좀 설렜다냥",
     polaroid_emotion: "❤️",
+    mom_cafe_title: "오늘 아이랑 독서 대화 나눴는데 너무 귀여워요 ㅎㅎ",
+    mom_cafe_body: "차차라는 캐릭터랑 같이 책 이야기하니까 아이가 정말 좋아하네요!"
   }; }
 }
 
@@ -483,19 +487,8 @@ export default function ReadingChachaV2() {
     return "😺";
   };
 
-  // 차차 깨우기
+  // 차차 깨우기 (중복 코드 수정 완료)
   const tapChacha = () => {
-    if (screen !== "home") return;
-    const n = tapCount + 1;
-    setTapCount(n);
-    const msgs = ["으음... 츄르 더 줘...", "누구야... zzz...", "잠깐만...", "...거의 다 깼어..."];
-    if (n < 5) setChachaMsg(msgs[n-1] || msgs[0]);
-    if (n >= 5) {
-      setWakeMsg(CHACHA_WAKE[Math.floor(Math.random()*CHACHA_WAKE.length)]);
-      setTimeout(() => setScreen("setup"), 900);
-      setTapCount(0);
-    }
-  };
     if (screen !== "home") return;
     const n = tapCount + 1;
     setTapCount(n);
@@ -543,8 +536,7 @@ export default function ReadingChachaV2() {
     setConversations(newConvs);
 
     if (roundNum >= totalRounds) {
-      const newConvs = [...conversations, newConv];
-      setConversations(newConvs);
+      // 버그 방지: 의도치 않은 중복 상태 업데이트 제거
       setBubbles(["으아앙! 네 덕분에 오늘 츄르값을 벌었다냥!", "잠깐 기다려봐냥... 뭔가 만들고 있어..."]);
       setChuru(true);
       setScreen("reward");
@@ -883,7 +875,7 @@ export default function ReadingChachaV2() {
       <div style={{textAlign:"center",padding:32}}>
         <span style={{fontSize:80}}>🐱</span>
         <div style={{fontSize:16,fontWeight:800,color:dark,marginTop:16,marginBottom:8}}>
-          "{churuReaction || "으아앙! 네 덕분에 오늘 츄르값 벌었다냥!"}"
+          {churuReaction || "으아앙! 네 덕분에 오늘 츄르값 벌었다냥!"}
         </div>
 
         {!churuFed ? (
@@ -981,143 +973,4 @@ export default function ReadingChachaV2() {
                 const newP = { book: selectedBook.title, text: rep.polaroid_text, emotion: rep.polaroid_emotion||"❤️", date: new Date().toLocaleDateString("ko-KR") };
                 const newPolaroids = [...polaroids, newP];
                 setPolaroids(newPolaroids);
-                localStorage.setItem("rcPolaroids", JSON.stringify(newPolaroids));
-              }
-              const newRead = [...new Set([...readBooks, selectedBook.title])];
-              setReadBooks(newRead);
-              localStorage.setItem("rcReadBooks", JSON.stringify(newRead));
-              setLoading(false);
-            }} style={S.btn(warm,dark)}>
-              📮 우체통에 넣기
-            </button>
-            <button onClick={()=>setScreen("handback")}
-              style={S.btn("#f5f5f5","#666")}>
-              그냥 종료하기
-            </button>
-          </>
-        )}
-      </div>
-    </div>
-  );
-
-  // ══ HANDBACK ══
-  if (screen === "handback") return (
-    <div style={{...S.app,display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center",minHeight:"100vh"}}>
-      <div style={{textAlign:"center",padding:40}}>
-        <span style={{fontSize:80}}>🐱</span>
-        <div style={{fontSize:16,fontWeight:800,color:dark,marginTop:16,marginBottom:8}}>
-          "어휴 하얗게 불태웠다냥..."
-        </div>
-        <div style={{fontSize:13,color:"#888",marginBottom:4}}>
-          "나 이제 낮잠 자러 갈게냥! Zzz"
-        </div>
-        <button onClick={()=>setScreen("home")} style={{...S.btn(warm,dark),marginTop:24,width:"auto",padding:"14px 32px"}}>
-          차차 방으로 돌아가기
-        </button>
-      </div>
-    </div>
-  );
-
-  // ══ REPORT ══
-  if (screen === "report" && report) return (
-    <div style={S.app}>
-      <div style={S.hdr}>
-        <span style={{fontSize:24}}>🐱</span>
-        <div>
-          <div style={{fontSize:15,fontWeight:800,color:dark}}>차차의 관찰 노트</div>
-          <div style={{fontSize:11,color:"#795548"}}>{selectedBook?.title}</div>
-        </div>
-      </div>
-      <div style={S.body}>
-
-        {/* 🥇 반짝 문장 */}
-        <div style={{...S.card("linear-gradient(135deg,#FFF9C4,#FFF3E0)"),border:`2px solid ${warm}`,textAlign:"center"}}>
-          <div style={{fontSize:11,color:warm,fontWeight:800,letterSpacing:1,marginBottom:8}}>🐱 오늘의 반짝 문장</div>
-          <div style={{fontSize:17,fontWeight:800,color:dark,lineHeight:1.6,fontStyle:"italic",marginBottom:8}}>
-            "{report.child_quote}"
-          </div>
-          <div style={{fontSize:12,color:"#795548"}}>— {childName} ({selectedBook?.title})</div>
-        </div>
-
-        {/* 💡 차차의 발견 */}
-        <div style={{...S.card("#FFF8E1"),border:"1px solid #FFE082"}}>
-          <div style={{fontSize:11,color:"#FF8F00",fontWeight:800,marginBottom:6}}>💡 차차의 발견</div>
-          <div style={{fontSize:14,color:dark,lineHeight:1.7}}>{report.discovery_insight}</div>
-        </div>
-
-        {/* 📝 오늘의 기록 */}
-        <div style={{...S.card("#F3F4F6"),border:"1px solid #E5E7EB"}}>
-          <div style={{fontSize:11,color:"#6B7280",fontWeight:800,marginBottom:6}}>📝 오늘의 기록</div>
-          <div style={{fontSize:13,color:"#374151",lineHeight:1.7}}>{report.observation_record}</div>
-        </div>
-
-        {/* 💬 오늘 저녁 */}
-        <div style={{...S.card("linear-gradient(135deg,#1a1a2e,#16213e)")}}>
-          <div style={{fontSize:11,color:warm,fontWeight:800,marginBottom:12,textAlign:"center"}}>💬 오늘 저녁, 아이에게 건네볼 한마디</div>
-          <div style={{background:"rgba(255,255,255,0.1)",borderRadius:14,padding:14,borderLeft:`3px solid ${warm}`}}>
-            <div style={{fontSize:14,color:"#fff",fontStyle:"italic",lineHeight:1.6}}>"{report.action_guide}"</div>
-          </div>
-        </div>
-
-        {/* 📸 폴라로이드 앨범 */}
-        {polaroids.length > 0 && (
-          <div style={{marginTop:8}}>
-            <div style={{fontSize:12,color:"#795548",fontWeight:700,marginBottom:12}}>
-              📸 차차의 서재 — {childName}의 생각 흔적
-            </div>
-            <div style={{display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:8}}>
-              {polaroids.map((p,i)=>(
-                <div key={i}
-                  onClick={()=>alert(`📖 ${p.book}\n\n"${p.text}"`)}
-                  style={{background:"#fff",borderRadius:12,padding:"10px 8px",boxShadow:"0 2px 8px rgba(0,0,0,0.1)",cursor:"pointer",textAlign:"center"}}>
-                  <div style={{fontSize:22,marginBottom:4}}>{p.emotion}</div>
-                  <div style={{fontSize:8,color:"#aaa",marginBottom:2,overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{p.book}</div>
-                  <div style={{fontSize:8,color:"#ccc",marginBottom:4}}>{p.date}</div>
-                  <div style={{fontSize:9,color:dark,fontStyle:"italic",lineHeight:1.3,overflow:"hidden",display:"-webkit-box",WebkitLineClamp:3,WebkitBoxOrient:"vertical"}}>"{p.text}"</div>
-                </div>
-              ))}
-            </div>
-          </div>
-        )}
-
-      </div>
-    </div>
-  );
-
-  // ══ FAKE DOOR ══
-  if (showFakeDoor) return (
-    <div style={{...S.app,display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center",minHeight:"100vh"}}>
-      <div style={{textAlign:"center",padding:32,maxWidth:320}}>
-        <span style={{fontSize:60}}>🐱</span>
-        <div style={{fontSize:16,fontWeight:800,color:dark,marginTop:16,marginBottom:8}}>
-          앗! 차차가 아직 준비 중이래요 ㅠㅠ
-        </div>
-        <div style={{fontSize:14,color:"#795548",fontStyle:"italic",marginBottom:16}}>
-          "조금만 더 단장하고 꼭 다시 만나고 싶다냥!"
-        </div>
-        <div style={{fontSize:13,color:"#666",lineHeight:1.7,marginBottom:20}}>
-          리딩차차는 아이의 생각이 자라는 순간을 발견하고, 엄마가 오늘 저녁 아이에게 건넬 독후대화 한 문장을 찾을 수 있도록 만들고 있어요.
-        </div>
-        {!emailSaved ? (
-          <>
-            <input value={emailInput} onChange={e=>setEmailInput(e.target.value)}
-              placeholder="이메일 또는 전화번호"
-              style={{width:"100%",padding:"14px",borderRadius:12,border:`2px solid ${warm}`,fontSize:14,textAlign:"center",boxSizing:"border-box",marginBottom:12}} />
-            <button onClick={()=>{if(emailInput)setEmailSaved(true);}}
-              style={S.btn(warm,dark,!emailInput)}>
-              🐾 우선 초대받기 (평생 할인 혜택)
-            </button>
-          </>
-        ) : (
-          <div style={{...S.card("#E8F5E9"),textAlign:"center"}}>
-            <div style={{fontSize:16}}>✅</div>
-            <div style={{fontSize:13,color:"#388E3C",fontWeight:700}}>감사해요! 꼭 먼저 연락드릴게요 🐾</div>
-          </div>
-        )}
-        <button onClick={()=>setShowFakeDoor(false)} style={{...S.btn("#f5f5f5","#666"),marginTop:8}}>돌아가기</button>
-      </div>
-    </div>
-  );
-
-  return null;
-}
+                localStorage.setItem("rcPolaroids",
