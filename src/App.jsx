@@ -1,4 +1,3 @@
-
 import { useState, useEffect, useRef } from "react";
 
 // ─── 차차 오늘 한마디 시스템 ───
@@ -322,7 +321,7 @@ JSON만 반환:
   "child_quote": "가장 인상 깊은 한 문장 (비밀 쪽지 있으면 우선 반영)",
   "discovery_insight": "아이가 고른 선택의 성격을 구체적 예시로 이야기화 (2문장)",
   "observation_record": "완주와 집중의 가치로 변환 (1문장, 숫자 없이)",
-  "action_guide": "오늘 저녁 식탁 슬링샷 질문 1개",
+  "action_guide": "오늘 저녁 엄마가 아이에게 건넬 한 문장. 아래 4가지 패턴 중 하나를 랜덤으로 선택해서 생성해. 직전과 같은 패턴 피하기. 반드시 물음표로 끝내야 함. 책의 구체적인 캐릭터 이름을 1개 이상 포함해야 함. 설명/가르침 금지. 딱 한 문장만.\n패턴1: '차차가 몰래 알려줬는데, [캐릭터]가 [상황]에서 네가 떠올랐대, 너는 그때 어떻게 했을 것 같아?'\n패턴2: '엄마가 어릴 때 [비슷한 상황] 나오면 꼭 [감정/행동]했거든, 너는 [캐릭터] 보면서 어땠어?'\n패턴3: '만약 네가 [캐릭터] 대신 그 장면에 있었다면, 제일 먼저 뭐 했을 것 같아?'\n패턴4: '[캐릭터]가 사실 [엉뚱한 상상]이었다면 어땠을까, 유니는 어떻게 생각해?'"
   "chacha_memo": "차차 말투 따뜻한 관찰 한 줄",
   "polaroid_text": "차차 기억 한 줄 (~냥으로 끝)",
   "polaroid_emotion": "😹 또는 🤔 또는 🥺 또는 😳 또는 ❤️"
@@ -474,8 +473,15 @@ export default function ReadingChachaV2() {
     return getRecommended(readBooks);
   };
 
-  // 차차 깨우기
-  const tapChacha = () => {
+  // 차차 이모지 상태
+  const getChachaEmoji = () => {
+    if (tapCount === 0) return "😴";
+    if (tapCount === 1) return "😴";
+    if (tapCount === 2) return "🐱";
+    if (tapCount === 3) return "🐱";
+    if (tapCount === 4) return "😺";
+    return "😺";
+  };
     if (screen !== "home") return;
     const n = tapCount + 1;
     setTapCount(n);
@@ -656,7 +662,7 @@ export default function ReadingChachaV2() {
         <div onClick={tapChacha} style={{display:"inline-block",transition:"transform 0.1s"}}
           onMouseDown={e=>e.currentTarget.style.transform="scale(0.9)"}
           onMouseUp={e=>e.currentTarget.style.transform="scale(1)"}>
-          <span style={{fontSize:80,userSelect:"none",cursor:"pointer"}}>🐱</span>
+          <span style={{fontSize:80,userSelect:"none",cursor:"pointer"}}>{getChachaEmoji()}</span>
         </div>
         {wakeMsg && <div style={{fontSize:15,fontWeight:700,color:dark,marginTop:8}}>{wakeMsg}</div>}
 
