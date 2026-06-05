@@ -427,16 +427,42 @@ return shuffled.slice(0, 5);
     setLoading(true);
     setScreen("dialog");
 
-    const mode = GENRE_CONFIG[genre] || GENRE_CONFIG.adventure;
-    const opening = mode.openings[Math.floor(Math.random() * mode.openings.length)];
     const firstRound = FIRST_ROUND[genre] || FIRST_ROUND.adventure;
-    const titleMention = finalTitle ? `${finalTitle} 읽었구나냥! ` : "";
 
-    setTimeout(() => {
-      setBubbles([titleMention + opening, ...(firstRound.chacha_says || [])]);
-      setCurrentDialogue({ ...firstRound, question: firstRound.chacha_says?.slice(-1)[0] || opening });
-      setLoading(false);
-    }, 800);
+    // ─── 책 파악 AI 호출 (1회) ───
+    let chachaOpening = `${finalTitle} 읽었구나냥!`;
+    try {
+      const res = await fetch("/api/chat", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          model: "claude-haiku-4-5-20251001",
+          max_tokens: 150,
+          messages: [{ role: "user", content:
+`너는 치즈냥이 차차야. 허술하고 능청스러운 고양이 친구.
+"${finalTitle}" 책을 읽은 아이에게 첫 인사를 해줘.
+
+규칙:
+- 이 책의 구체적인 장면이나 등장인물 1개 반드시 언급
+- 차차가 그 장면에서 어떻게 반응했는지 1문장
+- 가끔 ~냥 사용
+- 2문장 이내
+- 질문 하지 마 (질문은 다음에 따로 나옴)
+- 예시: "라모나가 수업 시간에 머리카락 잘랐잖아냥 ㅋㅋ 차차는 거기서 완전 뒤집어졌다냥..."
+
+2문장만 반환. JSON 아님. 그냥 텍스트.`
+          }]
+        })
+      });
+      const data = await res.json();
+      chachaOpening = data.content?.[0]?.text?.trim() || chachaOpening;
+    } catch {
+      // 실패하면 기본 멘트로
+    }
+
+    setBubbles([chachaOpening, ...(firstRound.chacha_says || [])]);
+    setCurrentDialogue({ ...firstRound, question: firstRound.chacha_says?.join(" ") || "" });
+    setLoading(false);
   };
 
   // ─── 하드코딩 라운드 ───
