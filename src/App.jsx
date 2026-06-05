@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import BOOKS from "./books.json";
+import BOOKS_DETAIL from "./books-detail.json";
 
 // ─── 차차 오늘 한마디 시스템 ───
 const DAILY_MSGS = {
