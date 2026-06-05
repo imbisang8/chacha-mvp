@@ -37,6 +37,21 @@ const CHURU_REACTIONS = [
   "이걸로 하루 더 버틴다냥!",
   "차차 생존 성공이다냥!",
 ];
+const LOADING_MSGS = [
+  "열심히 꾹꾹이하며 리포트를 빚는 중이다냥...",
+  "키보드 위를 뒹굴며 데이터를 모으는 중이다냥...",
+  "츄르 한 입 먹고 다시 힘내서 불러온다냥!",
+  "꼬리로 로딩 바를 영차영차 채우는 중이다냥...",
+  "잠깐 졸았지만 다시 눈 크게 뜨고 찾는 중이다냥!",
+  "먼지 쌓인 마법 책을 조심조심 펼치는 중이다냥...",
+  "도서관 구석구석에서 책들을 냄새 맡아 찾는 중이다냥...",
+  "수많은 페이지 속에서 딱 맞는 단서를 찾는 중이다냥...",
+  "주인공들을 제자리에 예쁘게 돌려놓는 중이다냥...",
+  "우주 최고의 리포트를 위해 영혼을 갈아 넣고 있다냥!",
+  "엄청난 데이터의 바다를 열심히 헤엄치는 중이다냥 💦",
+  "AI 고양이의 두뇌가 풀가동 중이다냥! 지잉지잉...",
+  "조금만 기다려달라냥! 발바닥에 땀나게 뛰고 있다냥!",
+];
 const CHACHA_WAKE = [
   "앗 깜짝이야!", "으음... 누구냐냥", "벌써 왔어?",
   "조금만 더 자면 안 되냥...", "헉! 나 침 흘렸냥?",
@@ -332,6 +347,7 @@ export default function ReadingChachaV2() {
   const [showSpecialDay, setShowSpecialDay] = useState(false);
   const [specialDayMsg, setSpecialDayMsg] = useState("");
   const [bookTitle, setBookTitle] = useState("");
+  const [loadingMsg] = useState(() => LOADING_MSGS[Math.floor(Math.random() * LOADING_MSGS.length)]);
 const [showFreeText, setShowFreeText] = useState(false);
 const [freeTextInput, setFreeTextInput] = useState("");
   
@@ -1018,7 +1034,7 @@ setShowFreeText(false); setFreeTextInput("");
           "나 이제 낮잠 자러 갈게냥! Zzz"
         </div>
         {loading ? (
-          <div style={{ fontSize: 13, color: "#aaa", marginTop: 24 }}>리포트 만드는 중이다냥... 🐾</div>
+          <div style={{ fontSize: 13, color: "#aaa", marginTop: 24 }}>{loadingMsg}</div>
         ) : (
           <div style={{ marginTop: 24, display: "flex", flexDirection: "column", gap: 12 }}>
             {report && (
