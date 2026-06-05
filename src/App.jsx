@@ -194,15 +194,15 @@ function getRounds(book) {
 }
 
 // ─── AI 대화 생성 ───
-async function generateDialogue(book, childName, prevAnswer, roundNum, totalRounds, allConversations = []) {
+async function generateDialogue(book, childName, prevAnswer, roundNum, totalRounds, allConversations = [], nextType = "") {
   const genre = guessGenre(book);
   const persona = detectPersona(prevAnswer);
   const reaction = PERSONA_REACTIONS[persona]?.[Math.floor(Math.random() * 3)] || "";
   const isLast = roundNum === totalRounds;
   const isSecondLast = roundNum === totalRounds - 1;
   const convHistory = allConversations.length > 0
-    ? `\n[지금까지 대화 기록]\n${allConversations.map((c, i) => `Q${i+1}: ${c.q}\n아이: ${c.a}`).join("\n")}\n→ 위 질문들과 겹치지 않는 새로운 질문을 만들어.`
-    : "";
+   ? `\n[지금까지 대화 기록]\n${allConversations.map((c, i) => `Q${i+1}: ${c.q}\n아이: ${c.a}`).join("\n")}\n→ 위 질문들과 절대 겹치지 않는 완전히 새로운 각도의 질문을 만들어. 같은 단어, 같은 주제 반복 금지. 이전 질문이 "장면"을 물었으면 다음은 "감정"을, "감정"을 물었으면 "행동"을 물어봐. ${nextType ? `다음 질문은 반드시 "${nextType}"에 대해 물어봐.` : ""}`
+: "";
 
   try {
     const res = await fetch("/api/chat", {
@@ -347,7 +347,8 @@ export default function ReadingChachaV2() {
   const [showSpecialDay, setShowSpecialDay] = useState(false);
   const [specialDayMsg, setSpecialDayMsg] = useState("");
   const [bookTitle, setBookTitle] = useState("");
-  const [loadingMsg] = useState(() => LOADING_MSGS[Math.floor(Math.random() * LOADING_MSGS.length)]);
+const [loadingMsg] = useState(() => LOADING_MSGS[Math.floor(Math.random() * LOADING_MSGS.length)]);
+const [usedTypes, setUsedTypes] = useState([]);
 const [showFreeText, setShowFreeText] = useState(false);
 const [freeTextInput, setFreeTextInput] = useState("");
   
@@ -530,7 +531,10 @@ setCurrentDialogue({ ...hardcoded, question: hardcoded.chacha_says?.join(" ") ||
         setLoading(false);
       }, 600);
     } else {
-      const next = await generateDialogue(selectedBook, childName, choice, nextRound, totalRounds, newConvs);
+      const types = ["장면", "감정", "행동", "상상"];
+const nextType = types.find(t => !usedTypes.includes(t)) || "상상";
+setUsedTypes(prev => [...prev, nextType]);
+const next = await generateDialogue(selectedBook, childName, choice, nextRound, totalRounds, newConvs, nextType);
       setTimeout(() => {
         setBubbles([reaction, ...(next.chacha_says || [])]);
         setCurrentDialogue({ ...next, question: next.chacha_says?.join(" ") || "" });
@@ -597,6 +601,7 @@ const newP = {
     setRewardItem(null); setShowReward(false); setChuruReaction("");
 setShowMailbox(false); setMailboxText(""); setBookTitle("");
 setShowFreeText(false); setFreeTextInput("");
+    setUsedTypes([]);
   };
 
   // ─── 리포트 복사 ───
