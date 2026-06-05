@@ -963,6 +963,11 @@ export default function ReadingChachaV2() {
   );
 
   // ══ REPORT ══
+  if (screen === "report" && !report) return (
+    <div style={{ ...S.app, display: "flex", alignItems: "center", justifyContent: "center", minHeight: "100vh" }}>
+      <div style={{ textAlign: "center", color: "#aaa", fontSize: 13 }}>리포트 불러오는 중이다냥... 🐾</div>
+    </div>
+  );
   if (screen === "report" && report) return (
     <div style={S.app}>
       <div style={S.hdr}>
