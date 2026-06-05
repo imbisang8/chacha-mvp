@@ -1094,11 +1094,6 @@ setShowFreeText(false); setFreeTextInput("");
           <div style={{ fontSize: 14, color: dark, lineHeight: 1.7 }}>{report.discovery_insight}</div>
         </div>
 
-        <div style={{ ...S.card("#F3F4F6"), border: "1px solid #E5E7EB" }}>
-          <div style={{ fontSize: 11, color: "#6B7280", fontWeight: 800, marginBottom: 6 }}>📝 오늘의 기록</div>
-          <div style={{ fontSize: 13, color: "#374151", lineHeight: 1.7 }}>{report.observation_record}</div>
-        </div>
-
         <div style={{ ...S.card("#1a1a2e") }}>
           <div style={{ fontSize: 11, color: warm, fontWeight: 800, marginBottom: 12, textAlign: "center" }}>💬 오늘 저녁, 아이에게 건네볼 한마디</div>
           <div style={{ background: "rgba(255,255,255,0.1)", borderRadius: 14, padding: 14, borderLeft: `3px solid ${warm}` }}>
