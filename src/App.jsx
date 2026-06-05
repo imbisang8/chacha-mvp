@@ -313,7 +313,9 @@ export default function ReadingChachaV2() {
   const [firstVisitDate] = useState(() => localStorage.getItem("rcFirstVisit") || new Date().toDateString());
   const [showSpecialDay, setShowSpecialDay] = useState(false);
   const [specialDayMsg, setSpecialDayMsg] = useState("");
-
+const [specialDayMsg, setSpecialDayMsg] = useState("");
+const [bookTitle, setBookTitle] = useState("");  //
+  
 
   // ─── 라운드 계산 ───
   const getBookScore = (b) => {
@@ -431,8 +433,9 @@ export default function ReadingChachaV2() {
     const opening = mode.openings[Math.floor(Math.random() * mode.openings.length)];
     const firstRound = FIRST_ROUND[selectedBook.genre] || FIRST_ROUND.adventure;
 
+    const titleMention = bookTitle ? `${bookTitle} 읽었구나냥! ` : "";
     setTimeout(() => {
-      setBubbles([opening, ...(firstRound.chacha_says || [])]);
+      setBubbles([titleMention + opening, ...(firstRound.chacha_says || [])]);
       setCurrentDialogue({ ...firstRound, question: firstRound.chacha_says?.slice(-1)[0] || opening });
       setLoading(false);
     }, 800);
@@ -534,7 +537,7 @@ export default function ReadingChachaV2() {
     setBubbles([]); setCurrentDialogue(null); setConversations([]); setRoundNum(1);
     setReport(null); setLoading(false); setChuruFed(false);
     setRewardItem(null); setShowReward(false); setChuruReaction("");
-    setShowMailbox(false); setMailboxText("");
+    setShowMailbox(false); setMailboxText(""); setBookTitle("");
   };
 
   // ─── 리포트 복사 ───
@@ -786,6 +789,20 @@ export default function ReadingChachaV2() {
           </>
         )}
 
+        {selectedBook && (
+  <div style={S.card()}>
+    <div style={{ fontSize: 13, color: "#888", marginBottom: 8 }}>
+      📖 오늘 읽은 책 제목이 뭐야? <span style={{ color: "#aaa", fontSize: 11 }}>(선택)</span>
+    </div>
+    <input
+      value={bookTitle}
+      onChange={e => setBookTitle(e.target.value)}
+      placeholder={`예: The Magic Key, 더 매직 키`}
+      style={{ width: "100%", padding: "12px 14px", borderRadius: 12, border: `2px solid #FFE082`, fontSize: 14, outline: "none", boxSizing: "border-box" }}
+    />
+    <div style={{ fontSize: 11, color: "#aaa", marginTop: 6 }}>한글로 써도 괜찮아냥!</div>
+  </div>
+)}
         <button onClick={startDialog} disabled={!childName || !selectedBook} style={S.btn(warm, dark, !childName || !selectedBook)}>
           이제 차차랑 놀래! 🐾
         </button>
