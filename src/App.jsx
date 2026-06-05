@@ -315,8 +315,12 @@ export default function ReadingChachaV2() {
   const [specialDayMsg, setSpecialDayMsg] = useState("");
 const [bookTitle, setBookTitle] = useState("");  //
   
-// ─── 시리즈물 감지 (추가된 코드) ───
-const isSeries = selectedBook && (selectedBook.title.toUpperCase().includes("ORT") || selectedBook.isSeries);
+// ─── 시리즈물 감지 (초강력 무적 코드) ───
+  const isSeries = selectedBook ? (
+    selectedBook.title.toUpperCase().includes("ORT") || 
+    selectedBook.title.toUpperCase().includes("OXFORD") || 
+    selectedBook.isSeries === true
+  ) : false;
   // ─── 라운드 계산 ───
   const getBookScore = (b) => {
     let s = 0;
