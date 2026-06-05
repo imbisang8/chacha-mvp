@@ -753,7 +753,7 @@ setShowFreeText(false); setFreeTextInput("");
           <div style={{ fontSize: 13, color: "#888", marginBottom: 8 }}>우리 이제 친구인데, 뭐라고 부르면 될까? 😸</div>
           <input value={childName}
             onChange={e => { setChildName(e.target.value); localStorage.setItem("rcChildName", e.target.value); }}
-            placeholder="차차가 앞으로 이 이름으로 부를게!"
+            placeholder="닉네임!"
             style={{ width: "100%", padding: "14px", borderRadius: 12, border: `2px solid ${warm}`, fontSize: 16, fontWeight: 700, textAlign: "center", outline: "none", boxSizing: "border-box" }} />
         </div>
 
