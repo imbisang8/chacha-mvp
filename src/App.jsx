@@ -560,7 +560,12 @@ setCurrentDialogue({ ...hardcoded, question: hardcoded.chacha_says?.join(" ") ||
     const rep = await generateReport(selectedBook, childName, conversations, note);
     setReport(rep);
     if (rep.polaroid_text) {
-      const newP = { book: selectedBook.title, text: rep.polaroid_text, emotion: rep.polaroid_emotion || "❤️", date: new Date().toLocaleDateString("ko-KR") };
+const newP = { 
+  book: selectedBook.seriesTitle ? `${selectedBook.seriesTitle} ${selectedBook.title}` : selectedBook.title, 
+  text: rep.polaroid_text, 
+  emotion: rep.polaroid_emotion || "❤️", 
+  date: new Date().toLocaleDateString("ko-KR") 
+};
       const newPolaroids = [...polaroids, newP];
       setPolaroids(newPolaroids);
       localStorage.setItem("rcPolaroids", JSON.stringify(newPolaroids));
@@ -1079,7 +1084,9 @@ setShowFreeText(false); setFreeTextInput("");
         <span style={{ fontSize: 24 }}>🐱</span>
         <div style={{ flex: 1 }}>
           <div style={{ fontSize: 15, fontWeight: 800, color: dark }}>차차의 관찰 노트</div>
-          <div style={{ fontSize: 11, color: "#795548" }}>{selectedBook?.title}</div>
+          <div style={{ fontSize: 11, color: "#795548" }}>
+  {selectedBook?.seriesTitle ? `${selectedBook.seriesTitle} ${selectedBook.title}` : selectedBook?.title}
+</div>
         </div>
         <button onClick={copyReport} style={{ background: "none", border: "none", fontSize: 18, cursor: "pointer" }}>📋</button>
       </div>
