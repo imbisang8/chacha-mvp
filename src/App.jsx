@@ -384,7 +384,8 @@ export default function ReadingChachaV2() {
       return notRead.filter(b => b.title.toLowerCase().includes(q));
     }
     if (showAllBooks) return notRead;
-    return notRead.slice(0, 5);
+   const shuffled = [...notRead].sort(() => Math.random() - 0.5);
+return shuffled.slice(0, 5);
   };
 
   const getChachaEmoji = () => {
