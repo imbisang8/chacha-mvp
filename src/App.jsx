@@ -792,7 +792,7 @@ const [bookTitle, setBookTitle] = useState("");  //
         {selectedBook && (
   <div style={S.card()}>
     <div style={{ fontSize: 13, color: "#888", marginBottom: 8 }}>
-      📖 오늘 읽은 책 제목이 뭐야? <span style={{ color: "#aaa", fontSize: 11 }}>*필수</span>
+      📖 오늘 읽은 책 제목이 뭐야? <span style={{ color: "#FF8F00", fontSize: 11 }}>*필수</span>
     </div>
     <input
       value={bookTitle}
