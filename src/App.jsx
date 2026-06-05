@@ -750,10 +750,10 @@ setShowFreeText(false); setFreeTextInput("");
       </div>
       <div style={S.body}>
         <div style={S.card()}>
-          <div style={{ fontSize: 13, color: "#888", marginBottom: 8 }}>차차가 이름으로 부를게! 아이 이름만 알려줘 😊</div>
+          <div style={{ fontSize: 13, color: "#888", marginBottom: 8 }}>우리 이제 친구인데, 뭐라고 부르면 될까? 😸</div>
           <input value={childName}
             onChange={e => { setChildName(e.target.value); localStorage.setItem("rcChildName", e.target.value); }}
-            placeholder="예: 민준"
+            placeholder="차차가 앞으로 이 이름으로 부를게!"
             style={{ width: "100%", padding: "14px", borderRadius: 12, border: `2px solid ${warm}`, fontSize: 16, fontWeight: 700, textAlign: "center", outline: "none", boxSizing: "border-box" }} />
         </div>
 
@@ -829,7 +829,7 @@ setShowFreeText(false); setFreeTextInput("");
               placeholder={selectedBook.seriesType === "numbered" ? "예: 5번, 12번" : "예: Judy Moody Gets Famous"}
               style={{ width: "100%", padding: "12px 14px", borderRadius: 12, border: `2px solid #FFE082`, fontSize: 14, outline: "none", boxSizing: "border-box" }}
             />
-            <div style={{ fontSize: 11, color: "#aaa", marginTop: 6 }}>한글로 써도 괜찮아냥!</div>
+           
           </div>
         )}
 
