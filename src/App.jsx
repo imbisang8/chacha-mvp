@@ -793,20 +793,7 @@ const [bookTitle, setBookTitle] = useState("");  //
                   : <div style={{ textAlign: "center", padding: 20, color: "#aaa", fontSize: 13 }}>검색 결과가 없어요.<br />다른 제목으로 찾아봐요!</div>;
               })()}
             </div>
-            {selectedBook && (
-              <div style={S.card()}>
-                <div style={{ fontSize: 13, color: "#888", marginBottom: 8 }}>
-                  📖 오늘 읽은 책 제목이 뭐야? <span style={{ color: "#FF8F00", fontSize: 11 }}>*필수</span>
-                </div>
-                <input
-                  value={bookTitle}
-                  onChange={e => setBookTitle(e.target.value)}
-                  placeholder="예: The Magic Key, 더 매직 키"
-                  style={{ width: "100%", padding: "12px 14px", borderRadius: 12, border: `2px solid #FFE082`, fontSize: 14, outline: "none", boxSizing: "border-box" }}
-                />
-                <div style={{ fontSize: 11, color: "#aaa", marginTop: 6 }}>한글로 써도 괜찮아냥!</div>
-              </div>
-            )}
+           
 <button onClick={() => { setShowAllBooks(false); setSearchQuery(""); }}
               style={{ background: "none", border: "none", color: "#888", fontSize: 12, cursor: "pointer", width: "100%", padding: "8px" }}>
               ← 차차 추천으로 돌아가기
@@ -836,7 +823,7 @@ const [bookTitle, setBookTitle] = useState("");  //
           disabled={!childName || !selectedBook || (isSeries && !bookTitle.trim())} 
           style={S.btn(warm, dark, !childName || !selectedBook || (isSeries && !bookTitle.trim()))}
         >
-          이제 차차랑 놀래! 🚀
+          이제 차차랑 놀래! 🐾
 
         </button>
       </div>
