@@ -94,17 +94,24 @@ const JUNK_ITEMS_BOOK = {
   ],
 };
 
+// ─── 장르 추측 (AR 기반) ───
+function guessGenre(book) {
+  const ar = parseFloat(book.ar) || 3.0;
+  if (ar >= 5.5) return "adventure";
+  if (ar >= 4.5) return "mystery";
+  if (ar >= 3.0) return "comedy";
+  return "emotion";
+}
+
 function getRewardItem(book) {
+  const genre = guessGenre(book);
   const useBookItem = Math.random() < 0.3;
-  if (useBookItem && JUNK_ITEMS_BOOK[book.genre]) {
-    const bookItems = JUNK_ITEMS_BOOK[book.genre];
+  if (useBookItem && JUNK_ITEMS_BOOK[genre]) {
+    const bookItems = JUNK_ITEMS_BOOK[genre];
     return bookItems[Math.floor(Math.random() * bookItems.length)];
   }
   return JUNK_ITEMS_BASE[Math.floor(Math.random() * JUNK_ITEMS_BASE.length)];
 }
-
-
-
 
 // ─── 장르별 차차 모드 ───
 const GENRE_CONFIG = {
@@ -163,8 +170,17 @@ function getEdgeResponse(input) {
   return null;
 }
 
+// ─── AR 기반 라운드 계산 ───
+function getRounds(book) {
+  const ar = parseFloat(book.ar) || 3.0;
+  if (ar < 3.0) return 3;
+  if (ar < 5.0) return 5;
+  return 7;
+}
+
 // ─── AI 대화 생성 ───
 async function generateDialogue(book, childName, prevAnswer, roundNum, totalRounds, allConversations = []) {
+  const genre = guessGenre(book);
   const persona = detectPersona(prevAnswer);
   const reaction = PERSONA_REACTIONS[persona]?.[Math.floor(Math.random() * 3)] || "";
   const isLast = roundNum === totalRounds;
@@ -194,6 +210,7 @@ ${convHistory}
 [이전 답변]: "${prevAnswer}"
 [차차 페르소나 반응 힌트]: "${reaction}"
 [라운드]: ${roundNum}/${totalRounds}
+[장르]: ${genre}
 ${isSecondLast ? "[이유 묻기: 왜 그렇게 느꼈는지 차차가 모르는 척]" : ""}
 ${isLast ? "[마지막: 아이 상상력/생각 묻기]" : ""}
 
@@ -314,38 +331,10 @@ export default function ReadingChachaV2() {
   const [firstVisitDate] = useState(() => localStorage.getItem("rcFirstVisit") || new Date().toDateString());
   const [showSpecialDay, setShowSpecialDay] = useState(false);
   const [specialDayMsg, setSpecialDayMsg] = useState("");
-const [bookTitle, setBookTitle] = useState("");  //
-  
-// ─── 시리즈물 감지 (초강력 무적 코드) ───
-  const isSeries = selectedBook ? (
-    selectedBook.title.toUpperCase().includes("ORT") || 
-    selectedBook.title.toUpperCase().includes("OXFORD") || 
-    selectedBook.isSeries === true
-  ) : false;
-  // ─── 라운드 계산 ───
-  const getBookScore = (b) => {
-    let s = 0;
-    if (b.pages >= 200) s += 2; else if (b.pages >= 100) s += 1;
-    if (b.chapters >= 16) s += 2; else if (b.chapters >= 6) s += 1;
-    s += b.density;
-    return s;
-  };
-  const getRounds = (b) => {
-    const s = getBookScore(b);
-    if (s <= 2) return 3;
-    if (s <= 4) return 5;
-    return 7;
-  };
+  const [bookTitle, setBookTitle] = useState("");
 
-  // ─── 방 성장 단계 ───
-  const getRoomStage = (inv) => {
-    const count = inv.length;
-    if (count >= 15) return { name: "아늑한 방 🏠", emoji: "🏠" };
-    if (count >= 10) return { name: "캣타워 🗼", emoji: "🗼" };
-    if (count >= 6)  return { name: "쿠션 🛋", emoji: "🛋" };
-    if (count >= 3)  return { name: "종이박스 📦", emoji: "📦" };
-    return { name: "빈 방", emoji: "🕳️" };
-  };
+  // ─── 시리즈물 감지 ───
+  const isSeries = selectedBook ? selectedBook.type === "series" : false;
 
   // ─── 초기 접속 처리 ───
   useEffect(() => {
@@ -392,14 +381,9 @@ const [bookTitle, setBookTitle] = useState("");  //
     const notRead = BOOKS.filter(b => !readBooks.includes(b.title));
     if (searchQuery) {
       const q = searchQuery.toLowerCase();
-      return notRead.filter(b =>
-        b.title.toLowerCase().includes(q) ||
-        b.author.toLowerCase().includes(q) ||
-        (b.series && b.series.toLowerCase().includes(q))
-      );
+      return notRead.filter(b => b.title.toLowerCase().includes(q));
     }
     if (showAllBooks) return notRead;
-    // 차차 추천: 읽지 않은 책 중 5권
     return notRead.slice(0, 5);
   };
 
@@ -409,7 +393,6 @@ const [bookTitle, setBookTitle] = useState("");  //
     return "😺";
   };
 
-  // ─── tapChacha: 단일 정의 ───
   const tapChacha = () => {
     if (screen !== "home") return;
     const n = tapCount + 1;
@@ -424,26 +407,25 @@ const [bookTitle, setBookTitle] = useState("");  //
     }
   };
 
- // ─── 대화 시작 ───
+  // ─── 대화 시작 ───
   const startDialog = async () => {
     if (!selectedBook) return;
 
-    // [핵심 로직] 시리즈물이면 사용자가 입력한 상세 제목으로 덮어쓰기!
     const finalTitle = isSeries ? bookTitle.trim() : selectedBook.title;
     const activeBook = { ...selectedBook, title: finalTitle };
-    setSelectedBook(activeBook); // 이렇게 덮어씌워야 나중에 AI 리포트에도 진짜 읽은 책 제목이 들어갑니다.
+    setSelectedBook(activeBook);
 
     const rounds = getRounds(activeBook);
+    const genre = guessGenre(activeBook);
     setTotalRounds(rounds);
     setRoundNum(1);
     setConversations([]);
     setLoading(true);
     setScreen("dialog");
 
-    const mode = GENRE_CONFIG[activeBook.genre] || GENRE_CONFIG.adventure;
+    const mode = GENRE_CONFIG[genre] || GENRE_CONFIG.adventure;
     const opening = mode.openings[Math.floor(Math.random() * mode.openings.length)];
-    const firstRound = FIRST_ROUND[activeBook.genre] || FIRST_ROUND.adventure;
-
+    const firstRound = FIRST_ROUND[genre] || FIRST_ROUND.adventure;
     const titleMention = finalTitle ? `${finalTitle} 읽었구나냥! ` : "";
 
     setTimeout(() => {
@@ -454,19 +436,19 @@ const [bookTitle, setBookTitle] = useState("");  //
   };
 
   // ─── 하드코딩 라운드 ───
-  const getHardcodedRound = (rNum, genre) => {
-    const g = genre || "adventure";
+  const getHardcodedRound = (rNum, book) => {
+    const g = guessGenre(book);
     if (rNum === 1) return FIRST_ROUND[g] || FIRST_ROUND.adventure;
     if (rNum === 2) return SECOND_ROUND[g] || SECOND_ROUND.adventure;
     if (rNum === 3) return THIRD_ROUND[g] || THIRD_ROUND.adventure;
     return null;
   };
 
-  // ─── 선택지 클릭: newConvs 단일 선언 ───
+  // ─── 선택지 클릭 ───
   const handleChoice = async (choice) => {
     const edgeRes = getEdgeResponse(choice);
     const newConv = { q: currentDialogue?.question || "", a: choice };
-    const newConvs = [...conversations, newConv]; // 단 한 번만 선언
+    const newConvs = [...conversations, newConv];
     setConversations(newConvs);
 
     if (roundNum >= totalRounds) {
@@ -480,7 +462,7 @@ const [bookTitle, setBookTitle] = useState("");  //
     const reaction = edgeRes || `"${choice}" 냥~`;
     setBubbles([reaction]);
 
-    const hardcoded = getHardcodedRound(nextRound, selectedBook.genre);
+    const hardcoded = getHardcodedRound(nextRound, selectedBook);
     if (hardcoded) {
       setTimeout(() => {
         setBubbles([reaction, ...(hardcoded.chacha_says || [])]);
@@ -573,7 +555,20 @@ const [bookTitle, setBookTitle] = useState("");  //
     choice: { width: "100%", background: "#FFF3E0", border: `2px solid ${warm}`, borderRadius: 14, padding: "14px 16px", fontSize: 14, fontWeight: 700, color: dark, cursor: "pointer", marginBottom: 8, textAlign: "left" },
   };
 
-  // ══ FAKE DOOR (페이월) — 최우선 렌더 ══
+  // ─── AR 표시 텍스트 ───
+  const arDisplay = (ar) => `AR ${ar}`;
+
+  // ─── 방 성장 단계 ───
+  const getRoomStage = (inv) => {
+    const count = inv.length;
+    if (count >= 15) return { name: "아늑한 방 🏠", emoji: "🏠" };
+    if (count >= 10) return { name: "캣타워 🗼", emoji: "🗼" };
+    if (count >= 6)  return { name: "쿠션 🛋", emoji: "🛋" };
+    if (count >= 3)  return { name: "종이박스 📦", emoji: "📦" };
+    return { name: "빈 방", emoji: "🕳️" };
+  };
+
+  // ══ FAKE DOOR ══
   if (showFakeDoor) return (
     <div style={{ ...S.app, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", minHeight: "100vh" }}>
       <div style={{ textAlign: "center", padding: 32, maxWidth: 320 }}>
@@ -684,12 +679,6 @@ const [bookTitle, setBookTitle] = useState("");  //
               ))}
             </div>
             <div style={{ fontSize: 10, color: "#aaa", marginTop: 6 }}>총 {inventory.length}개 수집</div>
-            <div onClick={() => alert("캣타워는 아직 준비 중이다냥...\n츄르를 더 모아야 한다냥! 🐱")}
-              style={{ marginTop: 12, padding: "10px 12px", background: "rgba(0,0,0,0.05)", borderRadius: 12, border: "2px dashed #ddd", cursor: "pointer", textAlign: "center" }}>
-              <div style={{ fontSize: 20, marginBottom: 4 }}>🔒</div>
-              <div style={{ fontSize: 11, color: "#aaa", fontWeight: 700 }}>차차의 꿈: 캣타워</div>
-              <div style={{ fontSize: 10, color: "#ccc" }}>아직 츄르가 부족하다냥!</div>
-            </div>
           </div>
         )}
 
@@ -744,16 +733,16 @@ const [bookTitle, setBookTitle] = useState("");  //
               <div style={{ textAlign: "center", padding: "24px 0", color: "#aaa", fontSize: 13 }}>
                 읽을 책이 없다냥... 전체 목록을 확인해봐!
               </div>
-            ) : displayBooks().map(book => (
-              <div key={book.id} onClick={() => setSelectedBook(book)}
-                style={{ ...S.card(selectedBook?.id === book.id ? "#FFF3E0" : "#fff", selectedBook?.id === book.id ? warm : "transparent"), cursor: "pointer", display: "flex", alignItems: "center", gap: 12 }}>
-                <div style={{ fontSize: 28 }}>{book.emoji}</div>
+            ) : displayBooks().map((book, idx) => (
+              <div key={idx} onClick={() => setSelectedBook(book)}
+                style={{ ...S.card(selectedBook?.title === book.title ? "#FFF3E0" : "#fff", selectedBook?.title === book.title ? warm : "transparent"), cursor: "pointer", display: "flex", alignItems: "center", gap: 12 }}>
+                <div style={{ fontSize: 28 }}>📚</div>
                 <div style={{ flex: 1 }}>
                   <div style={{ fontSize: 13, fontWeight: 700 }}>{book.title}</div>
-                  <div style={{ fontSize: 11, color: "#888" }}>{book.author} · AR {book.ar}</div>
-                  <div style={{ fontSize: 10, color: "#aaa" }}>{getRounds(book)}문제</div>
+                  <div style={{ fontSize: 11, color: "#888" }}>{arDisplay(book.ar)}</div>
+                  <div style={{ fontSize: 10, color: "#aaa" }}>{getRounds(book)}문제 · {book.type === "series" ? "시리즈" : "단행본"}</div>
                 </div>
-                {selectedBook?.id === book.id && <div style={{ fontSize: 18 }}>✅</div>}
+                {selectedBook?.title === book.title && <div style={{ fontSize: 18 }}>✅</div>}
               </div>
             ))}
             <button onClick={() => setShowAllBooks(true)}
@@ -764,68 +753,60 @@ const [bookTitle, setBookTitle] = useState("");  //
         ) : (
           <>
             <input value={searchQuery} onChange={e => setSearchQuery(e.target.value)}
-              placeholder="🔍 제목 / 저자 / 시리즈 검색..."
+              placeholder="🔍 책 제목 검색..."
               autoFocus
               style={{ width: "100%", padding: "12px 16px", borderRadius: 12, border: `2px solid ${warm}`, fontSize: 14, outline: "none", boxSizing: "border-box", marginBottom: 12 }} />
             <div style={{ maxHeight: 400, overflowY: "auto" }}>
               {(() => {
                 const notRead = BOOKS.filter(b => !readBooks.includes(b.title));
                 const q = searchQuery.toLowerCase();
-                const filtered = q
-                  ? notRead.filter(b =>
-                      b.title.toLowerCase().includes(q) ||
-                      b.author.toLowerCase().includes(q) ||
-                      (b.series && b.series.toLowerCase().includes(q))
-                    )
-                  : notRead;
+                const filtered = q ? notRead.filter(b => b.title.toLowerCase().includes(q)) : notRead;
                 return filtered.length > 0
-                  ? filtered.map(book => (
-                 <div key={book.id} onClick={() => setSelectedBook(book)}
-                      style={{ ...S.card(selectedBook?.id === book.id ? "#FFF3E0" : "#fff", selectedBook?.id === book.id ? warm : "transparent"), cursor: "pointer", display: "flex", alignItems: "center", gap: 12 }}>
-                      <div style={{ fontSize: 24 }}>{book.emoji}</div>
-                      <div style={{ flex: 1 }}>
-                        <div style={{ fontSize: 13, fontWeight: 700 }}>{book.title}</div>
-                        <div style={{ fontSize: 11, color: "#888" }}>{book.author} · AR {book.ar}</div>
-                        <div style={{ fontSize: 10, color: "#aaa" }}>{getRounds(book)}문제</div>
+                  ? filtered.map((book, idx) => (
+                      <div key={idx} onClick={() => setSelectedBook(book)}
+                        style={{ ...S.card(selectedBook?.title === book.title ? "#FFF3E0" : "#fff", selectedBook?.title === book.title ? warm : "transparent"), cursor: "pointer", display: "flex", alignItems: "center", gap: 12 }}>
+                        <div style={{ fontSize: 24 }}>📚</div>
+                        <div style={{ flex: 1 }}>
+                          <div style={{ fontSize: 13, fontWeight: 700 }}>{book.title}</div>
+                          <div style={{ fontSize: 11, color: "#888" }}>{arDisplay(book.ar)}</div>
+                          <div style={{ fontSize: 10, color: "#aaa" }}>{getRounds(book)}문제 · {book.type === "series" ? "시리즈" : "단행본"}</div>
+                        </div>
+                        {selectedBook?.title === book.title && <div>✅</div>}
                       </div>
-                      {selectedBook?.id === book.id && <div>✅</div>}
-                    </div>
-                  ))
+                    ))
                   : <div style={{ textAlign: "center", padding: 20, color: "#aaa", fontSize: 13 }}>검색 결과가 없어요.<br />다른 제목으로 찾아봐요!</div>;
               })()}
             </div>
-           
-<button onClick={() => { setShowAllBooks(false); setSearchQuery(""); }}
+            <button onClick={() => { setShowAllBooks(false); setSearchQuery(""); }}
               style={{ background: "none", border: "none", color: "#888", fontSize: 12, cursor: "pointer", width: "100%", padding: "8px" }}>
               ← 차차 추천으로 돌아가기
             </button>
           </>
         )}
 
-        {/* 🛑 수정된 부분: 시리즈물(ORT 등)일 때만 상세 책 제목 입력창 표시 */}
         {selectedBook && isSeries && (
           <div style={S.card()}>
             <div style={{ fontSize: 13, color: "#888", marginBottom: 8 }}>
-              📖 ORT 시리즈 중 어떤 책을 읽었어? <span style={{ color: "#FF8F00", fontSize: 11 }}>*필수</span>
+              📖 {selectedBook.type === "series" && selectedBook.seriesType === "numbered"
+                ? `${selectedBook.title} 몇 번 읽었어?`
+                : `${selectedBook.title} 어떤 책 읽었어?`}
+              <span style={{ color: "#FF8F00", fontSize: 11 }}> *필수</span>
             </div>
             <input
               value={bookTitle}
               onChange={e => setBookTitle(e.target.value)}
-              placeholder="예: The Magic Key, 킥보드 타기 등"
+              placeholder={selectedBook.seriesType === "numbered" ? "예: 5번, 12번" : "예: Judy Moody Gets Famous"}
               style={{ width: "100%", padding: "12px 14px", borderRadius: 12, border: `2px solid #FFE082`, fontSize: 14, outline: "none", boxSizing: "border-box" }}
             />
             <div style={{ fontSize: 11, color: "#aaa", marginTop: 6 }}>한글로 써도 괜찮아냥!</div>
           </div>
         )}
 
-        {/* 🛑 시리즈물이면 상세 제목(bookTitle)까지 적어야 버튼 활성화, 일반책이면 바로 활성화 */}
-       <button 
-          onClick={startDialog} 
-          disabled={!childName || !selectedBook || (isSeries && !bookTitle.trim())} 
-          style={S.btn(warm, dark, !childName || !selectedBook || (isSeries && !bookTitle.trim()))}
-        >
+        <button
+          onClick={startDialog}
+          disabled={!childName || !selectedBook || (isSeries && !bookTitle.trim())}
+          style={S.btn(warm, dark, !childName || !selectedBook || (isSeries && !bookTitle.trim()))}>
           이제 차차랑 놀래! 🐾
-
         </button>
       </div>
     </div>
@@ -884,7 +865,7 @@ const [bookTitle, setBookTitle] = useState("");  //
           <>
             <div style={{ fontSize: 13, color: "#888", marginBottom: 24 }}>츄르를 차차한테 줘봐!</div>
             <div onClick={feedChuru}
-              style={{ fontSize: 64, cursor: "pointer", animation: "bounce 0.6s infinite alternate", userSelect: "none" }}
+              style={{ fontSize: 64, cursor: "pointer", userSelect: "none" }}
               onMouseDown={e => e.currentTarget.style.transform = "scale(0.8)"}
               onMouseUp={e => e.currentTarget.style.transform = "scale(1)"}>
               🍬
@@ -911,7 +892,6 @@ const [bookTitle, setBookTitle] = useState("");  //
           </button>
         )}
       </div>
-      <style>{`@keyframes bounce{from{transform:translateY(0)}to{transform:translateY(-10px)}}`}</style>
     </div>
   );
 
@@ -980,8 +960,6 @@ const [bookTitle, setBookTitle] = useState("");  //
           </div>
         )}
       </div>
-
-      {/* PIN 모달 — handback 화면에서도 사용 */}
       {pinScreen && (
         <div style={{ position: "fixed", inset: 0, background: "rgba(0,0,0,0.5)", zIndex: 100, display: "flex", alignItems: "center", justifyContent: "center" }}>
           <div style={{ background: "#fff", borderRadius: 24, padding: 28, width: 300 }}>
