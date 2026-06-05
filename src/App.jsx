@@ -837,7 +837,7 @@ const [bookTitle, setBookTitle] = useState("");  //
           style={S.btn(warm, dark, !childName || !selectedBook || (isSeries && !bookTitle.trim()))}
         >
           이제 차차랑 놀래! 🚀
-        </button>
+
         </button>
       </div>
     </div>
