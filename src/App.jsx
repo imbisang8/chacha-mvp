@@ -767,7 +767,7 @@ const [bookTitle, setBookTitle] = useState("");  //
                   : notRead;
                 return filtered.length > 0
                   ? filtered.map(book => (
-                    <div key={book.id} onClick={() => setSelectedBook(book)}
+                  <div key={book.id} onClick={() => { setSelectedBook(book); setShowAllBooks(false); setSearchQuery(""); }}
                       style={{ ...S.card(selectedBook?.id === book.id ? "#FFF3E0" : "#fff", selectedBook?.id === book.id ? warm : "transparent"), cursor: "pointer", display: "flex", alignItems: "center", gap: 12 }}>
                       <div style={{ fontSize: 24 }}>{book.emoji}</div>
                       <div style={{ flex: 1 }}>
