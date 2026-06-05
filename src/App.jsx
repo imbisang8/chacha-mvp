@@ -835,7 +835,7 @@ setShowFreeText(false); setFreeTextInput("");
             <input
               value={bookTitle}
               onChange={e => setBookTitle(e.target.value)}
-              placeholder={selectedBook.seriesType === "numbered" ? "예: 5번, 12번" : "예: Judy Moody Gets Famous"}
+              placeholder={selectedBook.seriesType === "numbered" ? "예: 5권, Book 5" : "예: Ramona the Brave"}
               style={{ width: "100%", padding: "12px 14px", borderRadius: 12, border: `2px solid #FFE082`, fontSize: 14, outline: "none", boxSizing: "border-box" }}
             />
            
