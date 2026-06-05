@@ -781,7 +781,6 @@ const [bookTitle, setBookTitle] = useState("");  //
                   : <div style={{ textAlign: "center", padding: 20, color: "#aaa", fontSize: 13 }}>검색 결과가 없어요.<br />다른 제목으로 찾아봐요!</div>;
               })()}
             </div>
-            </div>
             {selectedBook && (
               <div style={S.card()}>
                 <div style={{ fontSize: 13, color: "#888", marginBottom: 8 }}>
