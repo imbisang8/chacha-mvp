@@ -416,7 +416,11 @@ return shuffled.slice(0, 5);
     if (!selectedBook) return;
 
     const finalTitle = isSeries ? bookTitle.trim() : selectedBook.title;
-    const activeBook = { ...selectedBook, title: finalTitle };
+    const activeBook = { 
+  ...selectedBook, 
+  title: finalTitle,
+  seriesTitle: isSeries ? selectedBook.title : null
+};
     setSelectedBook(activeBook);
 
     const rounds = getRounds(activeBook);
@@ -1066,7 +1070,7 @@ setShowFreeText(false); setFreeTextInput("");
         <div style={{ ...S.card("linear-gradient(135deg,#FFF9C4,#FFF3E0)"), border: `2px solid ${warm}`, textAlign: "center" }}>
           <div style={{ fontSize: 11, color: warm, fontWeight: 800, letterSpacing: 1, marginBottom: 8 }}>🐱 오늘의 반짝 문장</div>
           <div style={{ fontSize: 17, fontWeight: 800, color: dark, lineHeight: 1.6, fontStyle: "italic", marginBottom: 8 }}>"{report.child_quote}"</div>
-          <div style={{ fontSize: 12, color: "#795548" }}>— {childName} ({selectedBook?.title})</div>
+          <div style={{ fontSize: 12, color: "#795548" }}>—  {childName} ({selectedBook?.seriesTitle ? `${selectedBook.seriesTitle} ${selectedBook.title}` : selectedBook?.title})</div>
         </div>
 
         <div style={{ ...S.card("#FFF8E1"), border: "1px solid #FFE082" }}>
