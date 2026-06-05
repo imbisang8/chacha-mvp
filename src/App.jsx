@@ -332,6 +332,9 @@ export default function ReadingChachaV2() {
   const [showSpecialDay, setShowSpecialDay] = useState(false);
   const [specialDayMsg, setSpecialDayMsg] = useState("");
   const [bookTitle, setBookTitle] = useState("");
+const [showFreeText, setShowFreeText] = useState(false);
+const [freeTextInput, setFreeTextInput] = useState("");
+  
 
   // ─── 시리즈물 감지 ───
   const isSeries = selectedBook ? selectedBook.type === "series" : false;
@@ -532,7 +535,8 @@ return shuffled.slice(0, 5);
     setBubbles([]); setCurrentDialogue(null); setConversations([]); setRoundNum(1);
     setReport(null); setLoading(false); setChuruFed(false);
     setRewardItem(null); setShowReward(false); setChuruReaction("");
-    setShowMailbox(false); setMailboxText(""); setBookTitle("");
+setShowMailbox(false); setMailboxText(""); setBookTitle("");
+setShowFreeText(false); setFreeTextInput("");
   };
 
   // ─── 리포트 복사 ───
@@ -843,13 +847,41 @@ return shuffled.slice(0, 5);
           </div>
         )}
       </div>
-      {!loading && currentDialogue?.choices && (
-        <div style={{ position: "fixed", bottom: 0, left: "50%", transform: "translateX(-50%)", width: "100%", maxWidth: 390, background: bg, padding: "12px 16px", borderTop: "1px solid #FFE082" }}>
-          {currentDialogue.choices.map((c, i) => (
-            <button key={i} onClick={() => handleChoice(c)} style={S.choice}>{c}</button>
-          ))}
+     {!loading && currentDialogue?.choices && (
+  <div style={{ position: "fixed", bottom: 0, left: "50%", transform: "translateX(-50%)", width: "100%", maxWidth: 390, background: bg, padding: "12px 16px", borderTop: "1px solid #FFE082" }}>
+    {!showFreeText ? (
+      <>
+        {currentDialogue.choices.map((c, i) => (
+          <button key={i} onClick={() => handleChoice(c)} style={S.choice}>{c}</button>
+        ))}
+        <button onClick={() => setShowFreeText(true)} style={{ ...S.choice, background: "#F3F0FF", border: "2px solid #B39DDB", color: "#5E35B1" }}>
+          ✏️ 내 생각 쓰기
+        </button>
+      </>
+    ) : (
+      <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
+        <textarea
+          value={freeTextInput}
+          onChange={e => setFreeTextInput(e.target.value)}
+          placeholder="내 생각을 써봐!"
+          autoFocus
+          style={{ width: "100%", padding: "12px", borderRadius: 12, border: "2px solid #B39DDB", fontSize: 14, resize: "none", outline: "none", boxSizing: "border-box", fontFamily: "'Noto Sans KR',sans-serif", height: 80 }}
+        />
+        <div style={{ display: "flex", gap: 8 }}>
+          <button onClick={() => { setShowFreeText(false); setFreeTextInput(""); }} style={{ ...S.choice, flex: 1, textAlign: "center", background: "#f5f5f5", border: "2px solid #ddd", color: "#888" }}>
+            ← 돌아가기
+          </button>
+          <button
+            onClick={() => { if (freeTextInput.trim()) { handleChoice(freeTextInput.trim()); setShowFreeText(false); setFreeTextInput(""); } }}
+            disabled={!freeTextInput.trim()}
+            style={{ ...S.choice, flex: 2, textAlign: "center", background: freeTextInput.trim() ? "#5E35B1" : "#ddd", color: freeTextInput.trim() ? "#fff" : "#999", border: "none" }}>
+            전송 🐾
+          </button>
         </div>
-      )}
+      </div>
+    )}
+  </div>
+)}
       <style>{`@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}`}</style>
     </div>
   );
