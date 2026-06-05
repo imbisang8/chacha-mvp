@@ -315,7 +315,8 @@ export default function ReadingChachaV2() {
   const [specialDayMsg, setSpecialDayMsg] = useState("");
 const [bookTitle, setBookTitle] = useState("");  //
   
-
+// ─── 시리즈물 감지 (추가된 코드) ───
+const isSeries = selectedBook && (selectedBook.title.toUpperCase().includes("ORT") || selectedBook.isSeries);
   // ─── 라운드 계산 ───
   const getBookScore = (b) => {
     let s = 0;
@@ -418,21 +419,28 @@ const [bookTitle, setBookTitle] = useState("");  //
     }
   };
 
-  // ─── 대화 시작 ───
+ // ─── 대화 시작 ───
   const startDialog = async () => {
     if (!selectedBook) return;
-    const rounds = getRounds(selectedBook);
+
+    // [핵심 로직] 시리즈물이면 사용자가 입력한 상세 제목으로 덮어쓰기!
+    const finalTitle = isSeries ? bookTitle.trim() : selectedBook.title;
+    const activeBook = { ...selectedBook, title: finalTitle };
+    setSelectedBook(activeBook); // 이렇게 덮어씌워야 나중에 AI 리포트에도 진짜 읽은 책 제목이 들어갑니다.
+
+    const rounds = getRounds(activeBook);
     setTotalRounds(rounds);
     setRoundNum(1);
     setConversations([]);
     setLoading(true);
     setScreen("dialog");
 
-    const mode = GENRE_CONFIG[selectedBook.genre] || GENRE_CONFIG.adventure;
+    const mode = GENRE_CONFIG[activeBook.genre] || GENRE_CONFIG.adventure;
     const opening = mode.openings[Math.floor(Math.random() * mode.openings.length)];
-    const firstRound = FIRST_ROUND[selectedBook.genre] || FIRST_ROUND.adventure;
+    const firstRound = FIRST_ROUND[activeBook.genre] || FIRST_ROUND.adventure;
 
-    const titleMention = bookTitle ? `${bookTitle} 읽었구나냥! ` : "";
+    const titleMention = finalTitle ? `${finalTitle} 읽었구나냥! ` : "";
+
     setTimeout(() => {
       setBubbles([titleMention + opening, ...(firstRound.chacha_says || [])]);
       setCurrentDialogue({ ...firstRound, question: firstRound.chacha_says?.slice(-1)[0] || opening });
@@ -795,28 +803,35 @@ const [bookTitle, setBookTitle] = useState("");  //
                 <div style={{ fontSize: 11, color: "#aaa", marginTop: 6 }}>한글로 써도 괜찮아냥!</div>
               </div>
             )}
-            <button onClick={() => { setShowAllBooks(false); setSearchQuery(""); }}
+<button onClick={() => { setShowAllBooks(false); setSearchQuery(""); }}
               style={{ background: "none", border: "none", color: "#888", fontSize: 12, cursor: "pointer", width: "100%", padding: "8px" }}>
               ← 차차 추천으로 돌아가기
             </button>
           </>
         )}
 
-        {selectedBook && (
-  <div style={S.card()}>
-    <div style={{ fontSize: 13, color: "#888", marginBottom: 8 }}>
-      📖 오늘 읽은 책 제목이 뭐야? <span style={{ color: "#FF8F00", fontSize: 11 }}>*필수</span>
-    </div>
-    <input
-      value={bookTitle}
-      onChange={e => setBookTitle(e.target.value)}
-      placeholder={`예: The Magic Key, 더 매직 키`}
-      style={{ width: "100%", padding: "12px 14px", borderRadius: 12, border: `2px solid #FFE082`, fontSize: 14, outline: "none", boxSizing: "border-box" }}
-    />
-    <div style={{ fontSize: 11, color: "#aaa", marginTop: 6 }}>한글로 써도 괜찮아냥!</div>
-  </div>
-)}
-        <button onClick={startDialog} disabled={!childName || !selectedBook|| !bookTitle.trim()} style={S.btn(warm, dark, !childName || !selectedBook|| !bookTitle.trim())}>
+        {/* 🛑 수정된 부분: 시리즈물(ORT 등)일 때만 상세 책 제목 입력창 표시 */}
+        {selectedBook && isSeries && (
+          <div style={S.card()}>
+            <div style={{ fontSize: 13, color: "#888", marginBottom: 8 }}>
+              📖 ORT 시리즈 중 어떤 책을 읽었어? <span style={{ color: "#FF8F00", fontSize: 11 }}>*필수</span>
+            </div>
+            <input
+              value={bookTitle}
+              onChange={e => setBookTitle(e.target.value)}
+              placeholder="예: The Magic Key, 킥보드 타기 등"
+              style={{ width: "100%", padding: "12px 14px", borderRadius: 12, border: `2px solid #FFE082`, fontSize: 14, outline: "none", boxSizing: "border-box" }}
+            />
+            <div style={{ fontSize: 11, color: "#aaa", marginTop: 6 }}>한글로 써도 괜찮아냥!</div>
+          </div>
+        )}
+
+        {/* 🛑 시리즈물이면 상세 제목(bookTitle)까지 적어야 버튼 활성화, 일반책이면 바로 활성화 */}
+        <button 
+          onClick={startDialog} 
+          disabled={!childName || !selectedBook || (isSeries && !bookTitle.trim())} 
+          style={S.btn(warm, dark, !childName || !selectedBook || (isSeries && !bookTitle.trim()))}
+        >
           이제 차차랑 놀래! 🐾
         </button>
       </div>
