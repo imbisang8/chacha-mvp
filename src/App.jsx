@@ -831,12 +831,13 @@ const [bookTitle, setBookTitle] = useState("");  //
         )}
 
         {/* 🛑 시리즈물이면 상세 제목(bookTitle)까지 적어야 버튼 활성화, 일반책이면 바로 활성화 */}
-        <button 
+       <button 
           onClick={startDialog} 
           disabled={!childName || !selectedBook || (isSeries && !bookTitle.trim())} 
           style={S.btn(warm, dark, !childName || !selectedBook || (isSeries && !bookTitle.trim()))}
         >
-          이제 차차랑 놀래! 🐾
+          이제 차차랑 놀래! 🚀
+        </button>
         </button>
       </div>
     </div>
