@@ -1,0 +1,698 @@
+[
+  {
+    "title": "A Series of Unfortunate Events",
+    "ar": "6-7점대",
+    "tagline": "기발하고 어두운 유머를 즐기는 아이에게",
+    "similar": ["The Mysterious Benedict Society", "Nevermoor", "The Land of Stories"]
+  },
+  {
+    "title": "A to Z Mysteries",
+    "ar": "3-4점대",
+    "tagline": "친구들과 함께 수수께끼를 푸는 이야기를 좋아하는 아이에게",
+    "similar": ["Cam Jansen", "Jigsaw Jones", "Nate the Great"]
+  },
+  {
+    "title": "Al Capone Does My Shirts",
+    "ar": "5점대",
+    "tagline": "역사 속 특별한 배경에서 펼쳐지는 성장 이야기",
+    "similar": ["Hatchet", "Holes", "Number the Stars"]
+  },
+  {
+    "title": "Amari and the Night Brothers",
+    "ar": "5점대",
+    "tagline": "마법과 모험을 좋아하는 아이에게",
+    "similar": ["Percy Jackson", "Nevermoor", "Keeper of the Lost Cities"]
+  },
+  {
+    "title": "Amelia Bedelia",
+    "ar": "2-3점대",
+    "tagline": "말장난과 엉뚱한 상황을 좋아하는 아이에게",
+    "similar": ["Flat Stanley", "Fly Guy", "Henry and Mudge"]
+  },
+  {
+    "title": "Amelia's Notebook",
+    "ar": "3-4점대",
+    "tagline": "일기 형식의 유쾌한 학교생활 이야기를 좋아하는 아이에게",
+    "similar": ["Diary of a Wimpy Kid", "Dork Diaries", "Clementine"]
+  },
+  {
+    "title": "Animorphs",
+    "ar": "4-5점대",
+    "tagline": "SF와 모험을 동시에 즐기고 싶은 아이에게",
+    "similar": ["My Teacher Is an Alien", "Beast Quest", "The Last Kids on Earth"]
+  },
+  {
+    "title": "Arnold and Louise",
+    "ar": "2점대",
+    "tagline": "따뜻한 우정 이야기를 좋아하는 아이에게",
+    "similar": ["Frog and Toad", "Henry and Mudge", "Little Bear"]
+  },
+  {
+    "title": "Artemis Fowl",
+    "ar": "5-6점대",
+    "tagline": "천재 주인공과 판타지 세계를 좋아하는 아이에게",
+    "similar": ["Percy Jackson", "Keeper of the Lost Cities", "The Mysterious Benedict Society"]
+  },
+  {
+    "title": "Arthur Chapter Books",
+    "ar": "3점대",
+    "tagline": "학교와 가족 이야기를 편안하게 읽고 싶은 아이에게",
+    "similar": ["Horrible Harry", "Marvin Redpost", "Clementine"]
+  },
+  {
+    "title": "Babymouse",
+    "ar": "2-3점대",
+    "tagline": "그래픽노블 형식의 유쾌한 이야기를 좋아하는 아이에게",
+    "similar": ["Dog Man", "Cat Kid Comic Club", "Big Nate"]
+  },
+  {
+    "title": "Beast Quest",
+    "ar": "4점대",
+    "tagline": "괴물과 싸우는 액션 어드벤처를 좋아하는 아이에게",
+    "similar": ["Dragon Masters", "Magic Tree House", "Animorphs"]
+  },
+  {
+    "title": "Because of Winn-Dixie",
+    "ar": "3점대",
+    "tagline": "따뜻하고 감동적인 이야기를 좋아하는 아이에게",
+    "similar": ["Charlotte's Web", "Shiloh", "The Tale of Despereaux"]
+  },
+  {
+    "title": "Big Nate",
+    "ar": "3점대",
+    "tagline": "학교에서 펼쳐지는 웃긴 에피소드를 좋아하는 아이에게",
+    "similar": ["Diary of a Wimpy Kid", "Timmy Failure", "Dork Diaries"]
+  },
+  {
+    "title": "Boxcar Children",
+    "ar": "3-4점대",
+    "tagline": "스스로 문제를 해결하는 아이들 이야기를 좋아하는 아이에게",
+    "similar": ["A to Z Mysteries", "Cam Jansen", "The Mysterious Benedict Society"]
+  },
+  {
+    "title": "Bridge to Terabithia",
+    "ar": "4점대",
+    "tagline": "우정과 상상력, 감동을 함께 느끼고 싶은 아이에게",
+    "similar": ["The Tale of Despereaux", "Wonder", "Tuck Everlasting"]
+  },
+  {
+    "title": "Calendar Mysteries",
+    "ar": "2-3점대",
+    "tagline": "쉽고 재미있는 미스터리를 좋아하는 아이에게",
+    "similar": ["A to Z Mysteries", "Cam Jansen", "Nate the Great"]
+  },
+  {
+    "title": "Cam Jansen",
+    "ar": "3점대",
+    "tagline": "사진 같은 기억력을 가진 주인공의 미스터리를 좋아하는 아이에게",
+    "similar": ["A to Z Mysteries", "Jigsaw Jones", "Encyclopedia Brown"]
+  },
+  {
+    "title": "Captain Underpants",
+    "ar": "4점대",
+    "tagline": "엉뚱하고 과장된 유머를 좋아하는 아이에게",
+    "similar": ["Dog Man", "The Bad Guys", "My Weird School"]
+  },
+  {
+    "title": "Cat Kid Comic Club",
+    "ar": "2-3점대",
+    "tagline": "만화 그리기와 창작을 좋아하는 아이에게",
+    "similar": ["Dog Man", "Babymouse", "Big Nate"]
+  },
+  {
+    "title": "Charlie and the Chocolate Factory",
+    "ar": "5점대",
+    "tagline": "기발하고 달콤한 상상의 세계를 좋아하는 아이에게",
+    "similar": ["Matilda", "The BFG", "James and the Giant Peach"]
+  },
+  {
+    "title": "Charlotte's Web",
+    "ar": "4점대",
+    "tagline": "우정과 생명의 소중함을 느끼고 싶은 아이에게",
+    "similar": ["Because of Winn-Dixie", "Stuart Little", "The Tale of Despereaux"]
+  },
+  {
+    "title": "Chronicles of Narnia",
+    "ar": "5-6점대",
+    "tagline": "웅장한 판타지 세계를 탐험하고 싶은 아이에게",
+    "similar": ["Harry Potter", "Fablehaven", "The Land of Stories"]
+  },
+  {
+    "title": "City Spies",
+    "ar": "5점대",
+    "tagline": "첩보와 모험을 좋아하는 아이에게",
+    "similar": ["Spy School", "The Mysterious Benedict Society", "The 39 Clues"]
+  },
+  {
+    "title": "Clementine",
+    "ar": "3점대",
+    "tagline": "장난기 많은 주인공에 공감하는 아이에게",
+    "similar": ["Judy Moody", "Junie B. Jones", "Marvin Redpost"]
+  },
+  {
+    "title": "Danny the Champion of the World",
+    "ar": "4점대",
+    "tagline": "아빠와 아이의 특별한 모험을 좋아하는 아이에게",
+    "similar": ["Matilda", "Fantastic Mr Fox", "The BFG"]
+  },
+  {
+    "title": "Diary of a Pug",
+    "ar": "3점대",
+    "tagline": "동물의 시점으로 보는 유쾌한 일상을 좋아하는 아이에게",
+    "similar": ["Owl Diaries", "Zoey and Sassafras", "Fly Guy"]
+  },
+  {
+    "title": "Diary of a Wimpy Kid",
+    "ar": "5점대",
+    "tagline": "중학교 생활의 현실적인 유머를 좋아하는 아이에게",
+    "similar": ["Big Nate", "Dork Diaries", "Timmy Failure"]
+  },
+  {
+    "title": "Dog Man",
+    "ar": "2-3점대",
+    "tagline": "액션 가득한 그래픽노블을 좋아하는 아이에게",
+    "similar": ["Cat Kid Comic Club", "Captain Underpants", "The Bad Guys"]
+  },
+  {
+    "title": "Dork Diaries",
+    "ar": "4점대",
+    "tagline": "학교생활의 공감되는 에피소드를 좋아하는 아이에게",
+    "similar": ["Diary of a Wimpy Kid", "Big Nate", "Amelia's Notebook"]
+  },
+  {
+    "title": "Dragon Games",
+    "ar": "4점대",
+    "tagline": "드래곤과 게임이 합쳐진 판타지를 좋아하는 아이에게",
+    "similar": ["Dragon Masters", "Dragon Girls", "Beast Quest"]
+  },
+  {
+    "title": "Dragon Girls",
+    "ar": "3-4점대",
+    "tagline": "드래곤으로 변신하는 여자 주인공 이야기를 좋아하는 아이에게",
+    "similar": ["Dragon Masters", "Dragon Games", "Rainbow Magic"]
+  },
+  {
+    "title": "Dragon Masters",
+    "ar": "3점대",
+    "tagline": "드래곤과 함께하는 짧고 신나는 모험을 좋아하는 아이에게",
+    "similar": ["Beast Quest", "Magic Tree House", "The Kingdom of Wrenly"]
+  },
+  {
+    "title": "Encyclopedia Brown",
+    "ar": "3-4점대",
+    "tagline": "논리적으로 사건을 해결하는 탐정 이야기를 좋아하는 아이에게",
+    "similar": ["Cam Jansen", "A to Z Mysteries", "Jigsaw Jones"]
+  },
+  {
+    "title": "Fablehaven",
+    "ar": "5점대",
+    "tagline": "신화 속 생물들이 가득한 판타지를 좋아하는 아이에게",
+    "similar": ["Chronicles of Narnia", "The Spiderwick Chronicles", "Keeper of the Lost Cities"]
+  },
+  {
+    "title": "Fantastic Mr Fox",
+    "ar": "4점대",
+    "tagline": "영리한 주인공의 통쾌한 이야기를 좋아하는 아이에게",
+    "similar": ["Matilda", "Charlie and the Chocolate Factory", "The BFG"]
+  },
+  {
+    "title": "Flat Stanley",
+    "ar": "3점대",
+    "tagline": "엉뚱한 설정에서 펼쳐지는 가벼운 모험을 좋아하는 아이에게",
+    "similar": ["Amelia Bedelia", "Fly Guy", "Mercy Watson"]
+  },
+  {
+    "title": "Fly Guy",
+    "ar": "1-2점대",
+    "tagline": "파리와 소년의 귀여운 우정 이야기를 좋아하는 아이에게",
+    "similar": ["Mercy Watson", "Little Bear", "Arnold and Louise"]
+  },
+  {
+    "title": "Frog and Toad",
+    "ar": "2점대",
+    "tagline": "따뜻하고 느긋한 우정 이야기를 좋아하는 아이에게",
+    "similar": ["Arnold and Louise", "Little Bear", "Henry and Mudge"]
+  },
+  {
+    "title": "Geronimo Stilton",
+    "ar": "3-4점대",
+    "tagline": "유쾌한 쥐 기자의 세계 여행 이야기를 좋아하는 아이에게",
+    "similar": ["Magic Tree House", "I Survived", "Flat Stanley"]
+  },
+  {
+    "title": "Goosebumps",
+    "ar": "3-4점대",
+    "tagline": "짜릿한 공포와 반전을 즐기는 아이에게",
+    "similar": ["Goosebumps HorrorLand", "The Last Kids on Earth", "Animorphs"]
+  },
+  {
+    "title": "Goosebumps HorrorLand",
+    "ar": "3-4점대",
+    "tagline": "더 강렬한 공포와 모험을 원하는 아이에게",
+    "similar": ["Goosebumps", "The Last Kids on Earth", "Notebook of Doom"]
+  },
+  {
+    "title": "Harriet the Spy",
+    "ar": "4점대",
+    "tagline": "관찰력 뛰어난 주인공의 성장 이야기를 좋아하는 아이에게",
+    "similar": ["Clementine", "Judy Moody", "Out of My Mind"]
+  },
+  {
+    "title": "Harry Potter",
+    "ar": "5-7점대",
+    "tagline": "마법 세계의 웅장한 모험을 원하는 아이에게",
+    "similar": ["Chronicles of Narnia", "Percy Jackson", "Keeper of the Lost Cities"]
+  },
+  {
+    "title": "Hatchet",
+    "ar": "5점대",
+    "tagline": "혼자 살아남는 생존 이야기를 좋아하는 아이에게",
+    "similar": ["Holes", "Maniac Magee", "I Survived"]
+  },
+  {
+    "title": "Henry and Mudge",
+    "ar": "2점대",
+    "tagline": "소년과 강아지의 따뜻한 일상을 좋아하는 아이에게",
+    "similar": ["Frog and Toad", "Little Bear", "Mercy Watson"]
+  },
+  {
+    "title": "Holes",
+    "ar": "4점대",
+    "tagline": "미스터리한 설정과 반전 있는 이야기를 좋아하는 아이에게",
+    "similar": ["Hatchet", "Maniac Magee", "Al Capone Does My Shirts"]
+  },
+  {
+    "title": "Horrible Harry",
+    "ar": "3점대",
+    "tagline": "학교생활의 소소한 에피소드를 좋아하는 아이에게",
+    "similar": ["Marvin Redpost", "Arthur Chapter Books", "Clementine"]
+  },
+  {
+    "title": "Horrid Henry",
+    "ar": "3점대",
+    "tagline": "말썽꾸러기 주인공의 유쾌한 이야기를 좋아하는 아이에게",
+    "similar": ["Captain Underpants", "My Weird School", "Big Nate"]
+  },
+  {
+    "title": "Humphrey",
+    "ar": "4점대",
+    "tagline": "학교 햄스터의 시선으로 보는 따뜻한 교실 이야기",
+    "similar": ["Diary of a Pug", "Owl Diaries", "Mercy Watson"]
+  },
+  {
+    "title": "I Survived",
+    "ar": "4점대",
+    "tagline": "역사적 사건을 배경으로 한 긴박한 생존 이야기를 좋아하는 아이에게",
+    "similar": ["Magic Tree House", "Ranger in Time", "Hatchet"]
+  },
+  {
+    "title": "InvestiGators",
+    "ar": "3점대",
+    "tagline": "웃기고 엉뚱한 탐정 이야기를 좋아하는 아이에게",
+    "similar": ["Dog Man", "The Bad Guys", "Cat Kid Comic Club"]
+  },
+  {
+    "title": "Ivy & Bean",
+    "ar": "3점대",
+    "tagline": "정반대 성격의 친구가 친해지는 이야기를 좋아하는 아이에게",
+    "similar": ["Clementine", "Junie B. Jones", "Horrible Harry"]
+  },
+  {
+    "title": "James and the Giant Peach",
+    "ar": "4점대",
+    "tagline": "기발하고 신비로운 모험을 좋아하는 아이에게",
+    "similar": ["Charlie and the Chocolate Factory", "Matilda", "The BFG"]
+  },
+  {
+    "title": "Jeremy Thatcher, Dragon Hatcher",
+    "ar": "5점대",
+    "tagline": "드래곤과 비밀스러운 우정을 나누는 이야기를 좋아하는 아이에게",
+    "similar": ["Dragon Masters", "Fablehaven", "The Spiderwick Chronicles"]
+  },
+  {
+    "title": "Jigsaw Jones",
+    "ar": "3점대",
+    "tagline": "친근한 탐정 이야기를 좋아하는 아이에게",
+    "similar": ["Cam Jansen", "A to Z Mysteries", "Encyclopedia Brown"]
+  },
+  {
+    "title": "Judy Moody",
+    "ar": "3점대",
+    "tagline": "감정 표현이 풍부한 주인공의 학교생활을 좋아하는 아이에게",
+    "similar": ["Junie B. Jones", "Clementine", "Marvin Redpost"]
+  },
+  {
+    "title": "Junie B. Jones",
+    "ar": "3점대",
+    "tagline": "엉뚱하고 솔직한 여자 주인공의 학교생활을 좋아하는 아이에게",
+    "similar": ["Judy Moody", "Clementine", "Ivy & Bean"]
+  },
+  {
+    "title": "Keeper of the Lost Cities",
+    "ar": "6점대",
+    "tagline": "비밀스러운 엘프 세계의 웅장한 판타지를 좋아하는 아이에게",
+    "similar": ["Harry Potter", "Percy Jackson", "Nevermoor"]
+  },
+  {
+    "title": "Little Bear",
+    "ar": "1-2점대",
+    "tagline": "포근하고 따뜻한 이야기를 좋아하는 아이에게",
+    "similar": ["Frog and Toad", "Arnold and Louise", "Henry and Mudge"]
+  },
+  {
+    "title": "Magic School Bus",
+    "ar": "4점대",
+    "tagline": "과학을 신나게 배우고 싶은 아이에게",
+    "similar": ["Zoey and Sassafras", "I Survived", "Geronimo Stilton"]
+  },
+  {
+    "title": "Magic Shop",
+    "ar": "4점대",
+    "tagline": "마법 가게를 배경으로 한 신비로운 이야기를 좋아하는 아이에게",
+    "similar": ["Fablehaven", "The Spiderwick Chronicles", "Jeremy Thatcher, Dragon Hatcher"]
+  },
+  {
+    "title": "Magic Tree House",
+    "ar": "3점대",
+    "tagline": "역사와 모험을 동시에 즐기고 싶은 아이에게",
+    "similar": ["I Survived", "Ranger in Time", "Geronimo Stilton"]
+  },
+  {
+    "title": "Magic Tree House Merlin Missions",
+    "ar": "4점대",
+    "tagline": "Magic Tree House를 재미있게 읽고 더 깊은 모험을 원하는 아이에게",
+    "similar": ["Magic Tree House", "I Survived", "Chronicles of Narnia"]
+  },
+  {
+    "title": "Magisterium",
+    "ar": "5점대",
+    "tagline": "마법 학교를 배경으로 한 어두운 판타지를 좋아하는 아이에게",
+    "similar": ["Harry Potter", "Keeper of the Lost Cities", "Chronicles of Narnia"]
+  },
+  {
+    "title": "Maniac Magee",
+    "ar": "4점대",
+    "tagline": "편견을 넘는 용감한 주인공의 이야기를 좋아하는 아이에게",
+    "similar": ["Holes", "Hatchet", "Wonder"]
+  },
+  {
+    "title": "Marvin Redpost",
+    "ar": "3점대",
+    "tagline": "장난기 많은 주인공에 공감하는 아이에게",
+    "similar": ["Junie B. Jones", "Stink", "Clementine"]
+  },
+  {
+    "title": "Matilda",
+    "ar": "5점대",
+    "tagline": "특별한 능력을 가진 영리한 주인공을 좋아하는 아이에게",
+    "similar": ["Charlie and the Chocolate Factory", "The BFG", "James and the Giant Peach"]
+  },
+  {
+    "title": "Mercy Watson",
+    "ar": "2점대",
+    "tagline": "돼지 주인공의 귀엽고 엉뚱한 이야기를 좋아하는 아이에게",
+    "similar": ["Fly Guy", "Henry and Mudge", "Frog and Toad"]
+  },
+  {
+    "title": "My Father's Dragon",
+    "ar": "4점대",
+    "tagline": "아이의 상상력이 가득한 클래식 판타지를 좋아하는 아이에게",
+    "similar": ["The Tale of Despereaux", "Charlotte's Web", "Stuart Little"]
+  },
+  {
+    "title": "My Teacher Is an Alien",
+    "ar": "4점대",
+    "tagline": "SF와 학교생활이 합쳐진 엉뚱한 이야기를 좋아하는 아이에게",
+    "similar": ["Animorphs", "The Last Kids on Earth", "Goosebumps"]
+  },
+  {
+    "title": "My Weird School",
+    "ar": "3점대",
+    "tagline": "학교에서 일어나는 말도 안 되는 상황을 좋아하는 아이에게",
+    "similar": ["Horrid Henry", "Captain Underpants", "Horrible Harry"]
+  },
+  {
+    "title": "Nate the Great",
+    "ar": "2-3점대",
+    "tagline": "짧고 쉬운 탐정 이야기를 좋아하는 아이에게",
+    "similar": ["Cam Jansen", "Jigsaw Jones", "A to Z Mysteries"]
+  },
+  {
+    "title": "Nevermoor",
+    "ar": "5점대",
+    "tagline": "마법적이고 독특한 세계관의 판타지를 좋아하는 아이에게",
+    "similar": ["Harry Potter", "Keeper of the Lost Cities", "A Series of Unfortunate Events"]
+  },
+  {
+    "title": "Notebook of Doom",
+    "ar": "3점대",
+    "tagline": "괴물과 싸우는 짧고 신나는 이야기를 좋아하는 아이에게",
+    "similar": ["Goosebumps", "The Last Kids on Earth", "Dragon Masters"]
+  },
+  {
+    "title": "Number the Stars",
+    "ar": "4점대",
+    "tagline": "역사적 배경 속 용기 있는 이야기를 좋아하는 아이에게",
+    "similar": ["Al Capone Does My Shirts", "Hatchet", "Bridge to Terabithia"]
+  },
+  {
+    "title": "Out of My Mind",
+    "ar": "4점대",
+    "tagline": "다름을 인정하고 공감하는 이야기를 좋아하는 아이에게",
+    "similar": ["Wonder", "Harriet the Spy", "Bridge to Terabithia"]
+  },
+  {
+    "title": "Owl Diaries",
+    "ar": "2-3점대",
+    "tagline": "일기 형식의 귀여운 동물 이야기를 좋아하는 아이에게",
+    "similar": ["Diary of a Pug", "Zoey and Sassafras", "Fly Guy"]
+  },
+  {
+    "title": "Percy Jackson",
+    "ar": "4-5점대",
+    "tagline": "그리스 신화와 현대가 합쳐진 모험을 좋아하는 아이에게",
+    "similar": ["Harry Potter", "Artemis Fowl", "Keeper of the Lost Cities"]
+  },
+  {
+    "title": "Pokémon Chapter Books",
+    "ar": "3-4점대",
+    "tagline": "포켓몬을 좋아하는 아이에게",
+    "similar": ["Dragon Masters", "Beast Quest", "Animorphs"]
+  },
+  {
+    "title": "Press Start!",
+    "ar": "2-3점대",
+    "tagline": "게임 세계를 배경으로 한 그래픽노블을 좋아하는 아이에게",
+    "similar": ["Dog Man", "InvestiGators", "Babymouse"]
+  },
+  {
+    "title": "Rainbow Magic",
+    "ar": "3점대",
+    "tagline": "요정과 마법의 세계를 좋아하는 아이에게",
+    "similar": ["Dragon Girls", "Owl Diaries", "The Princess in Black"]
+  },
+  {
+    "title": "Ralph Mouse",
+    "ar": "4점대",
+    "tagline": "모험을 떠나는 작은 쥐 주인공을 좋아하는 아이에게",
+    "similar": ["Stuart Little", "Charlotte's Web", "My Father's Dragon"]
+  },
+  {
+    "title": "Ramona",
+    "ar": "4점대",
+    "tagline": "엉뚱하지만 사랑스러운 여자 주인공의 성장 이야기를 좋아하는 아이에게",
+    "similar": ["Clementine", "Judy Moody", "Junie B. Jones"]
+  },
+  {
+    "title": "Ranger in Time",
+    "ar": "3-4점대",
+    "tagline": "역사 속 모험을 좋아하는 아이에게",
+    "similar": ["Magic Tree House", "I Survived", "Boxcar Children"]
+  },
+  {
+    "title": "Roscoe Riley Rules",
+    "ar": "3점대",
+    "tagline": "규칙을 어기고 벌어지는 유쾌한 에피소드를 좋아하는 아이에게",
+    "similar": ["Marvin Redpost", "Horrible Harry", "My Weird School"]
+  },
+  {
+    "title": "School for Good and Evil",
+    "ar": "5-6점대",
+    "tagline": "동화 속 세계를 뒤집는 판타지를 좋아하는 아이에게",
+    "similar": ["The Land of Stories", "Nevermoor", "Chronicles of Narnia"]
+  },
+  {
+    "title": "Shiloh",
+    "ar": "4점대",
+    "tagline": "강아지와의 특별한 유대를 다룬 감동 이야기를 좋아하는 아이에게",
+    "similar": ["Because of Winn-Dixie", "Charlotte's Web", "Where the Red Fern Grows"]
+  },
+  {
+    "title": "Spy School",
+    "ar": "5점대",
+    "tagline": "첩보 학교를 배경으로 한 유쾌한 액션을 좋아하는 아이에게",
+    "similar": ["City Spies", "The Mysterious Benedict Society", "Artemis Fowl"]
+  },
+  {
+    "title": "Stink",
+    "ar": "3점대",
+    "tagline": "과학을 좋아하는 엉뚱한 남자 주인공을 좋아하는 아이에게",
+    "similar": ["Marvin Redpost", "My Weird School", "Horrible Harry"]
+  },
+  {
+    "title": "Stuart Little",
+    "ar": "5점대",
+    "tagline": "작지만 용감한 주인공의 모험을 좋아하는 아이에게",
+    "similar": ["Charlotte's Web", "Ralph Mouse", "The Tale of Despereaux"]
+  },
+  {
+    "title": "The 39 Clues",
+    "ar": "5점대",
+    "tagline": "세계를 무대로 한 스릴 넘치는 보물찾기를 좋아하는 아이에게",
+    "similar": ["City Spies", "Spy School", "The Mysterious Benedict Society"]
+  },
+  {
+    "title": "The Bad Guys",
+    "ar": "2-3점대",
+    "tagline": "악당이지만 착한 척하는 캐릭터들의 코믹 이야기를 좋아하는 아이에게",
+    "similar": ["Dog Man", "Captain Underpants", "InvestiGators"]
+  },
+  {
+    "title": "The BFG",
+    "ar": "4점대",
+    "tagline": "거인과 소녀의 따뜻하고 기발한 우정을 좋아하는 아이에게",
+    "similar": ["Matilda", "Charlie and the Chocolate Factory", "James and the Giant Peach"]
+  },
+  {
+    "title": "The Giver",
+    "ar": "5점대",
+    "tagline": "생각할 거리가 많은 묵직한 이야기를 원하는 아이에게",
+    "similar": ["Out of My Mind", "Number the Stars", "Bridge to Terabithia"]
+  },
+  {
+    "title": "The Kingdom of Wrenly",
+    "ar": "3점대",
+    "tagline": "왕국을 배경으로 한 짧고 신나는 판타지를 좋아하는 아이에게",
+    "similar": ["Dragon Masters", "The Princess in Black", "Beast Quest"]
+  },
+  {
+    "title": "The Land of Stories",
+    "ar": "5점대",
+    "tagline": "동화 속으로 빨려 들어가는 판타지를 좋아하는 아이에게",
+    "similar": ["School for Good and Evil", "Chronicles of Narnia", "Fablehaven"]
+  },
+  {
+    "title": "The Last Kids on Earth",
+    "ar": "4점대",
+    "tagline": "좀비와 괴물이 등장하는 코믹 어드벤처를 좋아하는 아이에게",
+    "similar": ["Goosebumps", "Notebook of Doom", "Animorphs"]
+  },
+  {
+    "title": "The Mysterious Benedict Society",
+    "ar": "5점대",
+    "tagline": "두뇌를 쓰는 팀 플레이 모험을 좋아하는 아이에게",
+    "similar": ["City Spies", "The 39 Clues", "Spy School"]
+  },
+  {
+    "title": "The Phantom Tollbooth",
+    "ar": "6점대",
+    "tagline": "언어와 논리로 가득한 기발한 판타지를 좋아하는 아이에게",
+    "similar": ["A Series of Unfortunate Events", "The Land of Stories", "Chronicles of Narnia"]
+  },
+  {
+    "title": "The Princess in Black",
+    "ar": "2-3점대",
+    "tagline": "공주지만 강한 히어로 캐릭터를 좋아하는 아이에게",
+    "similar": ["Dragon Girls", "Rainbow Magic", "Owl Diaries"]
+  },
+  {
+    "title": "The Spiderwick Chronicles",
+    "ar": "4점대",
+    "tagline": "요정과 신비한 생물을 다룬 판타지를 좋아하는 아이에게",
+    "similar": ["Fablehaven", "Magic Shop", "Jeremy Thatcher, Dragon Hatcher"]
+  },
+  {
+    "title": "The Tale of Despereaux",
+    "ar": "4점대",
+    "tagline": "용기 있는 작은 주인공의 감동적인 이야기를 좋아하는 아이에게",
+    "similar": ["Charlotte's Web", "Stuart Little", "My Father's Dragon"]
+  },
+  {
+    "title": "The Terrible Two",
+    "ar": "4점대",
+    "tagline": "장난의 달인들이 펼치는 유쾌한 학교 이야기를 좋아하는 아이에게",
+    "similar": ["Big Nate", "Timmy Failure", "Diary of a Wimpy Kid"]
+  },
+  {
+    "title": "The Trumpet of the Swan",
+    "ar": "5점대",
+    "tagline": "말 못하는 백조의 감동적인 성장 이야기를 좋아하는 아이에게",
+    "similar": ["Charlotte's Web", "Stuart Little", "Because of Winn-Dixie"]
+  },
+  {
+    "title": "The Witches",
+    "ar": "5점대",
+    "tagline": "으스스하지만 통쾌한 마녀 이야기를 좋아하는 아이에게",
+    "similar": ["Matilda", "Goosebumps", "A Series of Unfortunate Events"]
+  },
+  {
+    "title": "Timmy Failure",
+    "ar": "4점대",
+    "tagline": "자신감 넘치지만 엉뚱한 탐정 주인공을 좋아하는 아이에게",
+    "similar": ["Big Nate", "Diary of a Wimpy Kid", "The Terrible Two"]
+  },
+  {
+    "title": "Tuck Everlasting",
+    "ar": "5점대",
+    "tagline": "영원한 삶에 대해 생각하게 하는 감동적인 이야기를 좋아하는 아이에게",
+    "similar": ["Bridge to Terabithia", "The Giver", "Number the Stars"]
+  },
+  {
+    "title": "Unicorn Chronicles",
+    "ar": "4점대",
+    "tagline": "유니콘과 함께하는 아름다운 판타지를 좋아하는 아이에게",
+    "similar": ["Rainbow Magic", "Dragon Girls", "The Princess in Black"]
+  },
+  {
+    "title": "Warriors",
+    "ar": "5점대",
+    "tagline": "고양이 부족의 웅장한 서사를 좋아하는 아이에게",
+    "similar": ["Wings of Fire", "Animorphs", "Keeper of the Lost Cities"]
+  },
+  {
+    "title": "Wayside School",
+    "ar": "3-4점대",
+    "tagline": "말도 안 되는 학교 이야기를 좋아하는 아이에게",
+    "similar": ["My Weird School", "Captain Underpants", "Horrid Henry"]
+  },
+  {
+    "title": "Where the Red Fern Grows",
+    "ar": "4점대",
+    "tagline": "개와의 특별한 우정과 감동을 원하는 아이에게",
+    "similar": ["Shiloh", "Because of Winn-Dixie", "Hatchet"]
+  },
+  {
+    "title": "Wings of Fire",
+    "ar": "5점대",
+    "tagline": "드래곤 세계의 웅장한 서사를 좋아하는 아이에게",
+    "similar": ["Warriors", "Dragon Masters", "Keeper of the Lost Cities"]
+  },
+  {
+    "title": "Wonder",
+    "ar": "4점대",
+    "tagline": "다름을 받아들이는 따뜻한 성장 이야기를 좋아하는 아이에게",
+    "similar": ["Out of My Mind", "Maniac Magee", "Bridge to Terabithia"]
+  },
+  {
+    "title": "Young Cam Jansen",
+    "ar": "2점대",
+    "tagline": "어린 탐정의 쉽고 재미있는 미스터리를 좋아하는 아이에게",
+    "similar": ["Nate the Great", "Calendar Mysteries", "Cam Jansen"]
+  },
+  {
+    "title": "Zoey and Sassafras",
+    "ar": "3점대",
+    "tagline": "과학과 판타지가 합쳐진 동물 이야기를 좋아하는 아이에게",
+    "similar": ["Magic School Bus", "Owl Diaries", "Diary of a Pug"]
+  }
+]
