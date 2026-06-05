@@ -384,8 +384,7 @@ const [bookTitle, setBookTitle] = useState("");  //
   // ─── 유틸 ───
   const displayBooks = () => {
     const notRead = BOOKS.filter(b => !readBooks.includes(b.title));
-    if (showAllBooks) {
-      if (!searchQuery) return notRead;
+    if (searchQuery) {
       const q = searchQuery.toLowerCase();
       return notRead.filter(b =>
         b.title.toLowerCase().includes(q) ||
@@ -393,6 +392,7 @@ const [bookTitle, setBookTitle] = useState("");  //
         (b.series && b.series.toLowerCase().includes(q))
       );
     }
+    if (showAllBooks) return notRead;
     // 차차 추천: 읽지 않은 책 중 5권
     return notRead.slice(0, 5);
   };
