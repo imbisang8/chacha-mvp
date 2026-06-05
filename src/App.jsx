@@ -792,7 +792,7 @@ const [bookTitle, setBookTitle] = useState("");  //
         {selectedBook && (
   <div style={S.card()}>
     <div style={{ fontSize: 13, color: "#888", marginBottom: 8 }}>
-      📖 오늘 읽은 책 제목이 뭐야? <span style={{ color: "#aaa", fontSize: 11 }}>(선택)</span>
+      📖 오늘 읽은 책 제목이 뭐야? <span style={{ color: "#aaa", fontSize: 11 }}>*필수</span>
     </div>
     <input
       value={bookTitle}
@@ -803,7 +803,7 @@ const [bookTitle, setBookTitle] = useState("");  //
     <div style={{ fontSize: 11, color: "#aaa", marginTop: 6 }}>한글로 써도 괜찮아냥!</div>
   </div>
 )}
-        <button onClick={startDialog} disabled={!childName || !selectedBook} style={S.btn(warm, dark, !childName || !selectedBook)}>
+        <button onClick={startDialog} disabled={!childName || !selectedBook|| !bookTitle.trim()} style={S.btn(warm, dark, !childName || !selectedBook|| !bookTitle.trim())}>
           이제 차차랑 놀래! 🐾
         </button>
       </div>
