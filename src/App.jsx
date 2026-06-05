@@ -313,7 +313,6 @@ export default function ReadingChachaV2() {
   const [firstVisitDate] = useState(() => localStorage.getItem("rcFirstVisit") || new Date().toDateString());
   const [showSpecialDay, setShowSpecialDay] = useState(false);
   const [specialDayMsg, setSpecialDayMsg] = useState("");
-const [specialDayMsg, setSpecialDayMsg] = useState("");
 const [bookTitle, setBookTitle] = useState("");  //
   
 
