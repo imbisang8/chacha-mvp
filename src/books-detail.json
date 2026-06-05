@@ -3,696 +3,812 @@
     "title": "A Series of Unfortunate Events",
     "ar": "6-7점대",
     "tagline": "기발하고 어두운 유머를 즐기는 아이에게",
-    "similar": ["The Mysterious Benedict Society", "Nevermoor", "The Land of Stories"]
+    "similar": ["The Mysterious Benedict Society", "Nevermoor", "The Land of Stories"],
+    "aiHint": "주인공: 보들레어 삼남매 / 불운을 극복하는 여정 / 어둡고 기발함"
   },
   {
     "title": "A to Z Mysteries",
     "ar": "3-4점대",
     "tagline": "친구들과 함께 수수께끼를 푸는 이야기를 좋아하는 아이에게",
-    "similar": ["Cam Jansen", "Jigsaw Jones", "Nate the Great"]
+    "similar": ["Cam Jansen", "Jigsaw Jones", "Nate the Great"],
+    "aiHint": "주인공: 딩크, 조쉬, 로즈 / 동네 미스터리 해결 / 경쾌하고 호기심 넘침"
   },
   {
     "title": "Al Capone Does My Shirts",
     "ar": "5점대",
     "tagline": "역사 속 특별한 배경에서 펼쳐지는 성장 이야기",
-    "similar": ["Hatchet", "Holes", "Number the Stars"]
+    "similar": ["Hatchet", "Holes", "Number the Stars"],
+    "aiHint": "주인공: 무스 / 섬에서 겪는 특별한 일상 / 현실적이고 따뜻함"
   },
   {
     "title": "Amari and the Night Brothers",
     "ar": "5점대",
     "tagline": "마법과 모험을 좋아하는 아이에게",
-    "similar": ["Percy Jackson", "Nevermoor", "Keeper of the Lost Cities"]
+    "similar": ["Percy Jackson", "Nevermoor", "Keeper of the Lost Cities"],
+    "aiHint": "주인공: 아마리 / 숨겨진 마법 세계 탐험 / 신비롭고 진취적임"
   },
   {
     "title": "Amelia Bedelia",
     "ar": "2-3점대",
     "tagline": "말장난과 엉뚱한 상황을 좋아하는 아이에게",
-    "similar": ["Flat Stanley", "Fly Guy", "Henry and Mudge"]
+    "similar": ["Flat Stanley", "Fly Guy", "Henry and Mudge"],
+    "aiHint": "주인공: 아멜리아 / 엉뚱한 오해와 해프닝 / 유쾌하고 코믹함"
   },
   {
     "title": "Amelia's Notebook",
     "ar": "3-4점대",
     "tagline": "일기 형식의 유쾌한 학교생활 이야기를 좋아하는 아이에게",
-    "similar": ["Diary of a Wimpy Kid", "Dork Diaries", "Clementine"]
+    "similar": ["Diary of a Wimpy Kid", "Dork Diaries", "Clementine"],
+    "aiHint": "주인공: 아멜리아 / 학교생활의 솔직한 기록 / 공감가고 아기자기함"
   },
   {
     "title": "Animorphs",
     "ar": "4-5점대",
     "tagline": "SF와 모험을 동시에 즐기고 싶은 아이에게",
-    "similar": ["My Teacher Is an Alien", "Beast Quest", "The Last Kids on Earth"]
+    "similar": ["My Teacher Is an Alien", "Beast Quest", "The Last Kids on Earth"],
+    "aiHint": "주인공: 제이크 외 / 외계인에 맞서는 변신 / 긴장감 넘치는 SF"
   },
   {
     "title": "Arnold and Louise",
     "ar": "2점대",
     "tagline": "따뜻한 우정 이야기를 좋아하는 아이에게",
-    "similar": ["Frog and Toad", "Henry and Mudge", "Little Bear"]
+    "similar": ["Frog and Toad", "Henry and Mudge", "Little Bear"],
+    "aiHint": "주인공: 아놀드와 루이스 / 두 친구의 평범한 일상 / 잔잔하고 따뜻함"
   },
   {
     "title": "Artemis Fowl",
     "ar": "5-6점대",
     "tagline": "천재 주인공과 판타지 세계를 좋아하는 아이에게",
-    "similar": ["Percy Jackson", "Keeper of the Lost Cities", "The Mysterious Benedict Society"]
+    "similar": ["Percy Jackson", "Keeper of the Lost Cities", "The Mysterious Benedict Society"],
+    "aiHint": "주인공: 아르테미스 / 천재 소년의 마법 세계 계획 / 기발하고 스릴있음"
   },
   {
     "title": "Arthur Chapter Books",
     "ar": "3점대",
     "tagline": "학교와 가족 이야기를 편안하게 읽고 싶은 아이에게",
-    "similar": ["Horrible Harry", "Marvin Redpost", "Clementine"]
+    "similar": ["Horrible Harry", "Marvin Redpost", "Clementine"],
+    "aiHint": "주인공: 아서 / 친구와 가족 간의 소소한 일 / 편안하고 교훈적임"
   },
   {
     "title": "Babymouse",
     "ar": "2-3점대",
     "tagline": "그래픽노블 형식의 유쾌한 이야기를 좋아하는 아이에게",
-    "similar": ["Dog Man", "Cat Kid Comic Club", "Big Nate"]
+    "similar": ["Dog Man", "Cat Kid Comic Club", "Big Nate"],
+    "aiHint": "주인공: 베이비마우스 / 상상력 풍부한 쥐의 일상 / 발랄하고 유쾌함"
   },
   {
     "title": "Beast Quest",
     "ar": "4점대",
     "tagline": "괴물과 싸우는 액션 어드벤처를 좋아하는 아이에게",
-    "similar": ["Dragon Masters", "Magic Tree House", "Animorphs"]
+    "similar": ["Dragon Masters", "Magic Tree House", "Animorphs"],
+    "aiHint": "주인공: 톰 / 마법 괴물들로부터 왕국 구하기 / 박진감 넘치는 액션"
   },
   {
     "title": "Because of Winn-Dixie",
     "ar": "3점대",
     "tagline": "따뜻하고 감동적인 이야기를 좋아하는 아이에게",
-    "similar": ["Charlotte's Web", "Shiloh", "The Tale of Despereaux"]
+    "similar": ["Charlotte's Web", "Shiloh", "The Tale of Despereaux"],
+    "aiHint": "주인공: 오팔 / 상처를 치유하는 특별한 우정 / 감동적이고 따뜻함"
   },
   {
     "title": "Big Nate",
     "ar": "3점대",
     "tagline": "학교에서 펼쳐지는 웃긴 에피소드를 좋아하는 아이에게",
-    "similar": ["Diary of a Wimpy Kid", "Timmy Failure", "Dork Diaries"]
+    "similar": ["Diary of a Wimpy Kid", "Timmy Failure", "Dork Diaries"],
+    "aiHint": "주인공: 네이트 / 사고뭉치 소년의 학교생활 / 코믹하고 에너지 넘침"
   },
   {
     "title": "Boxcar Children",
     "ar": "3-4점대",
     "tagline": "스스로 문제를 해결하는 아이들 이야기를 좋아하는 아이에게",
-    "similar": ["A to Z Mysteries", "Cam Jansen", "The Mysterious Benedict Society"]
+    "similar": ["A to Z Mysteries", "Cam Jansen", "The Mysterious Benedict Society"],
+    "aiHint": "주인공: 알든가 네 남매 / 자립심 강한 아이들의 모험 / 훈훈하고 흥미로움"
   },
   {
     "title": "Bridge to Terabithia",
     "ar": "4점대",
     "tagline": "우정과 상상력, 감동을 함께 느끼고 싶은 아이에게",
-    "similar": ["The Tale of Despereaux", "Wonder", "Tuck Everlasting"]
+    "similar": ["The Tale of Despereaux", "Wonder", "Tuck Everlasting"],
+    "aiHint": "주인공: 제스와 레슬리 / 상상 속 왕국과 현실의 이별 / 슬프고 감동적임"
   },
   {
     "title": "Calendar Mysteries",
     "ar": "2-3점대",
     "tagline": "쉽고 재미있는 미스터리를 좋아하는 아이에게",
-    "similar": ["A to Z Mysteries", "Cam Jansen", "Nate the Great"]
+    "similar": ["A to Z Mysteries", "Cam Jansen", "Nate the Great"],
+    "aiHint": "주인공: 브래들리 등 / 달마다 일어나는 소소한 사건 / 쉽고 가벼운 추리"
   },
   {
     "title": "Cam Jansen",
     "ar": "3점대",
     "tagline": "사진 같은 기억력을 가진 주인공의 미스터리를 좋아하는 아이에게",
-    "similar": ["A to Z Mysteries", "Jigsaw Jones", "Encyclopedia Brown"]
+    "similar": ["A to Z Mysteries", "Jigsaw Jones", "Encyclopedia Brown"],
+    "aiHint": "주인공: 캠 잰슨 / 뛰어난 기억력으로 사건 해결 / 명쾌하고 흥미로움"
   },
   {
     "title": "Captain Underpants",
     "ar": "4점대",
     "tagline": "엉뚱하고 과장된 유머를 좋아하는 아이에게",
-    "similar": ["Dog Man", "The Bad Guys", "My Weird School"]
+    "similar": ["Dog Man", "The Bad Guys", "My Weird School"],
+    "aiHint": "주인공: 조지와 해럴드 / 엉뚱한 영웅의 탄생 / 과장되고 코믹함"
   },
   {
     "title": "Cat Kid Comic Club",
     "ar": "2-3점대",
     "tagline": "만화 그리기와 창작을 좋아하는 아이에게",
-    "similar": ["Dog Man", "Babymouse", "Big Nate"]
+    "similar": ["Dog Man", "Babymouse", "Big Nate"],
+    "aiHint": "주인공: 릴 피티 / 만화 클럽 아이들의 창작 활동 / 유쾌하고 창의적임"
   },
   {
     "title": "Charlie and the Chocolate Factory",
     "ar": "5점대",
     "tagline": "기발하고 달콤한 상상의 세계를 좋아하는 아이에게",
-    "similar": ["Matilda", "The BFG", "James and the Giant Peach"]
+    "similar": ["Matilda", "The BFG", "James and the Giant Peach"],
+    "aiHint": "주인공: 찰리 / 신비한 초콜릿 공장 견학 / 환상적이고 교훈적임"
   },
   {
     "title": "Charlotte's Web",
     "ar": "4점대",
     "tagline": "우정과 생명의 소중함을 느끼고 싶은 아이에게",
-    "similar": ["Because of Winn-Dixie", "Stuart Little", "The Tale of Despereaux"]
+    "similar": ["Because of Winn-Dixie", "Stuart Little", "The Tale of Despereaux"],
+    "aiHint": "주인공: 윌버와 샬롯 / 생명을 구하기 위한 우정 / 감동적이고 철학적임"
   },
   {
     "title": "Chronicles of Narnia",
     "ar": "5-6점대",
     "tagline": "웅장한 판타지 세계를 탐험하고 싶은 아이에게",
-    "similar": ["Harry Potter", "Fablehaven", "The Land of Stories"]
+    "similar": ["Harry Potter", "Fablehaven", "The Land of Stories"],
+    "aiHint": "주인공: 페번시 남매 / 마법의 옷장 너머 세계 구원 / 웅장한 판타지"
   },
   {
     "title": "City Spies",
     "ar": "5점대",
     "tagline": "첩보와 모험을 좋아하는 아이에게",
-    "similar": ["Spy School", "The Mysterious Benedict Society", "The 39 Clues"]
+    "similar": ["Spy School", "The Mysterious Benedict Society", "The 39 Clues"],
+    "aiHint": "주인공: 세라 등 / 비밀 스파이 아이들의 임무 / 긴장감 넘치는 모험"
   },
   {
     "title": "Clementine",
     "ar": "3점대",
     "tagline": "장난기 많은 주인공에 공감하는 아이에게",
-    "similar": ["Judy Moody", "Junie B. Jones", "Marvin Redpost"]
+    "similar": ["Judy Moody", "Junie B. Jones", "Marvin Redpost"],
+    "aiHint": "주인공: 클레멘타인 / 엉뚱하고 긍정적인 아이의 일상 / 발랄하고 공감됨"
   },
   {
     "title": "Danny the Champion of the World",
     "ar": "4점대",
     "tagline": "아빠와 아이의 특별한 모험을 좋아하는 아이에게",
-    "similar": ["Matilda", "Fantastic Mr Fox", "The BFG"]
+    "similar": ["Matilda", "Fantastic Mr Fox", "The BFG"],
+    "aiHint": "주인공: 대니 / 부자의 비밀스럽고 통쾌한 작전 / 흥미롭고 끈끈함"
   },
   {
     "title": "Diary of a Pug",
     "ar": "3점대",
     "tagline": "동물의 시점으로 보는 유쾌한 일상을 좋아하는 아이에게",
-    "similar": ["Owl Diaries", "Zoey and Sassafras", "Fly Guy"]
+    "similar": ["Owl Diaries", "Zoey and Sassafras", "Fly Guy"],
+    "aiHint": "주인공: 버브 / 주인을 향한 반려견의 애정 / 귀엽고 유쾌함"
   },
   {
     "title": "Diary of a Wimpy Kid",
     "ar": "5점대",
     "tagline": "중학교 생활의 현실적인 유머를 좋아하는 아이에게",
-    "similar": ["Big Nate", "Dork Diaries", "Timmy Failure"]
+    "similar": ["Big Nate", "Dork Diaries", "Timmy Failure"],
+    "aiHint": "주인공: 그레그 / 평범한 중학생의 좌충우돌 생존기 / 현실적이고 코믹함"
   },
   {
     "title": "Dog Man",
     "ar": "2-3점대",
     "tagline": "액션 가득한 그래픽노블을 좋아하는 아이에게",
-    "similar": ["Cat Kid Comic Club", "Captain Underpants", "The Bad Guys"]
+    "similar": ["Cat Kid Comic Club", "Captain Underpants", "The Bad Guys"],
+    "aiHint": "주인공: 도그맨 / 개 머리를 한 경찰의 악당 소탕 / 기발하고 엉뚱함"
   },
   {
     "title": "Dork Diaries",
     "ar": "4점대",
     "tagline": "학교생활의 공감되는 에피소드를 좋아하는 아이에게",
-    "similar": ["Diary of a Wimpy Kid", "Big Nate", "Amelia's Notebook"]
+    "similar": ["Diary of a Wimpy Kid", "Big Nate", "Amelia's Notebook"],
+    "aiHint": "주인공: 닛키 / 사춘기 소녀의 유별난 학교생활 / 발랄하고 공감됨"
   },
   {
     "title": "Dragon Games",
     "ar": "4점대",
     "tagline": "드래곤과 게임이 합쳐진 판타지를 좋아하는 아이에게",
-    "similar": ["Dragon Masters", "Dragon Girls", "Beast Quest"]
+    "similar": ["Dragon Masters", "Dragon Girls", "Beast Quest"],
+    "aiHint": "주인공: 미상 / 분위기: 모험"
   },
   {
     "title": "Dragon Girls",
     "ar": "3-4점대",
     "tagline": "드래곤으로 변신하는 여자 주인공 이야기를 좋아하는 아이에게",
-    "similar": ["Dragon Masters", "Dragon Games", "Rainbow Magic"]
+    "similar": ["Dragon Masters", "Dragon Games", "Rainbow Magic"],
+    "aiHint": "주인공: 아잘미나 등 / 소녀들의 드래곤 변신 모험 / 신비롭고 활기참"
   },
   {
     "title": "Dragon Masters",
     "ar": "3점대",
     "tagline": "드래곤과 함께하는 짧고 신나는 모험을 좋아하는 아이에게",
-    "similar": ["Beast Quest", "Magic Tree House", "The Kingdom of Wrenly"]
+    "similar": ["Beast Quest", "Magic Tree House", "The Kingdom of Wrenly"],
+    "aiHint": "주인공: 드레이크 / 드래곤 마스터들의 성장과 마법 / 흥미롭고 역동적임"
   },
   {
     "title": "Encyclopedia Brown",
     "ar": "3-4점대",
     "tagline": "논리적으로 사건을 해결하는 탐정 이야기를 좋아하는 아이에게",
-    "similar": ["Cam Jansen", "A to Z Mysteries", "Jigsaw Jones"]
+    "similar": ["Cam Jansen", "A to Z Mysteries", "Jigsaw Jones"],
+    "aiHint": "주인공: 리로이 / 방대한 지식으로 동네 사건 해결 / 논리적이고 명쾌함"
   },
   {
     "title": "Fablehaven",
     "ar": "5점대",
     "tagline": "신화 속 생물들이 가득한 판타지를 좋아하는 아이에게",
-    "similar": ["Chronicles of Narnia", "The Spiderwick Chronicles", "Keeper of the Lost Cities"]
+    "similar": ["Chronicles of Narnia", "The Spiderwick Chronicles", "Keeper of the Lost Cities"],
+    "aiHint": "주인공: 켄드라와 세스 / 신화 속 생물 보호구역 탐험 / 신비롭고 스릴있음"
   },
   {
     "title": "Fantastic Mr Fox",
     "ar": "4점대",
     "tagline": "영리한 주인공의 통쾌한 이야기를 좋아하는 아이에게",
-    "similar": ["Matilda", "Charlie and the Chocolate Factory", "The BFG"]
+    "similar": ["Matilda", "Charlie and the Chocolate Factory", "The BFG"],
+    "aiHint": "주인공: 폭스 씨 / 농부들을 골탕먹이는 여우의 기지 / 통쾌하고 영리함"
   },
   {
     "title": "Flat Stanley",
     "ar": "3점대",
     "tagline": "엉뚱한 설정에서 펼쳐지는 가벼운 모험을 좋아하는 아이에게",
-    "similar": ["Amelia Bedelia", "Fly Guy", "Mercy Watson"]
+    "similar": ["Amelia Bedelia", "Fly Guy", "Mercy Watson"],
+    "aiHint": "주인공: 스탠리 / 납작해진 소년의 독특한 모험 / 엉뚱하고 가벼움"
   },
   {
     "title": "Fly Guy",
     "ar": "1-2점대",
     "tagline": "파리와 소년의 귀여운 우정 이야기를 좋아하는 아이에게",
-    "similar": ["Mercy Watson", "Little Bear", "Arnold and Louise"]
+    "similar": ["Mercy Watson", "Little Bear", "Arnold and Louise"],
+    "aiHint": "주인공: 버즈 / 소년과 파리의 엉뚱한 우정 / 코믹하고 귀여움"
   },
   {
     "title": "Frog and Toad",
     "ar": "2점대",
     "tagline": "따뜻하고 느긋한 우정 이야기를 좋아하는 아이에게",
-    "similar": ["Arnold and Louise", "Little Bear", "Henry and Mudge"]
+    "similar": ["Arnold and Louise", "Little Bear", "Henry and Mudge"],
+    "aiHint": "주인공: 개구리와 두꺼비 / 두 친구의 소박한 일상 / 잔잔하고 따뜻함"
   },
   {
     "title": "Geronimo Stilton",
     "ar": "3-4점대",
     "tagline": "유쾌한 쥐 기자의 세계 여행 이야기를 좋아하는 아이에게",
-    "similar": ["Magic Tree House", "I Survived", "Flat Stanley"]
+    "similar": ["Magic Tree House", "I Survived", "Flat Stanley"],
+    "aiHint": "주인공: 제로니모 / 겁 많은 생쥐 기자의 세계 모험 / 경쾌하고 흥미로움"
   },
   {
     "title": "Goosebumps",
     "ar": "3-4점대",
     "tagline": "짜릿한 공포와 반전을 즐기는 아이에게",
-    "similar": ["Goosebumps HorrorLand", "The Last Kids on Earth", "Animorphs"]
+    "similar": ["Goosebumps HorrorLand", "The Last Kids on Earth", "Animorphs"],
+    "aiHint": "주인공: 매번 다름 / 기이하고 무서운 초자연적 사건 / 짜릿한 공포"
   },
   {
     "title": "Goosebumps HorrorLand",
     "ar": "3-4점대",
     "tagline": "더 강렬한 공포와 모험을 원하는 아이에게",
-    "similar": ["Goosebumps", "The Last Kids on Earth", "Notebook of Doom"]
+    "similar": ["Goosebumps", "The Last Kids on Earth", "Notebook of Doom"],
+    "aiHint": "주인공: 다수 / 테마파크에서 벌어지는 기괴한 일 / 강렬한 공포와 스릴"
   },
   {
     "title": "Harriet the Spy",
     "ar": "4점대",
     "tagline": "관찰력 뛰어난 주인공의 성장 이야기를 좋아하는 아이에게",
-    "similar": ["Clementine", "Judy Moody", "Out of My Mind"]
+    "similar": ["Clementine", "Judy Moody", "Out of My Mind"],
+    "aiHint": "주인공: 해리엇 / 비밀을 관찰하는 소녀의 내적 성장 / 현실적이고 교훈적임"
   },
   {
     "title": "Harry Potter",
     "ar": "5-7점대",
     "tagline": "마법 세계의 웅장한 모험을 원하는 아이에게",
-    "similar": ["Chronicles of Narnia", "Percy Jackson", "Keeper of the Lost Cities"]
+    "similar": ["Chronicles of Narnia", "Percy Jackson", "Keeper of the Lost Cities"],
+    "aiHint": "주인공: 해리 포터 / 마법 학교에서 벌어지는 거대한 여정 / 웅장하고 신비로움"
   },
   {
     "title": "Hatchet",
     "ar": "5점대",
     "tagline": "혼자 살아남는 생존 이야기를 좋아하는 아이에게",
-    "similar": ["Holes", "Maniac Magee", "I Survived"]
+    "similar": ["Holes", "Maniac Magee", "I Survived"],
+    "aiHint": "주인공: 브라이언 / 대자연 속 홀로 남겨진 소년의 생존 / 긴장되고 현실적임"
   },
   {
     "title": "Henry and Mudge",
     "ar": "2점대",
     "tagline": "소년과 강아지의 따뜻한 일상을 좋아하는 아이에게",
-    "similar": ["Frog and Toad", "Little Bear", "Mercy Watson"]
+    "similar": ["Frog and Toad", "Little Bear", "Mercy Watson"],
+    "aiHint": "주인공: 헨리 / 소년과 큰 개의 소소한 동네 일상 / 따뜻하고 포근함"
   },
   {
     "title": "Holes",
     "ar": "4점대",
     "tagline": "미스터리한 설정과 반전 있는 이야기를 좋아하는 아이에게",
-    "similar": ["Hatchet", "Maniac Magee", "Al Capone Does My Shirts"]
+    "similar": ["Hatchet", "Maniac Magee", "Al Capone Does My Shirts"],
+    "aiHint": "주인공: 스탠리 / 저주받은 가문과 수용소의 비밀 / 기발한 미스터리"
   },
   {
     "title": "Horrible Harry",
     "ar": "3점대",
     "tagline": "학교생활의 소소한 에피소드를 좋아하는 아이에게",
-    "similar": ["Marvin Redpost", "Arthur Chapter Books", "Clementine"]
+    "similar": ["Marvin Redpost", "Arthur Chapter Books", "Clementine"],
+    "aiHint": "주인공: 해리 / 장난꾸러기 소년의 학교 에피소드 / 현실적이고 유쾌함"
   },
   {
     "title": "Horrid Henry",
     "ar": "3점대",
     "tagline": "말썽꾸러기 주인공의 유쾌한 이야기를 좋아하는 아이에게",
-    "similar": ["Captain Underpants", "My Weird School", "Big Nate"]
+    "similar": ["Captain Underpants", "My Weird School", "Big Nate"],
+    "aiHint": "주인공: 헨리 / 말썽꾸러기 소년의 반항적인 일상 / 코믹하고 통쾌함"
   },
   {
     "title": "Humphrey",
     "ar": "4점대",
     "tagline": "학교 햄스터의 시선으로 보는 따뜻한 교실 이야기",
-    "similar": ["Diary of a Pug", "Owl Diaries", "Mercy Watson"]
+    "similar": ["Diary of a Pug", "Owl Diaries", "Mercy Watson"],
+    "aiHint": "주인공: 험프리 / 햄스터의 눈으로 본 교실 이야기 / 따뜻하고 긍정적임"
   },
   {
     "title": "I Survived",
     "ar": "4점대",
     "tagline": "역사적 사건을 배경으로 한 긴박한 생존 이야기를 좋아하는 아이에게",
-    "similar": ["Magic Tree House", "Ranger in Time", "Hatchet"]
+    "similar": ["Magic Tree House", "Ranger in Time", "Hatchet"],
+    "aiHint": "주인공: 매번 다름 / 역사적 재난 속 아이들의 생존기 / 긴박하고 감동적임"
   },
   {
     "title": "InvestiGators",
     "ar": "3점대",
     "tagline": "웃기고 엉뚱한 탐정 이야기를 좋아하는 아이에게",
-    "similar": ["Dog Man", "The Bad Guys", "Cat Kid Comic Club"]
+    "similar": ["Dog Man", "The Bad Guys", "Cat Kid Comic Club"],
+    "aiHint": "주인공: 망고와 브래시 / 악어 탐정들의 엉뚱한 수사 / 유쾌하고 기발함"
   },
   {
     "title": "Ivy & Bean",
     "ar": "3점대",
     "tagline": "정반대 성격의 친구가 친해지는 이야기를 좋아하는 아이에게",
-    "similar": ["Clementine", "Junie B. Jones", "Horrible Harry"]
+    "similar": ["Clementine", "Junie B. Jones", "Horrible Harry"],
+    "aiHint": "주인공: 아이비와 빈 / 성향이 다른 두 소녀의 우정 / 발랄하고 현실적임"
   },
   {
     "title": "James and the Giant Peach",
     "ar": "4점대",
     "tagline": "기발하고 신비로운 모험을 좋아하는 아이에게",
-    "similar": ["Charlie and the Chocolate Factory", "Matilda", "The BFG"]
+    "similar": ["Charlie and the Chocolate Factory", "Matilda", "The BFG"],
+    "aiHint": "주인공: 제임스 / 거대한 복숭아를 타고 떠나는 여정 / 환상적이고 신비로움"
   },
   {
     "title": "Jeremy Thatcher, Dragon Hatcher",
     "ar": "5점대",
     "tagline": "드래곤과 비밀스러운 우정을 나누는 이야기를 좋아하는 아이에게",
-    "similar": ["Dragon Masters", "Fablehaven", "The Spiderwick Chronicles"]
+    "similar": ["Dragon Masters", "Fablehaven", "The Spiderwick Chronicles"],
+    "aiHint": "주인공: 제러미 / 신비한 드래곤 알을 키우는 소년 / 몽환적이고 감동적임"
   },
   {
     "title": "Jigsaw Jones",
     "ar": "3점대",
     "tagline": "친근한 탐정 이야기를 좋아하는 아이에게",
-    "similar": ["Cam Jansen", "A to Z Mysteries", "Encyclopedia Brown"]
+    "similar": ["Cam Jansen", "A to Z Mysteries", "Encyclopedia Brown"],
+    "aiHint": "주인공: 직소 존스 / 퍼즐처럼 사건의 단서를 맞추는 탐정 / 흥미롭고 논리적임"
   },
   {
     "title": "Judy Moody",
     "ar": "3점대",
     "tagline": "감정 표현이 풍부한 주인공의 학교생활을 좋아하는 아이에게",
-    "similar": ["Junie B. Jones", "Clementine", "Marvin Redpost"]
+    "similar": ["Junie B. Jones", "Clementine", "Marvin Redpost"],
+    "aiHint": "주인공: 주디 / 감정 기복 심한 소녀의 솔직한 일상 / 유쾌하고 공감됨"
   },
   {
     "title": "Junie B. Jones",
     "ar": "3점대",
     "tagline": "엉뚱하고 솔직한 여자 주인공의 학교생활을 좋아하는 아이에게",
-    "similar": ["Judy Moody", "Clementine", "Ivy & Bean"]
+    "similar": ["Judy Moody", "Clementine", "Ivy & Bean"],
+    "aiHint": "주인공: 주니 / 천방지축 꼬마의 유치원 및 학교생활 / 유쾌하고 엉뚱함"
   },
   {
     "title": "Keeper of the Lost Cities",
     "ar": "6점대",
     "tagline": "비밀스러운 엘프 세계의 웅장한 판타지를 좋아하는 아이에게",
-    "similar": ["Harry Potter", "Percy Jackson", "Nevermoor"]
+    "similar": ["Harry Potter", "Percy Jackson", "Nevermoor"],
+    "aiHint": "주인공: 소피 / 엘프 세계의 비밀을 파헤치는 여정 / 웅장하고 신비로움"
   },
   {
     "title": "Little Bear",
     "ar": "1-2점대",
     "tagline": "포근하고 따뜻한 이야기를 좋아하는 아이에게",
-    "similar": ["Frog and Toad", "Arnold and Louise", "Henry and Mudge"]
+    "similar": ["Frog and Toad", "Arnold and Louise", "Henry and Mudge"],
+    "aiHint": "주인공: 꼬마 곰 / 숲속 동물 친구들과의 평화로운 일상 / 따뜻하고 포근함"
   },
   {
     "title": "Magic School Bus",
     "ar": "4점대",
     "tagline": "과학을 신나게 배우고 싶은 아이에게",
-    "similar": ["Zoey and Sassafras", "I Survived", "Geronimo Stilton"]
+    "similar": ["Zoey and Sassafras", "I Survived", "Geronimo Stilton"],
+    "aiHint": "주인공: 프리즐 선생님 / 마법 버스를 탄 과학 탐험 / 흥미롭고 교육적"
   },
   {
     "title": "Magic Shop",
     "ar": "4점대",
     "tagline": "마법 가게를 배경으로 한 신비로운 이야기를 좋아하는 아이에게",
-    "similar": ["Fablehaven", "The Spiderwick Chronicles", "Jeremy Thatcher, Dragon Hatcher"]
+    "similar": ["Fablehaven", "The Spiderwick Chronicles", "Jeremy Thatcher, Dragon Hatcher"],
+    "aiHint": "주인공: 러셀 등 / 마법 가게에서 시작된 신비한 모험 / 몽환적이고 스릴있음"
   },
   {
     "title": "Magic Tree House",
     "ar": "3점대",
     "tagline": "역사와 모험을 동시에 즐기고 싶은 아이에게",
-    "similar": ["I Survived", "Ranger in Time", "Geronimo Stilton"]
+    "similar": ["I Survived", "Ranger in Time", "Geronimo Stilton"],
+    "aiHint": "주인공: 잭과 애니 / 마법 오두막을 통한 시공간 여행 / 모험적이고 교육적임"
   },
   {
     "title": "Magic Tree House Merlin Missions",
     "ar": "4점대",
     "tagline": "Magic Tree House를 재미있게 읽고 더 깊은 모험을 원하는 아이에게",
-    "similar": ["Magic Tree House", "I Survived", "Chronicles of Narnia"]
+    "similar": ["Magic Tree House", "I Survived", "Chronicles of Narnia"],
+    "aiHint": "주인공: 잭과 애니 / 마법사 멀린을 돕는 심화된 모험 / 신비롭고 서사적임"
   },
   {
     "title": "Magisterium",
     "ar": "5점대",
     "tagline": "마법 학교를 배경으로 한 어두운 판타지를 좋아하는 아이에게",
-    "similar": ["Harry Potter", "Keeper of the Lost Cities", "Chronicles of Narnia"]
+    "similar": ["Harry Potter", "Keeper of the Lost Cities", "Chronicles of Narnia"],
+    "aiHint": "주인공: 콜 / 마법 학교에서 얽히는 어둠의 비밀 / 긴장감 넘치는 다크 판타지"
   },
   {
     "title": "Maniac Magee",
     "ar": "4점대",
     "tagline": "편견을 넘는 용감한 주인공의 이야기를 좋아하는 아이에게",
-    "similar": ["Holes", "Hatchet", "Wonder"]
+    "similar": ["Holes", "Hatchet", "Wonder"],
+    "aiHint": "주인공: 제프리 / 인종 차별을 뛰어넘는 소년의 달리기 / 감동적이고 교훈적임"
   },
   {
     "title": "Marvin Redpost",
     "ar": "3점대",
     "tagline": "장난기 많은 주인공에 공감하는 아이에게",
-    "similar": ["Junie B. Jones", "Stink", "Clementine"]
+    "similar": ["Junie B. Jones", "Stink", "Clementine"],
+    "aiHint": "주인공: 마빈 / 상상력 풍부한 소년의 엉뚱한 오해 / 현실적이고 코믹함"
   },
   {
     "title": "Matilda",
     "ar": "5점대",
     "tagline": "특별한 능력을 가진 영리한 주인공을 좋아하는 아이에게",
-    "similar": ["Charlie and the Chocolate Factory", "The BFG", "James and the Giant Peach"]
+    "similar": ["Charlie and the Chocolate Factory", "The BFG", "James and the Giant Peach"],
+    "aiHint": "주인공: 마틸다 / 천재 소녀의 부조리한 어른 골탕 먹이기 / 통쾌하고 환상적임"
   },
   {
     "title": "Mercy Watson",
     "ar": "2점대",
     "tagline": "돼지 주인공의 귀엽고 엉뚱한 이야기를 좋아하는 아이에게",
-    "similar": ["Fly Guy", "Henry and Mudge", "Frog and Toad"]
+    "similar": ["Fly Guy", "Henry and Mudge", "Frog and Toad"],
+    "aiHint": "주인공: 머시 / 식탐 많은 돼지의 엉뚱한 소동 / 유쾌하고 가벼움"
   },
   {
     "title": "My Father's Dragon",
     "ar": "4점대",
     "tagline": "아이의 상상력이 가득한 클래식 판타지를 좋아하는 아이에게",
-    "similar": ["The Tale of Despereaux", "Charlotte's Web", "Stuart Little"]
+    "similar": ["The Tale of Despereaux", "Charlotte's Web", "Stuart Little"],
+    "aiHint": "주인공: 엘머 / 꼬마 드래곤을 구하러 떠난 섬 탐험 / 동화적이고 상상력 넘침"
   },
   {
     "title": "My Teacher Is an Alien",
     "ar": "4점대",
     "tagline": "SF와 학교생활이 합쳐진 엉뚱한 이야기를 좋아하는 아이에게",
-    "similar": ["Animorphs", "The Last Kids on Earth", "Goosebumps"]
+    "similar": ["Animorphs", "The Last Kids on Earth", "Goosebumps"],
+    "aiHint": "주인공: 수잔 / 외계인 선생님의 비밀을 파헤치기 / 흥미로운 코믹 SF"
   },
   {
     "title": "My Weird School",
     "ar": "3점대",
     "tagline": "학교에서 일어나는 말도 안 되는 상황을 좋아하는 아이에게",
-    "similar": ["Horrid Henry", "Captain Underpants", "Horrible Harry"]
+    "similar": ["Horrid Henry", "Captain Underpants", "Horrible Harry"],
+    "aiHint": "주인공: 에이제이 / 이상한 선생님들과의 황당한 학교생활 / 과장되고 코믹함"
   },
   {
     "title": "Nate the Great",
     "ar": "2-3점대",
     "tagline": "짧고 쉬운 탐정 이야기를 좋아하는 아이에게",
-    "similar": ["Cam Jansen", "Jigsaw Jones", "A to Z Mysteries"]
+    "similar": ["Cam Jansen", "Jigsaw Jones", "A to Z Mysteries"],
+    "aiHint": "주인공: 네이트 / 팬케이크를 좋아하는 꼬마 탐정 / 경쾌하고 소박함"
   },
   {
     "title": "Nevermoor",
     "ar": "5점대",
     "tagline": "마법적이고 독특한 세계관의 판타지를 좋아하는 아이에게",
-    "similar": ["Harry Potter", "Keeper of the Lost Cities", "A Series of Unfortunate Events"]
+    "similar": ["Harry Potter", "Keeper of the Lost Cities", "A Series of Unfortunate Events"],
+    "aiHint": "주인공: 모리건 / 저주받은 소녀의 마법 세계 시험 / 신비롭고 기발함"
   },
   {
     "title": "Notebook of Doom",
     "ar": "3점대",
     "tagline": "괴물과 싸우는 짧고 신나는 이야기를 좋아하는 아이에게",
-    "similar": ["Goosebumps", "The Last Kids on Earth", "Dragon Masters"]
+    "similar": ["Goosebumps", "The Last Kids on Earth", "Dragon Masters"],
+    "aiHint": "주인공: 알렉산더 / 비밀 노트로 괴물에 맞서는 모험 / 긴장감 있고 유쾌함"
   },
   {
     "title": "Number the Stars",
     "ar": "4점대",
     "tagline": "역사적 배경 속 용기 있는 이야기를 좋아하는 아이에게",
-    "similar": ["Al Capone Does My Shirts", "Hatchet", "Bridge to Terabithia"]
+    "similar": ["Al Capone Does My Shirts", "Hatchet", "Bridge to Terabithia"],
+    "aiHint": "주인공: 안네마리 / 전쟁 속 유태인 친구를 구하는 용기 / 묵직하고 감동적임"
   },
   {
     "title": "Out of My Mind",
     "ar": "4점대",
     "tagline": "다름을 인정하고 공감하는 이야기를 좋아하는 아이에게",
-    "similar": ["Wonder", "Harriet the Spy", "Bridge to Terabithia"]
+    "similar": ["Wonder", "Harriet the Spy", "Bridge to Terabithia"],
+    "aiHint": "주인공: 멜로디 / 뇌성마비 소녀의 내면의 목소리 찾기 / 깊은 공감과 감동"
   },
   {
     "title": "Owl Diaries",
     "ar": "2-3점대",
     "tagline": "일기 형식의 귀여운 동물 이야기를 좋아하는 아이에게",
-    "similar": ["Diary of a Pug", "Zoey and Sassafras", "Fly Guy"]
+    "similar": ["Diary of a Pug", "Zoey and Sassafras", "Fly Guy"],
+    "aiHint": "주인공: 에바 / 꼬마 올빼미의 아기자기한 학교 일상 / 귀엽고 따뜻함"
   },
   {
     "title": "Percy Jackson",
     "ar": "4-5점대",
     "tagline": "그리스 신화와 현대가 합쳐진 모험을 좋아하는 아이에게",
-    "similar": ["Harry Potter", "Artemis Fowl", "Keeper of the Lost Cities"]
+    "similar": ["Harry Potter", "Artemis Fowl", "Keeper of the Lost Cities"],
+    "aiHint": "주인공: 퍼시 / 현대의 반쪽 피 신들의 괴물 퇴치 / 스펙터클한 모험"
   },
   {
     "title": "Pokémon Chapter Books",
     "ar": "3-4점대",
     "tagline": "포켓몬을 좋아하는 아이에게",
-    "similar": ["Dragon Masters", "Beast Quest", "Animorphs"]
+    "similar": ["Dragon Masters", "Beast Quest", "Animorphs"],
+    "aiHint": "주인공: 지우 / 포켓몬 마스터를 향한 훈련과 대결 / 활기차고 도전적임"
   },
   {
     "title": "Press Start!",
     "ar": "2-3점대",
     "tagline": "게임 세계를 배경으로 한 그래픽노블을 좋아하는 아이에게",
-    "similar": ["Dog Man", "InvestiGators", "Babymouse"]
+    "similar": ["Dog Man", "InvestiGators", "Babymouse"],
+    "aiHint": "주인공: 슈퍼 래빗 보이 / 게임 세계의 악당 무찌르기 / 경쾌하고 역동적임"
   },
   {
     "title": "Rainbow Magic",
     "ar": "3점대",
     "tagline": "요정과 마법의 세계를 좋아하는 아이에게",
-    "similar": ["Dragon Girls", "Owl Diaries", "The Princess in Black"]
+    "similar": ["Dragon Girls", "Owl Diaries", "The Princess in Black"],
+    "aiHint": "주인공: 레이첼과 키스티 / 악당에게서 요정 구하기 / 아기자기한 판타지"
   },
   {
     "title": "Ralph Mouse",
     "ar": "4점대",
     "tagline": "모험을 떠나는 작은 쥐 주인공을 좋아하는 아이에게",
-    "similar": ["Stuart Little", "Charlotte's Web", "My Father's Dragon"]
+    "similar": ["Stuart Little", "Charlotte's Web", "My Father's Dragon"],
+    "aiHint": "주인공: 랠프 / 오토바이를 타는 생쥐의 용감한 여정 / 흥미롭고 발랄함"
   },
   {
     "title": "Ramona",
     "ar": "4점대",
     "tagline": "엉뚱하지만 사랑스러운 여자 주인공의 성장 이야기를 좋아하는 아이에게",
-    "similar": ["Clementine", "Judy Moody", "Junie B. Jones"]
+    "similar": ["Clementine", "Judy Moody", "Junie B. Jones"],
+    "aiHint": "주인공: 라모나 / 상상력 넘치는 말괄량이 소녀의 성장 / 현실적이고 사랑스러움"
   },
   {
     "title": "Ranger in Time",
     "ar": "3-4점대",
     "tagline": "역사 속 모험을 좋아하는 아이에게",
-    "similar": ["Magic Tree House", "I Survived", "Boxcar Children"]
+    "similar": ["Magic Tree House", "I Survived", "Boxcar Children"],
+    "aiHint": "주인공: 레인저 / 시간을 여행하며 사람을 구하는 개 / 긴박하고 따뜻함"
   },
   {
     "title": "Roscoe Riley Rules",
     "ar": "3점대",
     "tagline": "규칙을 어기고 벌어지는 유쾌한 에피소드를 좋아하는 아이에게",
-    "similar": ["Marvin Redpost", "Horrible Harry", "My Weird School"]
+    "similar": ["Marvin Redpost", "Horrible Harry", "My Weird School"],
+    "aiHint": "주인공: 로스코 / 착한 의도로 시작된 엉뚱한 사고 / 유쾌하고 공감됨"
   },
   {
     "title": "School for Good and Evil",
     "ar": "5-6점대",
     "tagline": "동화 속 세계를 뒤집는 판타지를 좋아하는 아이에게",
-    "similar": ["The Land of Stories", "Nevermoor", "Chronicles of Narnia"]
+    "similar": ["The Land of Stories", "Nevermoor", "Chronicles of Narnia"],
+    "aiHint": "주인공: 소피와 아가사 / 선과 악의 학교에서 뒤바뀐 운명 / 매혹적인 판타지"
   },
   {
     "title": "Shiloh",
     "ar": "4점대",
     "tagline": "강아지와의 특별한 유대를 다룬 감동 이야기를 좋아하는 아이에게",
-    "similar": ["Because of Winn-Dixie", "Charlotte's Web", "Where the Red Fern Grows"]
+    "similar": ["Because of Winn-Dixie", "Charlotte's Web", "Where the Red Fern Grows"],
+    "aiHint": "주인공: 마티 / 학대받는 개를 지키기 위한 결단 / 감동적이고 철학적임"
   },
   {
     "title": "Spy School",
     "ar": "5점대",
     "tagline": "첩보 학교를 배경으로 한 유쾌한 액션을 좋아하는 아이에게",
-    "similar": ["City Spies", "The Mysterious Benedict Society", "Artemis Fowl"]
+    "similar": ["City Spies", "The Mysterious Benedict Society", "Artemis Fowl"],
+    "aiHint": "주인공: 벤 / 어설픈 스파이 지망생의 학교 생존기 / 스릴있고 코믹함"
   },
   {
     "title": "Stink",
     "ar": "3점대",
     "tagline": "과학을 좋아하는 엉뚱한 남자 주인공을 좋아하는 아이에게",
-    "similar": ["Marvin Redpost", "My Weird School", "Horrible Harry"]
+    "similar": ["Marvin Redpost", "My Weird School", "Horrible Harry"],
+    "aiHint": "주인공: 스팅크 / 누나에게 지지 않으려는 엉뚱 소년 / 코믹하고 재치있음"
   },
   {
     "title": "Stuart Little",
     "ar": "5점대",
     "tagline": "작지만 용감한 주인공의 모험을 좋아하는 아이에게",
-    "similar": ["Charlotte's Web", "Ralph Mouse", "The Tale of Despereaux"]
+    "similar": ["Charlotte's Web", "Ralph Mouse", "The Tale of Despereaux"],
+    "aiHint": "주인공: 스튜어트 / 생쥐로 태어난 소년의 넓은 세상 탐험 / 잔잔하고 철학적임"
   },
   {
     "title": "The 39 Clues",
     "ar": "5점대",
     "tagline": "세계를 무대로 한 스릴 넘치는 보물찾기를 좋아하는 아이에게",
-    "similar": ["City Spies", "Spy School", "The Mysterious Benedict Society"]
+    "similar": ["City Spies", "Spy School", "The Mysterious Benedict Society"],
+    "aiHint": "주인공: 댄과 에이미 / 가문의 비밀 단서를 찾는 보물찾기 / 스릴 넘치는 모험"
   },
   {
     "title": "The Bad Guys",
     "ar": "2-3점대",
     "tagline": "악당이지만 착한 척하는 캐릭터들의 코믹 이야기를 좋아하는 아이에게",
-    "similar": ["Dog Man", "Captain Underpants", "InvestiGators"]
+    "similar": ["Dog Man", "Captain Underpants", "InvestiGators"],
+    "aiHint": "주인공: 울프 등 / 착해지고 싶은 악당 동물들의 소동 / 기발하고 코믹함"
   },
   {
     "title": "The BFG",
     "ar": "4점대",
     "tagline": "거인과 소녀의 따뜻하고 기발한 우정을 좋아하는 아이에게",
-    "similar": ["Matilda", "Charlie and the Chocolate Factory", "James and the Giant Peach"]
+    "similar": ["Matilda", "Charlie and the Chocolate Factory", "James and the Giant Peach"],
+    "aiHint": "주인공: 소피 / 착한 거인과 식인 거인 물리치기 / 환상적이고 기발함"
   },
   {
     "title": "The Giver",
     "ar": "5점대",
     "tagline": "생각할 거리가 많은 묵직한 이야기를 원하는 아이에게",
-    "similar": ["Out of My Mind", "Number the Stars", "Bridge to Terabithia"]
+    "similar": ["Out of My Mind", "Number the Stars", "Bridge to Terabithia"],
+    "aiHint": "주인공: 조나스 / 완벽한 사회의 숨겨진 기억을 깨닫기 / 철학적이고 묵직함"
   },
   {
     "title": "The Kingdom of Wrenly",
     "ar": "3점대",
     "tagline": "왕국을 배경으로 한 짧고 신나는 판타지를 좋아하는 아이에게",
-    "similar": ["Dragon Masters", "The Princess in Black", "Beast Quest"]
+    "similar": ["Dragon Masters", "The Princess in Black", "Beast Quest"],
+    "aiHint": "주인공: 루카스와 클라라 / 마법 왕국에서 펼치는 탐험 / 가볍고 신나는 모험"
   },
   {
     "title": "The Land of Stories",
     "ar": "5점대",
     "tagline": "동화 속으로 빨려 들어가는 판타지를 좋아하는 아이에게",
-    "similar": ["School for Good and Evil", "Chronicles of Narnia", "Fablehaven"]
+    "similar": ["School for Good and Evil", "Chronicles of Narnia", "Fablehaven"],
+    "aiHint": "주인공: 알렉스와 코너 / 동화책 속 세계로 빠져든 남매 / 웅장한 크로스오버"
   },
   {
     "title": "The Last Kids on Earth",
     "ar": "4점대",
     "tagline": "좀비와 괴물이 등장하는 코믹 어드벤처를 좋아하는 아이에게",
-    "similar": ["Goosebumps", "Notebook of Doom", "Animorphs"]
+    "similar": ["Goosebumps", "Notebook of Doom", "Animorphs"],
+    "aiHint": "주인공: 잭 / 괴물과 좀비 세상에서 살아남는 아이들 / 코믹하고 액션 넘침"
   },
   {
     "title": "The Mysterious Benedict Society",
     "ar": "5점대",
     "tagline": "두뇌를 쓰는 팀 플레이 모험을 좋아하는 아이에게",
-    "similar": ["City Spies", "The 39 Clues", "Spy School"]
+    "similar": ["City Spies", "The 39 Clues", "Spy School"],
+    "aiHint": "주인공: 레이니 등 / 뛰어난 두뇌로 세상의 위기를 막기 / 기발한 미스터리"
   },
   {
     "title": "The Phantom Tollbooth",
     "ar": "6점대",
     "tagline": "언어와 논리로 가득한 기발한 판타지를 좋아하는 아이에게",
-    "similar": ["A Series of Unfortunate Events", "The Land of Stories", "Chronicles of Narnia"]
+    "similar": ["A Series of Unfortunate Events", "The Land of Stories", "Chronicles of Narnia"],
+    "aiHint": "주인공: 마일로 / 언어와 숫자의 세계를 통과하는 여정 / 철학적인 언어유희"
   },
   {
     "title": "The Princess in Black",
     "ar": "2-3점대",
     "tagline": "공주지만 강한 히어로 캐릭터를 좋아하는 아이에게",
-    "similar": ["Dragon Girls", "Rainbow Magic", "Owl Diaries"]
+    "similar": ["Dragon Girls", "Rainbow Magic", "Owl Diaries"],
+    "aiHint": "주인공: 매그놀리아 / 몬스터와 싸우는 히어로 공주 / 통쾌하고 발랄함"
   },
   {
     "title": "The Spiderwick Chronicles",
     "ar": "4점대",
     "tagline": "요정과 신비한 생물을 다룬 판타지를 좋아하는 아이에게",
-    "similar": ["Fablehaven", "Magic Shop", "Jeremy Thatcher, Dragon Hatcher"]
+    "similar": ["Fablehaven", "Magic Shop", "Jeremy Thatcher, Dragon Hatcher"],
+    "aiHint": "주인공: 그레이스가 아이들 / 낡은 저택에서 발견한 요정 세계 / 신비롭고 스릴있음"
   },
   {
     "title": "The Tale of Despereaux",
     "ar": "4점대",
     "tagline": "용기 있는 작은 주인공의 감동적인 이야기를 좋아하는 아이에게",
-    "similar": ["Charlotte's Web", "Stuart Little", "My Father's Dragon"]
+    "similar": ["Charlotte's Web", "Stuart Little", "My Father's Dragon"],
+    "aiHint": "주인공: 데스페로 / 공주를 구하려는 생쥐의 여정 / 동화적이고 감동적임"
   },
   {
     "title": "The Terrible Two",
     "ar": "4점대",
     "tagline": "장난의 달인들이 펼치는 유쾌한 학교 이야기를 좋아하는 아이에게",
-    "similar": ["Big Nate", "Timmy Failure", "Diary of a Wimpy Kid"]
+    "similar": ["Big Nate", "Timmy Failure", "Diary of a Wimpy Kid"],
+    "aiHint": "주인공: 마일스와 나일스 / 장난 천재들의 기상천외한 대결 / 과장되고 코믹함"
   },
   {
     "title": "The Trumpet of the Swan",
     "ar": "5점대",
     "tagline": "말 못하는 백조의 감동적인 성장 이야기를 좋아하는 아이에게",
-    "similar": ["Charlotte's Web", "Stuart Little", "Because of Winn-Dixie"]
+    "similar": ["Charlotte's Web", "Stuart Little", "Because of Winn-Dixie"],
+    "aiHint": "주인공: 루이스 / 소리 내지 못하는 백조의 트럼펫 연주 / 잔잔하고 감동적임"
   },
   {
     "title": "The Witches",
     "ar": "5점대",
     "tagline": "으스스하지만 통쾌한 마녀 이야기를 좋아하는 아이에게",
-    "similar": ["Matilda", "Goosebumps", "A Series of Unfortunate Events"]
+    "similar": ["Matilda", "Goosebumps", "A Series of Unfortunate Events"],
+    "aiHint": "주인공: 소년 / 아이들을 쥐로 만드는 마녀들의 음모 분쇄 / 오싹하고 기발함"
   },
   {
     "title": "Timmy Failure",
     "ar": "4점대",
     "tagline": "자신감 넘치지만 엉뚱한 탐정 주인공을 좋아하는 아이에게",
-    "similar": ["Big Nate", "Diary of a Wimpy Kid", "The Terrible Two"]
+    "similar": ["Big Nate", "Diary of a Wimpy Kid", "The Terrible Two"],
+    "aiHint": "주인공: 티미 / 허술한 소년 탐정의 자신감 넘치는 일상 / 엉뚱하고 코믹함"
   },
   {
     "title": "Tuck Everlasting",
     "ar": "5점대",
     "tagline": "영원한 삶에 대해 생각하게 하는 감동적인 이야기를 좋아하는 아이에게",
-    "similar": ["Bridge to Terabithia", "The Giver", "Number the Stars"]
+    "similar": ["Bridge to Terabithia", "The Giver", "Number the Stars"],
+    "aiHint": "주인공: 위니 / 영원한 생명의 비밀을 간직한 가족 / 몽환적이고 철학적임"
   },
   {
     "title": "Unicorn Chronicles",
     "ar": "4점대",
     "tagline": "유니콘과 함께하는 아름다운 판타지를 좋아하는 아이에게",
-    "similar": ["Rainbow Magic", "Dragon Girls", "The Princess in Black"]
+    "similar": ["Rainbow Magic", "Dragon Girls", "The Princess in Black"],
+    "aiHint": "주인공: 카라 / 유니콘을 지키기 위한 마법 세계 퀘스트 / 웅장하고 환상적임"
   },
   {
     "title": "Warriors",
     "ar": "5점대",
     "tagline": "고양이 부족의 웅장한 서사를 좋아하는 아이에게",
-    "similar": ["Wings of Fire", "Animorphs", "Keeper of the Lost Cities"]
+    "similar": ["Wings of Fire", "Animorphs", "Keeper of the Lost Cities"],
+    "aiHint": "주인공: 파이어스타 등 / 야생 고양이 종족 간의 서사 / 박진감 넘치는 대서사시"
   },
   {
     "title": "Wayside School",
     "ar": "3-4점대",
     "tagline": "말도 안 되는 학교 이야기를 좋아하는 아이에게",
-    "similar": ["My Weird School", "Captain Underpants", "Horrid Henry"]
+    "similar": ["My Weird School", "Captain Underpants", "Horrid Henry"],
+    "aiHint": "주인공: 다수 / 30층 학교에서 벌어지는 기이한 일 / 초현실적이고 코믹함"
   },
   {
     "title": "Where the Red Fern Grows",
     "ar": "4점대",
     "tagline": "개와의 특별한 우정과 감동을 원하는 아이에게",
-    "similar": ["Shiloh", "Because of Winn-Dixie", "Hatchet"]
+    "similar": ["Shiloh", "Because of Winn-Dixie", "Hatchet"],
+    "aiHint": "주인공: 빌리 / 사냥개 두 마리와 소년의 눈물겨운 우정 / 비극적이고 감동적임"
   },
   {
     "title": "Wings of Fire",
     "ar": "5점대",
     "tagline": "드래곤 세계의 웅장한 서사를 좋아하는 아이에게",
-    "similar": ["Warriors", "Dragon Masters", "Keeper of the Lost Cities"]
+    "similar": ["Warriors", "Dragon Masters", "Keeper of the Lost Cities"],
+    "aiHint": "주인공: 클레이 등 / 예언 속 드래곤들의 왕국 구원 / 스케일 큰 판타지 모험"
   },
   {
     "title": "Wonder",
     "ar": "4점대",
     "tagline": "다름을 받아들이는 따뜻한 성장 이야기를 좋아하는 아이에게",
-    "similar": ["Out of My Mind", "Maniac Magee", "Bridge to Terabithia"]
+    "similar": ["Out of My Mind", "Maniac Magee", "Bridge to Terabithia"],
+    "aiHint": "주인공: 어기 / 안면 기형 소년의 편견 극복과 성장 / 따뜻하고 깊은 감동"
   },
   {
     "title": "Young Cam Jansen",
     "ar": "2점대",
     "tagline": "어린 탐정의 쉽고 재미있는 미스터리를 좋아하는 아이에게",
-    "similar": ["Nate the Great", "Calendar Mysteries", "Cam Jansen"]
+    "similar": ["Nate the Great", "Calendar Mysteries", "Cam Jansen"],
+    "aiHint": "주인공: 캠 잰슨 / 기억력으로 일상 미스터리 해결 / 가볍고 경쾌한 추리"
   },
   {
     "title": "Zoey and Sassafras",
     "ar": "3점대",
     "tagline": "과학과 판타지가 합쳐진 동물 이야기를 좋아하는 아이에게",
-    "similar": ["Magic School Bus", "Owl Diaries", "Diary of a Pug"]
+    "similar": ["Magic School Bus", "Owl Diaries", "Diary of a Pug"],
+    "aiHint": "주인공: 조이 / 마법 생물들을 돕는 꼬마 과학자 / 호기심 넘치고 교육적임"
   }
 ]
