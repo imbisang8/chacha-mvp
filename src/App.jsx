@@ -470,7 +470,7 @@ return shuffled.slice(0, 5);
     if (hardcoded) {
       setTimeout(() => {
         setBubbles([reaction, ...(hardcoded.chacha_says || [])]);
-        setCurrentDialogue({ ...hardcoded, question: hardcoded.chacha_says?.slice(-1)[0] || "" });
+setCurrentDialogue({ ...hardcoded, question: hardcoded.chacha_says?.join(" ") || "" });
         setRoundNum(nextRound);
         setLoading(false);
       }, 600);
@@ -478,7 +478,7 @@ return shuffled.slice(0, 5);
       const next = await generateDialogue(selectedBook, childName, choice, nextRound, totalRounds, newConvs);
       setTimeout(() => {
         setBubbles([reaction, ...(next.chacha_says || [])]);
-        setCurrentDialogue({ ...next, question: next.chacha_says?.slice(-1)[0] || "" });
+        setCurrentDialogue({ ...next, question: next.chacha_says?.join(" ") || "" });
         setRoundNum(nextRound);
         setLoading(false);
       }, 600);
