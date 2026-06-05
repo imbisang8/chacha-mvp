@@ -753,10 +753,9 @@ setShowFreeText(false); setFreeTextInput("");
             <div style={{ display: "flex", gap: 10, overflowX: "auto", paddingBottom: 8, justifyContent: "center" }}>
               {polaroids.map((p, i) => (
                 <div key={i} style={{ minWidth: 120, background: "#fff", borderRadius: 12, padding: 10, boxShadow: "0 2px 8px rgba(0,0,0,0.1)", flexShrink: 0 }}>
-                  <div style={{ fontSize: 20, marginBottom: 4 }}>{p.emotion}</div>
-                  <div style={{ fontSize: 9, color: "#aaa", marginBottom: 2 }}>{p.book}</div>
-                  <div style={{ fontSize: 8, color: "#ccc", marginBottom: 4 }}>{p.date}</div>
-                  <div style={{ fontSize: 11, color: dark, fontStyle: "italic", lineHeight: 1.4 }}>"{p.text}"</div>
+  <div style={{ fontSize: 9, color: "#888", marginBottom: 2, fontWeight: 700 }}>📖 {p.book}</div>
+  <div style={{ fontSize: 8, color: "#ccc", marginBottom: 6 }}>{p.date}</div>
+  <div style={{ fontSize: 11, color: dark, fontStyle: "italic", lineHeight: 1.4 }}>"{p.text}"</div>
                 </div>
               ))}
             </div>
@@ -879,7 +878,9 @@ setShowFreeText(false); setFreeTextInput("");
         <span style={{ fontSize: 28 }}>🐱</span>
         <div style={{ flex: 1 }}>
           <div style={{ fontSize: 13, fontWeight: 800, color: dark }}>차차</div>
-          <div style={{ fontSize: 10, color: "#795548" }}>{selectedBook?.title}</div>
+          <div style={{ fontSize: 10, color: "#795548" }}>
+  {selectedBook?.seriesTitle ? `${selectedBook.seriesTitle} ${selectedBook.title}` : selectedBook?.title}
+</div>
         </div>
         <div style={{ fontSize: 11, color: "#795548", background: "rgba(255,255,255,0.5)", borderRadius: 10, padding: "4px 8px" }}>{roundNum}/{totalRounds}</div>
       </div>
@@ -1095,7 +1096,7 @@ setShowFreeText(false); setFreeTextInput("");
         </div>
 
         <div style={{ ...S.card("#1a1a2e") }}>
-          <div style={{ fontSize: 11, color: warm, fontWeight: 800, marginBottom: 12, textAlign: "center" }}>💬 오늘 저녁, 아이에게 건네볼 한마디</div>
+          <div style={{ fontSize: 11, color: warm, fontWeight: 800, marginBottom: 12, textAlign: "center" }}>💬 아이에게 건네볼 한마디</div>
           <div style={{ background: "rgba(255,255,255,0.1)", borderRadius: 14, padding: 14, borderLeft: `3px solid ${warm}` }}>
             <div style={{ fontSize: 14, color: "#fff", fontStyle: "italic", lineHeight: 1.6 }}>"{report.action_guide}"</div>
           </div>
