@@ -431,6 +431,11 @@ return shuffled.slice(0, 5);
 
     // ─── 책 파악 AI 호출 (1회) ───
     let chachaOpening = `${finalTitle} 읽었구나냥!`;
+    
+    // ─── aiHint 추출 ───
+    const bookDetail = BOOKS_DETAIL.find(b => b.title === selectedBook.title);
+    const hint = bookDetail?.aiHint || bookDetail?.tagline || "";
+    
     try {
       const res = await fetch("/api/chat", {
         method: "POST",
@@ -442,14 +447,16 @@ return shuffled.slice(0, 5);
 `너는 치즈냥이 차차야. 허술하고 능청스러운 고양이 친구.
 "${finalTitle}" 책을 읽은 아이에게 첫 인사를 해줘.
 
+책 정보: "${hint}"
+
 규칙:
-- 책의 구체적인 장면이나 사건 언급 금지
+- 위 책 정보 외 내용 생성 금지
+- 구체적인 장면이나 사건 절대 언급 금지
 - 주인공 이름 + 전체 분위기 1문장
 - 차차가 그 분위기에서 어떻게 느꼈는지 1문장
 - 가끔 ~냥 사용
 - 2문장 이내
 - 질문 하지 마 (질문은 다음에 따로 나옴)
-- 확실하지 않은 장면은 절대 언급하지 마. 주인공 이름과 전체 분위기만 말해도 돼.
 - 예시: "라모나는 뭔가 항상 터뜨리는 느낌이잖아냥 ㅋㅋ 차차는 그 에너지가 좋더라냥!"
 
 2문장만 반환. JSON 아님. 그냥 텍스트.`
