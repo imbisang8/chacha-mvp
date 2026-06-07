@@ -540,21 +540,21 @@ setLoading(false);
     return null;
   };
 
-  // ─── 선택지 클릭 ───
+// ─── 선택지 클릭 ───
   const handleChoice = async (choice) => {
     const edgeRes = getEdgeResponse(choice);
     const newConv = { q: currentDialogue?.question || "", a: choice };
-setConversations(newConvs);
-setMessages(prev => [...prev, { role: "child", text: choice }]);
-
-if (roundNum >= totalRounds) {
-  setMessages(prev => [...prev,
-    { role: "chacha", text: "으아앙! 네 덕분에 오늘 츄르값을 벌었다냥!" },
-    { role: "chacha", text: "잠깐 기다려봐냥... 뭔가 만들고 있어..." }
-  ]);
-  setScreen("reward");
-  return;
-}
+    const newConvs = [...conversations, newConv];
+    setConversations(newConvs);
+    setMessages(prev => [...prev, { role: "child", text: choice }]);
+    if (roundNum >= totalRounds) {
+      setMessages(prev => [...prev,
+        { role: "chacha", text: "으아앙! 네 덕분에 오늘 츄르값을 벌었다냥!" },
+        { role: "chacha", text: "잠깐 기다려봐냥... 뭔가 만들고 있어..." }
+      ]);
+      setScreen("reward");
+      return;
+    }
 
 setLoading(true);
 const nextRound = roundNum + 1;
