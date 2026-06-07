@@ -257,7 +257,7 @@ async function generateReport(book, childName, conversations, mailboxNote = "") 
         model: "claude-sonnet-4-6",
         max_tokens: 1000,
         messages: [{ role: "user", content:
-'당신은 리딩차차의 "차차 관찰 노트" 작성자입니다.
+`당신은 리딩차차의 "차차 관찰 노트" 작성자입니다.
 
 목표: 엄마가 오늘 저녁 아이에게 자연스럽게 한마디를 건네게 만드는 것.
 
