@@ -377,7 +377,10 @@ const bottomRef = useRef(null);
 const [usedTypes, setUsedTypes] = useState([]);
 const [showFreeText, setShowFreeText] = useState(false);
 const [freeTextInput, setFreeTextInput] = useState("");
-  
+const [bookList] = useState(() => {
+  const notRead = BOOKS.filter(b => !readBooks.includes(b.title));
+  return [...notRead].sort(() => Math.random() - 0.5).slice(0, 5);
+});  
 
   // ─── 시리즈물 감지 ───
   const isSeries = selectedBook ? selectedBook.type === "series" : false;
@@ -433,8 +436,11 @@ useEffect(() => {
       return notRead.filter(b => b.title.toLowerCase().includes(q));
     }
     if (showAllBooks) return notRead;
-   const shuffled = [...notRead].sort(() => Math.random() - 0.5);
-return shuffled.slice(0, 5);
+const sliced = bookList;
+if (selectedBook && !sliced.find(b => b.title === selectedBook.title)) {
+  return [selectedBook, ...sliced.slice(0, 4)];
+}
+return sliced;
   };
 
   const getChachaEmoji = () => {
