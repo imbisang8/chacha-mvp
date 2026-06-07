@@ -894,7 +894,7 @@ setShowFreeText(false); setFreeTextInput("");
               value={bookTitle}
               onChange={e => setBookTitle(e.target.value)}
               placeholder={selectedBook.seriesType === "numbered" ? "예: 5권, Book 5" : "예: Ramona the Brave"}
-              style={{ width: "100%", padding: "12px 14px", borderRadius: 12, border: `2px solid #FFE082`, fontSize: 14, outline: "none", boxSizing: "border-box" }}
+             style={{ width: "100%", padding: "12px 14px", borderRadius: 12, border: `2px solid ${warm}`, fontSize: 14, outline: "none", boxSizing: "border-box", background: "#FFF9C4" }}
             />
            
           </div>
