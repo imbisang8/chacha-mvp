@@ -1,118 +1,1203 @@
 [
-  { "title": "A Series of Unfortunate Events", "type": "series", "seriesType": "numbered", "ar": "6.0" },
-  { "title": "A to Z Mysteries", "type": "series", "seriesType": "numbered", "ar": "3.5" },
-  { "title": "Al Capone Does My Shirts", "type": "standalone", "ar": "5.1" },
-  { "title": "Amari and the Night Brothers", "type": "series", "seriesType": "numbered", "ar": "5.0" },
-  { "title": "Amelia Bedelia", "type": "series", "seriesType": "titled", "ar": "2.5" },
-  { "title": "Amelia's Notebook", "type": "series", "seriesType": "numbered", "ar": "3.9" },
-  { "title": "Animorphs", "type": "series", "seriesType": "numbered", "ar": "4.5" },
-  { "title": "Arnold and Louise", "type": "series", "seriesType": "numbered", "ar": "2.0" },
-  { "title": "Artemis Fowl", "type": "series", "seriesType": "numbered", "ar": "5.0" },
-  { "title": "Arthur Chapter Books", "type": "series", "seriesType": "titled", "ar": "3.2" },
-  { "title": "Babymouse", "type": "series", "seriesType": "numbered", "ar": "2.5" },
-  { "title": "Beast Quest", "type": "series", "seriesType": "numbered", "ar": "4.0" },
-  { "title": "Because of Winn-Dixie", "type": "standalone", "ar": "3.9" },
-  { "title": "Big Nate", "type": "series", "seriesType": "numbered", "ar": "3.5" },
-  { "title": "Boxcar Children", "type": "series", "seriesType": "numbered", "ar": "3.7" },
-  { "title": "Bridge to Terabithia", "type": "standalone", "ar": "4.6" },
-  { "title": "Calendar Mysteries", "type": "series", "seriesType": "numbered", "ar": "2.8" },
-  { "title": "Cam Jansen", "type": "series", "seriesType": "numbered", "ar": "3.0" },
-  { "title": "Captain Underpants", "type": "series", "seriesType": "numbered", "ar": "4.3" },
-  { "title": "Cat Kid Comic Club", "type": "series", "seriesType": "numbered", "ar": "2.5" },
-  { "title": "Charlie and the Chocolate Factory", "type": "standalone", "ar": "4.8" },
-  { "title": "Charlotte's Web", "type": "standalone", "ar": "4.4" },
-  { "title": "Chronicles of Narnia", "type": "series", "seriesType": "numbered", "ar": "5.7" },
-  { "title": "City Spies", "type": "series", "seriesType": "numbered", "ar": "5.0" },
-  { "title": "Clementine", "type": "series", "seriesType": "titled", "ar": "3.5" },
-  { "title": "Danny the Champion of the World", "type": "standalone", "ar": "4.7" },
-  { "title": "Diary of a Pug", "type": "series", "seriesType": "numbered", "ar": "3.2" },
-  { "title": "Diary of a Wimpy Kid", "type": "series", "seriesType": "numbered", "ar": "5.2" },
-  { "title": "Dog Man", "type": "series", "seriesType": "numbered", "ar": "2.6" },
-  { "title": "Dork Diaries", "type": "series", "seriesType": "numbered", "ar": "4.2" },
-  { "title": "Dragon Games", "type": "series", "seriesType": "numbered", "ar": "4.0" },
-  { "title": "Dragon Girls", "type": "series", "seriesType": "numbered", "ar": "3.5" },
-  { "title": "Dragon Masters", "type": "series", "seriesType": "numbered", "ar": "3.2" },
-  { "title": "Encyclopedia Brown", "type": "series", "seriesType": "numbered", "ar": "3.7" },
-  { "title": "Fablehaven", "type": "series", "seriesType": "numbered", "ar": "5.1" },
-  { "title": "Fantastic Mr Fox", "type": "standalone", "ar": "4.1" },
-  { "title": "Flat Stanley", "type": "series", "seriesType": "titled", "ar": "3.1" },
-  { "title": "Fly Guy", "type": "series", "seriesType": "numbered", "ar": "1.5" },
-  { "title": "Frog and Toad", "type": "series", "seriesType": "titled", "ar": "2.5" },
-  { "title": "Geronimo Stilton", "type": "series", "seriesType": "numbered", "ar": "3.7" },
-  { "title": "Goosebumps", "type": "series", "seriesType": "numbered", "ar": "3.6" },
-  { "title": "Goosebumps HorrorLand", "type": "series", "seriesType": "numbered", "ar": "3.8" },
-  { "title": "Harriet the Spy", "type": "standalone", "ar": "4.5" },
-  { "title": "Harry Potter", "type": "series", "seriesType": "numbered", "ar": "6.0" },
-  { "title": "Hatchet", "type": "standalone", "ar": "5.7" },
-  { "title": "Henry and Mudge", "type": "series", "seriesType": "titled", "ar": "2.2" },
-  { "title": "Holes", "type": "standalone", "ar": "4.6" },
-  { "title": "Horrible Harry", "type": "series", "seriesType": "numbered", "ar": "3.0" },
-  { "title": "Horrid Henry", "type": "series", "seriesType": "numbered", "ar": "3.2" },
-  { "title": "Humphrey", "type": "series", "seriesType": "numbered", "ar": "4.0" },
-  { "title": "I Survived", "type": "series", "seriesType": "numbered", "ar": "4.0" },
-  { "title": "InvestiGators", "type": "series", "seriesType": "numbered", "ar": "3.0" },
-  { "title": "Ivy & Bean", "type": "series", "seriesType": "numbered", "ar": "3.2" },
-  { "title": "James and the Giant Peach", "type": "standalone", "ar": "4.8" },
-  { "title": "Jeremy Thatcher, Dragon Hatcher", "type": "standalone", "ar": "5.2" },
-  { "title": "Jigsaw Jones", "type": "series", "seriesType": "numbered", "ar": "3.1" },
-  { "title": "Judy Moody", "type": "series", "seriesType": "titled", "ar": "3.3" },
-  { "title": "Junie B. Jones", "type": "series", "seriesType": "titled", "ar": "3.0" },
-  { "title": "Keeper of the Lost Cities", "type": "series", "seriesType": "numbered", "ar": "6.1" },
-  { "title": "Little Bear", "type": "series", "seriesType": "titled", "ar": "1.8" },
-  { "title": "Magic School Bus", "type": "series", "seriesType": "titled", "ar": "4.0" },
-  { "title": "Magic Shop", "type": "series", "seriesType": "titled", "ar": "4.2" },
-  { "title": "Magic Tree House", "type": "series", "seriesType": "numbered", "ar": "3.3" },
-  { "title": "Magic Tree House Merlin Missions", "type": "series", "seriesType": "numbered", "ar": "4.0" },
-  { "title": "Magisterium", "type": "series", "seriesType": "numbered", "ar": "5.2" },
-  { "title": "Maniac Magee", "type": "standalone", "ar": "4.7" },
-  { "title": "Marvin Redpost", "type": "series", "seriesType": "numbered", "ar": "3.3" },
-  { "title": "Matilda", "type": "standalone", "ar": "5.0" },
-  { "title": "Mercy Watson", "type": "series", "seriesType": "numbered", "ar": "2.6" },
-  { "title": "My Father's Dragon", "type": "series", "seriesType": "numbered", "ar": "4.5" },
-  { "title": "My Teacher Is an Alien", "type": "series", "seriesType": "numbered", "ar": "4.3" },
-  { "title": "My Weird School", "type": "series", "seriesType": "numbered", "ar": "3.3" },
-  { "title": "Nate the Great", "type": "series", "seriesType": "titled", "ar": "2.5" },
-  { "title": "Nevermoor", "type": "series", "seriesType": "numbered", "ar": "5.5" },
-  { "title": "Notebook of Doom", "type": "series", "seriesType": "numbered", "ar": "3.5" },
-  { "title": "Number the Stars", "type": "standalone", "ar": "4.5" },
-  { "title": "Out of My Mind", "type": "standalone", "ar": "4.3" },
-  { "title": "Owl Diaries", "type": "series", "seriesType": "numbered", "ar": "2.8" },
-  { "title": "Percy Jackson", "type": "series", "seriesType": "numbered", "ar": "4.7" },
-  { "title": "Pokémon Chapter Books", "type": "series", "seriesType": "numbered", "ar": "3.8" },
-  { "title": "Press Start!", "type": "series", "seriesType": "numbered", "ar": "2.5" },
-  { "title": "Rainbow Magic", "type": "series", "seriesType": "numbered", "ar": "3.2" },
-  { "title": "Ralph Mouse", "type": "series", "seriesType": "titled", "ar": "4.5" },
-  { "title": "Ramona", "type": "series", "seriesType": "titled", "ar": "4.2" },
-  { "title": "Ranger in Time", "type": "series", "seriesType": "numbered", "ar": "3.5" },
-  { "title": "Roscoe Riley Rules", "type": "series", "seriesType": "numbered", "ar": "3.2" },
-  { "title": "School for Good and Evil", "type": "series", "seriesType": "numbered", "ar": "5.8" },
-  { "title": "Shiloh", "type": "series", "seriesType": "numbered", "ar": "4.4" },
-  { "title": "Spy School", "type": "series", "seriesType": "numbered", "ar": "5.0" },
-  { "title": "Stink", "type": "series", "seriesType": "numbered", "ar": "3.5" },
-  { "title": "Stuart Little", "type": "standalone", "ar": "5.0" },
-  { "title": "The 39 Clues", "type": "series", "seriesType": "numbered", "ar": "5.2" },
-  { "title": "The Bad Guys", "type": "series", "seriesType": "numbered", "ar": "2.5" },
-  { "title": "The BFG", "type": "standalone", "ar": "4.8" },
-  { "title": "The Giver", "type": "standalone", "ar": "5.7" },
-  { "title": "The Kingdom of Wrenly", "type": "series", "seriesType": "numbered", "ar": "3.5" },
-  { "title": "The Land of Stories", "type": "series", "seriesType": "numbered", "ar": "5.0" },
-  { "title": "The Last Kids on Earth", "type": "series", "seriesType": "numbered", "ar": "4.8" },
-  { "title": "The Mysterious Benedict Society", "type": "series", "seriesType": "numbered", "ar": "5.2" },
-  { "title": "The Phantom Tollbooth", "type": "standalone", "ar": "6.7" },
-  { "title": "The Princess in Black", "type": "series", "seriesType": "numbered", "ar": "2.8" },
-  { "title": "The Spiderwick Chronicles", "type": "series", "seriesType": "numbered", "ar": "4.5" },
-  { "title": "The Tale of Despereaux", "type": "standalone", "ar": "4.7" },
-  { "title": "The Terrible Two", "type": "series", "seriesType": "numbered", "ar": "4.2" },
-  { "title": "The Trumpet of the Swan", "type": "standalone", "ar": "5.2" },
-  { "title": "The Witches", "type": "standalone", "ar": "5.1" },
-  { "title": "Timmy Failure", "type": "series", "seriesType": "numbered", "ar": "4.5" },
-  { "title": "Tuck Everlasting", "type": "standalone", "ar": "5.0" },
-  { "title": "Unicorn Chronicles", "type": "series", "seriesType": "numbered", "ar": "4.2" },
-  { "title": "Warriors", "type": "series", "seriesType": "numbered", "ar": "5.1" },
-  { "title": "Wayside School", "type": "series", "seriesType": "titled", "ar": "3.8" },
-  { "title": "Where the Red Fern Grows", "type": "standalone", "ar": "4.9" },
-  { "title": "Wings of Fire", "type": "series", "seriesType": "numbered", "ar": "5.2" },
-  { "title": "Wonder", "type": "standalone", "ar": "4.8" },
-  { "title": "Young Cam Jansen", "type": "series", "seriesType": "numbered", "ar": "2.5" },
-  { "title": "Zoey and Sassafras", "type": "series", "seriesType": "numbered", "ar": "3.5" }
+  {
+    "title": "A Series of Unfortunate Events",
+    "type": "series",
+    "seriesType": "numbered",
+    "ar": "6.0"
+  },
+  {
+    "title": "A to Z Mysteries",
+    "type": "series",
+    "seriesType": "numbered",
+    "ar": "3.5"
+  },
+  {
+    "title": "Akimbo",
+    "type": "series",
+    "seriesType": "numbered",
+    "ar": "3.5"
+  },
+  {
+    "title": "Al Capone Does My Shirts",
+    "type": "standalone",
+    "ar": "5.1"
+  },
+  {
+    "title": "Amari and the Night Brothers",
+    "type": "series",
+    "seriesType": "numbered",
+    "ar": "5.0"
+  },
+  {
+    "title": "Amber Brown",
+    "type": "series",
+    "seriesType": "numbered",
+    "ar": "3.5"
+  },
+  {
+    "title": "Amelia Bedelia",
+    "type": "series",
+    "seriesType": "titled",
+    "ar": "2.5"
+  },
+  {
+    "title": "Amelia's Notebook",
+    "type": "series",
+    "seriesType": "numbered",
+    "ar": "3.9"
+  },
+  {
+    "title": "Andy Shane",
+    "type": "series",
+    "seriesType": "numbered",
+    "ar": "2.5"
+  },
+  {
+    "title": "Animorphs",
+    "type": "series",
+    "seriesType": "numbered",
+    "ar": "4.5"
+  },
+  {
+    "title": "Arnold and Louise",
+    "type": "series",
+    "seriesType": "numbered",
+    "ar": "2.0"
+  },
+  {
+    "title": "Artemis Fowl",
+    "type": "series",
+    "seriesType": "numbered",
+    "ar": "5.0"
+  },
+  {
+    "title": "Arthur Chapter Books",
+    "type": "series",
+    "seriesType": "titled",
+    "ar": "3.2"
+  },
+  {
+    "title": "Babymouse",
+    "type": "series",
+    "seriesType": "numbered",
+    "ar": "2.5"
+  },
+  {
+    "title": "Bad Kitty",
+    "type": "series",
+    "seriesType": "numbered",
+    "ar": "3.0"
+  },
+  {
+    "title": "Beast Quest",
+    "type": "series",
+    "seriesType": "numbered",
+    "ar": "4.0"
+  },
+  {
+    "title": "Because of Winn-Dixie",
+    "type": "standalone",
+    "ar": "3.9"
+  },
+  {
+    "title": "Berenstain Bears",
+    "type": "series",
+    "seriesType": "titled",
+    "ar": "1.9"
+  },
+  {
+    "title": "Big Nate",
+    "type": "series",
+    "seriesType": "numbered",
+    "ar": "3.5"
+  },
+  {
+    "title": "Billie B Brown",
+    "type": "series",
+    "seriesType": "numbered",
+    "ar": "2.5"
+  },
+  {
+    "title": "Bink & Gollie",
+    "type": "series",
+    "seriesType": "numbered",
+    "ar": "2.0"
+  },
+  {
+    "title": "Biscuit",
+    "type": "series",
+    "seriesType": "titled",
+    "ar": "1.0"
+  },
+  {
+    "title": "Black Lagoon Adventures",
+    "type": "series",
+    "seriesType": "numbered",
+    "ar": "2.5"
+  },
+  {
+    "title": "Boris",
+    "type": "series",
+    "seriesType": "numbered",
+    "ar": "2.0"
+  },
+  {
+    "title": "Boxcar Children",
+    "type": "series",
+    "seriesType": "numbered",
+    "ar": "3.7"
+  },
+  {
+    "title": "Bridge to Terabithia",
+    "type": "standalone",
+    "ar": "4.6"
+  },
+  {
+    "title": "Brownie & Pearl",
+    "type": "series",
+    "seriesType": "numbered",
+    "ar": "1.2"
+  },
+  {
+    "title": "Calendar Mysteries",
+    "type": "series",
+    "seriesType": "numbered",
+    "ar": "2.8"
+  },
+  {
+    "title": "Cam Jansen",
+    "type": "series",
+    "seriesType": "numbered",
+    "ar": "3.0"
+  },
+  {
+    "title": "Captain Awesome",
+    "type": "series",
+    "seriesType": "numbered",
+    "ar": "2.8"
+  },
+  {
+    "title": "Captain Underpants",
+    "type": "series",
+    "seriesType": "numbered",
+    "ar": "4.3"
+  },
+  {
+    "title": "Cat Kid Comic Club",
+    "type": "series",
+    "seriesType": "numbered",
+    "ar": "2.5"
+  },
+  {
+    "title": "Charlie and the Chocolate Factory",
+    "type": "standalone",
+    "ar": "4.8"
+  },
+  {
+    "title": "Charlie the Ranch Dog",
+    "type": "series",
+    "seriesType": "titled",
+    "ar": "1.8"
+  },
+  {
+    "title": "Charlotte's Web",
+    "type": "standalone",
+    "ar": "4.4"
+  },
+  {
+    "title": "Chronicles of Narnia",
+    "type": "series",
+    "seriesType": "numbered",
+    "ar": "5.7"
+  },
+  {
+    "title": "City Spies",
+    "type": "series",
+    "seriesType": "numbered",
+    "ar": "5.0"
+  },
+  {
+    "title": "Clementine",
+    "type": "series",
+    "seriesType": "titled",
+    "ar": "3.5"
+  },
+  {
+    "title": "Cobble Street Cousins",
+    "type": "series",
+    "seriesType": "numbered",
+    "ar": "3.2"
+  },
+  {
+    "title": "Commander Toad",
+    "type": "series",
+    "seriesType": "numbered",
+    "ar": "2.5"
+  },
+  {
+    "title": "Cork & Fuzz",
+    "type": "series",
+    "seriesType": "numbered",
+    "ar": "2.0"
+  },
+  {
+    "title": "Cowgirl Kate and Cocoa",
+    "type": "series",
+    "seriesType": "numbered",
+    "ar": "2.0"
+  },
+  {
+    "title": "Danny the Champion of the World",
+    "type": "standalone",
+    "ar": "4.7"
+  },
+  {
+    "title": "Desmond Cole Ghost Patrol",
+    "type": "series",
+    "seriesType": "numbered",
+    "ar": "2.8"
+  },
+  {
+    "title": "Diary of a Pug",
+    "type": "series",
+    "seriesType": "numbered",
+    "ar": "3.2"
+  },
+  {
+    "title": "Diary of a Wimpy Kid",
+    "type": "series",
+    "seriesType": "numbered",
+    "ar": "5.2"
+  },
+  {
+    "title": "Dinosaur Cove",
+    "type": "series",
+    "seriesType": "numbered",
+    "ar": "3.5"
+  },
+  {
+    "title": "DK Readers",
+    "type": "series",
+    "seriesType": "numbered",
+    "ar": "2.5"
+  },
+  {
+    "title": "Dodsworth",
+    "type": "series",
+    "seriesType": "numbered",
+    "ar": "2.5"
+  },
+  {
+    "title": "Dog Man",
+    "type": "series",
+    "seriesType": "numbered",
+    "ar": "2.6"
+  },
+  {
+    "title": "Dork Diaries",
+    "type": "series",
+    "seriesType": "numbered",
+    "ar": "4.2"
+  },
+  {
+    "title": "Dory Fantasmagory",
+    "type": "series",
+    "seriesType": "numbered",
+    "ar": "3.2"
+  },
+  {
+    "title": "Dragon",
+    "type": "series",
+    "seriesType": "numbered",
+    "ar": "2.0"
+  },
+  {
+    "title": "Dragon Games",
+    "type": "series",
+    "seriesType": "numbered",
+    "ar": "4.0"
+  },
+  {
+    "title": "Dragon Girls",
+    "type": "series",
+    "seriesType": "numbered",
+    "ar": "3.5"
+  },
+  {
+    "title": "Dragon Masters",
+    "type": "series",
+    "seriesType": "numbered",
+    "ar": "3.2"
+  },
+  {
+    "title": "Eerie Elementary",
+    "type": "series",
+    "seriesType": "numbered",
+    "ar": "2.8"
+  },
+  {
+    "title": "Elephant and Piggie",
+    "type": "series",
+    "seriesType": "titled",
+    "ar": "1.5"
+  },
+  {
+    "title": "Encyclopedia Brown",
+    "type": "series",
+    "seriesType": "numbered",
+    "ar": "3.7"
+  },
+  {
+    "title": "Fablehaven",
+    "type": "series",
+    "seriesType": "numbered",
+    "ar": "5.1"
+  },
+  {
+    "title": "Fantastic Mr Fox",
+    "type": "standalone",
+    "ar": "4.1"
+  },
+  {
+    "title": "Flat Stanley",
+    "type": "series",
+    "seriesType": "titled",
+    "ar": "3.1"
+  },
+  {
+    "title": "Fly Guy",
+    "type": "series",
+    "seriesType": "numbered",
+    "ar": "1.5"
+  },
+  {
+    "title": "Fly Guy Presents",
+    "type": "series",
+    "seriesType": "titled",
+    "ar": "2.5"
+  },
+  {
+    "title": "Fox and His Friends",
+    "type": "series",
+    "seriesType": "titled",
+    "ar": "2.0"
+  },
+  {
+    "title": "Franny K. Stein",
+    "type": "series",
+    "seriesType": "numbered",
+    "ar": "3.2"
+  },
+  {
+    "title": "Frog and Toad",
+    "type": "series",
+    "seriesType": "titled",
+    "ar": "2.5"
+  },
+  {
+    "title": "Gail Gibbons Science",
+    "type": "series",
+    "seriesType": "titled",
+    "ar": "3.0"
+  },
+  {
+    "title": "Galaxy Zack",
+    "type": "series",
+    "seriesType": "numbered",
+    "ar": "2.8"
+  },
+  {
+    "title": "Geronimo Stilton",
+    "type": "series",
+    "seriesType": "numbered",
+    "ar": "3.7"
+  },
+  {
+    "title": "Gooney Bird Greene",
+    "type": "series",
+    "seriesType": "numbered",
+    "ar": "3.5"
+  },
+  {
+    "title": "Goosebumps",
+    "type": "series",
+    "seriesType": "numbered",
+    "ar": "3.6"
+  },
+  {
+    "title": "Goosebumps HorrorLand",
+    "type": "series",
+    "seriesType": "numbered",
+    "ar": "3.8"
+  },
+  {
+    "title": "Haggis and Tank Unleashed",
+    "type": "series",
+    "seriesType": "numbered",
+    "ar": "2.5"
+  },
+  {
+    "title": "Hank Zipzer",
+    "type": "series",
+    "seriesType": "numbered",
+    "ar": "3.8"
+  },
+  {
+    "title": "Harriet the Spy",
+    "type": "standalone",
+    "ar": "4.5"
+  },
+  {
+    "title": "Harry Potter",
+    "type": "series",
+    "seriesType": "numbered",
+    "ar": "6.0"
+  },
+  {
+    "title": "Hatchet",
+    "type": "standalone",
+    "ar": "5.7"
+  },
+  {
+    "title": "Heidi Heckelbeck",
+    "type": "series",
+    "seriesType": "numbered",
+    "ar": "2.8"
+  },
+  {
+    "title": "Henry and Mudge",
+    "type": "series",
+    "seriesType": "titled",
+    "ar": "2.2"
+  },
+  {
+    "title": "Hey Jack",
+    "type": "series",
+    "seriesType": "numbered",
+    "ar": "1.8"
+  },
+  {
+    "title": "High-Rise Private Eyes",
+    "type": "series",
+    "seriesType": "numbered",
+    "ar": "2.5"
+  },
+  {
+    "title": "Holes",
+    "type": "standalone",
+    "ar": "4.6"
+  },
+  {
+    "title": "Horrible Harry",
+    "type": "series",
+    "seriesType": "numbered",
+    "ar": "3.0"
+  },
+  {
+    "title": "Horrid Henry",
+    "type": "series",
+    "seriesType": "numbered",
+    "ar": "3.2"
+  },
+  {
+    "title": "Houndsley and Catina",
+    "type": "series",
+    "seriesType": "numbered",
+    "ar": "2.5"
+  },
+  {
+    "title": "Humphrey",
+    "type": "series",
+    "seriesType": "numbered",
+    "ar": "4.0"
+  },
+  {
+    "title": "I Am Series",
+    "type": "series",
+    "seriesType": "titled",
+    "ar": "3.0"
+  },
+  {
+    "title": "I Survived",
+    "type": "series",
+    "seriesType": "numbered",
+    "ar": "4.0"
+  },
+  {
+    "title": "InvestiGators",
+    "type": "series",
+    "seriesType": "numbered",
+    "ar": "3.0"
+  },
+  {
+    "title": "Ivy & Bean",
+    "type": "series",
+    "seriesType": "numbered",
+    "ar": "3.2"
+  },
+  {
+    "title": "James and the Giant Peach",
+    "type": "standalone",
+    "ar": "4.8"
+  },
+  {
+    "title": "Jeremy Thatcher, Dragon Hatcher",
+    "type": "standalone",
+    "ar": "5.2"
+  },
+  {
+    "title": "Jigsaw Jones",
+    "type": "series",
+    "seriesType": "numbered",
+    "ar": "3.1"
+  },
+  {
+    "title": "Judy Moody",
+    "type": "series",
+    "seriesType": "titled",
+    "ar": "3.3"
+  },
+  {
+    "title": "Junie B. Jones",
+    "type": "series",
+    "seriesType": "titled",
+    "ar": "3.0"
+  },
+  {
+    "title": "Katie Woo",
+    "type": "series",
+    "seriesType": "numbered",
+    "ar": "2.0"
+  },
+  {
+    "title": "Keeper of the Lost Cities",
+    "type": "series",
+    "seriesType": "numbered",
+    "ar": "6.1"
+  },
+  {
+    "title": "Kung Pow Chicken",
+    "type": "series",
+    "seriesType": "numbered",
+    "ar": "2.5"
+  },
+  {
+    "title": "Let's-Read-and-Find-Out Science",
+    "type": "series",
+    "seriesType": "titled",
+    "ar": "2.5"
+  },
+  {
+    "title": "Little Bear",
+    "type": "series",
+    "seriesType": "titled",
+    "ar": "1.8"
+  },
+  {
+    "title": "Lola Levine",
+    "type": "series",
+    "seriesType": "numbered",
+    "ar": "3.0"
+  },
+  {
+    "title": "Mac and Cheese",
+    "type": "series",
+    "seriesType": "titled",
+    "ar": "1.5"
+  },
+  {
+    "title": "Magic School Bus",
+    "type": "series",
+    "seriesType": "titled",
+    "ar": "4.0"
+  },
+  {
+    "title": "Magic Shop",
+    "type": "series",
+    "seriesType": "titled",
+    "ar": "4.2"
+  },
+  {
+    "title": "Magic Tree House",
+    "type": "series",
+    "seriesType": "numbered",
+    "ar": "3.3"
+  },
+  {
+    "title": "Magic Tree House Fact Trackers",
+    "type": "series",
+    "seriesType": "numbered",
+    "ar": "3.5"
+  },
+  {
+    "title": "Magic Tree House Merlin Missions",
+    "type": "series",
+    "seriesType": "numbered",
+    "ar": "4.0"
+  },
+  {
+    "title": "Magisterium",
+    "type": "series",
+    "seriesType": "numbered",
+    "ar": "5.2"
+  },
+  {
+    "title": "Maniac Magee",
+    "type": "standalone",
+    "ar": "4.7"
+  },
+  {
+    "title": "Marvin Redpost",
+    "type": "series",
+    "seriesType": "numbered",
+    "ar": "3.3"
+  },
+  {
+    "title": "Matilda",
+    "type": "standalone",
+    "ar": "5.0"
+  },
+  {
+    "title": "Max Spaniel",
+    "type": "series",
+    "seriesType": "numbered",
+    "ar": "1.5"
+  },
+  {
+    "title": "Mercy Watson",
+    "type": "series",
+    "seriesType": "numbered",
+    "ar": "2.6"
+  },
+  {
+    "title": "Mia Mayhem",
+    "type": "series",
+    "seriesType": "numbered",
+    "ar": "2.5"
+  },
+  {
+    "title": "Milo & Jazz Mysteries",
+    "type": "series",
+    "seriesType": "numbered",
+    "ar": "2.8"
+  },
+  {
+    "title": "Minnie and Moo",
+    "type": "series",
+    "seriesType": "numbered",
+    "ar": "2.6"
+  },
+  {
+    "title": "Mittens",
+    "type": "series",
+    "seriesType": "titled",
+    "ar": "1.1"
+  },
+  {
+    "title": "Monkey Me",
+    "type": "series",
+    "seriesType": "numbered",
+    "ar": "2.5"
+  },
+  {
+    "title": "Mouse Soup",
+    "type": "standalone",
+    "ar": "2.4"
+  },
+  {
+    "title": "Mouse Tales",
+    "type": "standalone",
+    "ar": "2.1"
+  },
+  {
+    "title": "Mr. Putter & Tabby",
+    "type": "series",
+    "seriesType": "numbered",
+    "ar": "2.5"
+  },
+  {
+    "title": "My Father's Dragon",
+    "type": "series",
+    "seriesType": "numbered",
+    "ar": "4.5"
+  },
+  {
+    "title": "My Teacher Is an Alien",
+    "type": "series",
+    "seriesType": "numbered",
+    "ar": "4.3"
+  },
+  {
+    "title": "My Weird School",
+    "type": "series",
+    "seriesType": "numbered",
+    "ar": "3.3"
+  },
+  {
+    "title": "Narwhal and Jelly",
+    "type": "series",
+    "seriesType": "numbered",
+    "ar": "2.5"
+  },
+  {
+    "title": "Nate the Great",
+    "type": "series",
+    "seriesType": "titled",
+    "ar": "2.5"
+  },
+  {
+    "title": "National Geographic Kids",
+    "type": "series",
+    "seriesType": "titled",
+    "ar": "2.0"
+  },
+  {
+    "title": "Nevermoor",
+    "type": "series",
+    "seriesType": "numbered",
+    "ar": "5.5"
+  },
+  {
+    "title": "Notebook of Doom",
+    "type": "series",
+    "seriesType": "numbered",
+    "ar": "3.5"
+  },
+  {
+    "title": "Number the Stars",
+    "type": "standalone",
+    "ar": "4.5"
+  },
+  {
+    "title": "Oliver and Amanda Pig",
+    "type": "series",
+    "seriesType": "numbered",
+    "ar": "2.5"
+  },
+  {
+    "title": "Olivia Sharp",
+    "type": "series",
+    "seriesType": "numbered",
+    "ar": "2.9"
+  },
+  {
+    "title": "Out of My Mind",
+    "type": "standalone",
+    "ar": "4.3"
+  },
+  {
+    "title": "Owl at Home",
+    "type": "standalone",
+    "ar": "2.6"
+  },
+  {
+    "title": "Owl Diaries",
+    "type": "series",
+    "seriesType": "numbered",
+    "ar": "2.8"
+  },
+  {
+    "title": "Pedro",
+    "type": "series",
+    "seriesType": "numbered",
+    "ar": "2.0"
+  },
+  {
+    "title": "Penny",
+    "type": "series",
+    "seriesType": "numbered",
+    "ar": "2.0"
+  },
+  {
+    "title": "Percy Jackson",
+    "type": "series",
+    "seriesType": "numbered",
+    "ar": "4.7"
+  },
+  {
+    "title": "Pete the Cat",
+    "type": "series",
+    "seriesType": "titled",
+    "ar": "1.5"
+  },
+  {
+    "title": "Pokémon Chapter Books",
+    "type": "series",
+    "seriesType": "numbered",
+    "ar": "3.8"
+  },
+  {
+    "title": "Pony Pals",
+    "type": "series",
+    "seriesType": "numbered",
+    "ar": "3.0"
+  },
+  {
+    "title": "Poppleton",
+    "type": "series",
+    "seriesType": "numbered",
+    "ar": "2.0"
+  },
+  {
+    "title": "Press Start!",
+    "type": "series",
+    "seriesType": "numbered",
+    "ar": "2.5"
+  },
+  {
+    "title": "Princess Posey",
+    "type": "series",
+    "seriesType": "numbered",
+    "ar": "2.5"
+  },
+  {
+    "title": "Puppy Mudge",
+    "type": "series",
+    "seriesType": "numbered",
+    "ar": "1.5"
+  },
+  {
+    "title": "Puppy Place",
+    "type": "series",
+    "seriesType": "numbered",
+    "ar": "3.2"
+  },
+  {
+    "title": "Rainbow Magic",
+    "type": "series",
+    "seriesType": "numbered",
+    "ar": "3.2"
+  },
+  {
+    "title": "Ralph Mouse",
+    "type": "series",
+    "seriesType": "titled",
+    "ar": "4.5"
+  },
+  {
+    "title": "Ramona",
+    "type": "series",
+    "seriesType": "titled",
+    "ar": "4.2"
+  },
+  {
+    "title": "Ranger in Time",
+    "type": "series",
+    "seriesType": "numbered",
+    "ar": "3.5"
+  },
+  {
+    "title": "Ricky Ricotta's Mighty Robot",
+    "type": "series",
+    "seriesType": "numbered",
+    "ar": "2.9"
+  },
+  {
+    "title": "Rookie Read-About Science",
+    "type": "series",
+    "seriesType": "titled",
+    "ar": "2.0"
+  },
+  {
+    "title": "Roscoe Riley Rules",
+    "type": "series",
+    "seriesType": "numbered",
+    "ar": "3.2"
+  },
+  {
+    "title": "School for Good and Evil",
+    "type": "series",
+    "seriesType": "numbered",
+    "ar": "5.8"
+  },
+  {
+    "title": "Science Vocabulary Readers",
+    "type": "series",
+    "seriesType": "titled",
+    "ar": "2.0"
+  },
+  {
+    "title": "Shiloh",
+    "type": "series",
+    "seriesType": "numbered",
+    "ar": "4.4"
+  },
+  {
+    "title": "Simple Machines",
+    "type": "series",
+    "seriesType": "titled",
+    "ar": "2.5"
+  },
+  {
+    "title": "Splat the Cat",
+    "type": "series",
+    "seriesType": "titled",
+    "ar": "1.8"
+  },
+  {
+    "title": "Spy School",
+    "type": "series",
+    "seriesType": "numbered",
+    "ar": "5.0"
+  },
+  {
+    "title": "Stink",
+    "type": "series",
+    "seriesType": "numbered",
+    "ar": "3.5"
+  },
+  {
+    "title": "Stuart Little",
+    "type": "standalone",
+    "ar": "5.0"
+  },
+  {
+    "title": "Tales of a Fourth Grade Nothing",
+    "type": "series",
+    "seriesType": "numbered",
+    "ar": "3.3"
+  },
+  {
+    "title": "The 39 Clues",
+    "type": "series",
+    "seriesType": "numbered",
+    "ar": "5.2"
+  },
+  {
+    "title": "The Bad Guys",
+    "type": "series",
+    "seriesType": "numbered",
+    "ar": "2.5"
+  },
+  {
+    "title": "The Bailey School Kids",
+    "type": "series",
+    "seriesType": "numbered",
+    "ar": "3.5"
+  },
+  {
+    "title": "The BFG",
+    "type": "standalone",
+    "ar": "4.8"
+  },
+  {
+    "title": "The Chicken Squad",
+    "type": "series",
+    "seriesType": "numbered",
+    "ar": "2.8"
+  },
+  {
+    "title": "The Critter Club",
+    "type": "series",
+    "seriesType": "numbered",
+    "ar": "3.0"
+  },
+  {
+    "title": "The Giver",
+    "type": "standalone",
+    "ar": "5.7"
+  },
+  {
+    "title": "The Kingdom of Wrenly",
+    "type": "series",
+    "seriesType": "numbered",
+    "ar": "3.5"
+  },
+  {
+    "title": "The Land of Stories",
+    "type": "series",
+    "seriesType": "numbered",
+    "ar": "5.0"
+  },
+  {
+    "title": "The Last Kids on Earth",
+    "type": "series",
+    "seriesType": "numbered",
+    "ar": "4.8"
+  },
+  {
+    "title": "The Mysterious Benedict Society",
+    "type": "series",
+    "seriesType": "numbered",
+    "ar": "5.2"
+  },
+  {
+    "title": "The Phantom Tollbooth",
+    "type": "standalone",
+    "ar": "6.7"
+  },
+  {
+    "title": "The Pigeon Series",
+    "type": "series",
+    "seriesType": "titled",
+    "ar": "1.5"
+  },
+  {
+    "title": "The Princess in Black",
+    "type": "series",
+    "seriesType": "numbered",
+    "ar": "2.8"
+  },
+  {
+    "title": "The Secrets of Droon",
+    "type": "series",
+    "seriesType": "numbered",
+    "ar": "3.0"
+  },
+  {
+    "title": "The Spiderwick Chronicles",
+    "type": "series",
+    "seriesType": "numbered",
+    "ar": "4.5"
+  },
+  {
+    "title": "The Tale of Despereaux",
+    "type": "standalone",
+    "ar": "4.7"
+  },
+  {
+    "title": "The Terrible Two",
+    "type": "series",
+    "seriesType": "numbered",
+    "ar": "4.2"
+  },
+  {
+    "title": "The Trumpet of the Swan",
+    "type": "standalone",
+    "ar": "5.2"
+  },
+  {
+    "title": "The Twin Club",
+    "type": "series",
+    "seriesType": "titled",
+    "ar": "2.0"
+  },
+  {
+    "title": "The Witches",
+    "type": "standalone",
+    "ar": "5.1"
+  },
+  {
+    "title": "The Zack Files",
+    "type": "series",
+    "seriesType": "numbered",
+    "ar": "3.2"
+  },
+  {
+    "title": "Third Grade Detectives",
+    "type": "series",
+    "seriesType": "numbered",
+    "ar": "3.2"
+  },
+  {
+    "title": "Time Warp Trio",
+    "type": "series",
+    "seriesType": "numbered",
+    "ar": "3.8"
+  },
+  {
+    "title": "Timmy Failure",
+    "type": "series",
+    "seriesType": "numbered",
+    "ar": "4.5"
+  },
+  {
+    "title": "Tiny",
+    "type": "series",
+    "seriesType": "titled",
+    "ar": "1.4"
+  },
+  {
+    "title": "Tuck Everlasting",
+    "type": "standalone",
+    "ar": "5.0"
+  },
+  {
+    "title": "Tug the Pup",
+    "type": "series",
+    "seriesType": "numbered",
+    "ar": "1.2"
+  },
+  {
+    "title": "Unicorn Academy",
+    "type": "series",
+    "seriesType": "numbered",
+    "ar": "3.5"
+  },
+  {
+    "title": "Unicorn Chronicles",
+    "type": "series",
+    "seriesType": "numbered",
+    "ar": "4.2"
+  },
+  {
+    "title": "Usborne Beginners",
+    "type": "series",
+    "seriesType": "titled",
+    "ar": "2.5"
+  },
+  {
+    "title": "Warriors",
+    "type": "series",
+    "seriesType": "numbered",
+    "ar": "5.1"
+  },
+  {
+    "title": "Wayside School",
+    "type": "series",
+    "seriesType": "titled",
+    "ar": "3.8"
+  },
+  {
+    "title": "Whatever After",
+    "type": "series",
+    "seriesType": "numbered",
+    "ar": "3.8"
+  },
+  {
+    "title": "Where the Red Fern Grows",
+    "type": "standalone",
+    "ar": "4.9"
+  },
+  {
+    "title": "Who Was? Series",
+    "type": "series",
+    "seriesType": "titled",
+    "ar": "3.5"
+  },
+  {
+    "title": "Wings of Fire",
+    "type": "series",
+    "seriesType": "numbered",
+    "ar": "5.2"
+  },
+  {
+    "title": "Wonder",
+    "type": "standalone",
+    "ar": "4.8"
+  },
+  {
+    "title": "Yasmin!",
+    "type": "series",
+    "seriesType": "numbered",
+    "ar": "2.0"
+  },
+  {
+    "title": "Young Cam Jansen",
+    "type": "series",
+    "seriesType": "numbered",
+    "ar": "2.5"
+  },
+  {
+    "title": "Zelda and Ivy",
+    "type": "series",
+    "seriesType": "numbered",
+    "ar": "2.0"
+  },
+  {
+    "title": "Zoey and Sassafras",
+    "type": "series",
+    "seriesType": "numbered",
+    "ar": "3.5"
+  }
 ]
