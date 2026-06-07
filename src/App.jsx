@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import BOOKS from "./books.json";
 import BOOKS_DETAIL from "./books-detail.json";
 
@@ -373,6 +373,7 @@ export default function ReadingChachaV2() {
   const [specialDayMsg, setSpecialDayMsg] = useState("");
   const [bookTitle, setBookTitle] = useState("");
 const [loadingMsg] = useState(() => LOADING_MSGS[Math.floor(Math.random() * LOADING_MSGS.length)]);
+const bottomRef = useRef(null);
 const [usedTypes, setUsedTypes] = useState([]);
 const [showFreeText, setShowFreeText] = useState(false);
 const [freeTextInput, setFreeTextInput] = useState("");
@@ -420,7 +421,10 @@ const [freeTextInput, setFreeTextInput] = useState("");
     setDailyMsg(getDailyMsg());
     if (Math.random() < 0.25) setSmalltalk(SMALLTALK[Math.floor(Math.random() * SMALLTALK.length)]);
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
-
+useEffect(() => {
+  bottomRef.current?.scrollIntoView({ behavior: "smooth" });
+}, [bubbles, conversations, loading]);
+  
   // ─── 유틸 ───
   const displayBooks = () => {
     const notRead = BOOKS.filter(b => !readBooks.includes(b.title));
@@ -938,6 +942,7 @@ setShowFreeText(false); setFreeTextInput("");
           </div>
         )}
       </div>
+      <div ref={bottomRef} />
      {!loading && currentDialogue?.choices && (
   <div style={{ position: "fixed", bottom: 0, left: "50%", transform: "translateX(-50%)", width: "100%", maxWidth: 390, background: bg, padding: "12px 16px", borderTop: "1px solid #FFE082" }}>
     {!showFreeText ? (
