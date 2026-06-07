@@ -579,12 +579,9 @@ if (hardcoded) {
     setCurrentDialogue({ ...next, question: next.chacha_says?.join(" ") || "" });
     setRoundNum(nextRound);
     setLoading(false);
-  }, 600);
+    }, 600);
 }
-      }, 600);
-    }
   };
-
   // ─── 츄르 먹이기 ───
   const feedChuru = () => {
     if (churuFed) return;
