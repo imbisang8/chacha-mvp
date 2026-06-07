@@ -549,12 +549,12 @@ return shuffled.slice(0, 5);
     setLoading(true);
     const nextRound = roundNum + 1;
     const reaction = edgeRes || `"${choice}" 냥~`;
-    setBubbles([reaction]);
+   setBubbles(prev => [...prev, reaction]);
 
     const hardcoded = getHardcodedRound(nextRound, selectedBook);
     if (hardcoded) {
       setTimeout(() => {
-        setBubbles([reaction, ...(hardcoded.chacha_says || [])]);
+  setBubbles(prev => [...prev, reaction, ...(hardcoded.chacha_says || [])]);
 setCurrentDialogue({ ...hardcoded, question: hardcoded.chacha_says?.join(" ") || "" });
         setRoundNum(nextRound);
         setLoading(false);
@@ -565,7 +565,7 @@ const nextType = types.find(t => !usedTypes.includes(t)) || "상상";
 setUsedTypes(prev => [...prev, nextType]);
 const next = await generateDialogue(selectedBook, childName, choice, nextRound, totalRounds, newConvs, nextType);
       setTimeout(() => {
-        setBubbles([reaction, ...(next.chacha_says || [])]);
+     setBubbles(prev => [...prev, reaction, ...(next.chacha_says || [])]);
         setCurrentDialogue({ ...next, question: next.chacha_says?.join(" ") || "" });
         setRoundNum(nextRound);
         setLoading(false);
