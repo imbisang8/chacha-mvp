@@ -546,7 +546,7 @@ setLoading(false);
     const newConv = { q: currentDialogue?.question || "", a: choice };
     const newConvs = [...conversations, newConv];
     setConversations(newConvs);
-    setMessages(prev => [...prev, { role: "child", text: choice }]);
+    setMessages([{ role: "child", text: choice }]);
     if (roundNum >= totalRounds) {
       setMessages(prev => [...prev,
         { role: "chacha", text: "으아앙! 네 덕분에 오늘 츄르값을 벌었다냥!" },
