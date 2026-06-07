@@ -926,24 +926,24 @@ setShowFreeText(false); setFreeTextInput("");
         <span style={{ fontSize: 28 }}>🐱</span>
         <div style={{ flex: 1 }}>
           <div style={{ fontSize: 13, fontWeight: 800, color: dark }}>차차</div>
-          <div style={{ fontSize: 10, color: "#795548" }}>
- {messages.map((m, i) => (
-  m.role === "chacha" ? (
-    <div key={i} style={{ display: "flex", gap: 8, marginBottom: 8, animation: "fadeIn 0.3s ease" }}>
-      <span style={{ fontSize: 24, alignSelf: "flex-end", flexShrink: 0 }}>🐱</span>
-      <div style={S.bubble}>{m.text}</div>
-    </div>
-  ) : (
-    <div key={i} style={{ display: "flex", justifyContent: "flex-end", marginBottom: 8 }}>
-      <div style={{ background: warm, borderRadius: "20px 20px 4px 20px", padding: "12px 16px", fontSize: 14, color: "#fff", fontWeight: 700, maxWidth: "75%" }}>{m.text}</div>
-    </div>
-  )
-))}
-        ))}
-        {conversations.slice(-1).map((c, i) => (
-          <div key={i} style={{ display: "flex", justifyContent: "flex-end", marginBottom: 8 }}>
-            <div style={{ background: warm, borderRadius: "20px 20px 4px 20px", padding: "12px 16px", fontSize: 14, color: "#fff", fontWeight: 700, maxWidth: "75%" }}>{c.a}</div>
-          </div>
+    <div style={{ fontSize: 10, color: "#795548" }}>
+  {selectedBook?.seriesTitle ? `${selectedBook.seriesTitle} ${selectedBook.title}` : selectedBook?.title}
+</div>
+        </div>
+        <div style={{ fontSize: 11, color: "#795548", background: "rgba(255,255,255,0.5)", borderRadius: 10, padding: "4px 8px" }}>{roundNum}/{totalRounds}</div>
+      </div>
+      <div style={{ ...S.body, paddingBottom: 140 }}>
+        {messages.map((m, i) => (
+          m.role === "chacha" ? (
+            <div key={i} style={{ display: "flex", gap: 8, marginBottom: 8, animation: "fadeIn 0.3s ease" }}>
+              <span style={{ fontSize: 24, alignSelf: "flex-end", flexShrink: 0 }}>🐱</span>
+              <div style={S.bubble}>{m.text}</div>
+            </div>
+          ) : (
+            <div key={i} style={{ display: "flex", justifyContent: "flex-end", marginBottom: 8 }}>
+              <div style={{ background: warm, borderRadius: "20px 20px 4px 20px", padding: "12px 16px", fontSize: 14, color: "#fff", fontWeight: 700, maxWidth: "75%" }}>{m.text}</div>
+            </div>
+          )
         ))}
         {loading && (
           <div style={{ display: "flex", gap: 8, marginBottom: 8 }}>
