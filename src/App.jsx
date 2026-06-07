@@ -339,9 +339,9 @@ export default function ReadingChachaV2() {
   const [dailyMsg, setDailyMsg] = useState("");
   const [smalltalk, setSmalltalk] = useState(null);
   const [showSmalltalk, setShowSmalltalk] = useState(false);
-  const [bubbles, setBubbles] = useState([]);
-  const [currentDialogue, setCurrentDialogue] = useState(null);
-  const [conversations, setConversations] = useState([]);
+ const [messages, setMessages] = useState([]); // {role: "chacha"|"child", text: string}
+const [currentDialogue, setCurrentDialogue] = useState(null);
+const [conversations, setConversations] = useState([]);
   const [roundNum, setRoundNum] = useState(1);
   const [totalRounds, setTotalRounds] = useState(5);
   const [loading, setLoading] = useState(false);
@@ -426,7 +426,7 @@ const [bookList] = useState(() => {
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 useEffect(() => {
   bottomRef.current?.scrollIntoView({ behavior: "smooth" });
-}, [bubbles, conversations, loading]);
+}, [messages, loading]);
   
   // ─── 유틸 ───
   const displayBooks = () => {
@@ -525,9 +525,10 @@ return sliced;
       // 실패하면 기본 멘트로
     }
 
-    setBubbles([chachaOpening, ...(firstRound.chacha_says || [])]);
-    setCurrentDialogue({ ...firstRound, question: firstRound.chacha_says?.join(" ") || "" });
-    setLoading(false);
+  const openingMsgs = [chachaOpening, ...(firstRound.chacha_says || [])].map(t => ({ role: "chacha", text: t }));
+setMessages(openingMsgs);
+setCurrentDialogue({ ...firstRound, question: firstRound.chacha_says?.join(" ") || "" });
+setLoading(false);
   };
 
   // ─── 하드코딩 라운드 ───
@@ -543,38 +544,43 @@ return sliced;
   const handleChoice = async (choice) => {
     const edgeRes = getEdgeResponse(choice);
     const newConv = { q: currentDialogue?.question || "", a: choice };
-    const newConvs = [...conversations, newConv];
-    setConversations(newConvs);
+setConversations(newConvs);
+setMessages(prev => [...prev, { role: "child", text: choice }]);
 
-    if (roundNum >= totalRounds) {
-      setBubbles(["으아앙! 네 덕분에 오늘 츄르값을 벌었다냥!", "잠깐 기다려봐냥... 뭔가 만들고 있어..."]);
-      setScreen("reward");
-      return;
-    }
+if (roundNum >= totalRounds) {
+  setMessages(prev => [...prev,
+    { role: "chacha", text: "으아앙! 네 덕분에 오늘 츄르값을 벌었다냥!" },
+    { role: "chacha", text: "잠깐 기다려봐냥... 뭔가 만들고 있어..." }
+  ]);
+  setScreen("reward");
+  return;
+}
 
-    setLoading(true);
-    const nextRound = roundNum + 1;
-    const reaction = edgeRes || `"${choice}" 냥~`;
-   setBubbles(prev => [...prev, reaction]);
+setLoading(true);
+const nextRound = roundNum + 1;
+const reaction = edgeRes || `"${choice}" 냥~`;
+setMessages(prev => [...prev, { role: "chacha", text: reaction }]);
 
-    const hardcoded = getHardcodedRound(nextRound, selectedBook);
-    if (hardcoded) {
-      setTimeout(() => {
- setBubbles(prev => [...prev, ...(hardcoded.chacha_says || [])]);
-setCurrentDialogue({ ...hardcoded, question: hardcoded.chacha_says?.join(" ") || "" });
-        setRoundNum(nextRound);
-        setLoading(false);
-      }, 600);
-    } else {
-      const types = ["장면", "감정", "행동", "상상"];
-const nextType = types.find(t => !usedTypes.includes(t)) || "상상";
-setUsedTypes(prev => [...prev, nextType]);
-const next = await generateDialogue(selectedBook, childName, choice, nextRound, totalRounds, newConvs, nextType);
-      setTimeout(() => {
-    setBubbles(prev => [...prev, ...(next.chacha_says || [])]);
-        setCurrentDialogue({ ...next, question: next.chacha_says?.join(" ") || "" });
-        setRoundNum(nextRound);
-        setLoading(false);
+const hardcoded = getHardcodedRound(nextRound, selectedBook);
+if (hardcoded) {
+  setTimeout(() => {
+    setMessages(prev => [...prev, ...(hardcoded.chacha_says || []).map(t => ({ role: "chacha", text: t }))]);
+    setCurrentDialogue({ ...hardcoded, question: hardcoded.chacha_says?.join(" ") || "" });
+    setRoundNum(nextRound);
+    setLoading(false);
+  }, 600);
+} else {
+  const types = ["장면", "감정", "행동", "상상"];
+  const nextType = types.find(t => !usedTypes.includes(t)) || "상상";
+  setUsedTypes(prev => [...prev, nextType]);
+  const next = await generateDialogue(selectedBook, childName, choice, nextRound, totalRounds, newConvs, nextType);
+  setTimeout(() => {
+    setMessages(prev => [...prev, ...(next.chacha_says || []).map(t => ({ role: "chacha", text: t }))]);
+    setCurrentDialogue({ ...next, question: next.chacha_says?.join(" ") || "" });
+    setRoundNum(nextRound);
+    setLoading(false);
+  }, 600);
+}
       }, 600);
     }
   };
@@ -924,17 +930,18 @@ setShowFreeText(false); setFreeTextInput("");
         <div style={{ flex: 1 }}>
           <div style={{ fontSize: 13, fontWeight: 800, color: dark }}>차차</div>
           <div style={{ fontSize: 10, color: "#795548" }}>
-  {selectedBook?.seriesTitle ? `${selectedBook.seriesTitle} ${selectedBook.title}` : selectedBook?.title}
-</div>
-        </div>
-        <div style={{ fontSize: 11, color: "#795548", background: "rgba(255,255,255,0.5)", borderRadius: 10, padding: "4px 8px" }}>{roundNum}/{totalRounds}</div>
-      </div>
-      <div style={{ ...S.body, paddingBottom: 140 }}>
-        {bubbles.map((b, i) => (
-          <div key={i} style={{ display: "flex", gap: 8, marginBottom: 8, animation: "fadeIn 0.3s ease" }}>
-            <span style={{ fontSize: 24, alignSelf: "flex-end", flexShrink: 0 }}>🐱</span>
-            <div style={S.bubble}>{b}</div>
-          </div>
+ {messages.map((m, i) => (
+  m.role === "chacha" ? (
+    <div key={i} style={{ display: "flex", gap: 8, marginBottom: 8, animation: "fadeIn 0.3s ease" }}>
+      <span style={{ fontSize: 24, alignSelf: "flex-end", flexShrink: 0 }}>🐱</span>
+      <div style={S.bubble}>{m.text}</div>
+    </div>
+  ) : (
+    <div key={i} style={{ display: "flex", justifyContent: "flex-end", marginBottom: 8 }}>
+      <div style={{ background: warm, borderRadius: "20px 20px 4px 20px", padding: "12px 16px", fontSize: 14, color: "#fff", fontWeight: 700, maxWidth: "75%" }}>{m.text}</div>
+    </div>
+  )
+))}
         ))}
         {conversations.slice(-1).map((c, i) => (
           <div key={i} style={{ display: "flex", justifyContent: "flex-end", marginBottom: 8 }}>
