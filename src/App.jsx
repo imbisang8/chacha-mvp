@@ -300,7 +300,7 @@ JSON만 반환. 설명 없이:
 {
   "child_quote": "아이 실제 발화 or 선택을 그대로. 수정 금지. 그 순간감이 가장 강한 것 1개. 비밀 우체통 쪽지 있으면 최우선.",
   "discovery_insight": "형식: 오늘 {이름}은 [관찰 사실]. [조심스러운 해석 한 줄]. 2문장 이하. 장면 기록.",
-  "action_guide": "형식: 오늘은 [방향]을 물어보세요.\n→ [질문]?\n물음표로 끝. 캐릭터 이름 포함. 추상 질문 단독 금지. 상황 기반. 패턴 A/B/C/D 중 랜덤 1개.\nA.캐릭터 상황에 아이 대입 B.엄마 어릴 때 경험 연결 C.캐릭터 엉뚱한 상상 D.아이 선택 이유 스토리화",
+ "action_guide": "엄마가 저녁에 아이에게 그대로 말할 수 있는 자연스러운 대화 한 문장을 생성한다. 조건: 엄마가 읽어도 어색하지 않을 것. 아이가 자기 경험이나 생각을 편하게 이야기하기 쉬울 것. 정답을 맞히는 느낌이 아니라 이야기를 꺼내는 느낌일 것. 아이가 실제로 오늘 말한 문장 또는 핵심 표현을 그대로 또는 의미를 유지하는 범위에서만 자연스럽게 인용해서 시작할 것. 새로운 발화는 만들어내지 말 것. 질문은 하나의 주제만 다룰 것. 반드시 물음표로 끝날 것. 설명이나 훈계 없이 딱 한 문장만 작성할 것.",
   "chacha_memo": "차차 말투. 아이 실제 행동·말 1개 반드시 포함. 추상 표현 금지.",
  "polaroid_text": "오늘 대화에서 가장 인상 깊었던 아이의 반응을 차차 말투로 한 줄. 매번 다르게. (~냥으로 끝)"
   "polaroid_emotion": "😹 또는 🤔 또는 🥺 또는 😳 또는 ❤️"
@@ -1132,7 +1132,7 @@ setShowFreeText(false); setFreeTextInput("");
         </div>
 
         <div style={{ ...S.card("#1a1a2e") }}>
-          <div style={{ fontSize: 11, color: warm, fontWeight: 800, marginBottom: 12, textAlign: "center" }}>💬 아이에게 건네볼 한마디</div>
+          <div style={{ fontSize: 11, color: warm, fontWeight: 800, marginBottom: 12, textAlign: "center" }}>💬 오늘 저녁, 이렇게 말해보세요</div>
           <div style={{ background: "rgba(255,255,255,0.1)", borderRadius: 14, padding: 14, borderLeft: `3px solid ${warm}` }}>
             <div style={{ fontSize: 14, color: "#fff", fontStyle: "italic", lineHeight: 1.6 }}>"{report.action_guide}"</div>
           </div>
