@@ -311,15 +311,14 @@ JSON만 반환. 설명 없이:
     });
     const data = await res.json();
     return JSON.parse(data.content[0].text.replace(/```json|```/g, "").trim());
-  } catch {
+ } catch {
     return {
       child_quote: mailboxNote || "재밌었어!",
-      discovery_insight: "이야기 속 인물들에게 자연스럽게 관심을 보였어요.",
-      observation_record: "끝까지 차차와 대화를 이어갔어요.",
-      action_guide: "주인공이 너라면 어떻게 했을 것 같아?",
-      chacha_memo: "오늘 꽤 오래 생각했어. 차차는 그게 좋더라 ㅋㅋ",
-      polaroid_text: "오늘 이야기 들으면서 나도 좀 설렜다냥",
-      polaroid_emotion: "❤️",
+      discovery_insight: "오늘 대화를 불러오지 못했어요. 다시 시도해주세요.",
+      action_guide: "오늘은 가장 기억에 남는 장면을 물어보세요.\n→ 어떤 부분이 제일 재밌었어?",
+      chacha_memo: "앗, 차차가 잠깐 졸았나봐냥... 다시 해줘냥!",
+      polaroid_text: "오늘 대화 기억 저장 실패다냥...",
+      polaroid_emotion: "😳",
     };
   }
 }
