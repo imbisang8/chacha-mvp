@@ -194,6 +194,21 @@ function getRounds(book) {
   if (ar < 5.0) return 5;
   return 7;
 }
+function guessGenre(book) {
+  let detail = BOOKS_DETAIL.find(d => d.title === book.title);
+  if (!detail && book.seriesTitle) {
+    detail = BOOKS_DETAIL.find(d => d.title === book.seriesTitle);
+  }
+  if (!detail) {
+    detail = BOOKS_DETAIL.find(d => book.title.startsWith(d.title) || d.title.startsWith(book.title));
+  }
+  if (detail?.genre) return detail.genre;
+  const ar = parseFloat(book.ar) || 3.0;
+  if (ar >= 5.5) return "adventure";
+  if (ar >= 4.5) return "mystery";
+  if (ar >= 3.0) return "comedy";
+  return "emotion";
+}
 
 // ─── AI 대화 생성 ───
 async function generateDialogue(book, childName, prevAnswer, roundNum, totalRounds, allConversations = [], nextType = "") {
@@ -466,21 +481,6 @@ return sliced;
   };
 
   // ─── 대화 시작 ───
- function guessGenre(book) {
-  let detail = BOOKS_DETAIL.find(d => d.title === book.title);
-  if (!detail && book.seriesTitle) {
-    detail = BOOKS_DETAIL.find(d => d.title === book.seriesTitle);
-  }
-  if (!detail) {
-    detail = BOOKS_DETAIL.find(d => book.title.startsWith(d.title) || d.title.startsWith(book.title));
-  }
-  if (detail?.genre) return detail.genre;
-  const ar = parseFloat(book.ar) || 3.0;
-  if (ar >= 5.5) return "adventure";
-  if (ar >= 4.5) return "mystery";
-  if (ar >= 3.0) return "comedy";
-  return "emotion";
-}
 
     // ─── 책 파악 AI 호출 (1회) ───
     let chachaOpening = `${finalTitle} 읽었구나냥!`;
