@@ -1010,7 +1010,7 @@ setShowFreeText(false); setFreeTextInput("");
     )}
   </div>
 )}
-      <style>{`@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}`}</style>
+    <style>{`@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}.flipped{transform:rotateY(180deg)!important;}`}</style>
     </div>
   );
 
