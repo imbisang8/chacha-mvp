@@ -8,7 +8,8 @@
       "Nevermoor",
       "The Land of Stories"
     ],
-    "aiHint": "주인공: 보들레어 삼남매 / 불운을 극복하는 여정 / 어둡고 기발함"
+    "aiHint": "주인공: 보들레어 삼남매 / 불운을 극복하는 여정 / 어둡고 기발함",
+    "genre": "mystery"
   },
   {
     "title": "A to Z Mysteries",
@@ -19,7 +20,8 @@
       "Jigsaw Jones",
       "Nate the Great"
     ],
-    "aiHint": "주인공: 딩크, 조쉬, 로즈 / 동네 미스터리 해결 / 경쾌하고 호기심 넘침"
+    "aiHint": "주인공: 딩크, 조쉬, 로즈 / 동네 미스터리 해결 / 경쾌하고 호기심 넘침",
+    "genre": "mystery"
   },
   {
     "title": "Akimbo",
@@ -30,7 +32,8 @@
       "National Geographic Kids",
       "Puppy Place",
       "Magic Tree House"
-    ]
+    ],
+    "genre": "adventure"
   },
   {
     "title": "Al Capone Does My Shirts",
@@ -41,7 +44,8 @@
       "Holes",
       "Number the Stars"
     ],
-    "aiHint": "주인공: 무스 / 섬에서 겪는 특별한 일상 / 현실적이고 따뜻함"
+    "aiHint": "주인공: 무스 / 섬에서 겪는 특별한 일상 / 현실적이고 따뜻함",
+    "genre": "emotion"
   },
   {
     "title": "Amari and the Night Brothers",
@@ -52,7 +56,8 @@
       "Nevermoor",
       "Keeper of the Lost Cities"
     ],
-    "aiHint": "주인공: 아마리 / 숨겨진 마법 세계 탐험 / 신비롭고 진취적임"
+    "aiHint": "주인공: 아마리 / 숨겨진 마법 세계 탐험 / 신비롭고 진취적임",
+    "genre": "adventure"
   },
   {
     "title": "Amber Brown",
@@ -63,7 +68,8 @@
       "Judy Moody",
       "Clementine",
       "Ramona"
-    ]
+    ],
+    "genre": "adventure"
   },
   {
     "title": "Amelia Bedelia",
@@ -74,7 +80,8 @@
       "Fly Guy",
       "Henry and Mudge"
     ],
-    "aiHint": "주인공: 아멜리아 / 엉뚱한 오해와 해프닝 / 유쾌하고 코믹함"
+    "aiHint": "주인공: 아멜리아 / 엉뚱한 오해와 해프닝 / 유쾌하고 코믹함",
+    "genre": "adventure"
   },
   {
     "title": "Amelia's Notebook",
@@ -85,7 +92,8 @@
       "Dork Diaries",
       "Clementine"
     ],
-    "aiHint": "주인공: 아멜리아 / 학교생활의 솔직한 기록 / 공감가고 아기자기함"
+    "aiHint": "주인공: 아멜리아 / 학교생활의 솔직한 기록 / 공감가고 아기자기함",
+    "genre": "emotion"
   },
   {
     "title": "Andy Shane",
@@ -96,7 +104,8 @@
       "Horrible Harry",
       "Katie Woo",
       "Billie B Brown"
-    ]
+    ],
+    "genre": "adventure"
   },
   {
     "title": "Animorphs",
@@ -107,7 +116,8 @@
       "Beast Quest",
       "The Last Kids on Earth"
     ],
-    "aiHint": "주인공: 제이크 외 / 외계인에 맞서는 변신 / 긴장감 넘치는 SF"
+    "aiHint": "주인공: 제이크 외 / 외계인에 맞서는 변신 / 긴장감 넘치는 SF",
+    "genre": "adventure"
   },
   {
     "title": "Arnold and Louise",
@@ -118,7 +128,8 @@
       "Henry and Mudge",
       "Little Bear"
     ],
-    "aiHint": "주인공: 아놀드와 루이스 / 두 친구의 평범한 일상 / 잔잔하고 따뜻함"
+    "aiHint": "주인공: 아놀드와 루이스 / 두 친구의 평범한 일상 / 잔잔하고 따뜻함",
+    "genre": "emotion"
   },
   {
     "title": "Artemis Fowl",
@@ -129,7 +140,8 @@
       "Keeper of the Lost Cities",
       "The Mysterious Benedict Society"
     ],
-    "aiHint": "주인공: 아르테미스 / 천재 소년의 마법 세계 계획 / 기발하고 스릴있음"
+    "aiHint": "주인공: 아르테미스 / 천재 소년의 마법 세계 계획 / 기발하고 스릴있음",
+    "genre": "adventure"
   },
   {
     "title": "Arthur Chapter Books",
@@ -140,7 +152,8 @@
       "Marvin Redpost",
       "Clementine"
     ],
-    "aiHint": "주인공: 아서 / 친구와 가족 간의 소소한 일 / 편안하고 교훈적임"
+    "aiHint": "주인공: 아서 / 친구와 가족 간의 소소한 일 / 편안하고 교훈적임",
+    "genre": "adventure"
   },
   {
     "title": "Babymouse",
@@ -151,7 +164,8 @@
       "Cat Kid Comic Club",
       "Big Nate"
     ],
-    "aiHint": "주인공: 베이비마우스 / 상상력 풍부한 쥐의 일상 / 발랄하고 유쾌함"
+    "aiHint": "주인공: 베이비마우스 / 상상력 풍부한 쥐의 일상 / 발랄하고 유쾌함",
+    "genre": "comedy"
   },
   {
     "title": "Bad Kitty",
@@ -162,7 +176,8 @@
       "Pete the Cat",
       "Diary of a Pug",
       "Splat the Cat"
-    ]
+    ],
+    "genre": "comedy"
   },
   {
     "title": "Beast Quest",
@@ -173,7 +188,8 @@
       "Magic Tree House",
       "Animorphs"
     ],
-    "aiHint": "주인공: 톰 / 마법 괴물들로부터 왕국 구하기 / 박진감 넘치는 액션"
+    "aiHint": "주인공: 톰 / 마법 괴물들로부터 왕국 구하기 / 박진감 넘치는 액션",
+    "genre": "adventure"
   },
   {
     "title": "Because of Winn-Dixie",
@@ -184,7 +200,8 @@
       "Shiloh",
       "The Tale of Despereaux"
     ],
-    "aiHint": "주인공: 오팔 / 상처를 치유하는 특별한 우정 / 감동적이고 따뜻함"
+    "aiHint": "주인공: 오팔 / 상처를 치유하는 특별한 우정 / 감동적이고 따뜻함",
+    "genre": "emotion"
   },
   {
     "title": "Berenstain Bears",
@@ -195,7 +212,8 @@
       "Little Bear",
       "Frog and Toad",
       "Arthur Chapter Books"
-    ]
+    ],
+    "genre": "adventure"
   },
   {
     "title": "Big Nate",
@@ -206,7 +224,8 @@
       "Timmy Failure",
       "Dork Diaries"
     ],
-    "aiHint": "주인공: 네이트 / 사고뭉치 소년의 학교생활 / 코믹하고 에너지 넘침"
+    "aiHint": "주인공: 네이트 / 사고뭉치 소년의 학교생활 / 코믹하고 에너지 넘침",
+    "genre": "comedy"
   },
   {
     "title": "Billie B Brown",
@@ -217,7 +236,8 @@
       "Hey Jack",
       "Junie B. Jones",
       "Clementine"
-    ]
+    ],
+    "genre": "adventure"
   },
   {
     "title": "Bink & Gollie",
@@ -228,7 +248,8 @@
       "Ivy & Bean",
       "Elephant and Piggie",
       "Cork & Fuzz"
-    ]
+    ],
+    "genre": "adventure"
   },
   {
     "title": "Biscuit",
@@ -239,7 +260,8 @@
       "Henry and Mudge",
       "Little Bear",
       "Mercy Watson"
-    ]
+    ],
+    "genre": "emotion"
   },
   {
     "title": "Black Lagoon Adventures",
@@ -250,7 +272,8 @@
       "Eerie Elementary",
       "My Weird School",
       "Horrible Harry"
-    ]
+    ],
+    "genre": "adventure"
   },
   {
     "title": "Boris",
@@ -261,7 +284,8 @@
       "Fox and His Friends",
       "Poppleton",
       "Mercy Watson"
-    ]
+    ],
+    "genre": "adventure"
   },
   {
     "title": "Boxcar Children",
@@ -272,7 +296,8 @@
       "Cam Jansen",
       "The Mysterious Benedict Society"
     ],
-    "aiHint": "주인공: 알든가 네 남매 / 자립심 강한 아이들의 모험 / 훈훈하고 흥미로움"
+    "aiHint": "주인공: 알든가 네 남매 / 자립심 강한 아이들의 모험 / 훈훈하고 흥미로움",
+    "genre": "adventure"
   },
   {
     "title": "Bridge to Terabithia",
@@ -283,7 +308,8 @@
       "Wonder",
       "Tuck Everlasting"
     ],
-    "aiHint": "주인공: 제스와 레슬리 / 상상 속 왕국과 현실의 이별 / 슬프고 감동적임"
+    "aiHint": "주인공: 제스와 레슬리 / 상상 속 왕국과 현실의 이별 / 슬프고 감동적임",
+    "genre": "emotion"
   },
   {
     "title": "Brownie & Pearl",
@@ -294,7 +320,8 @@
       "Mittens",
       "Zelda and Ivy",
       "Penny"
-    ]
+    ],
+    "genre": "emotion"
   },
   {
     "title": "Calendar Mysteries",
@@ -305,7 +332,8 @@
       "Cam Jansen",
       "Nate the Great"
     ],
-    "aiHint": "주인공: 브래들리 등 / 달마다 일어나는 소소한 사건 / 쉽고 가벼운 추리"
+    "aiHint": "주인공: 브래들리 등 / 달마다 일어나는 소소한 사건 / 쉽고 가벼운 추리",
+    "genre": "mystery"
   },
   {
     "title": "Cam Jansen",
@@ -316,7 +344,8 @@
       "Jigsaw Jones",
       "Encyclopedia Brown"
     ],
-    "aiHint": "주인공: 캠 잰슨 / 뛰어난 기억력으로 사건 해결 / 명쾌하고 흥미로움"
+    "aiHint": "주인공: 캠 잰슨 / 뛰어난 기억력으로 사건 해결 / 명쾌하고 흥미로움",
+    "genre": "mystery"
   },
   {
     "title": "Captain Awesome",
@@ -327,7 +356,8 @@
       "Monkey Me",
       "Roscoe Riley Rules",
       "Ricky Ricotta's Mighty Robot"
-    ]
+    ],
+    "genre": "adventure"
   },
   {
     "title": "Captain Underpants",
@@ -338,7 +368,8 @@
       "The Bad Guys",
       "My Weird School"
     ],
-    "aiHint": "주인공: 조지와 해럴드 / 엉뚱한 영웅의 탄생 / 과장되고 코믹함"
+    "aiHint": "주인공: 조지와 해럴드 / 엉뚱한 영웅의 탄생 / 과장되고 코믹함",
+    "genre": "comedy"
   },
   {
     "title": "Cat Kid Comic Club",
@@ -349,7 +380,8 @@
       "Babymouse",
       "Big Nate"
     ],
-    "aiHint": "주인공: 릴 피티 / 만화 클럽 아이들의 창작 활동 / 유쾌하고 창의적임"
+    "aiHint": "주인공: 릴 피티 / 만화 클럽 아이들의 창작 활동 / 유쾌하고 창의적임",
+    "genre": "comedy"
   },
   {
     "title": "Charlie and the Chocolate Factory",
@@ -360,7 +392,8 @@
       "The BFG",
       "James and the Giant Peach"
     ],
-    "aiHint": "주인공: 찰리 / 신비한 초콜릿 공장 견학 / 환상적이고 교훈적임"
+    "aiHint": "주인공: 찰리 / 신비한 초콜릿 공장 견학 / 환상적이고 교훈적임",
+    "genre": "adventure"
   },
   {
     "title": "Charlie the Ranch Dog",
@@ -371,7 +404,8 @@
       "Biscuit",
       "Pete the Cat",
       "High-Rise Private Eyes"
-    ]
+    ],
+    "genre": "emotion"
   },
   {
     "title": "Charlotte's Web",
@@ -382,7 +416,8 @@
       "Stuart Little",
       "The Tale of Despereaux"
     ],
-    "aiHint": "주인공: 윌버와 샬롯 / 생명을 구하기 위한 우정 / 감동적이고 철학적임"
+    "aiHint": "주인공: 윌버와 샬롯 / 생명을 구하기 위한 우정 / 감동적이고 철학적임",
+    "genre": "emotion"
   },
   {
     "title": "Chronicles of Narnia",
@@ -393,7 +428,8 @@
       "Fablehaven",
       "The Land of Stories"
     ],
-    "aiHint": "주인공: 페번시 남매 / 마법의 옷장 너머 세계 구원 / 웅장한 판타지"
+    "aiHint": "주인공: 페번시 남매 / 마법의 옷장 너머 세계 구원 / 웅장한 판타지",
+    "genre": "adventure"
   },
   {
     "title": "City Spies",
@@ -404,7 +440,8 @@
       "The Mysterious Benedict Society",
       "The 39 Clues"
     ],
-    "aiHint": "주인공: 세라 등 / 비밀 스파이 아이들의 임무 / 긴장감 넘치는 모험"
+    "aiHint": "주인공: 세라 등 / 비밀 스파이 아이들의 임무 / 긴장감 넘치는 모험",
+    "genre": "adventure"
   },
   {
     "title": "Clementine",
@@ -415,7 +452,8 @@
       "Junie B. Jones",
       "Marvin Redpost"
     ],
-    "aiHint": "주인공: 클레멘타인 / 엉뚱하고 긍정적인 아이의 일상 / 발랄하고 공감됨"
+    "aiHint": "주인공: 클레멘타인 / 엉뚱하고 긍정적인 아이의 일상 / 발랄하고 공감됨",
+    "genre": "comedy"
   },
   {
     "title": "Cobble Street Cousins",
@@ -426,7 +464,8 @@
       "Ivy & Bean",
       "Owl Diaries",
       "Amelia's Notebook"
-    ]
+    ],
+    "genre": "adventure"
   },
   {
     "title": "Commander Toad",
@@ -437,7 +476,8 @@
       "Ricky Ricotta's Mighty Robot",
       "The Zack Files",
       "Fly Guy"
-    ]
+    ],
+    "genre": "adventure"
   },
   {
     "title": "Cork & Fuzz",
@@ -448,7 +488,8 @@
       "Frog and Toad",
       "Elephant and Piggie",
       "Bink & Gollie"
-    ]
+    ],
+    "genre": "adventure"
   },
   {
     "title": "Cowgirl Kate and Cocoa",
@@ -459,7 +500,8 @@
       "Charlie the Ranch Dog",
       "Bink & Gollie",
       "Mercy Watson"
-    ]
+    ],
+    "genre": "emotion"
   },
   {
     "title": "Danny the Champion of the World",
@@ -470,7 +512,8 @@
       "Fantastic Mr Fox",
       "The BFG"
     ],
-    "aiHint": "주인공: 대니 / 부자의 비밀스럽고 통쾌한 작전 / 흥미롭고 끈끈함"
+    "aiHint": "주인공: 대니 / 부자의 비밀스럽고 통쾌한 작전 / 흥미롭고 끈끈함",
+    "genre": "adventure"
   },
   {
     "title": "Desmond Cole Ghost Patrol",
@@ -481,7 +524,8 @@
       "Eerie Elementary",
       "Notebook of Doom",
       "Galaxy Zack"
-    ]
+    ],
+    "genre": "adventure"
   },
   {
     "title": "Diary of a Pug",
@@ -492,7 +536,8 @@
       "Zoey and Sassafras",
       "Fly Guy"
     ],
-    "aiHint": "주인공: 버브 / 주인을 향한 반려견의 애정 / 귀엽고 유쾌함"
+    "aiHint": "주인공: 버브 / 주인을 향한 반려견의 애정 / 귀엽고 유쾌함",
+    "genre": "comedy"
   },
   {
     "title": "Diary of a Wimpy Kid",
@@ -503,7 +548,8 @@
       "Dork Diaries",
       "Timmy Failure"
     ],
-    "aiHint": "주인공: 그레그 / 평범한 중학생의 좌충우돌 생존기 / 현실적이고 코믹함"
+    "aiHint": "주인공: 그레그 / 평범한 중학생의 좌충우돌 생존기 / 현실적이고 코믹함",
+    "genre": "comedy"
   },
   {
     "title": "Dinosaur Cove",
@@ -514,7 +560,8 @@
       "Magic Tree House",
       "Beast Quest",
       "Dragon Masters"
-    ]
+    ],
+    "genre": "adventure"
   },
   {
     "title": "DK Readers",
@@ -525,7 +572,8 @@
       "National Geographic Kids",
       "Usborne Beginners",
       "Science Vocabulary Readers"
-    ]
+    ],
+    "genre": "adventure"
   },
   {
     "title": "Dodsworth",
@@ -536,7 +584,8 @@
       "Geronimo Stilton",
       "Poppleton",
       "Mr. Putter & Tabby"
-    ]
+    ],
+    "genre": "adventure"
   },
   {
     "title": "Dog Man",
@@ -547,7 +596,8 @@
       "Captain Underpants",
       "The Bad Guys"
     ],
-    "aiHint": "주인공: 도그맨 / 개 머리를 한 경찰의 악당 소탕 / 기발하고 엉뚱함"
+    "aiHint": "주인공: 도그맨 / 개 머리를 한 경찰의 악당 소탕 / 기발하고 엉뚱함",
+    "genre": "comedy"
   },
   {
     "title": "Dork Diaries",
@@ -558,7 +608,8 @@
       "Big Nate",
       "Amelia's Notebook"
     ],
-    "aiHint": "주인공: 닛키 / 사춘기 소녀의 유별난 학교생활 / 발랄하고 공감됨"
+    "aiHint": "주인공: 닛키 / 사춘기 소녀의 유별난 학교생활 / 발랄하고 공감됨",
+    "genre": "comedy"
   },
   {
     "title": "Dory Fantasmagory",
@@ -569,7 +620,8 @@
       "Junie B. Jones",
       "Ramona",
       "Penny"
-    ]
+    ],
+    "genre": "adventure"
   },
   {
     "title": "Dragon",
@@ -580,7 +632,8 @@
       "Frog and Toad",
       "Fly Guy",
       "Little Bear"
-    ]
+    ],
+    "genre": "adventure"
   },
   {
     "title": "Dragon Games",
@@ -591,7 +644,8 @@
       "Dragon Girls",
       "Beast Quest"
     ],
-    "aiHint": "주인공: 미상 / 분위기: 모험"
+    "aiHint": "주인공: 미상 / 분위기: 모험",
+    "genre": "adventure"
   },
   {
     "title": "Dragon Girls",
@@ -602,7 +656,8 @@
       "Dragon Games",
       "Rainbow Magic"
     ],
-    "aiHint": "주인공: 아잘미나 등 / 소녀들의 드래곤 변신 모험 / 신비롭고 활기참"
+    "aiHint": "주인공: 아잘미나 등 / 소녀들의 드래곤 변신 모험 / 신비롭고 활기참",
+    "genre": "adventure"
   },
   {
     "title": "Dragon Masters",
@@ -613,7 +668,8 @@
       "Magic Tree House",
       "The Kingdom of Wrenly"
     ],
-    "aiHint": "주인공: 드레이크 / 드래곤 마스터들의 성장과 마법 / 흥미롭고 역동적임"
+    "aiHint": "주인공: 드레이크 / 드래곤 마스터들의 성장과 마법 / 흥미롭고 역동적임",
+    "genre": "adventure"
   },
   {
     "title": "Eerie Elementary",
@@ -624,7 +680,8 @@
       "Notebook of Doom",
       "Goosebumps",
       "Black Lagoon Adventures"
-    ]
+    ],
+    "genre": "adventure"
   },
   {
     "title": "Elephant and Piggie",
@@ -635,7 +692,8 @@
       "Fly Guy",
       "Frog and Toad",
       "Little Bear"
-    ]
+    ],
+    "genre": "emotion"
   },
   {
     "title": "Encyclopedia Brown",
@@ -646,7 +704,8 @@
       "A to Z Mysteries",
       "Jigsaw Jones"
     ],
-    "aiHint": "주인공: 리로이 / 방대한 지식으로 동네 사건 해결 / 논리적이고 명쾌함"
+    "aiHint": "주인공: 리로이 / 방대한 지식으로 동네 사건 해결 / 논리적이고 명쾌함",
+    "genre": "mystery"
   },
   {
     "title": "Fablehaven",
@@ -657,7 +716,8 @@
       "The Spiderwick Chronicles",
       "Keeper of the Lost Cities"
     ],
-    "aiHint": "주인공: 켄드라와 세스 / 신화 속 생물 보호구역 탐험 / 신비롭고 스릴있음"
+    "aiHint": "주인공: 켄드라와 세스 / 신화 속 생물 보호구역 탐험 / 신비롭고 스릴있음",
+    "genre": "adventure"
   },
   {
     "title": "Fantastic Mr Fox",
@@ -668,7 +728,8 @@
       "Charlie and the Chocolate Factory",
       "The BFG"
     ],
-    "aiHint": "주인공: 폭스 씨 / 농부들을 골탕먹이는 여우의 기지 / 통쾌하고 영리함"
+    "aiHint": "주인공: 폭스 씨 / 농부들을 골탕먹이는 여우의 기지 / 통쾌하고 영리함",
+    "genre": "comedy"
   },
   {
     "title": "Flat Stanley",
@@ -679,7 +740,8 @@
       "Fly Guy",
       "Mercy Watson"
     ],
-    "aiHint": "주인공: 스탠리 / 납작해진 소년의 독특한 모험 / 엉뚱하고 가벼움"
+    "aiHint": "주인공: 스탠리 / 납작해진 소년의 독특한 모험 / 엉뚱하고 가벼움",
+    "genre": "adventure"
   },
   {
     "title": "Fly Guy",
@@ -690,7 +752,8 @@
       "Little Bear",
       "Arnold and Louise"
     ],
-    "aiHint": "주인공: 버즈 / 소년과 파리의 엉뚱한 우정 / 코믹하고 귀여움"
+    "aiHint": "주인공: 버즈 / 소년과 파리의 엉뚱한 우정 / 코믹하고 귀여움",
+    "genre": "adventure"
   },
   {
     "title": "Fly Guy Presents",
@@ -701,7 +764,8 @@
       "National Geographic Kids",
       "Science Vocabulary Readers",
       "Fly Guy"
-    ]
+    ],
+    "genre": "adventure"
   },
   {
     "title": "Fox and His Friends",
@@ -712,7 +776,8 @@
       "Frog and Toad",
       "Zelda and Ivy",
       "Boris"
-    ]
+    ],
+    "genre": "emotion"
   },
   {
     "title": "Franny K. Stein",
@@ -723,7 +788,8 @@
       "Captain Underpants",
       "My Weird School",
       "Stink"
-    ]
+    ],
+    "genre": "adventure"
   },
   {
     "title": "Frog and Toad",
@@ -734,7 +800,8 @@
       "Little Bear",
       "Henry and Mudge"
     ],
-    "aiHint": "주인공: 개구리와 두꺼비 / 두 친구의 소박한 일상 / 잔잔하고 따뜻함"
+    "aiHint": "주인공: 개구리와 두꺼비 / 두 친구의 소박한 일상 / 잔잔하고 따뜻함",
+    "genre": "emotion"
   },
   {
     "title": "Gail Gibbons Science",
@@ -745,7 +812,8 @@
       "Let's-Read-and-Find-Out Science",
       "Simple Machines",
       "Magic School Bus"
-    ]
+    ],
+    "genre": "adventure"
   },
   {
     "title": "Galaxy Zack",
@@ -756,7 +824,8 @@
       "Commander Toad",
       "Ricky Ricotta's Mighty Robot",
       "The Zack Files"
-    ]
+    ],
+    "genre": "comedy"
   },
   {
     "title": "Geronimo Stilton",
@@ -767,7 +836,8 @@
       "I Survived",
       "Flat Stanley"
     ],
-    "aiHint": "주인공: 제로니모 / 겁 많은 생쥐 기자의 세계 모험 / 경쾌하고 흥미로움"
+    "aiHint": "주인공: 제로니모 / 겁 많은 생쥐 기자의 세계 모험 / 경쾌하고 흥미로움",
+    "genre": "adventure"
   },
   {
     "title": "Gooney Bird Greene",
@@ -778,7 +848,8 @@
       "Clementine",
       "Junie B. Jones",
       "Amelia Bedelia"
-    ]
+    ],
+    "genre": "comedy"
   },
   {
     "title": "Goosebumps",
@@ -789,7 +860,8 @@
       "The Last Kids on Earth",
       "Animorphs"
     ],
-    "aiHint": "주인공: 매번 다름 / 기이하고 무서운 초자연적 사건 / 짜릿한 공포"
+    "aiHint": "주인공: 매번 다름 / 기이하고 무서운 초자연적 사건 / 짜릿한 공포",
+    "genre": "mystery"
   },
   {
     "title": "Goosebumps HorrorLand",
@@ -800,7 +872,8 @@
       "The Last Kids on Earth",
       "Notebook of Doom"
     ],
-    "aiHint": "주인공: 다수 / 테마파크에서 벌어지는 기괴한 일 / 강렬한 공포와 스릴"
+    "aiHint": "주인공: 다수 / 테마파크에서 벌어지는 기괴한 일 / 강렬한 공포와 스릴",
+    "genre": "mystery"
   },
   {
     "title": "Haggis and Tank Unleashed",
@@ -811,7 +884,8 @@
       "Dog Man",
       "Narwhal and Jelly",
       "Cat Kid Comic Club"
-    ]
+    ],
+    "genre": "adventure"
   },
   {
     "title": "Hank Zipzer",
@@ -822,7 +896,8 @@
       "Diary of a Wimpy Kid",
       "Big Nate",
       "Clementine"
-    ]
+    ],
+    "genre": "adventure"
   },
   {
     "title": "Harriet the Spy",
@@ -833,7 +908,8 @@
       "Judy Moody",
       "Out of My Mind"
     ],
-    "aiHint": "주인공: 해리엇 / 비밀을 관찰하는 소녀의 내적 성장 / 현실적이고 교훈적임"
+    "aiHint": "주인공: 해리엇 / 비밀을 관찰하는 소녀의 내적 성장 / 현실적이고 교훈적임",
+    "genre": "mystery"
   },
   {
     "title": "Harry Potter",
@@ -844,7 +920,8 @@
       "Percy Jackson",
       "Keeper of the Lost Cities"
     ],
-    "aiHint": "주인공: 해리 포터 / 마법 학교에서 벌어지는 거대한 여정 / 웅장하고 신비로움"
+    "aiHint": "주인공: 해리 포터 / 마법 학교에서 벌어지는 거대한 여정 / 웅장하고 신비로움",
+    "genre": "adventure"
   },
   {
     "title": "Hatchet",
@@ -855,7 +932,8 @@
       "Maniac Magee",
       "I Survived"
     ],
-    "aiHint": "주인공: 브라이언 / 대자연 속 홀로 남겨진 소년의 생존 / 긴장되고 현실적임"
+    "aiHint": "주인공: 브라이언 / 대자연 속 홀로 남겨진 소년의 생존 / 긴장되고 현실적임",
+    "genre": "adventure"
   },
   {
     "title": "Heidi Heckelbeck",
@@ -866,7 +944,8 @@
       "Princess Posey",
       "Rainbow Magic",
       "Katie Woo"
-    ]
+    ],
+    "genre": "comedy"
   },
   {
     "title": "Henry and Mudge",
@@ -877,7 +956,8 @@
       "Little Bear",
       "Mercy Watson"
     ],
-    "aiHint": "주인공: 헨리 / 소년과 큰 개의 소소한 동네 일상 / 따뜻하고 포근함"
+    "aiHint": "주인공: 헨리 / 소년과 큰 개의 소소한 동네 일상 / 따뜻하고 포근함",
+    "genre": "emotion"
   },
   {
     "title": "Hey Jack",
@@ -888,7 +968,8 @@
       "Billie B Brown",
       "Fly Guy",
       "Arthur Chapter Books"
-    ]
+    ],
+    "genre": "adventure"
   },
   {
     "title": "High-Rise Private Eyes",
@@ -899,7 +980,8 @@
       "Nate the Great",
       "Young Cam Jansen",
       "Olivia Sharp"
-    ]
+    ],
+    "genre": "adventure"
   },
   {
     "title": "Holes",
@@ -910,7 +992,8 @@
       "Maniac Magee",
       "Al Capone Does My Shirts"
     ],
-    "aiHint": "주인공: 스탠리 / 저주받은 가문과 수용소의 비밀 / 기발한 미스터리"
+    "aiHint": "주인공: 스탠리 / 저주받은 가문과 수용소의 비밀 / 기발한 미스터리",
+    "genre": "adventure"
   },
   {
     "title": "Horrible Harry",
@@ -921,7 +1004,8 @@
       "Arthur Chapter Books",
       "Clementine"
     ],
-    "aiHint": "주인공: 해리 / 장난꾸러기 소년의 학교 에피소드 / 현실적이고 유쾌함"
+    "aiHint": "주인공: 해리 / 장난꾸러기 소년의 학교 에피소드 / 현실적이고 유쾌함",
+    "genre": "comedy"
   },
   {
     "title": "Horrid Henry",
@@ -932,7 +1016,8 @@
       "My Weird School",
       "Big Nate"
     ],
-    "aiHint": "주인공: 헨리 / 말썽꾸러기 소년의 반항적인 일상 / 코믹하고 통쾌함"
+    "aiHint": "주인공: 헨리 / 말썽꾸러기 소년의 반항적인 일상 / 코믹하고 통쾌함",
+    "genre": "comedy"
   },
   {
     "title": "Houndsley and Catina",
@@ -943,7 +1028,8 @@
       "Frog and Toad",
       "Mr. Putter & Tabby",
       "Henry and Mudge"
-    ]
+    ],
+    "genre": "adventure"
   },
   {
     "title": "Humphrey",
@@ -954,7 +1040,8 @@
       "Owl Diaries",
       "Mercy Watson"
     ],
-    "aiHint": "주인공: 험프리 / 햄스터의 눈으로 본 교실 이야기 / 따뜻하고 긍정적임"
+    "aiHint": "주인공: 험프리 / 햄스터의 눈으로 본 교실 이야기 / 따뜻하고 긍정적임",
+    "genre": "adventure"
   },
   {
     "title": "I Am Series",
@@ -965,7 +1052,8 @@
       "Who Was? Series",
       "DK Readers",
       "Fly Guy Presents"
-    ]
+    ],
+    "genre": "adventure"
   },
   {
     "title": "I Survived",
@@ -976,7 +1064,8 @@
       "Ranger in Time",
       "Hatchet"
     ],
-    "aiHint": "주인공: 매번 다름 / 역사적 재난 속 아이들의 생존기 / 긴박하고 감동적임"
+    "aiHint": "주인공: 매번 다름 / 역사적 재난 속 아이들의 생존기 / 긴박하고 감동적임",
+    "genre": "adventure"
   },
   {
     "title": "InvestiGators",
@@ -987,7 +1076,8 @@
       "The Bad Guys",
       "Cat Kid Comic Club"
     ],
-    "aiHint": "주인공: 망고와 브래시 / 악어 탐정들의 엉뚱한 수사 / 유쾌하고 기발함"
+    "aiHint": "주인공: 망고와 브래시 / 악어 탐정들의 엉뚱한 수사 / 유쾌하고 기발함",
+    "genre": "adventure"
   },
   {
     "title": "Ivy & Bean",
@@ -998,7 +1088,8 @@
       "Junie B. Jones",
       "Horrible Harry"
     ],
-    "aiHint": "주인공: 아이비와 빈 / 성향이 다른 두 소녀의 우정 / 발랄하고 현실적임"
+    "aiHint": "주인공: 아이비와 빈 / 성향이 다른 두 소녀의 우정 / 발랄하고 현실적임",
+    "genre": "adventure"
   },
   {
     "title": "James and the Giant Peach",
@@ -1009,7 +1100,8 @@
       "Matilda",
       "The BFG"
     ],
-    "aiHint": "주인공: 제임스 / 거대한 복숭아를 타고 떠나는 여정 / 환상적이고 신비로움"
+    "aiHint": "주인공: 제임스 / 거대한 복숭아를 타고 떠나는 여정 / 환상적이고 신비로움",
+    "genre": "adventure"
   },
   {
     "title": "Jeremy Thatcher, Dragon Hatcher",
@@ -1020,7 +1112,8 @@
       "Fablehaven",
       "The Spiderwick Chronicles"
     ],
-    "aiHint": "주인공: 제러미 / 신비한 드래곤 알을 키우는 소년 / 몽환적이고 감동적임"
+    "aiHint": "주인공: 제러미 / 신비한 드래곤 알을 키우는 소년 / 몽환적이고 감동적임",
+    "genre": "adventure"
   },
   {
     "title": "Jigsaw Jones",
@@ -1031,7 +1124,8 @@
       "A to Z Mysteries",
       "Encyclopedia Brown"
     ],
-    "aiHint": "주인공: 직소 존스 / 퍼즐처럼 사건의 단서를 맞추는 탐정 / 흥미롭고 논리적임"
+    "aiHint": "주인공: 직소 존스 / 퍼즐처럼 사건의 단서를 맞추는 탐정 / 흥미롭고 논리적임",
+    "genre": "mystery"
   },
   {
     "title": "Judy Moody",
@@ -1042,7 +1136,8 @@
       "Clementine",
       "Marvin Redpost"
     ],
-    "aiHint": "주인공: 주디 / 감정 기복 심한 소녀의 솔직한 일상 / 유쾌하고 공감됨"
+    "aiHint": "주인공: 주디 / 감정 기복 심한 소녀의 솔직한 일상 / 유쾌하고 공감됨",
+    "genre": "comedy"
   },
   {
     "title": "Junie B. Jones",
@@ -1053,7 +1148,8 @@
       "Clementine",
       "Ivy & Bean"
     ],
-    "aiHint": "주인공: 주니 / 천방지축 꼬마의 유치원 및 학교생활 / 유쾌하고 엉뚱함"
+    "aiHint": "주인공: 주니 / 천방지축 꼬마의 유치원 및 학교생활 / 유쾌하고 엉뚱함",
+    "genre": "comedy"
   },
   {
     "title": "Katie Woo",
@@ -1064,7 +1160,8 @@
       "Junie B. Jones",
       "Clementine",
       "Pedro"
-    ]
+    ],
+    "genre": "emotion"
   },
   {
     "title": "Keeper of the Lost Cities",
@@ -1075,7 +1172,8 @@
       "Percy Jackson",
       "Nevermoor"
     ],
-    "aiHint": "주인공: 소피 / 엘프 세계의 비밀을 파헤치는 여정 / 웅장하고 신비로움"
+    "aiHint": "주인공: 소피 / 엘프 세계의 비밀을 파헤치는 여정 / 웅장하고 신비로움",
+    "genre": "adventure"
   },
   {
     "title": "Kung Pow Chicken",
@@ -1086,7 +1184,8 @@
       "Dog Man",
       "Captain Underpants",
       "Press Start!"
-    ]
+    ],
+    "genre": "adventure"
   },
   {
     "title": "Let's-Read-and-Find-Out Science",
@@ -1097,7 +1196,8 @@
       "Gail Gibbons Science",
       "Rookie Read-About Science",
       "Magic School Bus"
-    ]
+    ],
+    "genre": "adventure"
   },
   {
     "title": "Little Bear",
@@ -1108,7 +1208,8 @@
       "Arnold and Louise",
       "Henry and Mudge"
     ],
-    "aiHint": "주인공: 꼬마 곰 / 숲속 동물 친구들과의 평화로운 일상 / 따뜻하고 포근함"
+    "aiHint": "주인공: 꼬마 곰 / 숲속 동물 친구들과의 평화로운 일상 / 따뜻하고 포근함",
+    "genre": "adventure"
   },
   {
     "title": "Lola Levine",
@@ -1119,7 +1220,8 @@
       "Clementine",
       "Judy Moody",
       "Amber Brown"
-    ]
+    ],
+    "genre": "emotion"
   },
   {
     "title": "Mac and Cheese",
@@ -1130,7 +1232,8 @@
       "Splat the Cat",
       "Elephant and Piggie",
       "Cork & Fuzz"
-    ]
+    ],
+    "genre": "adventure"
   },
   {
     "title": "Magic School Bus",
@@ -1141,7 +1244,8 @@
       "I Survived",
       "Geronimo Stilton"
     ],
-    "aiHint": "주인공: 프리즐 선생님 / 마법 버스를 탄 과학 탐험 / 흥미롭고 교육적"
+    "aiHint": "주인공: 프리즐 선생님 / 마법 버스를 탄 과학 탐험 / 흥미롭고 교육적",
+    "genre": "adventure"
   },
   {
     "title": "Magic Shop",
@@ -1152,7 +1256,8 @@
       "The Spiderwick Chronicles",
       "Jeremy Thatcher, Dragon Hatcher"
     ],
-    "aiHint": "주인공: 러셀 등 / 마법 가게에서 시작된 신비한 모험 / 몽환적이고 스릴있음"
+    "aiHint": "주인공: 러셀 등 / 마법 가게에서 시작된 신비한 모험 / 몽환적이고 스릴있음",
+    "genre": "adventure"
   },
   {
     "title": "Magic Tree House",
@@ -1163,7 +1268,8 @@
       "Ranger in Time",
       "Geronimo Stilton"
     ],
-    "aiHint": "주인공: 잭과 애니 / 마법 오두막을 통한 시공간 여행 / 모험적이고 교육적임"
+    "aiHint": "주인공: 잭과 애니 / 마법 오두막을 통한 시공간 여행 / 모험적이고 교육적임",
+    "genre": "adventure"
   },
   {
     "title": "Magic Tree House Fact Trackers",
@@ -1174,7 +1280,8 @@
       "Magic Tree House",
       "Who Was? Series",
       "I Survived"
-    ]
+    ],
+    "genre": "adventure"
   },
   {
     "title": "Magic Tree House Merlin Missions",
@@ -1185,7 +1292,8 @@
       "I Survived",
       "Chronicles of Narnia"
     ],
-    "aiHint": "주인공: 잭과 애니 / 마법사 멀린을 돕는 심화된 모험 / 신비롭고 서사적임"
+    "aiHint": "주인공: 잭과 애니 / 마법사 멀린을 돕는 심화된 모험 / 신비롭고 서사적임",
+    "genre": "adventure"
   },
   {
     "title": "Magisterium",
@@ -1196,7 +1304,8 @@
       "Keeper of the Lost Cities",
       "Chronicles of Narnia"
     ],
-    "aiHint": "주인공: 콜 / 마법 학교에서 얽히는 어둠의 비밀 / 긴장감 넘치는 다크 판타지"
+    "aiHint": "주인공: 콜 / 마법 학교에서 얽히는 어둠의 비밀 / 긴장감 넘치는 다크 판타지",
+    "genre": "adventure"
   },
   {
     "title": "Maniac Magee",
@@ -1207,7 +1316,8 @@
       "Hatchet",
       "Wonder"
     ],
-    "aiHint": "주인공: 제프리 / 인종 차별을 뛰어넘는 소년의 달리기 / 감동적이고 교훈적임"
+    "aiHint": "주인공: 제프리 / 인종 차별을 뛰어넘는 소년의 달리기 / 감동적이고 교훈적임",
+    "genre": "adventure"
   },
   {
     "title": "Marvin Redpost",
@@ -1218,7 +1328,8 @@
       "Stink",
       "Clementine"
     ],
-    "aiHint": "주인공: 마빈 / 상상력 풍부한 소년의 엉뚱한 오해 / 현실적이고 코믹함"
+    "aiHint": "주인공: 마빈 / 상상력 풍부한 소년의 엉뚱한 오해 / 현실적이고 코믹함",
+    "genre": "adventure"
   },
   {
     "title": "Matilda",
@@ -1229,7 +1340,8 @@
       "The BFG",
       "James and the Giant Peach"
     ],
-    "aiHint": "주인공: 마틸다 / 천재 소녀의 부조리한 어른 골탕 먹이기 / 통쾌하고 환상적임"
+    "aiHint": "주인공: 마틸다 / 천재 소녀의 부조리한 어른 골탕 먹이기 / 통쾌하고 환상적임",
+    "genre": "comedy"
   },
   {
     "title": "Max Spaniel",
@@ -1240,7 +1352,8 @@
       "Fly Guy",
       "Splat the Cat",
       "Dog Man"
-    ]
+    ],
+    "genre": "adventure"
   },
   {
     "title": "Mercy Watson",
@@ -1251,7 +1364,8 @@
       "Henry and Mudge",
       "Frog and Toad"
     ],
-    "aiHint": "주인공: 머시 / 식탐 많은 돼지의 엉뚱한 소동 / 유쾌하고 가벼움"
+    "aiHint": "주인공: 머시 / 식탐 많은 돼지의 엉뚱한 소동 / 유쾌하고 가벼움",
+    "genre": "comedy"
   },
   {
     "title": "Mia Mayhem",
@@ -1262,7 +1376,8 @@
       "The Princess in Black",
       "Dragon Girls",
       "Heidi Heckelbeck"
-    ]
+    ],
+    "genre": "adventure"
   },
   {
     "title": "Milo & Jazz Mysteries",
@@ -1273,7 +1388,8 @@
       "Cam Jansen",
       "A to Z Mysteries",
       "Jigsaw Jones"
-    ]
+    ],
+    "genre": "adventure"
   },
   {
     "title": "Minnie and Moo",
@@ -1284,7 +1400,8 @@
       "Mercy Watson",
       "Fly Guy",
       "The Chicken Squad"
-    ]
+    ],
+    "genre": "adventure"
   },
   {
     "title": "Mittens",
@@ -1295,7 +1412,8 @@
       "Biscuit",
       "Puppy Mudge",
       "Little Bear"
-    ]
+    ],
+    "genre": "adventure"
   },
   {
     "title": "Monkey Me",
@@ -1306,7 +1424,8 @@
       "Captain Awesome",
       "Fly Guy",
       "Flat Stanley"
-    ]
+    ],
+    "genre": "adventure"
   },
   {
     "title": "Mouse Soup",
@@ -1317,7 +1436,8 @@
       "Mouse Tales",
       "Frog and Toad",
       "Owl at Home"
-    ]
+    ],
+    "genre": "adventure"
   },
   {
     "title": "Mouse Tales",
@@ -1328,7 +1448,8 @@
       "Mouse Soup",
       "Little Bear",
       "Penny"
-    ]
+    ],
+    "genre": "adventure"
   },
   {
     "title": "Mr. Putter & Tabby",
@@ -1339,7 +1460,8 @@
       "Henry and Mudge",
       "Frog and Toad",
       "Poppleton"
-    ]
+    ],
+    "genre": "emotion"
   },
   {
     "title": "My Father's Dragon",
@@ -1350,7 +1472,8 @@
       "Charlotte's Web",
       "Stuart Little"
     ],
-    "aiHint": "주인공: 엘머 / 꼬마 드래곤을 구하러 떠난 섬 탐험 / 동화적이고 상상력 넘침"
+    "aiHint": "주인공: 엘머 / 꼬마 드래곤을 구하러 떠난 섬 탐험 / 동화적이고 상상력 넘침",
+    "genre": "adventure"
   },
   {
     "title": "My Teacher Is an Alien",
@@ -1361,7 +1484,8 @@
       "The Last Kids on Earth",
       "Goosebumps"
     ],
-    "aiHint": "주인공: 수잔 / 외계인 선생님의 비밀을 파헤치기 / 흥미로운 코믹 SF"
+    "aiHint": "주인공: 수잔 / 외계인 선생님의 비밀을 파헤치기 / 흥미로운 코믹 SF",
+    "genre": "adventure"
   },
   {
     "title": "My Weird School",
@@ -1372,7 +1496,8 @@
       "Captain Underpants",
       "Horrible Harry"
     ],
-    "aiHint": "주인공: 에이제이 / 이상한 선생님들과의 황당한 학교생활 / 과장되고 코믹함"
+    "aiHint": "주인공: 에이제이 / 이상한 선생님들과의 황당한 학교생활 / 과장되고 코믹함",
+    "genre": "comedy"
   },
   {
     "title": "Narwhal and Jelly",
@@ -1383,7 +1508,8 @@
       "Elephant and Piggie",
       "The Bad Guys",
       "InvestiGators"
-    ]
+    ],
+    "genre": "adventure"
   },
   {
     "title": "Nate the Great",
@@ -1394,7 +1520,8 @@
       "Jigsaw Jones",
       "A to Z Mysteries"
     ],
-    "aiHint": "주인공: 네이트 / 팬케이크를 좋아하는 꼬마 탐정 / 경쾌하고 소박함"
+    "aiHint": "주인공: 네이트 / 팬케이크를 좋아하는 꼬마 탐정 / 경쾌하고 소박함",
+    "genre": "comedy"
   },
   {
     "title": "National Geographic Kids",
@@ -1405,7 +1532,8 @@
       "Simple Machines",
       "Magic School Bus",
       "I Survived"
-    ]
+    ],
+    "genre": "adventure"
   },
   {
     "title": "Nevermoor",
@@ -1416,7 +1544,8 @@
       "Keeper of the Lost Cities",
       "A Series of Unfortunate Events"
     ],
-    "aiHint": "주인공: 모리건 / 저주받은 소녀의 마법 세계 시험 / 신비롭고 기발함"
+    "aiHint": "주인공: 모리건 / 저주받은 소녀의 마법 세계 시험 / 신비롭고 기발함",
+    "genre": "adventure"
   },
   {
     "title": "Notebook of Doom",
@@ -1427,7 +1556,8 @@
       "The Last Kids on Earth",
       "Dragon Masters"
     ],
-    "aiHint": "주인공: 알렉산더 / 비밀 노트로 괴물에 맞서는 모험 / 긴장감 있고 유쾌함"
+    "aiHint": "주인공: 알렉산더 / 비밀 노트로 괴물에 맞서는 모험 / 긴장감 있고 유쾌함",
+    "genre": "adventure"
   },
   {
     "title": "Number the Stars",
@@ -1438,7 +1568,8 @@
       "Hatchet",
       "Bridge to Terabithia"
     ],
-    "aiHint": "주인공: 안네마리 / 전쟁 속 유태인 친구를 구하는 용기 / 묵직하고 감동적임"
+    "aiHint": "주인공: 안네마리 / 전쟁 속 유태인 친구를 구하는 용기 / 묵직하고 감동적임",
+    "genre": "emotion"
   },
   {
     "title": "Oliver and Amanda Pig",
@@ -1449,7 +1580,8 @@
       "Zelda and Ivy",
       "Berenstain Bears",
       "Poppleton"
-    ]
+    ],
+    "genre": "adventure"
   },
   {
     "title": "Olivia Sharp",
@@ -1460,7 +1592,8 @@
       "Nate the Great",
       "Cam Jansen",
       "A to Z Mysteries"
-    ]
+    ],
+    "genre": "adventure"
   },
   {
     "title": "Out of My Mind",
@@ -1471,7 +1604,8 @@
       "Harriet the Spy",
       "Bridge to Terabithia"
     ],
-    "aiHint": "주인공: 멜로디 / 뇌성마비 소녀의 내면의 목소리 찾기 / 깊은 공감과 감동"
+    "aiHint": "주인공: 멜로디 / 뇌성마비 소녀의 내면의 목소리 찾기 / 깊은 공감과 감동",
+    "genre": "adventure"
   },
   {
     "title": "Owl at Home",
@@ -1482,7 +1616,8 @@
       "Frog and Toad",
       "Mouse Soup",
       "Little Bear"
-    ]
+    ],
+    "genre": "emotion"
   },
   {
     "title": "Owl Diaries",
@@ -1493,7 +1628,8 @@
       "Zoey and Sassafras",
       "Fly Guy"
     ],
-    "aiHint": "주인공: 에바 / 꼬마 올빼미의 아기자기한 학교 일상 / 귀엽고 따뜻함"
+    "aiHint": "주인공: 에바 / 꼬마 올빼미의 아기자기한 학교 일상 / 귀엽고 따뜻함",
+    "genre": "adventure"
   },
   {
     "title": "Pedro",
@@ -1504,7 +1640,8 @@
       "Katie Woo",
       "Hey Jack",
       "Fly Guy"
-    ]
+    ],
+    "genre": "adventure"
   },
   {
     "title": "Penny",
@@ -1515,7 +1652,8 @@
       "Little Bear",
       "Zelda and Ivy",
       "Katie Woo"
-    ]
+    ],
+    "genre": "adventure"
   },
   {
     "title": "Percy Jackson",
@@ -1526,7 +1664,8 @@
       "Artemis Fowl",
       "Keeper of the Lost Cities"
     ],
-    "aiHint": "주인공: 퍼시 / 현대의 반쪽 피 신들의 괴물 퇴치 / 스펙터클한 모험"
+    "aiHint": "주인공: 퍼시 / 현대의 반쪽 피 신들의 괴물 퇴치 / 스펙터클한 모험",
+    "genre": "adventure"
   },
   {
     "title": "Pete the Cat",
@@ -1537,7 +1676,8 @@
       "The Pigeon Series",
       "Fly Guy",
       "Biscuit"
-    ]
+    ],
+    "genre": "comedy"
   },
   {
     "title": "Pokémon Chapter Books",
@@ -1548,7 +1688,8 @@
       "Beast Quest",
       "Animorphs"
     ],
-    "aiHint": "주인공: 지우 / 포켓몬 마스터를 향한 훈련과 대결 / 활기차고 도전적임"
+    "aiHint": "주인공: 지우 / 포켓몬 마스터를 향한 훈련과 대결 / 활기차고 도전적임",
+    "genre": "adventure"
   },
   {
     "title": "Pony Pals",
@@ -1559,7 +1700,8 @@
       "Puppy Place",
       "Unicorn Academy",
       "The Critter Club"
-    ]
+    ],
+    "genre": "adventure"
   },
   {
     "title": "Poppleton",
@@ -1570,7 +1712,8 @@
       "Mercy Watson",
       "Frog and Toad",
       "Arnold and Louise"
-    ]
+    ],
+    "genre": "emotion"
   },
   {
     "title": "Press Start!",
@@ -1581,7 +1724,8 @@
       "InvestiGators",
       "Babymouse"
     ],
-    "aiHint": "주인공: 슈퍼 래빗 보이 / 게임 세계의 악당 무찌르기 / 경쾌하고 역동적임"
+    "aiHint": "주인공: 슈퍼 래빗 보이 / 게임 세계의 악당 무찌르기 / 경쾌하고 역동적임",
+    "genre": "adventure"
   },
   {
     "title": "Princess Posey",
@@ -1592,7 +1736,8 @@
       "Junie B. Jones",
       "Katie Woo",
       "Amelia Bedelia"
-    ]
+    ],
+    "genre": "adventure"
   },
   {
     "title": "Puppy Mudge",
@@ -1603,7 +1748,8 @@
       "Henry and Mudge",
       "Biscuit",
       "Charlie the Ranch Dog"
-    ]
+    ],
+    "genre": "adventure"
   },
   {
     "title": "Puppy Place",
@@ -1614,7 +1760,8 @@
       "Pony Pals",
       "The Critter Club",
       "Shiloh"
-    ]
+    ],
+    "genre": "adventure"
   },
   {
     "title": "Rainbow Magic",
@@ -1625,7 +1772,8 @@
       "Owl Diaries",
       "The Princess in Black"
     ],
-    "aiHint": "주인공: 레이첼과 키스티 / 악당에게서 요정 구하기 / 아기자기한 판타지"
+    "aiHint": "주인공: 레이첼과 키스티 / 악당에게서 요정 구하기 / 아기자기한 판타지",
+    "genre": "adventure"
   },
   {
     "title": "Ralph Mouse",
@@ -1636,7 +1784,8 @@
       "Charlotte's Web",
       "My Father's Dragon"
     ],
-    "aiHint": "주인공: 랠프 / 오토바이를 타는 생쥐의 용감한 여정 / 흥미롭고 발랄함"
+    "aiHint": "주인공: 랠프 / 오토바이를 타는 생쥐의 용감한 여정 / 흥미롭고 발랄함",
+    "genre": "adventure"
   },
   {
     "title": "Ramona",
@@ -1647,7 +1796,8 @@
       "Judy Moody",
       "Junie B. Jones"
     ],
-    "aiHint": "주인공: 라모나 / 상상력 넘치는 말괄량이 소녀의 성장 / 현실적이고 사랑스러움"
+    "aiHint": "주인공: 라모나 / 상상력 넘치는 말괄량이 소녀의 성장 / 현실적이고 사랑스러움",
+    "genre": "comedy"
   },
   {
     "title": "Ranger in Time",
@@ -1658,7 +1808,8 @@
       "I Survived",
       "Boxcar Children"
     ],
-    "aiHint": "주인공: 레인저 / 시간을 여행하며 사람을 구하는 개 / 긴박하고 따뜻함"
+    "aiHint": "주인공: 레인저 / 시간을 여행하며 사람을 구하는 개 / 긴박하고 따뜻함",
+    "genre": "adventure"
   },
   {
     "title": "Ricky Ricotta's Mighty Robot",
@@ -1669,7 +1820,8 @@
       "Captain Underpants",
       "Dog Man",
       "The Bad Guys"
-    ]
+    ],
+    "genre": "comedy"
   },
   {
     "title": "Rookie Read-About Science",
@@ -1680,7 +1832,8 @@
       "Science Vocabulary Readers",
       "Let's-Read-and-Find-Out Science",
       "National Geographic Kids"
-    ]
+    ],
+    "genre": "adventure"
   },
   {
     "title": "Roscoe Riley Rules",
@@ -1691,7 +1844,8 @@
       "Horrible Harry",
       "My Weird School"
     ],
-    "aiHint": "주인공: 로스코 / 착한 의도로 시작된 엉뚱한 사고 / 유쾌하고 공감됨"
+    "aiHint": "주인공: 로스코 / 착한 의도로 시작된 엉뚱한 사고 / 유쾌하고 공감됨",
+    "genre": "comedy"
   },
   {
     "title": "School for Good and Evil",
@@ -1702,7 +1856,8 @@
       "Nevermoor",
       "Chronicles of Narnia"
     ],
-    "aiHint": "주인공: 소피와 아가사 / 선과 악의 학교에서 뒤바뀐 운명 / 매혹적인 판타지"
+    "aiHint": "주인공: 소피와 아가사 / 선과 악의 학교에서 뒤바뀐 운명 / 매혹적인 판타지",
+    "genre": "adventure"
   },
   {
     "title": "Science Vocabulary Readers",
@@ -1713,7 +1868,8 @@
       "National Geographic Kids",
       "Rookie Read-About Science",
       "Simple Machines"
-    ]
+    ],
+    "genre": "adventure"
   },
   {
     "title": "Shiloh",
@@ -1724,7 +1880,8 @@
       "Charlotte's Web",
       "Where the Red Fern Grows"
     ],
-    "aiHint": "주인공: 마티 / 학대받는 개를 지키기 위한 결단 / 감동적이고 철학적임"
+    "aiHint": "주인공: 마티 / 학대받는 개를 지키기 위한 결단 / 감동적이고 철학적임",
+    "genre": "adventure"
   },
   {
     "title": "Simple Machines",
@@ -1735,7 +1892,8 @@
       "Magic School Bus",
       "National Geographic Kids",
       "I Survived"
-    ]
+    ],
+    "genre": "adventure"
   },
   {
     "title": "Splat the Cat",
@@ -1746,7 +1904,8 @@
       "Pete the Cat",
       "Fly Guy",
       "Mac and Cheese"
-    ]
+    ],
+    "genre": "adventure"
   },
   {
     "title": "Spy School",
@@ -1757,7 +1916,8 @@
       "The Mysterious Benedict Society",
       "Artemis Fowl"
     ],
-    "aiHint": "주인공: 벤 / 어설픈 스파이 지망생의 학교 생존기 / 스릴있고 코믹함"
+    "aiHint": "주인공: 벤 / 어설픈 스파이 지망생의 학교 생존기 / 스릴있고 코믹함",
+    "genre": "adventure"
   },
   {
     "title": "Stink",
@@ -1768,7 +1928,8 @@
       "My Weird School",
       "Horrible Harry"
     ],
-    "aiHint": "주인공: 스팅크 / 누나에게 지지 않으려는 엉뚱 소년 / 코믹하고 재치있음"
+    "aiHint": "주인공: 스팅크 / 누나에게 지지 않으려는 엉뚱 소년 / 코믹하고 재치있음",
+    "genre": "comedy"
   },
   {
     "title": "Stuart Little",
@@ -1779,7 +1940,8 @@
       "Ralph Mouse",
       "The Tale of Despereaux"
     ],
-    "aiHint": "주인공: 스튜어트 / 생쥐로 태어난 소년의 넓은 세상 탐험 / 잔잔하고 철학적임"
+    "aiHint": "주인공: 스튜어트 / 생쥐로 태어난 소년의 넓은 세상 탐험 / 잔잔하고 철학적임",
+    "genre": "adventure"
   },
   {
     "title": "Tales of a Fourth Grade Nothing",
@@ -1790,7 +1952,8 @@
       "Ramona",
       "Horrid Henry",
       "Diary of a Wimpy Kid"
-    ]
+    ],
+    "genre": "adventure"
   },
   {
     "title": "The 39 Clues",
@@ -1801,7 +1964,8 @@
       "Spy School",
       "The Mysterious Benedict Society"
     ],
-    "aiHint": "주인공: 댄과 에이미 / 가문의 비밀 단서를 찾는 보물찾기 / 스릴 넘치는 모험"
+    "aiHint": "주인공: 댄과 에이미 / 가문의 비밀 단서를 찾는 보물찾기 / 스릴 넘치는 모험",
+    "genre": "adventure"
   },
   {
     "title": "The Bad Guys",
@@ -1812,7 +1976,8 @@
       "Captain Underpants",
       "InvestiGators"
     ],
-    "aiHint": "주인공: 울프 등 / 착해지고 싶은 악당 동물들의 소동 / 기발하고 코믹함"
+    "aiHint": "주인공: 울프 등 / 착해지고 싶은 악당 동물들의 소동 / 기발하고 코믹함",
+    "genre": "adventure"
   },
   {
     "title": "The Bailey School Kids",
@@ -1823,7 +1988,8 @@
       "My Weird School",
       "Goosebumps",
       "Black Lagoon Adventures"
-    ]
+    ],
+    "genre": "adventure"
   },
   {
     "title": "The BFG",
@@ -1834,7 +2000,8 @@
       "Charlie and the Chocolate Factory",
       "James and the Giant Peach"
     ],
-    "aiHint": "주인공: 소피 / 착한 거인과 식인 거인 물리치기 / 환상적이고 기발함"
+    "aiHint": "주인공: 소피 / 착한 거인과 식인 거인 물리치기 / 환상적이고 기발함",
+    "genre": "adventure"
   },
   {
     "title": "The Chicken Squad",
@@ -1845,7 +2012,8 @@
       "InvestiGators",
       "High-Rise Private Eyes",
       "Minnie and Moo"
-    ]
+    ],
+    "genre": "adventure"
   },
   {
     "title": "The Critter Club",
@@ -1856,7 +2024,8 @@
       "Puppy Place",
       "Pony Pals",
       "Owl Diaries"
-    ]
+    ],
+    "genre": "adventure"
   },
   {
     "title": "The Giver",
@@ -1867,7 +2036,8 @@
       "Number the Stars",
       "Bridge to Terabithia"
     ],
-    "aiHint": "주인공: 조나스 / 완벽한 사회의 숨겨진 기억을 깨닫기 / 철학적이고 묵직함"
+    "aiHint": "주인공: 조나스 / 완벽한 사회의 숨겨진 기억을 깨닫기 / 철학적이고 묵직함",
+    "genre": "emotion"
   },
   {
     "title": "The Kingdom of Wrenly",
@@ -1878,7 +2048,8 @@
       "The Princess in Black",
       "Beast Quest"
     ],
-    "aiHint": "주인공: 루카스와 클라라 / 마법 왕국에서 펼치는 탐험 / 가볍고 신나는 모험"
+    "aiHint": "주인공: 루카스와 클라라 / 마법 왕국에서 펼치는 탐험 / 가볍고 신나는 모험",
+    "genre": "adventure"
   },
   {
     "title": "The Land of Stories",
@@ -1889,7 +2060,8 @@
       "Chronicles of Narnia",
       "Fablehaven"
     ],
-    "aiHint": "주인공: 알렉스와 코너 / 동화책 속 세계로 빠져든 남매 / 웅장한 크로스오버"
+    "aiHint": "주인공: 알렉스와 코너 / 동화책 속 세계로 빠져든 남매 / 웅장한 크로스오버",
+    "genre": "adventure"
   },
   {
     "title": "The Last Kids on Earth",
@@ -1900,7 +2072,8 @@
       "Notebook of Doom",
       "Animorphs"
     ],
-    "aiHint": "주인공: 잭 / 괴물과 좀비 세상에서 살아남는 아이들 / 코믹하고 액션 넘침"
+    "aiHint": "주인공: 잭 / 괴물과 좀비 세상에서 살아남는 아이들 / 코믹하고 액션 넘침",
+    "genre": "adventure"
   },
   {
     "title": "The Mysterious Benedict Society",
@@ -1911,7 +2084,8 @@
       "The 39 Clues",
       "Spy School"
     ],
-    "aiHint": "주인공: 레이니 등 / 뛰어난 두뇌로 세상의 위기를 막기 / 기발한 미스터리"
+    "aiHint": "주인공: 레이니 등 / 뛰어난 두뇌로 세상의 위기를 막기 / 기발한 미스터리",
+    "genre": "adventure"
   },
   {
     "title": "The Phantom Tollbooth",
@@ -1922,7 +2096,8 @@
       "The Land of Stories",
       "Chronicles of Narnia"
     ],
-    "aiHint": "주인공: 마일로 / 언어와 숫자의 세계를 통과하는 여정 / 철학적인 언어유희"
+    "aiHint": "주인공: 마일로 / 언어와 숫자의 세계를 통과하는 여정 / 철학적인 언어유희",
+    "genre": "adventure"
   },
   {
     "title": "The Pigeon Series",
@@ -1933,7 +2108,8 @@
       "Elephant and Piggie",
       "Pete the Cat",
       "Fly Guy"
-    ]
+    ],
+    "genre": "adventure"
   },
   {
     "title": "The Princess in Black",
@@ -1944,7 +2120,8 @@
       "Rainbow Magic",
       "Owl Diaries"
     ],
-    "aiHint": "주인공: 매그놀리아 / 몬스터와 싸우는 히어로 공주 / 통쾌하고 발랄함"
+    "aiHint": "주인공: 매그놀리아 / 몬스터와 싸우는 히어로 공주 / 통쾌하고 발랄함",
+    "genre": "adventure"
   },
   {
     "title": "The Secrets of Droon",
@@ -1955,7 +2132,8 @@
       "Magic Tree House",
       "Beast Quest",
       "Dragon Masters"
-    ]
+    ],
+    "genre": "adventure"
   },
   {
     "title": "The Spiderwick Chronicles",
@@ -1966,7 +2144,8 @@
       "Magic Shop",
       "Jeremy Thatcher, Dragon Hatcher"
     ],
-    "aiHint": "주인공: 그레이스가 아이들 / 낡은 저택에서 발견한 요정 세계 / 신비롭고 스릴있음"
+    "aiHint": "주인공: 그레이스가 아이들 / 낡은 저택에서 발견한 요정 세계 / 신비롭고 스릴있음",
+    "genre": "adventure"
   },
   {
     "title": "The Tale of Despereaux",
@@ -1977,7 +2156,8 @@
       "Stuart Little",
       "My Father's Dragon"
     ],
-    "aiHint": "주인공: 데스페로 / 공주를 구하려는 생쥐의 여정 / 동화적이고 감동적임"
+    "aiHint": "주인공: 데스페로 / 공주를 구하려는 생쥐의 여정 / 동화적이고 감동적임",
+    "genre": "adventure"
   },
   {
     "title": "The Terrible Two",
@@ -1988,7 +2168,8 @@
       "Timmy Failure",
       "Diary of a Wimpy Kid"
     ],
-    "aiHint": "주인공: 마일스와 나일스 / 장난 천재들의 기상천외한 대결 / 과장되고 코믹함"
+    "aiHint": "주인공: 마일스와 나일스 / 장난 천재들의 기상천외한 대결 / 과장되고 코믹함",
+    "genre": "adventure"
   },
   {
     "title": "The Trumpet of the Swan",
@@ -1999,7 +2180,8 @@
       "Stuart Little",
       "Because of Winn-Dixie"
     ],
-    "aiHint": "주인공: 루이스 / 소리 내지 못하는 백조의 트럼펫 연주 / 잔잔하고 감동적임"
+    "aiHint": "주인공: 루이스 / 소리 내지 못하는 백조의 트럼펫 연주 / 잔잔하고 감동적임",
+    "genre": "adventure"
   },
   {
     "title": "The Twin Club",
@@ -2010,7 +2192,8 @@
       "Arthur Chapter Books",
       "Ivy & Bean",
       "Amelia Bedelia"
-    ]
+    ],
+    "genre": "adventure"
   },
   {
     "title": "The Witches",
@@ -2021,7 +2204,8 @@
       "Goosebumps",
       "A Series of Unfortunate Events"
     ],
-    "aiHint": "주인공: 소년 / 아이들을 쥐로 만드는 마녀들의 음모 분쇄 / 오싹하고 기발함"
+    "aiHint": "주인공: 소년 / 아이들을 쥐로 만드는 마녀들의 음모 분쇄 / 오싹하고 기발함",
+    "genre": "adventure"
   },
   {
     "title": "The Zack Files",
@@ -2032,7 +2216,8 @@
       "Goosebumps",
       "A to Z Mysteries",
       "My Weird School"
-    ]
+    ],
+    "genre": "adventure"
   },
   {
     "title": "Third Grade Detectives",
@@ -2043,7 +2228,8 @@
       "Encyclopedia Brown",
       "Cam Jansen",
       "A to Z Mysteries"
-    ]
+    ],
+    "genre": "mystery"
   },
   {
     "title": "Time Warp Trio",
@@ -2054,7 +2240,8 @@
       "Magic Tree House",
       "I Survived",
       "Ranger in Time"
-    ]
+    ],
+    "genre": "adventure"
   },
   {
     "title": "Timmy Failure",
@@ -2065,7 +2252,8 @@
       "Diary of a Wimpy Kid",
       "The Terrible Two"
     ],
-    "aiHint": "주인공: 티미 / 허술한 소년 탐정의 자신감 넘치는 일상 / 엉뚱하고 코믹함"
+    "aiHint": "주인공: 티미 / 허술한 소년 탐정의 자신감 넘치는 일상 / 엉뚱하고 코믹함",
+    "genre": "adventure"
   },
   {
     "title": "Tiny",
@@ -2076,7 +2264,8 @@
       "Henry and Mudge",
       "Puppy Mudge",
       "Biscuit"
-    ]
+    ],
+    "genre": "adventure"
   },
   {
     "title": "Tuck Everlasting",
@@ -2087,7 +2276,8 @@
       "The Giver",
       "Number the Stars"
     ],
-    "aiHint": "주인공: 위니 / 영원한 생명의 비밀을 간직한 가족 / 몽환적이고 철학적임"
+    "aiHint": "주인공: 위니 / 영원한 생명의 비밀을 간직한 가족 / 몽환적이고 철학적임",
+    "genre": "emotion"
   },
   {
     "title": "Tug the Pup",
@@ -2098,7 +2288,8 @@
       "Biscuit",
       "Mittens",
       "Tiny"
-    ]
+    ],
+    "genre": "adventure"
   },
   {
     "title": "Unicorn Academy",
@@ -2109,7 +2300,8 @@
       "Rainbow Magic",
       "Dragon Girls",
       "Pony Pals"
-    ]
+    ],
+    "genre": "adventure"
   },
   {
     "title": "Unicorn Chronicles",
@@ -2120,7 +2312,8 @@
       "Dragon Girls",
       "The Princess in Black"
     ],
-    "aiHint": "주인공: 카라 / 유니콘을 지키기 위한 마법 세계 퀘스트 / 웅장하고 환상적임"
+    "aiHint": "주인공: 카라 / 유니콘을 지키기 위한 마법 세계 퀘스트 / 웅장하고 환상적임",
+    "genre": "adventure"
   },
   {
     "title": "Usborne Beginners",
@@ -2131,7 +2324,8 @@
       "DK Readers",
       "National Geographic Kids",
       "Rookie Read-About Science"
-    ]
+    ],
+    "genre": "adventure"
   },
   {
     "title": "Warriors",
@@ -2142,7 +2336,8 @@
       "Animorphs",
       "Keeper of the Lost Cities"
     ],
-    "aiHint": "주인공: 파이어스타 등 / 야생 고양이 종족 간의 서사 / 박진감 넘치는 대서사시"
+    "aiHint": "주인공: 파이어스타 등 / 야생 고양이 종족 간의 서사 / 박진감 넘치는 대서사시",
+    "genre": "adventure"
   },
   {
     "title": "Wayside School",
@@ -2153,7 +2348,8 @@
       "Captain Underpants",
       "Horrid Henry"
     ],
-    "aiHint": "주인공: 다수 / 30층 학교에서 벌어지는 기이한 일 / 초현실적이고 코믹함"
+    "aiHint": "주인공: 다수 / 30층 학교에서 벌어지는 기이한 일 / 초현실적이고 코믹함",
+    "genre": "comedy"
   },
   {
     "title": "Whatever After",
@@ -2164,7 +2360,8 @@
       "The Land of Stories",
       "School for Good and Evil",
       "Magic Tree House"
-    ]
+    ],
+    "genre": "adventure"
   },
   {
     "title": "Where the Red Fern Grows",
@@ -2175,7 +2372,8 @@
       "Because of Winn-Dixie",
       "Hatchet"
     ],
-    "aiHint": "주인공: 빌리 / 사냥개 두 마리와 소년의 눈물겨운 우정 / 비극적이고 감동적임"
+    "aiHint": "주인공: 빌리 / 사냥개 두 마리와 소년의 눈물겨운 우정 / 비극적이고 감동적임",
+    "genre": "adventure"
   },
   {
     "title": "Who Was? Series",
@@ -2186,7 +2384,8 @@
       "I Am Series",
       "Magic Tree House Fact Trackers",
       "I Survived"
-    ]
+    ],
+    "genre": "adventure"
   },
   {
     "title": "Wings of Fire",
@@ -2197,7 +2396,8 @@
       "Dragon Masters",
       "Keeper of the Lost Cities"
     ],
-    "aiHint": "주인공: 클레이 등 / 예언 속 드래곤들의 왕국 구원 / 스케일 큰 판타지 모험"
+    "aiHint": "주인공: 클레이 등 / 예언 속 드래곤들의 왕국 구원 / 스케일 큰 판타지 모험",
+    "genre": "adventure"
   },
   {
     "title": "Wonder",
@@ -2208,7 +2408,8 @@
       "Maniac Magee",
       "Bridge to Terabithia"
     ],
-    "aiHint": "주인공: 어기 / 안면 기형 소년의 편견 극복과 성장 / 따뜻하고 깊은 감동"
+    "aiHint": "주인공: 어기 / 안면 기형 소년의 편견 극복과 성장 / 따뜻하고 깊은 감동",
+    "genre": "emotion"
   },
   {
     "title": "Yasmin!",
@@ -2219,7 +2420,8 @@
       "Katie Woo",
       "Billie B Brown",
       "Penny"
-    ]
+    ],
+    "genre": "adventure"
   },
   {
     "title": "Young Cam Jansen",
@@ -2230,7 +2432,8 @@
       "Calendar Mysteries",
       "Cam Jansen"
     ],
-    "aiHint": "주인공: 캠 잰슨 / 기억력으로 일상 미스터리 해결 / 가볍고 경쾌한 추리"
+    "aiHint": "주인공: 캠 잰슨 / 기억력으로 일상 미스터리 해결 / 가볍고 경쾌한 추리",
+    "genre": "mystery"
   },
   {
     "title": "Zelda and Ivy",
@@ -2241,7 +2444,8 @@
       "Fox and His Friends",
       "Penny",
       "Katie Woo"
-    ]
+    ],
+    "genre": "adventure"
   },
   {
     "title": "Zoey and Sassafras",
@@ -2252,6 +2456,7 @@
       "Owl Diaries",
       "Diary of a Pug"
     ],
-    "aiHint": "주인공: 조이 / 마법 생물들을 돕는 꼬마 과학자 / 호기심 넘치고 교육적임"
+    "aiHint": "주인공: 조이 / 마법 생물들을 돕는 꼬마 과학자 / 호기심 넘치고 교육적임",
+    "genre": "adventure"
   }
 ]
