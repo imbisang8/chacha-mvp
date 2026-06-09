@@ -632,7 +632,7 @@ if (hardcoded) {
   // ─── 홈 리셋 ───
   const reset = () => {
     setScreen("home"); setSelectedBook(null); setSearchQuery(""); setShowAllBooks(false);
-    setBubbles([]); setCurrentDialogue(null); setConversations([]); setRoundNum(1);
+    setMessages([]); setCurrentDialogue(null); setConversations([]); setRoundNum(1);
     setReport(null); setLoading(false); setChuruFed(false);
     setRewardItem(null); setShowReward(false); setChuruReaction("");
 setShowMailbox(false); setMailboxText(""); setBookTitle("");
