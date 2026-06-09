@@ -794,29 +794,53 @@ setShowFreeText(false); setFreeTextInput("");
           </div>
         )}
 
-        {polaroids.length === 0 ? (
-          <div style={{ marginTop: 16, padding: "16px", background: "#FFF8E1", borderRadius: 16, border: "2px dashed #FFE082" }}>
-            <div style={{ fontSize: 20, marginBottom: 6 }}>🖼</div>
-            <div style={{ fontSize: 12, color: "#aaa" }}>아직 기억이 쌓이는 중이다냥…</div>
-          </div>
-        ) : (
-          <div style={{ marginTop: 16 }}>
-            <div style={{ fontSize: 12, color: "#795548", fontWeight: 700, marginBottom: 10 }}>🖼 차차의 서재</div>
-            <div style={{ display: "flex", gap: 10, overflowX: "auto", paddingBottom: 8, justifyContent: "center" }}>
-              {polaroids.map((p, i) => (
-                <div key={i} style={{ minWidth: 120, background: "#fff", borderRadius: 12, padding: 10, boxShadow: "0 2px 8px rgba(0,0,0,0.1)", flexShrink: 0 }}>
-  <div style={{ fontSize: 9, color: "#888", marginBottom: 2, fontWeight: 700 }}>📖 {p.book}</div>
-  <div style={{ fontSize: 8, color: "#ccc", marginBottom: 6 }}>{p.date}</div>
-  <div style={{ fontSize: 11, color: dark, fontStyle: "italic", lineHeight: 1.4 }}>"{p.text}"</div>
-                </div>
-              ))}
+   {polaroids.length === 0 ? (
+  <div style={{ marginTop: 16, padding: "16px", background: "#FFF8E1", borderRadius: 16, border: "2px dashed #FFE082" }}>
+    <div style={{ fontSize: 20, marginBottom: 6 }}>🖼</div>
+    <div style={{ fontSize: 12, color: "#aaa" }}>아직 기억이 쌓이는 중이다냥…</div>
+  </div>
+) : (
+  <div style={{ marginTop: 16 }}>
+    <div style={{ fontSize: 12, color: "#795548", fontWeight: 700, marginBottom: 10 }}>🖼 차차의 서재</div>
+    <div style={{ display: "flex", gap: 10, overflowX: "auto", paddingBottom: 8, justifyContent: "center" }}>
+      {polaroids.map((p, i) => (
+        <div key={i}
+          onClick={() => {
+            const el = document.getElementById(`polaroid-${i}`);
+            if (el) el.classList.toggle('flipped');
+          }}
+          style={{ minWidth: 130, height: 160, perspective: 600, cursor: "pointer", flexShrink: 0 }}>
+          <div id={`polaroid-${i}`} style={{
+            width: "100%", height: "100%", position: "relative",
+            transformStyle: "preserve-3d", transition: "transform 0.5s ease",
+          }}>
+            <div style={{
+              position: "absolute", inset: 0, background: "#fff", borderRadius: 12,
+              padding: 12, boxShadow: "0 2px 8px rgba(0,0,0,0.1)",
+              backfaceVisibility: "hidden", display: "flex", flexDirection: "column", justifyContent: "space-between"
+            }}>
+              <div style={{ fontSize: 12, color: dark, fontStyle: "italic", lineHeight: 1.5, fontWeight: 600 }}>"{p.text}"</div>
+              <div>
+                <div style={{ fontSize: 8, color: "#888", fontWeight: 700 }}>📖 {p.book}</div>
+                <div style={{ fontSize: 8, color: "#ccc" }}>{p.date}</div>
+              </div>
+            </div>
+            <div style={{
+              position: "absolute", inset: 0, background: "#1a1a2e", borderRadius: 12,
+              padding: 12, boxShadow: "0 2px 8px rgba(0,0,0,0.1)",
+              backfaceVisibility: "hidden", transform: "rotateY(180deg)",
+              display: "flex", flexDirection: "column", justifyContent: "center"
+            }}>
+              <div style={{ fontSize: 10, color: warm, fontWeight: 800, marginBottom: 8, textAlign: "center" }}>💬 그날의 한마디</div>
+              <div style={{ fontSize: 11, color: "#fff", fontStyle: "italic", lineHeight: 1.6, textAlign: "center" }}>"{p.action_guide || '기록 없음'}"</div>
             </div>
           </div>
-        )}
-      </div>
-      <style>{`@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}`}</style>
+        </div>
+      ))}
     </div>
-  );
+  </div>
+)}
+<style>{`.flipped { transform: rotateY(180deg) !important; }`}</style>
 
   // ══ SETUP ══
   if (screen === "setup") return (
