@@ -466,26 +466,21 @@ return sliced;
   };
 
   // ─── 대화 시작 ───
-  const startDialog = async () => {
-    if (!selectedBook) return;
-
-    const finalTitle = isSeries ? bookTitle.trim() : selectedBook.title;
-    const activeBook = { 
-  ...selectedBook, 
-  title: finalTitle,
-  seriesTitle: isSeries ? selectedBook.title : null
-};
-    setSelectedBook(activeBook);
-
-    const rounds = getRounds(activeBook);
-    const genre = guessGenre(activeBook);
-    setTotalRounds(rounds);
-    setRoundNum(1);
-    setConversations([]);
-    setLoading(true);
-    setScreen("dialog");
-
-    const firstRound = FIRST_ROUND[genre] || FIRST_ROUND.adventure;
+ function guessGenre(book) {
+  let detail = BOOKS_DETAIL.find(d => d.title === book.title);
+  if (!detail && book.seriesTitle) {
+    detail = BOOKS_DETAIL.find(d => d.title === book.seriesTitle);
+  }
+  if (!detail) {
+    detail = BOOKS_DETAIL.find(d => book.title.startsWith(d.title) || d.title.startsWith(book.title));
+  }
+  if (detail?.genre) return detail.genre;
+  const ar = parseFloat(book.ar) || 3.0;
+  if (ar >= 5.5) return "adventure";
+  if (ar >= 4.5) return "mystery";
+  if (ar >= 3.0) return "comedy";
+  return "emotion";
+}
 
     // ─── 책 파악 AI 호출 (1회) ───
     let chachaOpening = `${finalTitle} 읽었구나냥!`;
