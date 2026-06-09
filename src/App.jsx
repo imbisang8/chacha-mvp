@@ -481,7 +481,25 @@ return sliced;
   };
 
   // ─── 대화 시작 ───
-
+const startDialog = async () => {
+    if (!selectedBook) return;
+    const finalTitle = isSeries ? bookTitle.trim() : selectedBook.title;
+    const activeBook = { 
+      ...selectedBook, 
+      title: finalTitle,
+      seriesTitle: isSeries ? selectedBook.title : null
+    };
+    setSelectedBook(activeBook);
+    const rounds = getRounds(activeBook);
+    const genre = guessGenre(activeBook);
+    setTotalRounds(rounds);
+    setRoundNum(1);
+    setConversations([]);
+    setMessages([]);
+    setLoading(true);
+    setScreen("dialog");
+    const firstRound = FIRST_ROUND[genre] || FIRST_ROUND.adventure;
+  
     // ─── 책 파악 AI 호출 (1회) ───
     let chachaOpening = `${finalTitle} 읽었구나냥!`;
     
