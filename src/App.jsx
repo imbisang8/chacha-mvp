@@ -599,13 +599,19 @@ if (hardcoded) {
     setTimeout(() => setShowReward(true), 800);
   };
 
-  // ─── 리포트 공통 생성 로직 ───
- const newP = { 
-  book: selectedBook.seriesTitle ? `${selectedBook.seriesTitle} - ${selectedBook.title}` : selectedBook.title, 
-  text: rep.polaroid_text, 
-  action_guide: rep.action_guide || "",
-  date: new Date().toLocaleDateString("ko-KR") 
-};
+// ─── 리포트 공통 생성 로직 ───
+  const finishSession = async (note = "") => {
+    setLoading(true);
+    setScreen("handback");
+    const rep = await generateReport(selectedBook, childName, conversations, note);
+    setReport(rep);
+    if (rep.polaroid_text) {
+      const newP = { 
+        book: selectedBook.seriesTitle ? `${selectedBook.seriesTitle} - ${selectedBook.title}` : selectedBook.title, 
+        text: rep.polaroid_text, 
+        action_guide: rep.action_guide || "",
+        date: new Date().toLocaleDateString("ko-KR") 
+      };
       const newPolaroids = [...polaroids, newP];
       setPolaroids(newPolaroids);
       localStorage.setItem("rcPolaroids", JSON.stringify(newPolaroids));
