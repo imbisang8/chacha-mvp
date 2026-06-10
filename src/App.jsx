@@ -1202,8 +1202,7 @@ setShowFreeText(false); setFreeTextInput("");
             <div style={{
               position: "absolute", inset: 0, background: "#fff", borderRadius: 12,
               padding: "10px 8px", boxShadow: "0 2px 8px rgba(0,0,0,0.1)",
-              backfaceVisibility: "hidden", display: "flex", flexDirection: "column", justifyContent: "space-between" backfaceVisibility: "hidden", display: "flex", flexDirection: "column", justifyContent: "space-between", WebkitBackfaceVisibility: "hidden"
-            }}>
+            backfaceVisibility: "hidden", display: "flex", flexDirection: "column", justifyContent: "space-between", WebkitBackfaceVisibility: "hidden"
               <div style={{ fontSize: 10, color: dark, fontStyle: "italic", lineHeight: 1.4, overflow: "hidden", display: "-webkit-box", WebkitLineClamp: 4, WebkitBoxOrient: "vertical" }}>"{p.text}"</div>
               <div>
                 <div style={{ fontSize: 8, color: "#aaa", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{p.book}</div>
