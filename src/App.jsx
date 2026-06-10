@@ -817,7 +817,7 @@ setShowFreeText(false); setFreeTextInput("");
             <div style={{
               position: "absolute", inset: 0, background: "#fff", borderRadius: 12,
               padding: 12, boxShadow: "0 2px 8px rgba(0,0,0,0.1)",
-              backfaceVisibility: "hidden", display: "flex", flexDirection: "column", justifyContent: "space-between"
+              backfaceVisibility: "hidden", display: "flex", flexDirection: "column", justifyContent: "space-between", WebkitBackfaceVisibility: "hidden"
             }}>
               <div style={{ fontSize: 12, color: dark, fontStyle: "italic", lineHeight: 1.5, fontWeight: 600 }}>"{p.text}"</div>
               <div>
@@ -829,7 +829,7 @@ setShowFreeText(false); setFreeTextInput("");
               position: "absolute", inset: 0, background: "#1a1a2e", borderRadius: 12,
               padding: 12, boxShadow: "0 2px 8px rgba(0,0,0,0.1)",
               backfaceVisibility: "hidden", transform: "rotateY(180deg)",
-              display: "flex", flexDirection: "column", justifyContent: "center"
+              display: "flex", flexDirection: "column", justifyContent: "center", WebkitBackfaceVisibility: "hidden"
             }}>
               <div style={{ fontSize: 10, color: warm, fontWeight: 800, marginBottom: 8, textAlign: "center" }}>💬 그날의 한마디</div>
               <div style={{ fontSize: 11, color: "#fff", fontStyle: "italic", lineHeight: 1.6, textAlign: "center" }}>"{p.action_guide || '기록 없음'}"</div>
@@ -1202,7 +1202,7 @@ setShowFreeText(false); setFreeTextInput("");
             <div style={{
               position: "absolute", inset: 0, background: "#fff", borderRadius: 12,
               padding: "10px 8px", boxShadow: "0 2px 8px rgba(0,0,0,0.1)",
-              backfaceVisibility: "hidden", display: "flex", flexDirection: "column", justifyContent: "space-between"
+              backfaceVisibility: "hidden", display: "flex", flexDirection: "column", justifyContent: "space-between" backfaceVisibility: "hidden", display: "flex", flexDirection: "column", justifyContent: "space-between", WebkitBackfaceVisibility: "hidden"
             }}>
               <div style={{ fontSize: 10, color: dark, fontStyle: "italic", lineHeight: 1.4, overflow: "hidden", display: "-webkit-box", WebkitLineClamp: 4, WebkitBoxOrient: "vertical" }}>"{p.text}"</div>
               <div>
@@ -1214,7 +1214,7 @@ setShowFreeText(false); setFreeTextInput("");
               position: "absolute", inset: 0, background: "#1a1a2e", borderRadius: 12,
               padding: "10px 8px", boxShadow: "0 2px 8px rgba(0,0,0,0.1)",
               backfaceVisibility: "hidden", transform: "rotateY(180deg)",
-              display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center"
+              display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", WebkitBackfaceVisibility: "hidden"
             }}>
               <div style={{ fontSize: 9, color: warm, fontWeight: 800, marginBottom: 6, textAlign: "center" }}>💬 그날의 한마디</div>
               <div style={{ fontSize: 9, color: "#fff", fontStyle: "italic", lineHeight: 1.5, textAlign: "center" }}>"{p.action_guide || '기록 없음'}"</div>
