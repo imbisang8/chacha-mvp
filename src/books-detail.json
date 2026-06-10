@@ -105,7 +105,7 @@
       "Katie Woo",
       "Billie B Brown"
     ],
-    "genre": "adventure"
+    "genre": "emotion"
   },
   {
     "title": "Animorphs",
@@ -1581,7 +1581,7 @@
       "Berenstain Bears",
       "Poppleton"
     ],
-    "genre": "adventure"
+    "genre": "emotion"
   },
   {
     "title": "Olivia Sharp",
@@ -2181,7 +2181,7 @@
       "Because of Winn-Dixie"
     ],
     "aiHint": "주인공: 루이스 / 소리 내지 못하는 백조의 트럼펫 연주 / 잔잔하고 감동적임",
-    "genre": "adventure"
+    "genre": "emotion"
   },
   {
     "title": "The Twin Club",
@@ -2193,7 +2193,7 @@
       "Ivy & Bean",
       "Amelia Bedelia"
     ],
-    "genre": "adventure"
+    "genre": "comedy"
   },
   {
     "title": "The Witches",
@@ -2373,7 +2373,7 @@
       "Hatchet"
     ],
     "aiHint": "주인공: 빌리 / 사냥개 두 마리와 소년의 눈물겨운 우정 / 비극적이고 감동적임",
-    "genre": "adventure"
+    "genre": "emotion"
   },
   {
     "title": "Who Was? Series",
