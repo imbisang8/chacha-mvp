@@ -1056,6 +1056,18 @@
     "genre": "adventure"
   },
   {
+    "title": "I Can Read",
+    "ar": "1-2점대",
+    "tagline": "My First부터 Level 4까지 단계별 리더스북",
+    "aiHint": "주인공: 책마다 다름 / 친근한 캐릭터 중심 / 레벨별 난이도",
+    "similar": [
+      "Ready-to-Read",
+      "Step into Reading",
+      "Penguin Young Readers"
+    ],
+    "bookMode": "reader"
+  },
+  {
     "title": "I Survived",
     "ar": "4점대",
     "tagline": "역사적 사건을 배경으로 한 긴박한 생존 이야기를 좋아하는 아이에게",
@@ -1632,6 +1644,18 @@
     "genre": "adventure"
   },
   {
+    "title": "Oxford Reading Tree",
+    "ar": "1점대",
+    "tagline": "영국 초등 필독 리더스북 시리즈",
+    "aiHint": "주인공: Biff, Chip, Kipper 가족 / 일상 에피소드 중심 / 짧고 반복적인 문장",
+    "similar": [
+      "Step into Reading",
+      "I Can Read",
+      "Ready-to-Read"
+    ],
+    "bookMode": "reader"
+  },
+  {
     "title": "Pedro",
     "ar": "2점대",
     "tagline": "케이티 우의 단짝 친구 페드로의 신나는 일상",
@@ -1642,6 +1666,18 @@
       "Fly Guy"
     ],
     "genre": "adventure"
+  },
+  {
+    "title": "Penguin Young Readers",
+    "ar": "1-2점대",
+    "tagline": "Level 1~4의 픽션·논픽션 리더스북",
+    "aiHint": "주인공: 책마다 다름 / 픽션·논픽션 혼합 / 레벨별 난이도",
+    "similar": [
+      "I Can Read",
+      "Ready-to-Read",
+      "Step into Reading"
+    ],
+    "bookMode": "reader"
   },
   {
     "title": "Penny",
@@ -1812,6 +1848,18 @@
     "genre": "adventure"
   },
   {
+    "title": "Ready-to-Read",
+    "ar": "1-2점대",
+    "tagline": "Pre-Level 1부터 Level 3까지 리더스북",
+    "aiHint": "주인공: 책마다 다름 / 다양한 캐릭터와 주제 / 짧은 문장",
+    "similar": [
+      "I Can Read",
+      "Step into Reading",
+      "Penguin Young Readers"
+    ],
+    "bookMode": "reader"
+  },
+  {
     "title": "Ricky Ricotta's Mighty Robot",
     "ar": "2점대",
     "tagline": "작은 생쥐와 거대한 로봇의 우주 모험",
@@ -1918,6 +1966,18 @@
     ],
     "aiHint": "주인공: 벤 / 어설픈 스파이 지망생의 학교 생존기 / 스릴있고 코믹함",
     "genre": "adventure"
+  },
+  {
+    "title": "Step into Reading",
+    "ar": "1-2점대",
+    "tagline": "레벨별 다양한 주제의 리더스북",
+    "aiHint": "주인공: 책마다 다름 / 다양한 주제 / 레벨별 난이도 조절",
+    "similar": [
+      "I Can Read",
+      "Ready-to-Read",
+      "Penguin Young Readers"
+    ],
+    "bookMode": "reader"
   },
   {
     "title": "Stink",
