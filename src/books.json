@@ -520,7 +520,7 @@
   {
     "title": "I Can Read (ICR)",
     "type": "series",
-    "seriesType": "numbered",
+    "seriesType": "titled",
     "ar": "1.5",
     "bookMode": "reader",
     "seriesHint": {
@@ -810,7 +810,7 @@
   {
     "title": "Oxford Reading Tree (ORT)",
     "type": "series",
-    "seriesType": "numbered",
+    "seriesType": "titled",
     "ar": "1.0",
     "bookMode": "reader",
     "seriesHint": {
@@ -834,7 +834,7 @@
   {
     "title": "Penguin Young Readers (PYR)",
     "type": "series",
-    "seriesType": "numbered",
+    "seriesType": "titled",
     "ar": "2.0",
     "bookMode": "reader",
     "seriesHint": {
@@ -929,7 +929,7 @@
   {
     "title": "Ready-to-Read (RTR)",
     "type": "series",
-    "seriesType": "numbered",
+    "seriesType": "titled",
     "ar": "1.5",
     "bookMode": "reader",
     "seriesHint": {
@@ -994,7 +994,7 @@
   {
     "title": "Step into Reading (SIR)",
     "type": "series",
-    "seriesType": "numbered",
+    "seriesType": "titled",
     "ar": "1.5",
     "bookMode": "reader",
     "seriesHint": {
