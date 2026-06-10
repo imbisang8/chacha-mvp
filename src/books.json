@@ -518,6 +518,17 @@
     "ar": "3.0"
   },
   {
+    "title": "I Can Read",
+    "type": "series",
+    "seriesType": "numbered",
+    "ar": "1.5",
+    "bookMode": "reader",
+    "seriesHint": {
+      "typicalCharacters": [],
+      "description": "My First~Level 4까지 레벨별 리더스북. Frog and Toad, Amelia Bedelia 등 다양한 캐릭터 시리즈 포함. 권별 내용은 추측하지 않는다."
+    }
+  },
+  {
     "title": "I Survived",
     "type": "series",
     "seriesType": "numbered",
@@ -797,10 +808,39 @@
     "ar": "2.8"
   },
   {
+    "title": "Oxford Reading Tree",
+    "type": "series",
+    "seriesType": "numbered",
+    "ar": "1.0",
+    "bookMode": "reader",
+    "seriesHint": {
+      "typicalCharacters": [
+        "Biff",
+        "Chip",
+        "Kipper",
+        "Mum",
+        "Dad",
+        "Floppy"
+      ],
+      "description": "가족의 일상과 짧은 에피소드 중심의 리더스북. 권마다 등장인물 구성이 달라질 수 있으므로 특정 사건은 추측하지 않는다."
+    }
+  },
+  {
     "title": "Pedro",
     "type": "series",
     "seriesType": "numbered",
     "ar": "2.0"
+  },
+  {
+    "title": "Penguin Young Readers",
+    "type": "series",
+    "seriesType": "numbered",
+    "ar": "2.0",
+    "bookMode": "reader",
+    "seriesHint": {
+      "typicalCharacters": [],
+      "description": "Level 1~4의 리더스북. 픽션과 논픽션 모두 포함. 권별 내용은 추측하지 않고 아이 발화 중심으로 대화한다."
+    }
   },
   {
     "title": "Penny",
@@ -887,6 +927,17 @@
     "ar": "3.5"
   },
   {
+    "title": "Ready-to-Read",
+    "type": "series",
+    "seriesType": "numbered",
+    "ar": "1.5",
+    "bookMode": "reader",
+    "seriesHint": {
+      "typicalCharacters": [],
+      "description": "Pre-Level 1~Level 3의 리더스북. 다양한 캐릭터와 주제. 권별 내용은 추측하지 않고 아이 발화 중심으로 대화한다."
+    }
+  },
+  {
     "title": "Ricky Ricotta's Mighty Robot",
     "type": "series",
     "seriesType": "numbered",
@@ -939,6 +990,17 @@
     "type": "series",
     "seriesType": "numbered",
     "ar": "5.0"
+  },
+  {
+    "title": "Step into Reading",
+    "type": "series",
+    "seriesType": "numbered",
+    "ar": "1.5",
+    "bookMode": "reader",
+    "seriesHint": {
+      "typicalCharacters": [],
+      "description": "레벨별 다양한 주제의 리더스북 시리즈. 과학, 역사, 픽션 등 주제가 다양하므로 책 내용은 추측하지 않고 아이 발화 중심으로 대화한다."
+    }
   },
   {
     "title": "Stink",
