@@ -1065,7 +1065,8 @@
       "Step into Reading",
       "Penguin Young Readers"
     ],
-    "bookMode": "reader"
+   "genre": "adventure",
+"bookMode": "reader"
   },
   {
     "title": "I Survived",
@@ -1653,7 +1654,8 @@
       "I Can Read",
       "Ready-to-Read"
     ],
-    "bookMode": "reader"
+"genre": "comedy",
+"bookMode": "reader"
   },
   {
     "title": "Pedro",
@@ -1677,7 +1679,8 @@
       "Ready-to-Read",
       "Step into Reading"
     ],
-    "bookMode": "reader"
+   "genre": "adventure",
+"bookMode": "reader"
   },
   {
     "title": "Penny",
@@ -1857,7 +1860,8 @@
       "Step into Reading",
       "Penguin Young Readers"
     ],
-    "bookMode": "reader"
+    "genre": "adventure",
+"bookMode": "reader"
   },
   {
     "title": "Ricky Ricotta's Mighty Robot",
@@ -1977,7 +1981,8 @@
       "Ready-to-Read",
       "Penguin Young Readers"
     ],
-    "bookMode": "reader"
+    "genre": "adventure",
+"bookMode": "reader"
   },
   {
     "title": "Stink",
