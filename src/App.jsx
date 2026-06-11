@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import BOOKS from "./books.json";
 import BOOKS_DETAIL from "./books-detail.json";
 import posthog from 'posthog-js';
@@ -352,7 +352,7 @@ export default function ReadingChachaV2() {
   const [dailyMsg, setDailyMsg] = useState("");
   const [smalltalk, setSmalltalk] = useState(null);
   const [showSmalltalk, setShowSmalltalk] = useState(false);
-  const [bubbles, setBubbles] = useState([]);
+  const [messages, setMessages] = useState([]);
   const [currentDialogue, setCurrentDialogue] = useState(null);
   const [conversations, setConversations] = useState([]);
   const [roundNum, setRoundNum] = useState(1);
@@ -393,13 +393,19 @@ const [freeTextInput, setFreeTextInput] = useState("");
   const notRead = BOOKS.filter(b => !readBooks.includes(b.title));
   return [...notRead].sort(() => Math.random() - 0.5).slice(0, 5);
 });
+  const bottomRef = useRef(null);
 
   // ─── 시리즈물 감지 ───
   const isSeries = selectedBook ? selectedBook.type === "series" : false;
 
-  // ─── 초기 접속 처리 ───
-  useEffect(() => {
-    const count = visitCount + 1;
+useEffect(() => {
+  bottomRef.current?.scrollIntoView({ behavior: "smooth" });
+}, [messages, loading]);
+
+// ─── 초기 접속 처리 ───
+useEffect(() => {
+  const count = visitCount + 1;
+  ...
     setVisitCount(count);
     localStorage.setItem("rcVisitCount", count);
     if (!localStorage.getItem("rcFirstVisit")) {
@@ -535,7 +541,8 @@ const [freeTextInput, setFreeTextInput] = useState("");
       // 실패하면 기본 멘트로
     }
 
-    setBubbles([chachaOpening, ...(firstRound.chacha_says || [])]);
+    const openingMsgs = [chachaOpening, ...(firstRound.chacha_says || [])].map(t => ({ role: "chacha", text: t }));
+setMessages(openingMsgs);
     setCurrentDialogue({ ...firstRound, question: firstRound.chacha_says?.join(" ") || "" });
     setLoading(false);
   };
