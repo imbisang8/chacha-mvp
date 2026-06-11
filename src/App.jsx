@@ -1,6 +1,11 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import BOOKS from "./books.json";
 import BOOKS_DETAIL from "./books-detail.json";
+import posthog from 'posthog-js';
+posthog.init('phc_D2abCsFvJgd94ucD7y5Goc4rq6omz3Wi5ZB9V8FvwLcV', {
+  api_host: 'https://app.posthog.com',
+  person_profiles: 'identified_only',
+});
 
 // ─── 차차 오늘 한마디 시스템 ───
 const DAILY_MSGS = {
@@ -109,6 +114,15 @@ const JUNK_ITEMS_BOOK = {
   ],
 };
 
+// ─── 장르 추측 (AR 기반) ───
+function guessGenre(book) {
+  const ar = parseFloat(book.ar) || 3.0;
+  if (ar >= 5.5) return "adventure";
+  if (ar >= 4.5) return "mystery";
+  if (ar >= 3.0) return "comedy";
+  return "emotion";
+}
+
 function getRewardItem(book) {
   const genre = guessGenre(book);
   const useBookItem = Math.random() < 0.3;
@@ -123,7 +137,7 @@ function getRewardItem(book) {
 const GENRE_CONFIG = {
   adventure: { openings: ["오늘 모험 어땠냥?", "읽다가 두근거렸냥?", "재밌었어?", "나 그 장면 읽다가 심장 쫄렸다냥!", "오늘 모험 진짜 스케일 크던데?"] },
   mystery:   { openings: ["잠깐, 이거 이상하지 않아?", "차차는 범인 딱 감 왔는데...", "너는 누구라고 생각했어?"] },
-  comedy:    { openings: ["아 ㅋㅋㅋ 이거 완전 반칙 아니냐", "나 웃다가 책 떨어뜨림", "이거 읽다가 진짜 뒤집어졌다냥"] },
+  comedy:    { openings: ["아 ㅋㅋㅋ 이거 완전 반칙 아니냐", "나 여기서 웃다가 책 떨어뜨림", "이거 읽다가 진짜 뒤집어졌다냥"] },
   emotion:   { openings: ["아 이 장면 좀 오래 남는다...", "차차도 이상하게 마음이 좀 묵직해졌어", "너는 이때 어떤 느낌이었어?"] },
 };
 
@@ -183,21 +197,6 @@ function getRounds(book) {
   if (ar < 5.0) return 5;
   return 7;
 }
-function guessGenre(book) {
-  let detail = BOOKS_DETAIL.find(d => d.title === book.title);
-  if (!detail && book.seriesTitle) {
-    detail = BOOKS_DETAIL.find(d => d.title === book.seriesTitle);
-  }
-  if (!detail) {
-    detail = BOOKS_DETAIL.find(d => book.title.startsWith(d.title) || d.title.startsWith(book.title));
-  }
-  if (detail?.genre) return detail.genre;
-  const ar = parseFloat(book.ar) || 3.0;
-  if (ar >= 5.5) return "adventure";
-  if (ar >= 4.5) return "mystery";
-  if (ar >= 3.0) return "comedy";
-  return "emotion";
-}
 
 // ─── AI 대화 생성 ───
 async function generateDialogue(book, childName, prevAnswer, roundNum, totalRounds, allConversations = [], nextType = "") {
@@ -251,7 +250,6 @@ JSON만:
 // ─── 리포트 생성 ───
 async function generateReport(book, childName, conversations, mailboxNote = "") {
   const convText = conversations.map((c, i) => `Q${i+1}: ${c.q}\n${childName}: ${c.a}`).join("\n");
-  const readerMode = book.bookMode === "reader";
   const mailboxSection = mailboxNote
     ? `\n[비밀 우체통 쪽지 - 아이가 직접 쓴 말]\n"${mailboxNote}"\n→ 이 문장을 child_quote에 우선 반영하고 리포트에 자연스럽게 녹여주세요.`
     : "";
@@ -306,9 +304,8 @@ ${convText}
 JSON만 반환. 설명 없이:
 {
 "child_quote": "아이 실제 발화 또는 선택을 그대로 기록한다. 수정·요약·의역 금지. 그 순간성이 가장 강한 것 1개만 선택한다. 비밀 우체통 쪽지가 있으면 최우선으로 사용한다.",
-"discovery_insight": "형식: '오늘 {이름}은 [아이의 실제 발화나 선택]. [조심스러운 해석 한 줄 — 관찰이 충분하면 생략 가능].' 최대 2문장. 말투: ~했어요 / ~보였어요 / ~것 같아요 체로 끝낼 것. 보고서체 절대 금지. 해석은 관찰에서 한 발만. 아이를 성격이나 능력으로 정의하지 말 것.",
-${readerMode ? `[리더스북 모드] 책 내용, 사건, 캐릭터 행동 추측 금지. 아이의 실제 발화와 선택만 활용.` : ""}
-"action_guide": "오늘 저녁 한마디는 오늘 아이가 실제로 한 말에서 시작해야 하며, 그 말을 하지 않았다면 나올 수 없는 질문이어야 한다. 아래 유형 중 하나를 골라 만들되, 매번 다른 유형을 사용할 것. 1.감정형: '아까 속상했어라고 했잖아, 그 마음이 또 들었던 적 있어?' 2.이유형: '아까 처음 장면이라고 했잖아, 그 장면이 제일 기억에 남은 이유가 뭐야?' 3.상상형: '아까 주인공이 용감했어라고 했잖아, 네가 거기 있었다면 제일 먼저 뭘 했을 것 같아?' 4.경험 연결형: '아까 나도 비슷한 적 있어라고 했잖아, 그때는 무슨 일이 있었어?' 5.사람 연결형: '아까 친구가 착했어라고 했잖아, 너한테도 그런 친구가 떠올랐어?' 6.가치 발견형: '아까 도와줘서 좋았어라고 했잖아, 너는 왜 그게 좋았던 것 같아?' 7.반대 의견형: '아까 잘한 것 같아라고 했잖아, 혹시 다르게 생각할 수도 있을까?' 8.기억 회상형: '아까 나도 해봤어라고 했잖아, 그때 제일 기억나는 장면이 뭐야?' 9.관계형: '아까 둘이 친했어라고 했잖아, 너라면 그런 친구에게 뭐라고 말해주고 싶어?' 작성 규칙: 아이가 실제로 한 말을 인용해서 시작할 것. 새로운 발화 만들지 말 것. 가능하면 '아까 ○○라고 했잖아' 형태로 시작할 것. 엄마도 정답을 모르는 열린 질문일 것. 반드시 물음표로 끝날 것. 설명이나 훈계 없이 딱 한 문장만 작성할 것.",
+"discovery_insight": "형식: '오늘 {이름}은 [구체적인 관찰 사실]. [그 관찰에서 조심스럽게 추측할 수 있는 해석 한 줄].' 최대 2문장. 실제 대화와 행동을 기반으로 작성하며 과도한 일반화·평가·칭찬·훈계는 금지한다. 발달 단계나 성격을 단정 짓지 말 것. 관찰되지 않은 감정이나 의도를 단정하지 말고, 실제 대화와 행동에서 확인된 내용만 바탕으로 작성할 것.",
+"action_guide": "엄마가 저녁에 아이에게 그대로 말할 수 있는 자연스러운 대화 한 문장을 생성한다. 조건: 엄마가 읽어도 어색하지 않을 것. 아이가 자기 경험이나 생각을 편하게 이야기하기 쉬울 것. 정답을 맞히는 느낌이 아니라 이야기를 이어가는 느낌일 것. 아이가 실제로 오늘 말한 문장 또는 핵심 표현을 그대로 또는 의미를 유지하는 범위에서 자연스럽게 인용해서 시작할 것. 새로운 발화는 만들어내지 말 것. 가능하면 '아까 ○○라고 했잖아' 형태로 시작하고, 아이를 이름이나 '너' 외의 3인칭으로 지칭하지 말 것. 질문은 하나의 주제만 다룰 것. 반드시 물음표로 끝날 것. 설명이나 훈계 없이 딱 한 문장만 작성할 것.",
 "chacha_memo": "차차 말투로 작성한다. 오늘 아이가 실제로 한 행동 또는 실제 발화 1개를 반드시 포함한다. 추상적인 표현이나 일반적인 칭찬은 사용하지 않는다.",
 "polaroid_text": "차차가 오늘 가장 기억에 남은 아이의 실제 말이나 행동 하나를 떠올리며 남기는 한 줄 메모. 관찰하거나 기억하는 느낌으로 작성하고, 아이를 놀리거나 섭섭해하거나 평가하는 말투는 사용하지 않는다. 차차다운 귀엽고 가벼운 말투를 사용하며, 실제 대화 내용을 바탕으로 매번 다르게 작성한다. 반드시 '~냥'으로 끝낸다.",
 "polaroid_emotion": "😹 또는 🤔 또는 🥺 또는 😳 또는 ❤️ 중 하나를 선택한다."
@@ -347,9 +344,9 @@ export default function ReadingChachaV2() {
   const [dailyMsg, setDailyMsg] = useState("");
   const [smalltalk, setSmalltalk] = useState(null);
   const [showSmalltalk, setShowSmalltalk] = useState(false);
- const [messages, setMessages] = useState([]); // {role: "chacha"|"child", text: string}
-const [currentDialogue, setCurrentDialogue] = useState(null);
-const [conversations, setConversations] = useState([]);
+  const [bubbles, setBubbles] = useState([]);
+  const [currentDialogue, setCurrentDialogue] = useState(null);
+  const [conversations, setConversations] = useState([]);
   const [roundNum, setRoundNum] = useState(1);
   const [totalRounds, setTotalRounds] = useState(5);
   const [loading, setLoading] = useState(false);
@@ -381,14 +378,10 @@ const [conversations, setConversations] = useState([]);
   const [specialDayMsg, setSpecialDayMsg] = useState("");
   const [bookTitle, setBookTitle] = useState("");
 const [loadingMsg] = useState(() => LOADING_MSGS[Math.floor(Math.random() * LOADING_MSGS.length)]);
-const bottomRef = useRef(null);
 const [usedTypes, setUsedTypes] = useState([]);
 const [showFreeText, setShowFreeText] = useState(false);
 const [freeTextInput, setFreeTextInput] = useState("");
-const [bookList] = useState(() => {
-  const notRead = BOOKS.filter(b => !readBooks.includes(b.title));
-  return [...notRead].sort(() => Math.random() - 0.5).slice(0, 5);
-});  
+  
 
   // ─── 시리즈물 감지 ───
   const isSeries = selectedBook ? selectedBook.type === "series" : false;
@@ -432,10 +425,7 @@ const [bookList] = useState(() => {
     setDailyMsg(getDailyMsg());
     if (Math.random() < 0.25) setSmalltalk(SMALLTALK[Math.floor(Math.random() * SMALLTALK.length)]);
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
-useEffect(() => {
-  bottomRef.current?.scrollIntoView({ behavior: "smooth" });
-}, [messages, loading]);
-  
+
   // ─── 유틸 ───
   const displayBooks = () => {
     const notRead = BOOKS.filter(b => !readBooks.includes(b.title));
@@ -444,11 +434,8 @@ useEffect(() => {
       return notRead.filter(b => b.title.toLowerCase().includes(q));
     }
     if (showAllBooks) return notRead;
-const sliced = bookList;
-if (selectedBook && !sliced.find(b => b.title === selectedBook.title)) {
-  return [selectedBook, ...sliced.slice(0, 4)];
-}
-return sliced;
+   const shuffled = [...notRead].sort(() => Math.random() - 0.5);
+return shuffled.slice(0, 5);
   };
 
   const getChachaEmoji = () => {
@@ -472,32 +459,34 @@ return sliced;
   };
 
   // ─── 대화 시작 ───
-const startDialog = async () => {
+  const startDialog = async () => {
     if (!selectedBook) return;
+
     const finalTitle = isSeries ? bookTitle.trim() : selectedBook.title;
     const activeBook = { 
-      ...selectedBook, 
-      title: finalTitle,
-      seriesTitle: isSeries ? selectedBook.title : null
-    };
+  ...selectedBook, 
+  title: finalTitle,
+  seriesTitle: isSeries ? selectedBook.title : null
+};
     setSelectedBook(activeBook);
+
     const rounds = getRounds(activeBook);
     const genre = guessGenre(activeBook);
     setTotalRounds(rounds);
     setRoundNum(1);
     setConversations([]);
-    setMessages([]);
     setLoading(true);
     setScreen("dialog");
+    posthog.capture('session_started', { book: finalTitle, ar: activeBook.ar });
+
     const firstRound = FIRST_ROUND[genre] || FIRST_ROUND.adventure;
-  
+
     // ─── 책 파악 AI 호출 (1회) ───
     let chachaOpening = `${finalTitle} 읽었구나냥!`;
     
     // ─── aiHint 추출 ───
     const bookDetail = BOOKS_DETAIL.find(b => b.title === selectedBook.title);
-const hint = bookDetail?.aiHint || bookDetail?.tagline || "";
-const readerMode = activeBook.bookMode === "reader";
+    const hint = bookDetail?.aiHint || bookDetail?.tagline || "";
     
     try {
       const res = await fetch("/api/chat", {
@@ -513,19 +502,15 @@ const readerMode = activeBook.bookMode === "reader";
 책 정보: "${hint}"
 
 규칙:
-${readerMode ? `
-- 이 책은 리더스북이야. 책 내용, 사건, 캐릭터 행동을 절대 추측하지 마.
-- 시리즈 전체 분위기만 1문장으로 말해.
-- 차차가 그 분위기에서 어떻게 느꼈는지 1문장.
-- 가끔 ~냥 사용. 2문장 이내. 질문 하지 마.
-` : `
 - 위 책 정보 외 내용 생성 금지
 - 구체적인 장면이나 사건 절대 언급 금지
 - 주인공 이름 + 전체 분위기 1문장
 - 차차가 그 분위기에서 어떻게 느꼈는지 1문장
-- 가끔 ~냥 사용. 2문장 이내. 질문 하지 마.
+- 가끔 ~냥 사용
+- 2문장 이내
+- 질문 하지 마 (질문은 다음에 따로 나옴)
 - 예시: "라모나는 뭔가 항상 터뜨리는 느낌이잖아냥 ㅋㅋ 차차는 그 에너지가 좋더라냥!"
-`}
+
 2문장만 반환. JSON 아님. 그냥 텍스트.`
           }]
         })
@@ -536,10 +521,9 @@ ${readerMode ? `
       // 실패하면 기본 멘트로
     }
 
-  const openingMsgs = [chachaOpening, ...(firstRound.chacha_says || [])].map(t => ({ role: "chacha", text: t }));
-setMessages(openingMsgs);
-setCurrentDialogue({ ...firstRound, question: firstRound.chacha_says?.join(" ") || "" });
-setLoading(false);
+    setBubbles([chachaOpening, ...(firstRound.chacha_says || [])]);
+    setCurrentDialogue({ ...firstRound, question: firstRound.chacha_says?.join(" ") || "" });
+    setLoading(false);
   };
 
   // ─── 하드코딩 라운드 ───
@@ -551,48 +535,46 @@ setLoading(false);
     return null;
   };
 
-// ─── 선택지 클릭 ───
+  // ─── 선택지 클릭 ───
   const handleChoice = async (choice) => {
     const edgeRes = getEdgeResponse(choice);
     const newConv = { q: currentDialogue?.question || "", a: choice };
     const newConvs = [...conversations, newConv];
     setConversations(newConvs);
-    setMessages([{ role: "child", text: choice }]);
+
     if (roundNum >= totalRounds) {
-      setMessages(prev => [...prev,
-        { role: "chacha", text: "으아앙! 네 덕분에 오늘 츄르값을 벌었다냥!" },
-        { role: "chacha", text: "잠깐 기다려봐냥... 뭔가 만들고 있어..." }
-      ]);
+      setBubbles(["으아앙! 네 덕분에 오늘 츄르값을 벌었다냥!", "잠깐 기다려봐냥... 뭔가 만들고 있어..."]);
       setScreen("reward");
       return;
     }
 
-setLoading(true);
-const nextRound = roundNum + 1;
-const reaction = edgeRes || `"${choice}" 냥~`;
-setMessages(prev => [...prev, { role: "chacha", text: reaction }]);
+    setLoading(true);
+    const nextRound = roundNum + 1;
+    const reaction = edgeRes || `"${choice}" 냥~`;
+    setBubbles([reaction]);
 
-const hardcoded = getHardcodedRound(nextRound, selectedBook);
-if (hardcoded) {
-  setTimeout(() => {
-    setMessages(prev => [...prev, ...(hardcoded.chacha_says || []).map(t => ({ role: "chacha", text: t }))]);
-    setCurrentDialogue({ ...hardcoded, question: hardcoded.chacha_says?.join(" ") || "" });
-    setRoundNum(nextRound);
-    setLoading(false);
-  }, 600);
-} else {
-  const types = ["장면", "감정", "행동", "상상"];
-  const nextType = types.find(t => !usedTypes.includes(t)) || "상상";
-  setUsedTypes(prev => [...prev, nextType]);
-  const next = await generateDialogue(selectedBook, childName, choice, nextRound, totalRounds, newConvs, nextType);
-  setTimeout(() => {
-    setMessages(prev => [...prev, ...(next.chacha_says || []).map(t => ({ role: "chacha", text: t }))]);
-    setCurrentDialogue({ ...next, question: next.chacha_says?.join(" ") || "" });
-    setRoundNum(nextRound);
-    setLoading(false);
-    }, 600);
-}
+    const hardcoded = getHardcodedRound(nextRound, selectedBook);
+    if (hardcoded) {
+      setTimeout(() => {
+        setBubbles([reaction, ...(hardcoded.chacha_says || [])]);
+setCurrentDialogue({ ...hardcoded, question: hardcoded.chacha_says?.join(" ") || "" });
+        setRoundNum(nextRound);
+        setLoading(false);
+      }, 600);
+    } else {
+      const types = ["장면", "감정", "행동", "상상"];
+const nextType = types.find(t => !usedTypes.includes(t)) || "상상";
+setUsedTypes(prev => [...prev, nextType]);
+const next = await generateDialogue(selectedBook, childName, choice, nextRound, totalRounds, newConvs, nextType);
+      setTimeout(() => {
+        setBubbles([reaction, ...(next.chacha_says || [])]);
+        setCurrentDialogue({ ...next, question: next.chacha_says?.join(" ") || "" });
+        setRoundNum(nextRound);
+        setLoading(false);
+      }, 600);
+    }
   };
+
   // ─── 츄르 먹이기 ───
   const feedChuru = () => {
     if (churuFed) return;
@@ -606,19 +588,20 @@ if (hardcoded) {
     setTimeout(() => setShowReward(true), 800);
   };
 
-// ─── 리포트 공통 생성 로직 ───
+  // ─── 리포트 공통 생성 로직 ───
   const finishSession = async (note = "") => {
     setLoading(true);
+    posthog.capture('report_completed', { book: selectedBook.title });
     setScreen("handback");
     const rep = await generateReport(selectedBook, childName, conversations, note);
     setReport(rep);
     if (rep.polaroid_text) {
-      const newP = { 
-        book: selectedBook.seriesTitle ? `${selectedBook.seriesTitle} - ${selectedBook.title}` : selectedBook.title, 
-        text: rep.polaroid_text, 
-        action_guide: rep.action_guide || "",
-        date: new Date().toLocaleDateString("ko-KR") 
-      };
+const newP = { 
+  book: selectedBook.seriesTitle ? `${selectedBook.seriesTitle} - ${selectedBook.title}` : selectedBook.title, 
+  text: rep.polaroid_text, 
+  action_guide: rep.action_guide || "",
+  date: new Date().toLocaleDateString("ko-KR") 
+};
       const newPolaroids = [...polaroids, newP];
       setPolaroids(newPolaroids);
       localStorage.setItem("rcPolaroids", JSON.stringify(newPolaroids));
@@ -645,7 +628,7 @@ if (hardcoded) {
   // ─── 홈 리셋 ───
   const reset = () => {
     setScreen("home"); setSelectedBook(null); setSearchQuery(""); setShowAllBooks(false);
-    setMessages([]); setCurrentDialogue(null); setConversations([]); setRoundNum(1);
+    setBubbles([]); setCurrentDialogue(null); setConversations([]); setRoundNum(1);
     setReport(null); setLoading(false); setChuruFed(false);
     setRewardItem(null); setShowReward(false); setChuruReaction("");
 setShowMailbox(false); setMailboxText(""); setBookTitle("");
@@ -801,57 +784,30 @@ setShowFreeText(false); setFreeTextInput("");
           </div>
         )}
 
-   {polaroids.length === 0 ? (
-  <div style={{ marginTop: 16, padding: "16px", background: "#FFF8E1", borderRadius: 16, border: "2px dashed #FFE082" }}>
-    <div style={{ fontSize: 20, marginBottom: 6 }}>🖼</div>
-    <div style={{ fontSize: 12, color: "#aaa" }}>아직 기억이 쌓이는 중이다냥…</div>
-  </div>
-) : (
-  <div style={{ marginTop: 16 }}>
-    <div style={{ fontSize: 12, color: "#795548", fontWeight: 700, marginBottom: 10 }}>🖼 차차의 서재</div>
-    <div style={{ display: "flex", gap: 10, overflowX: "auto", paddingBottom: 8, justifyContent: "center" }}>
-      {polaroids.map((p, i) => (
-        <div key={i}
-          onClick={() => {
-            const el = document.getElementById(`polaroid-${i}`);
-            if (el) el.classList.toggle('flipped');
-          }}
-          style={{ minWidth: 130, height: 160, perspective: 600, cursor: "pointer", flexShrink: 0 }}>
-         <div id={`polaroid-${i}`} style={{
-  width: "100%", height: "100%", position: "relative",
-  transformStyle: "preserve-3d", WebkitTransformStyle: "preserve-3d",
-  transition: "transform 0.5s ease", WebkitTransition: "-webkit-transform 0.5s ease",
-}}>
-            <div style={{
-              position: "absolute", inset: 0, background: "#fff", borderRadius: 12,
-              padding: 12, boxShadow: "0 2px 8px rgba(0,0,0,0.1)",
-              backfaceVisibility: "hidden", display: "flex", flexDirection: "column", justifyContent: "space-between", WebkitBackfaceVisibility: "hidden"
-            }}>
-              <div style={{ fontSize: 12, color: dark, fontStyle: "italic", lineHeight: 1.5, fontWeight: 600 }}>"{p.text}"</div>
-              <div>
-                <div style={{ fontSize: 8, color: "#888", fontWeight: 700 }}>📖 {p.book}</div>
-                <div style={{ fontSize: 8, color: "#ccc" }}>{p.date}</div>
-              </div>
-            </div>
-            <div style={{
-              position: "absolute", inset: 0, background: "#1a1a2e", borderRadius: 12,
-              padding: 12, boxShadow: "0 2px 8px rgba(0,0,0,0.1)",
-              backfaceVisibility: "hidden", transform: "rotateY(180deg)",
-              display: "flex", flexDirection: "column", justifyContent: "center", WebkitBackfaceVisibility: "hidden"
-            }}>
-              <div style={{ fontSize: 10, color: warm, fontWeight: 800, marginBottom: 8, textAlign: "center" }}>💬 그날의 한마디</div>
-              <div style={{ fontSize: 11, color: "#fff", fontStyle: "italic", lineHeight: 1.6, textAlign: "center" }}>"{p.action_guide || '기록 없음'}"</div>
+        {polaroids.length === 0 ? (
+          <div style={{ marginTop: 16, padding: "16px", background: "#FFF8E1", borderRadius: 16, border: "2px dashed #FFE082" }}>
+            <div style={{ fontSize: 20, marginBottom: 6 }}>🖼</div>
+            <div style={{ fontSize: 12, color: "#aaa" }}>아직 기억이 쌓이는 중이다냥…</div>
+          </div>
+        ) : (
+          <div style={{ marginTop: 16 }}>
+            <div style={{ fontSize: 12, color: "#795548", fontWeight: 700, marginBottom: 10 }}>🖼 차차의 서재</div>
+            <div style={{ display: "flex", gap: 10, overflowX: "auto", paddingBottom: 8, justifyContent: "center" }}>
+              {polaroids.map((p, i) => (
+                <div key={i} style={{ minWidth: 120, background: "#fff", borderRadius: 12, padding: 10, boxShadow: "0 2px 8px rgba(0,0,0,0.1)", flexShrink: 0 }}>
+  <div style={{ fontSize: 9, color: "#888", marginBottom: 2, fontWeight: 700 }}>📖 {p.book}</div>
+  <div style={{ fontSize: 8, color: "#ccc", marginBottom: 6 }}>{p.date}</div>
+  <div style={{ fontSize: 11, color: dark, fontStyle: "italic", lineHeight: 1.4 }}>"{p.text}"</div>
+                </div>
+              ))}
             </div>
           </div>
-        </div>
-      ))}
-    </div>
-  </div>
-)}
+        )}
       </div>
-      <style>{`@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}.flipped{transform:rotateY(180deg)!important;-webkit-transform:rotateY(180deg)!important;}`}</style>
+      <style>{`@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}`}</style>
     </div>
   );
+
   // ══ SETUP ══
   if (screen === "setup") return (
     <div style={S.app}>
@@ -941,7 +897,7 @@ setShowFreeText(false); setFreeTextInput("");
               value={bookTitle}
               onChange={e => setBookTitle(e.target.value)}
               placeholder={selectedBook.seriesType === "numbered" ? "예: 5권, Book 5" : "예: Ramona the Brave"}
-             style={{ width: "100%", padding: "12px 14px", borderRadius: 12, border: `2px solid ${warm}`, fontSize: 14, outline: "none", boxSizing: "border-box", background: "#FFF9C4" }}
+              style={{ width: "100%", padding: "12px 14px", borderRadius: 12, border: `2px solid #FFE082`, fontSize: 14, outline: "none", boxSizing: "border-box" }}
             />
            
           </div>
@@ -964,24 +920,23 @@ setShowFreeText(false); setFreeTextInput("");
         <span style={{ fontSize: 28 }}>🐱</span>
         <div style={{ flex: 1 }}>
           <div style={{ fontSize: 13, fontWeight: 800, color: dark }}>차차</div>
-    <div style={{ fontSize: 10, color: "#795548" }}>
+          <div style={{ fontSize: 10, color: "#795548" }}>
   {selectedBook?.seriesTitle ? `${selectedBook.seriesTitle} ${selectedBook.title}` : selectedBook?.title}
 </div>
         </div>
         <div style={{ fontSize: 11, color: "#795548", background: "rgba(255,255,255,0.5)", borderRadius: 10, padding: "4px 8px" }}>{roundNum}/{totalRounds}</div>
       </div>
       <div style={{ ...S.body, paddingBottom: 140 }}>
-        {messages.map((m, i) => (
-          m.role === "chacha" ? (
-            <div key={i} style={{ display: "flex", gap: 8, marginBottom: 8, animation: "fadeIn 0.3s ease" }}>
-              <span style={{ fontSize: 24, alignSelf: "flex-end", flexShrink: 0 }}>🐱</span>
-              <div style={S.bubble}>{m.text}</div>
-            </div>
-          ) : (
-            <div key={i} style={{ display: "flex", justifyContent: "flex-end", marginBottom: 8 }}>
-              <div style={{ background: warm, borderRadius: "20px 20px 4px 20px", padding: "12px 16px", fontSize: 14, color: "#fff", fontWeight: 700, maxWidth: "75%" }}>{m.text}</div>
-            </div>
-          )
+        {bubbles.map((b, i) => (
+          <div key={i} style={{ display: "flex", gap: 8, marginBottom: 8, animation: "fadeIn 0.3s ease" }}>
+            <span style={{ fontSize: 24, alignSelf: "flex-end", flexShrink: 0 }}>🐱</span>
+            <div style={S.bubble}>{b}</div>
+          </div>
+        ))}
+        {conversations.slice(-1).map((c, i) => (
+          <div key={i} style={{ display: "flex", justifyContent: "flex-end", marginBottom: 8 }}>
+            <div style={{ background: warm, borderRadius: "20px 20px 4px 20px", padding: "12px 16px", fontSize: 14, color: "#fff", fontWeight: 700, maxWidth: "75%" }}>{c.a}</div>
+          </div>
         ))}
         {loading && (
           <div style={{ display: "flex", gap: 8, marginBottom: 8 }}>
@@ -990,7 +945,6 @@ setShowFreeText(false); setFreeTextInput("");
           </div>
         )}
       </div>
-      <div ref={bottomRef} />
      {!loading && currentDialogue?.choices && (
   <div style={{ position: "fixed", bottom: 0, left: "50%", transform: "translateX(-50%)", width: "100%", maxWidth: 390, background: bg, padding: "12px 16px", borderTop: "1px solid #FFE082" }}>
     {!showFreeText ? (
@@ -1026,7 +980,7 @@ setShowFreeText(false); setFreeTextInput("");
     )}
   </div>
 )}
-    <style>{`@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}.flipped{transform:rotateY(180deg)!important;-webkit-transform:rotateY(180deg)!important;}`}</style>
+      <style>{`@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}`}</style>
     </div>
   );
 
@@ -1193,68 +1147,22 @@ setShowFreeText(false); setFreeTextInput("");
         </div>
 
         {polaroids.length > 0 && (
-  <div style={{ marginTop: 8 }}>
-    <div style={{ fontSize: 12, color: "#795548", fontWeight: 700, marginBottom: 12 }}>📸 차차의 서재 — {childName}의 생각 흔적</div>
-    <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 8 }}>
-      {polaroids.map((p, i) => (
-        <div key={i}
-          onClick={() => {
-            const el = document.getElementById(`report-polaroid-${i}`);
-            if (el) el.classList.toggle('flipped');
-          }}
-          style={{ perspective: 600, cursor: "pointer", height: 140 }}>
-      <div id={`report-polaroid-${i}`} style={{
-  width: "100%", height: "100%", position: "relative",
-  transformStyle: "preserve-3d", WebkitTransformStyle: "preserve-3d",
-  transition: "transform 0.5s ease", WebkitTransition: "-webkit-transform 0.5s ease",
-}}>
-            <div style={{
-              position: "absolute", inset: 0, background: "#fff", borderRadius: 12,
-              padding: "10px 8px", boxShadow: "0 2px 8px rgba(0,0,0,0.1)",
-           backfaceVisibility: "hidden", display: "flex", flexDirection: "column", justifyContent: "space-between",WebkitBackfaceVisibility: "hidden"
-            }}>
-              <div style={{ fontSize: 10, color: dark, fontStyle: "italic", lineHeight: 1.4, overflow: "hidden", display: "-webkit-box", WebkitLineClamp: 4, WebkitBoxOrient: "vertical" }}>"{p.text}"</div>
-              <div>
-                <div style={{ fontSize: 8, color: "#aaa", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{p.book}</div>
-                <div style={{ fontSize: 8, color: "#ccc" }}>{p.date}</div>
-              </div>
-            </div>
-            <div style={{
-              position: "absolute", inset: 0, background: "#1a1a2e", borderRadius: 12,
-              padding: "10px 8px", boxShadow: "0 2px 8px rgba(0,0,0,0.1)",
-              backfaceVisibility: "hidden", transform: "rotateY(180deg)",
-              display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", WebkitBackfaceVisibility: "hidden"
-            }}>
-              <div style={{ fontSize: 9, color: warm, fontWeight: 800, marginBottom: 6, textAlign: "center" }}>💬 그날의 한마디</div>
-              <div style={{ fontSize: 9, color: "#fff", fontStyle: "italic", lineHeight: 1.5, textAlign: "center" }}>"{p.action_guide || '기록 없음'}"</div>
+          <div style={{ marginTop: 8 }}>
+            <div style={{ fontSize: 12, color: "#795548", fontWeight: 700, marginBottom: 12 }}>📸 차차의 서재 — {childName}의 생각 흔적</div>
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 8 }}>
+              {polaroids.map((p, i) => (
+                <div key={i} onClick={() => alert(`📖 ${p.book}\n\n"${p.text}"`)}
+                  style={{ background: "#fff", borderRadius: 12, padding: "10px 8px", boxShadow: "0 2px 8px rgba(0,0,0,0.1)", cursor: "pointer", textAlign: "center" }}>
+                  <div style={{ fontSize: 22, marginBottom: 4 }}>{p.emotion}</div>
+                  <div style={{ fontSize: 8, color: "#aaa", marginBottom: 2, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{p.book}</div>
+                  <div style={{ fontSize: 8, color: "#ccc", marginBottom: 4 }}>{p.date}</div>
+                  <div style={{ fontSize: 9, color: dark, fontStyle: "italic", lineHeight: 1.3, overflow: "hidden", display: "-webkit-box", WebkitLineClamp: 3, WebkitBoxOrient: "vertical" }}>"{p.text}"</div>
+                </div>
+              ))}
             </div>
           </div>
-        </div>
-      ))}
-    </div>
-  </div>
-)}
-{(() => {
-  const bookDetail = BOOKS_DETAIL.find(d => 
-    d.title === (selectedBook?.seriesTitle || selectedBook?.title)
-  );
-  const similar = bookDetail?.similar?.slice(0, 3) || [];
-  if (similar.length === 0) return null;
-  return (
-    <div style={{ ...S.card("#FFF9F0"), border: "1px solid #FFE082", marginTop: 8 }}>
-      <div style={{ fontSize: 11, color: "#FF8F00", fontWeight: 800, marginBottom: 10 }}>📚 다음엔 이런 책 어때요?</div>
-      {similar.map((title, i) => {
-        const b = BOOKS.find(b => b.title === title);
-        return (
-          <div key={i} style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "8px 0", borderBottom: i < similar.length - 1 ? "1px solid #FFE082" : "none" }}>
-            <div style={{ fontSize: 13, color: "#5D4037", fontWeight: 600 }}>{title}</div>
-            {b && <div style={{ fontSize: 11, color: "#aaa" }}>AR {b.ar}</div>}
-          </div>
-        );
-      })}
-    </div>
-  );
-})()}
+        )}
+
         <button onClick={reset} style={{ ...S.btn("#f5f5f5", "#666"), marginTop: 16 }}>차차 방으로 돌아가기</button>
       </div>
     </div>
