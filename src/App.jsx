@@ -817,10 +817,11 @@ setShowFreeText(false); setFreeTextInput("");
             if (el) el.classList.toggle('flipped');
           }}
           style={{ minWidth: 130, height: 160, perspective: 600, cursor: "pointer", flexShrink: 0 }}>
-          <div id={`polaroid-${i}`} style={{
-            width: "100%", height: "100%", position: "relative",
-            transformStyle: "preserve-3d", transition: "transform 0.5s ease",
-          }}>
+         <div id={`polaroid-${i}`} style={{
+  width: "100%", height: "100%", position: "relative",
+  transformStyle: "preserve-3d", WebkitTransformStyle: "preserve-3d",
+  transition: "transform 0.5s ease", WebkitTransition: "-webkit-transform 0.5s ease",
+}}>
             <div style={{
               position: "absolute", inset: 0, background: "#fff", borderRadius: 12,
               padding: 12, boxShadow: "0 2px 8px rgba(0,0,0,0.1)",
@@ -848,7 +849,7 @@ setShowFreeText(false); setFreeTextInput("");
   </div>
 )}
       </div>
-      <style>{`@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}.flipped{transform:rotateY(180deg)!important;}`}</style>
+      <style>{`@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}.flipped{transform:rotateY(180deg)!important;-webkit-transform:rotateY(180deg)!important;}`}</style>
     </div>
   );
   // ══ SETUP ══
@@ -1025,7 +1026,7 @@ setShowFreeText(false); setFreeTextInput("");
     )}
   </div>
 )}
-    <style>{`@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}.flipped{transform:rotateY(180deg)!important;}`}</style>
+    <style>{`@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}.flipped{transform:rotateY(180deg)!important;-webkit-transform:rotateY(180deg)!important;}`}</style>
     </div>
   );
 
@@ -1202,10 +1203,11 @@ setShowFreeText(false); setFreeTextInput("");
             if (el) el.classList.toggle('flipped');
           }}
           style={{ perspective: 600, cursor: "pointer", height: 140 }}>
-          <div id={`report-polaroid-${i}`} style={{
-            width: "100%", height: "100%", position: "relative",
-            transformStyle: "preserve-3d", transition: "transform 0.5s ease",
-          }}>
+      <div id={`report-polaroid-${i}`} style={{
+  width: "100%", height: "100%", position: "relative",
+  transformStyle: "preserve-3d", WebkitTransformStyle: "preserve-3d",
+  transition: "transform 0.5s ease", WebkitTransition: "-webkit-transform 0.5s ease",
+}}>
             <div style={{
               position: "absolute", inset: 0, background: "#fff", borderRadius: 12,
               padding: "10px 8px", boxShadow: "0 2px 8px rgba(0,0,0,0.1)",
