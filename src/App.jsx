@@ -116,6 +116,14 @@ const JUNK_ITEMS_BOOK = {
 
 // ─── 장르 추측 (AR 기반) ───
 function guessGenre(book) {
+  let detail = BOOKS_DETAIL.find(d => d.title === book.title);
+  if (!detail && book.seriesTitle) {
+    detail = BOOKS_DETAIL.find(d => d.title === book.seriesTitle);
+  }
+  if (!detail) {
+    detail = BOOKS_DETAIL.find(d => book.title.startsWith(d.title) || d.title.startsWith(book.title));
+  }
+  if (detail?.genre) return detail.genre;
   const ar = parseFloat(book.ar) || 3.0;
   if (ar >= 5.5) return "adventure";
   if (ar >= 4.5) return "mystery";
