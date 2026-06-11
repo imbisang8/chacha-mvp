@@ -550,7 +550,8 @@ const [freeTextInput, setFreeTextInput] = useState("");
   };
 
 // ─── 선택지 클릭 ───
-  const handleChoice = async (choice) => {
+    const handleChoice = async (choice) => {
+    if (loading) return;
     const edgeRes = getEdgeResponse(choice);
     const newConv = { q: currentDialogue?.question || "", a: choice };
     const newConvs = [...conversations, newConv];
