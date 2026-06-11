@@ -556,6 +556,7 @@ const [freeTextInput, setFreeTextInput] = useState("");
     const newConvs = [...conversations, newConv];
     setConversations(newConvs);
     setMessages([{ role: "child", text: choice }]);
+    setCurrentDialogue(prev => ({ ...prev, choices: [] }));
     if (roundNum >= totalRounds) {
       setMessages(prev => [...prev,
         { role: "chacha", text: "으아앙! 네 덕분에 오늘 츄르값을 벌었다냥!" },
