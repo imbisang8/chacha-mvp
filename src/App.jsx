@@ -549,39 +549,40 @@ const [freeTextInput, setFreeTextInput] = useState("");
     return null;
   };
 
-  // ─── 선택지 클릭 ───
+// ─── 선택지 클릭 ───
   const handleChoice = async (choice) => {
     const edgeRes = getEdgeResponse(choice);
     const newConv = { q: currentDialogue?.question || "", a: choice };
     const newConvs = [...conversations, newConv];
     setConversations(newConvs);
-
+    setMessages([{ role: "child", text: choice }]);
     if (roundNum >= totalRounds) {
-      setBubbles(["으아앙! 네 덕분에 오늘 츄르값을 벌었다냥!", "잠깐 기다려봐냥... 뭔가 만들고 있어..."]);
+      setMessages(prev => [...prev,
+        { role: "chacha", text: "으아앙! 네 덕분에 오늘 츄르값을 벌었다냥!" },
+        { role: "chacha", text: "잠깐 기다려봐냥... 뭔가 만들고 있어..." }
+      ]);
       setScreen("reward");
       return;
     }
-
     setLoading(true);
     const nextRound = roundNum + 1;
     const reaction = edgeRes || `"${choice}" 냥~`;
-    setBubbles([reaction]);
-
+    setMessages(prev => [...prev, { role: "chacha", text: reaction }]);
     const hardcoded = getHardcodedRound(nextRound, selectedBook);
     if (hardcoded) {
       setTimeout(() => {
-        setBubbles([reaction, ...(hardcoded.chacha_says || [])]);
-setCurrentDialogue({ ...hardcoded, question: hardcoded.chacha_says?.join(" ") || "" });
+        setMessages(prev => [...prev, ...(hardcoded.chacha_says || []).map(t => ({ role: "chacha", text: t }))]);
+        setCurrentDialogue({ ...hardcoded, question: hardcoded.chacha_says?.join(" ") || "" });
         setRoundNum(nextRound);
         setLoading(false);
       }, 600);
     } else {
       const types = ["장면", "감정", "행동", "상상"];
-const nextType = types.find(t => !usedTypes.includes(t)) || "상상";
-setUsedTypes(prev => [...prev, nextType]);
-const next = await generateDialogue(selectedBook, childName, choice, nextRound, totalRounds, newConvs, nextType);
+      const nextType = types.find(t => !usedTypes.includes(t)) || "상상";
+      setUsedTypes(prev => [...prev, nextType]);
+      const next = await generateDialogue(selectedBook, childName, choice, nextRound, totalRounds, newConvs, nextType);
       setTimeout(() => {
-        setBubbles([reaction, ...(next.chacha_says || [])]);
+        setMessages(prev => [...prev, ...(next.chacha_says || []).map(t => ({ role: "chacha", text: t }))]);
         setCurrentDialogue({ ...next, question: next.chacha_says?.join(" ") || "" });
         setRoundNum(nextRound);
         setLoading(false);
