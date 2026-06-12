@@ -394,6 +394,8 @@ const [freeTextInput, setFreeTextInput] = useState("");
   return [...notRead].sort(() => Math.random() - 0.5).slice(0, 5);
 });
   const bottomRef = useRef(null);
+  const [flippedHome, setFlippedHome] = useState({});
+  const [flippedReport, setFlippedReport] = useState({});
 
   // ─── 시리즈물 감지 ───
   const isSeries = selectedBook ? selectedBook.type === "series" : false;
@@ -816,15 +818,14 @@ setShowFreeText(false); setFreeTextInput("");
             <div style={{ display: "flex", gap: 10, overflowX: "auto", paddingBottom: 8, justifyContent: "center" }}>
            {polaroids.map((p, i) => (
                 <div key={i}
-                  onClick={() => {
-                    const el = document.getElementById(`polaroid-${i}`);
-                    if (el) el.classList.toggle('flipped');
-                  }}
+                  onClick={() => setFlippedHome(prev => ({ ...prev, [i]: !prev[i] }))}
                   style={{ minWidth: 130, height: 160, perspective: 600, cursor: "pointer", flexShrink: 0 }}>
-                  <div id={`polaroid-${i}`} style={{
+                  <div style={{
                     width: "100%", height: "100%", position: "relative",
                     transformStyle: "preserve-3d", WebkitTransformStyle: "preserve-3d",
                     transition: "transform 0.5s ease", WebkitTransition: "-webkit-transform 0.5s ease",
+                    transform: flippedHome[i] ? "rotateY(180deg)" : "rotateY(0deg)",
+                    WebkitTransform: flippedHome[i] ? "rotateY(180deg)" : "rotateY(0deg)",
                   }}>
                     <div style={{
                       position: "absolute", inset: 0, background: "#fff", borderRadius: 12,
@@ -853,7 +854,7 @@ setShowFreeText(false); setFreeTextInput("");
           </div>
         )}
       </div>
-  <style>{`@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}.flipped{transform:rotateY(180deg)!important;-webkit-transform:rotateY(180deg)!important;}`}</style>
+  <style>{`@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}`}</style>
     </div>
   );
 
@@ -1031,7 +1032,7 @@ setShowFreeText(false); setFreeTextInput("");
     )}
   </div>
 )}
-     <style>{`@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}.flipped{transform:rotateY(180deg)!important;-webkit-transform:rotateY(180deg)!important;}`}</style>
+     <style>{`@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}`}</style>
     </div>
   );
 
@@ -1203,15 +1204,14 @@ setShowFreeText(false); setFreeTextInput("");
     <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 8 }}>
       {polaroids.map((p, i) => (
         <div key={i}
-          onClick={() => {
-            const el = document.getElementById(`report-polaroid-${i}`);
-            if (el) el.classList.toggle('flipped');
-          }}
+          onClick={() => setFlippedReport(prev => ({ ...prev, [i]: !prev[i] }))}
           style={{ perspective: 600, cursor: "pointer", height: 140 }}>
-          <div id={`report-polaroid-${i}`} style={{
+          <div style={{
             width: "100%", height: "100%", position: "relative",
             transformStyle: "preserve-3d", WebkitTransformStyle: "preserve-3d",
             transition: "transform 0.5s ease", WebkitTransition: "-webkit-transform 0.5s ease",
+            transform: flippedReport[i] ? "rotateY(180deg)" : "rotateY(0deg)",
+            WebkitTransform: flippedReport[i] ? "rotateY(180deg)" : "rotateY(0deg)",
           }}>
             <div style={{
               position: "absolute", inset: 0, background: "#fff", borderRadius: 12,
