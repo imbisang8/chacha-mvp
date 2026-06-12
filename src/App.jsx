@@ -814,18 +814,46 @@ setShowFreeText(false); setFreeTextInput("");
           <div style={{ marginTop: 16 }}>
             <div style={{ fontSize: 12, color: "#795548", fontWeight: 700, marginBottom: 10 }}>🖼 차차의 서재</div>
             <div style={{ display: "flex", gap: 10, overflowX: "auto", paddingBottom: 8, justifyContent: "center" }}>
-              {polaroids.map((p, i) => (
-                <div key={i} style={{ minWidth: 120, background: "#fff", borderRadius: 12, padding: 10, boxShadow: "0 2px 8px rgba(0,0,0,0.1)", flexShrink: 0 }}>
-  <div style={{ fontSize: 9, color: "#888", marginBottom: 2, fontWeight: 700 }}>📖 {p.book}</div>
-  <div style={{ fontSize: 8, color: "#ccc", marginBottom: 6 }}>{p.date}</div>
-  <div style={{ fontSize: 11, color: dark, fontStyle: "italic", lineHeight: 1.4 }}>"{p.text}"</div>
+           {polaroids.map((p, i) => (
+                <div key={i}
+                  onClick={() => {
+                    const el = document.getElementById(`polaroid-${i}`);
+                    if (el) el.classList.toggle('flipped');
+                  }}
+                  style={{ minWidth: 130, height: 160, perspective: 600, cursor: "pointer", flexShrink: 0 }}>
+                  <div id={`polaroid-${i}`} style={{
+                    width: "100%", height: "100%", position: "relative",
+                    transformStyle: "preserve-3d", WebkitTransformStyle: "preserve-3d",
+                    transition: "transform 0.5s ease", WebkitTransition: "-webkit-transform 0.5s ease",
+                  }}>
+                    <div style={{
+                      position: "absolute", inset: 0, background: "#fff", borderRadius: 12,
+                      padding: 12, boxShadow: "0 2px 8px rgba(0,0,0,0.1)",
+                      backfaceVisibility: "hidden", display: "flex", flexDirection: "column", justifyContent: "space-between", WebkitBackfaceVisibility: "hidden"
+                    }}>
+                      <div style={{ fontSize: 12, color: dark, fontStyle: "italic", lineHeight: 1.5, fontWeight: 600 }}>"{p.text}"</div>
+                      <div>
+                        <div style={{ fontSize: 8, color: "#888", fontWeight: 700 }}>📖 {p.book}</div>
+                        <div style={{ fontSize: 8, color: "#ccc" }}>{p.date}</div>
+                      </div>
+                    </div>
+                    <div style={{
+                      position: "absolute", inset: 0, background: "#1a1a2e", borderRadius: 12,
+                      padding: 12, boxShadow: "0 2px 8px rgba(0,0,0,0.1)",
+                      backfaceVisibility: "hidden", transform: "rotateY(180deg)",
+                      display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", WebkitBackfaceVisibility: "hidden"
+                    }}>
+                      <div style={{ fontSize: 10, color: warm, fontWeight: 800, marginBottom: 8, textAlign: "center" }}>💬 그날의 한마디</div>
+                      <div style={{ fontSize: 11, color: "#fff", fontStyle: "italic", lineHeight: 1.6, textAlign: "center" }}>"{p.action_guide || '기록 없음'}"</div>
+                    </div>
+                  </div>
                 </div>
               ))}
             </div>
           </div>
         )}
       </div>
-      <style>{`@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}`}</style>
+  <style>{`@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}.flipped{transform:rotateY(180deg)!important;-webkit-transform:rotateY(180deg)!important;}`}</style>
     </div>
   );
 
@@ -1003,7 +1031,7 @@ setShowFreeText(false); setFreeTextInput("");
     )}
   </div>
 )}
-      <style>{`@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}`}</style>
+     <style>{`@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}.flipped{transform:rotateY(180deg)!important;-webkit-transform:rotateY(180deg)!important;}`}</style>
     </div>
   );
 
@@ -1170,21 +1198,47 @@ setShowFreeText(false); setFreeTextInput("");
         </div>
 
         {polaroids.length > 0 && (
-          <div style={{ marginTop: 8 }}>
-            <div style={{ fontSize: 12, color: "#795548", fontWeight: 700, marginBottom: 12 }}>📸 차차의 서재 — {childName}의 생각 흔적</div>
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 8 }}>
-              {polaroids.map((p, i) => (
-                <div key={i} onClick={() => alert(`📖 ${p.book}\n\n"${p.text}"`)}
-                  style={{ background: "#fff", borderRadius: 12, padding: "10px 8px", boxShadow: "0 2px 8px rgba(0,0,0,0.1)", cursor: "pointer", textAlign: "center" }}>
-                  <div style={{ fontSize: 22, marginBottom: 4 }}>{p.emotion}</div>
-                  <div style={{ fontSize: 8, color: "#aaa", marginBottom: 2, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{p.book}</div>
-                  <div style={{ fontSize: 8, color: "#ccc", marginBottom: 4 }}>{p.date}</div>
-                  <div style={{ fontSize: 9, color: dark, fontStyle: "italic", lineHeight: 1.3, overflow: "hidden", display: "-webkit-box", WebkitLineClamp: 3, WebkitBoxOrient: "vertical" }}>"{p.text}"</div>
-                </div>
-              ))}
+  <div style={{ marginTop: 8 }}>
+    <div style={{ fontSize: 12, color: "#795548", fontWeight: 700, marginBottom: 12 }}>📸 차차의 서재 — {childName}의 생각 흔적</div>
+    <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 8 }}>
+      {polaroids.map((p, i) => (
+        <div key={i}
+          onClick={() => {
+            const el = document.getElementById(`report-polaroid-${i}`);
+            if (el) el.classList.toggle('flipped');
+          }}
+          style={{ perspective: 600, cursor: "pointer", height: 140 }}>
+          <div id={`report-polaroid-${i}`} style={{
+            width: "100%", height: "100%", position: "relative",
+            transformStyle: "preserve-3d", WebkitTransformStyle: "preserve-3d",
+            transition: "transform 0.5s ease", WebkitTransition: "-webkit-transform 0.5s ease",
+          }}>
+            <div style={{
+              position: "absolute", inset: 0, background: "#fff", borderRadius: 12,
+              padding: "10px 8px", boxShadow: "0 2px 8px rgba(0,0,0,0.1)",
+              backfaceVisibility: "hidden", display: "flex", flexDirection: "column", justifyContent: "space-between", WebkitBackfaceVisibility: "hidden"
+            }}>
+              <div style={{ fontSize: 10, color: dark, fontStyle: "italic", lineHeight: 1.4, overflow: "hidden", display: "-webkit-box", WebkitLineClamp: 4, WebkitBoxOrient: "vertical" }}>"{p.text}"</div>
+              <div>
+                <div style={{ fontSize: 8, color: "#aaa", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{p.book}</div>
+                <div style={{ fontSize: 8, color: "#ccc" }}>{p.date}</div>
+              </div>
+            </div>
+            <div style={{
+              position: "absolute", inset: 0, background: "#1a1a2e", borderRadius: 12,
+              padding: "10px 8px", boxShadow: "0 2px 8px rgba(0,0,0,0.1)",
+              backfaceVisibility: "hidden", transform: "rotateY(180deg)",
+              display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", WebkitBackfaceVisibility: "hidden"
+            }}>
+              <div style={{ fontSize: 9, color: warm, fontWeight: 800, marginBottom: 6, textAlign: "center" }}>💬 그날의 한마디</div>
+              <div style={{ fontSize: 9, color: "#fff", fontStyle: "italic", lineHeight: 1.5, textAlign: "center" }}>"{p.action_guide || '기록 없음'}"</div>
             </div>
           </div>
-        )}
+        </div>
+      ))}
+    </div>
+  </div>
+)}
 
         <button onClick={reset} style={{ ...S.btn("#f5f5f5", "#666"), marginTop: 16 }}>차차 방으로 돌아가기</button>
       </div>
