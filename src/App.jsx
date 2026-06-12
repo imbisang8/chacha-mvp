@@ -650,7 +650,7 @@ const newP = {
   // ─── 홈 리셋 ───
   const reset = () => {
     setScreen("home"); setSelectedBook(null); setSearchQuery(""); setShowAllBooks(false);
-    setBubbles([]); setCurrentDialogue(null); setConversations([]); setRoundNum(1);
+    setMessages([]); setCurrentDialogue(null); setConversations([]); setRoundNum(1);
     setReport(null); setLoading(false); setChuruFed(false);
     setRewardItem(null); setShowReward(false); setChuruReaction("");
 setShowMailbox(false); setMailboxText(""); setBookTitle("");
@@ -949,24 +949,26 @@ setShowFreeText(false); setFreeTextInput("");
         <div style={{ fontSize: 11, color: "#795548", background: "rgba(255,255,255,0.5)", borderRadius: 10, padding: "4px 8px" }}>{roundNum}/{totalRounds}</div>
       </div>
       <div style={{ ...S.body, paddingBottom: 140 }}>
-        {bubbles.map((b, i) => (
-          <div key={i} style={{ display: "flex", gap: 8, marginBottom: 8, animation: "fadeIn 0.3s ease" }}>
-            <span style={{ fontSize: 24, alignSelf: "flex-end", flexShrink: 0 }}>🐱</span>
-            <div style={S.bubble}>{b}</div>
-          </div>
-        ))}
-        {conversations.slice(-1).map((c, i) => (
-          <div key={i} style={{ display: "flex", justifyContent: "flex-end", marginBottom: 8 }}>
-            <div style={{ background: warm, borderRadius: "20px 20px 4px 20px", padding: "12px 16px", fontSize: 14, color: "#fff", fontWeight: 700, maxWidth: "75%" }}>{c.a}</div>
-          </div>
-        ))}
-        {loading && (
+       {messages.map((m, i) => (
+  m.role === "chacha" ? (
+    <div key={i} style={{ display: "flex", gap: 8, marginBottom: 8, animation: "fadeIn 0.3s ease" }}>
+      <span style={{ fontSize: 24, alignSelf: "flex-end", flexShrink: 0 }}>🐱</span>
+      <div style={S.bubble}>{m.text}</div>
+    </div>
+  ) : (
+    <div key={i} style={{ display: "flex", justifyContent: "flex-end", marginBottom: 8 }}>
+      <div style={{ background: warm, borderRadius: "20px 20px 4px 20px", padding: "12px 16px", fontSize: 14, color: "#fff", fontWeight: 700, maxWidth: "75%" }}>{m.text}</div>
+    </div>
+  )
+))}
+       {loading && (
           <div style={{ display: "flex", gap: 8, marginBottom: 8 }}>
             <span style={{ fontSize: 24 }}>🐱</span>
             <div style={{ ...S.bubble, color: "#aaa" }}>생각 중이다냥...</div>
           </div>
         )}
       </div>
+      <div ref={bottomRef} />
      {!loading && currentDialogue?.choices && (
   <div style={{ position: "fixed", bottom: 0, left: "50%", transform: "translateX(-50%)", width: "100%", maxWidth: 390, background: bg, padding: "12px 16px", borderTop: "1px solid #FFE082" }}>
     {!showFreeText ? (
