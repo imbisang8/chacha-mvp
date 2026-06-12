@@ -69,7 +69,7 @@
       "Clementine",
       "Ramona"
     ],
-    "genre": "adventure"
+    "genre": "emotion"
   },
   {
     "title": "Amelia Bedelia",
@@ -81,7 +81,7 @@
       "Henry and Mudge"
     ],
     "aiHint": "주인공: 아멜리아 / 엉뚱한 오해와 해프닝 / 유쾌하고 코믹함",
-    "genre": "adventure"
+    "genre": "comedy"
   },
   {
     "title": "Amelia's Notebook",
@@ -213,7 +213,7 @@
       "Frog and Toad",
       "Arthur Chapter Books"
     ],
-    "genre": "adventure"
+    "genre": "emotion"
   },
   {
     "title": "Big Nate",
@@ -249,7 +249,7 @@
       "Elephant and Piggie",
       "Cork & Fuzz"
     ],
-    "genre": "adventure"
+    "genre": "comedy"
   },
   {
     "title": "Biscuit",
@@ -273,7 +273,7 @@
       "My Weird School",
       "Horrible Harry"
     ],
-    "genre": "adventure"
+    "genre": "comedy"
   },
   {
     "title": "Boris",
@@ -357,7 +357,7 @@
       "Roscoe Riley Rules",
       "Ricky Ricotta's Mighty Robot"
     ],
-    "genre": "adventure"
+    "genre": "comedy"
   },
   {
     "title": "Captain Underpants",
@@ -465,7 +465,7 @@
       "Owl Diaries",
       "Amelia's Notebook"
     ],
-    "genre": "adventure"
+    "genre": "emotion"
   },
   {
     "title": "Commander Toad",
@@ -477,7 +477,7 @@
       "The Zack Files",
       "Fly Guy"
     ],
-    "genre": "adventure"
+    "genre": "comedy"
   },
   {
     "title": "Cork & Fuzz",
@@ -489,7 +489,7 @@
       "Elephant and Piggie",
       "Bink & Gollie"
     ],
-    "genre": "adventure"
+    "genre": "comedy"
   },
   {
     "title": "Cowgirl Kate and Cocoa",
@@ -621,7 +621,7 @@
       "Ramona",
       "Penny"
     ],
-    "genre": "adventure"
+    "genre": "comedy"
   },
   {
     "title": "Dragon",
@@ -633,7 +633,7 @@
       "Fly Guy",
       "Little Bear"
     ],
-    "genre": "adventure"
+    "genre": "comedy"
   },
   {
     "title": "Dragon Games",
@@ -693,7 +693,7 @@
       "Frog and Toad",
       "Little Bear"
     ],
-    "genre": "emotion"
+    "genre": "comedy"
   },
   {
     "title": "Encyclopedia Brown",
@@ -741,7 +741,7 @@
       "Mercy Watson"
     ],
     "aiHint": "주인공: 스탠리 / 납작해진 소년의 독특한 모험 / 엉뚱하고 가벼움",
-    "genre": "adventure"
+    "genre": "comedy"
   },
   {
     "title": "Fly Guy",
@@ -753,7 +753,7 @@
       "Arnold and Louise"
     ],
     "aiHint": "주인공: 버즈 / 소년과 파리의 엉뚱한 우정 / 코믹하고 귀여움",
-    "genre": "adventure"
+    "genre": "comedy"
   },
   {
     "title": "Fly Guy Presents",
@@ -777,7 +777,7 @@
       "Zelda and Ivy",
       "Boris"
     ],
-    "genre": "emotion"
+    "genre": "comedy"
   },
   {
     "title": "Franny K. Stein",
@@ -789,7 +789,7 @@
       "My Weird School",
       "Stink"
     ],
-    "genre": "adventure"
+    "genre": "comedy"
   },
   {
     "title": "Frog and Toad",
@@ -837,7 +837,7 @@
       "Flat Stanley"
     ],
     "aiHint": "주인공: 제로니모 / 겁 많은 생쥐 기자의 세계 모험 / 경쾌하고 흥미로움",
-    "genre": "adventure"
+    "genre": "comedy"
   },
   {
     "title": "Gooney Bird Greene",
@@ -885,7 +885,7 @@
       "Narwhal and Jelly",
       "Cat Kid Comic Club"
     ],
-    "genre": "adventure"
+    "genre": "comedy"
   },
   {
     "title": "Hank Zipzer",
@@ -897,7 +897,7 @@
       "Big Nate",
       "Clementine"
     ],
-    "genre": "adventure"
+    "genre": "comedy"
   },
   {
     "title": "Harriet the Spy",
@@ -969,7 +969,7 @@
       "Fly Guy",
       "Arthur Chapter Books"
     ],
-    "genre": "adventure"
+    "genre": "emotion"
   },
   {
     "title": "High-Rise Private Eyes",
@@ -981,7 +981,7 @@
       "Young Cam Jansen",
       "Olivia Sharp"
     ],
-    "genre": "adventure"
+    "genre": "mystery"
   },
   {
     "title": "Holes",
@@ -1029,7 +1029,7 @@
       "Mr. Putter & Tabby",
       "Henry and Mudge"
     ],
-    "genre": "adventure"
+    "genre": "emotion"
   },
   {
     "title": "Humphrey",
@@ -1041,7 +1041,7 @@
       "Mercy Watson"
     ],
     "aiHint": "주인공: 험프리 / 햄스터의 눈으로 본 교실 이야기 / 따뜻하고 긍정적임",
-    "genre": "adventure"
+    "genre": "emotion"
   },
   {
     "title": "I Am Series",
@@ -1065,8 +1065,8 @@
       "Step into Reading",
       "Penguin Young Readers"
     ],
-   "genre": "adventure",
-"bookMode": "reader"
+    "genre": "adventure",
+    "bookMode": "reader"
   },
   {
     "title": "I Survived",
@@ -1090,7 +1090,7 @@
       "Cat Kid Comic Club"
     ],
     "aiHint": "주인공: 망고와 브래시 / 악어 탐정들의 엉뚱한 수사 / 유쾌하고 기발함",
-    "genre": "adventure"
+    "genre": "comedy"
   },
   {
     "title": "Ivy & Bean",
@@ -1198,7 +1198,7 @@
       "Captain Underpants",
       "Press Start!"
     ],
-    "genre": "adventure"
+    "genre": "comedy"
   },
   {
     "title": "Let's-Read-and-Find-Out Science",
@@ -1222,7 +1222,7 @@
       "Henry and Mudge"
     ],
     "aiHint": "주인공: 꼬마 곰 / 숲속 동물 친구들과의 평화로운 일상 / 따뜻하고 포근함",
-    "genre": "adventure"
+    "genre": "emotion"
   },
   {
     "title": "Lola Levine",
@@ -1246,7 +1246,7 @@
       "Elephant and Piggie",
       "Cork & Fuzz"
     ],
-    "genre": "adventure"
+    "genre": "comedy"
   },
   {
     "title": "Magic School Bus",
@@ -1330,7 +1330,7 @@
       "Wonder"
     ],
     "aiHint": "주인공: 제프리 / 인종 차별을 뛰어넘는 소년의 달리기 / 감동적이고 교훈적임",
-    "genre": "adventure"
+    "genre": "emotion"
   },
   {
     "title": "Marvin Redpost",
@@ -1342,7 +1342,7 @@
       "Clementine"
     ],
     "aiHint": "주인공: 마빈 / 상상력 풍부한 소년의 엉뚱한 오해 / 현실적이고 코믹함",
-    "genre": "adventure"
+    "genre": "comedy"
   },
   {
     "title": "Matilda",
@@ -1366,7 +1366,7 @@
       "Splat the Cat",
       "Dog Man"
     ],
-    "genre": "adventure"
+    "genre": "comedy"
   },
   {
     "title": "Mercy Watson",
@@ -1402,7 +1402,7 @@
       "A to Z Mysteries",
       "Jigsaw Jones"
     ],
-    "genre": "adventure"
+    "genre": "mystery"
   },
   {
     "title": "Minnie and Moo",
@@ -1414,7 +1414,7 @@
       "Fly Guy",
       "The Chicken Squad"
     ],
-    "genre": "adventure"
+    "genre": "comedy"
   },
   {
     "title": "Mittens",
@@ -1426,7 +1426,7 @@
       "Puppy Mudge",
       "Little Bear"
     ],
-    "genre": "adventure"
+    "genre": "emotion"
   },
   {
     "title": "Monkey Me",
@@ -1438,7 +1438,7 @@
       "Fly Guy",
       "Flat Stanley"
     ],
-    "genre": "adventure"
+    "genre": "comedy"
   },
   {
     "title": "Mouse Soup",
@@ -1450,7 +1450,7 @@
       "Frog and Toad",
       "Owl at Home"
     ],
-    "genre": "adventure"
+    "genre": "comedy"
   },
   {
     "title": "Mouse Tales",
@@ -1498,7 +1498,7 @@
       "Goosebumps"
     ],
     "aiHint": "주인공: 수잔 / 외계인 선생님의 비밀을 파헤치기 / 흥미로운 코믹 SF",
-    "genre": "adventure"
+    "genre": "comedy"
   },
   {
     "title": "My Weird School",
@@ -1522,7 +1522,7 @@
       "The Bad Guys",
       "InvestiGators"
     ],
-    "genre": "adventure"
+    "genre": "comedy"
   },
   {
     "title": "Nate the Great",
@@ -1534,7 +1534,7 @@
       "A to Z Mysteries"
     ],
     "aiHint": "주인공: 네이트 / 팬케이크를 좋아하는 꼬마 탐정 / 경쾌하고 소박함",
-    "genre": "comedy"
+    "genre": "mystery"
   },
   {
     "title": "National Geographic Kids",
@@ -1606,7 +1606,7 @@
       "Cam Jansen",
       "A to Z Mysteries"
     ],
-    "genre": "adventure"
+    "genre": "mystery"
   },
   {
     "title": "Out of My Mind",
@@ -1618,7 +1618,7 @@
       "Bridge to Terabithia"
     ],
     "aiHint": "주인공: 멜로디 / 뇌성마비 소녀의 내면의 목소리 찾기 / 깊은 공감과 감동",
-    "genre": "adventure"
+    "genre": "emotion"
   },
   {
     "title": "Owl at Home",
@@ -1642,7 +1642,7 @@
       "Fly Guy"
     ],
     "aiHint": "주인공: 에바 / 꼬마 올빼미의 아기자기한 학교 일상 / 귀엽고 따뜻함",
-    "genre": "adventure"
+    "genre": "emotion"
   },
   {
     "title": "Oxford Reading Tree (ORT)",
@@ -1654,8 +1654,8 @@
       "I Can Read",
       "Ready-to-Read"
     ],
-"genre": "comedy",
-"bookMode": "reader"
+    "genre": "comedy",
+    "bookMode": "reader"
   },
   {
     "title": "Pedro",
@@ -1679,8 +1679,8 @@
       "Ready-to-Read",
       "Step into Reading"
     ],
-   "genre": "adventure",
-"bookMode": "reader"
+    "genre": "adventure",
+    "bookMode": "reader"
   },
   {
     "title": "Penny",
@@ -1740,7 +1740,7 @@
       "Unicorn Academy",
       "The Critter Club"
     ],
-    "genre": "adventure"
+    "genre": "emotion"
   },
   {
     "title": "Poppleton",
@@ -1776,7 +1776,7 @@
       "Katie Woo",
       "Amelia Bedelia"
     ],
-    "genre": "adventure"
+    "genre": "emotion"
   },
   {
     "title": "Puppy Mudge",
@@ -1800,7 +1800,7 @@
       "The Critter Club",
       "Shiloh"
     ],
-    "genre": "adventure"
+    "genre": "emotion"
   },
   {
     "title": "Rainbow Magic",
@@ -1861,7 +1861,7 @@
       "Penguin Young Readers"
     ],
     "genre": "adventure",
-"bookMode": "reader"
+    "bookMode": "reader"
   },
   {
     "title": "Ricky Ricotta's Mighty Robot",
@@ -1933,7 +1933,7 @@
       "Where the Red Fern Grows"
     ],
     "aiHint": "주인공: 마티 / 학대받는 개를 지키기 위한 결단 / 감동적이고 철학적임",
-    "genre": "adventure"
+    "genre": "emotion"
   },
   {
     "title": "Simple Machines",
@@ -1957,7 +1957,7 @@
       "Fly Guy",
       "Mac and Cheese"
     ],
-    "genre": "adventure"
+    "genre": "comedy"
   },
   {
     "title": "Spy School",
@@ -1982,7 +1982,7 @@
       "Penguin Young Readers"
     ],
     "genre": "adventure",
-"bookMode": "reader"
+    "bookMode": "reader"
   },
   {
     "title": "Stink",
@@ -2006,7 +2006,7 @@
       "The Tale of Despereaux"
     ],
     "aiHint": "주인공: 스튜어트 / 생쥐로 태어난 소년의 넓은 세상 탐험 / 잔잔하고 철학적임",
-    "genre": "adventure"
+    "genre": "emotion"
   },
   {
     "title": "Tales of a Fourth Grade Nothing",
@@ -2018,7 +2018,7 @@
       "Horrid Henry",
       "Diary of a Wimpy Kid"
     ],
-    "genre": "adventure"
+    "genre": "comedy"
   },
   {
     "title": "The 39 Clues",
@@ -2042,7 +2042,7 @@
       "InvestiGators"
     ],
     "aiHint": "주인공: 울프 등 / 착해지고 싶은 악당 동물들의 소동 / 기발하고 코믹함",
-    "genre": "adventure"
+    "genre": "comedy"
   },
   {
     "title": "The Bailey School Kids",
@@ -2054,7 +2054,7 @@
       "Goosebumps",
       "Black Lagoon Adventures"
     ],
-    "genre": "adventure"
+    "genre": "mystery"
   },
   {
     "title": "The BFG",
@@ -2078,7 +2078,7 @@
       "High-Rise Private Eyes",
       "Minnie and Moo"
     ],
-    "genre": "adventure"
+    "genre": "mystery"
   },
   {
     "title": "The Critter Club",
@@ -2090,7 +2090,7 @@
       "Pony Pals",
       "Owl Diaries"
     ],
-    "genre": "adventure"
+    "genre": "emotion"
   },
   {
     "title": "The Giver",
@@ -2174,7 +2174,7 @@
       "Pete the Cat",
       "Fly Guy"
     ],
-    "genre": "adventure"
+    "genre": "comedy"
   },
   {
     "title": "The Princess in Black",
@@ -2234,7 +2234,7 @@
       "Diary of a Wimpy Kid"
     ],
     "aiHint": "주인공: 마일스와 나일스 / 장난 천재들의 기상천외한 대결 / 과장되고 코믹함",
-    "genre": "adventure"
+    "genre": "comedy"
   },
   {
     "title": "The Trumpet of the Swan",
@@ -2282,7 +2282,7 @@
       "A to Z Mysteries",
       "My Weird School"
     ],
-    "genre": "adventure"
+    "genre": "mystery"
   },
   {
     "title": "Third Grade Detectives",
@@ -2306,7 +2306,7 @@
       "I Survived",
       "Ranger in Time"
     ],
-    "genre": "adventure"
+    "genre": "comedy"
   },
   {
     "title": "Timmy Failure",
@@ -2318,7 +2318,7 @@
       "The Terrible Two"
     ],
     "aiHint": "주인공: 티미 / 허술한 소년 탐정의 자신감 넘치는 일상 / 엉뚱하고 코믹함",
-    "genre": "adventure"
+    "genre": "comedy"
   },
   {
     "title": "Tiny",
@@ -2486,7 +2486,7 @@
       "Billie B Brown",
       "Penny"
     ],
-    "genre": "adventure"
+    "genre": "emotion"
   },
   {
     "title": "Young Cam Jansen",
@@ -2510,7 +2510,7 @@
       "Penny",
       "Katie Woo"
     ],
-    "genre": "adventure"
+    "genre": "emotion"
   },
   {
     "title": "Zoey and Sassafras",
