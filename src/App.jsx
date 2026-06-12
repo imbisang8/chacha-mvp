@@ -1292,6 +1292,27 @@ setShowFreeText(false); setFreeTextInput("");
   </div>
 )}
 
+        {(() => {
+          const bookDetail = BOOKS_DETAIL.find(d => 
+            d.title === (selectedBook?.seriesTitle || selectedBook?.title)
+          );
+          const similar = bookDetail?.similar?.slice(0, 3) || [];
+          if (similar.length === 0) return null;
+          return (
+            <div style={{ ...S.card("#FFF9F0"), border: "1px solid #FFE082", marginTop: 8 }}>
+              <div style={{ fontSize: 11, color: "#FF8F00", fontWeight: 800, marginBottom: 10 }}>📚 다음엔 이런 책 어때요?</div>
+              {similar.map((title, i) => {
+                const b = BOOKS.find(b => b.title === title);
+                return (
+                  <div key={i} style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "8px 0", borderBottom: i < similar.length - 1 ? "1px solid #FFE082" : "none" }}>
+                    <div style={{ fontSize: 13, color: "#5D4037", fontWeight: 600 }}>{title}</div>
+                    {b && <div style={{ fontSize: 11, color: "#aaa" }}>AR {b.ar}</div>}
+                  </div>
+                );
+              })}
+            </div>
+          );
+        })()}
         <button onClick={reset} style={{ ...S.btn("#f5f5f5", "#666"), marginTop: 16 }}>차차 방으로 돌아가기</button>
       </div>
     </div>
