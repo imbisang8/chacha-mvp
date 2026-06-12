@@ -405,7 +405,6 @@ useEffect(() => {
 // ─── 초기 접속 처리 ───
 useEffect(() => {
   const count = visitCount + 1;
-  ...
     setVisitCount(count);
     localStorage.setItem("rcVisitCount", count);
     if (!localStorage.getItem("rcFirstVisit")) {
