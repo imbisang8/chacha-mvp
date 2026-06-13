@@ -2523,5 +2523,31 @@
     ],
     "aiHint": "주인공: 조이 / 마법 생물들을 돕는 꼬마 과학자 / 호기심 넘치고 교육적임",
     "genre": "adventure"
+  },
+  {
+    "title": "Big Cat",
+    "ar": "1-3점대",
+    "tagline": "영국 콜린스 출판사의 단계별 리더스북 시리즈",
+    "aiHint": "주인공: 책마다 다름 / 픽션·논픽션 혼합 / 다양한 작가의 짧은 이야기 / 레벨별 난이도",
+    "similar": [
+      "Oxford Reading Tree (ORT)",
+      "I Can Read",
+      "Step into Reading (SIR)"
+    ],
+    "genre": "adventure",
+    "bookMode": "reader"
+  },
+  {
+    "title": "World of Reading",
+    "ar": "1점대",
+    "tagline": "디즈니·픽사·마블 캐릭터들의 리더스북 시리즈",
+    "aiHint": "주인공: 디즈니/픽사/마블 캐릭터(미키, 엘사, 모아나, 스파이더맨 등) / 영화 속 한 장면을 다룬 짧은 이야기 / 레벨별 난이도",
+    "similar": [
+      "I Can Read",
+      "Step into Reading (SIR)",
+      "Ready-to-Read (RTR)"
+    ],
+    "genre": "adventure",
+    "bookMode": "reader"
   }
 ]
