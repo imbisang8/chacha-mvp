@@ -1261,5 +1261,27 @@
     "type": "series",
     "seriesType": "numbered",
     "ar": "3.5"
+  },
+  {
+    "title": "Big Cat",
+    "type": "series",
+    "seriesType": "titled",
+    "ar": "2.0",
+    "bookMode": "reader",
+    "seriesHint": {
+      "typicalCharacters": [],
+      "description": "영국 콜린스 출판사의 단계별 리더스북. 픽션과 논픽션 모두 포함되며 권마다 작가와 주인공이 다르므로 특정 사건은 추측하지 않고 아이 발화 중심으로 대화한다."
+    }
+  },
+  {
+    "title": "World of Reading",
+    "type": "series",
+    "seriesType": "titled",
+    "ar": "1.0",
+    "bookMode": "reader",
+    "seriesHint": {
+      "typicalCharacters": [],
+      "description": "디즈니·픽사·마블 캐릭터들의 리더스북. 권마다 등장 캐릭터와 에피소드가 다르므로 특정 사건은 추측하지 않고 아이 발화 중심으로 대화한다."
+    }
   }
 ]
