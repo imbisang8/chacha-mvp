@@ -448,6 +448,7 @@ const [freeTextInput, setFreeTextInput] = useState("");
   const bottomRef = useRef(null);
   const [flippedHome, setFlippedHome] = useState({});
   const [flippedReport, setFlippedReport] = useState({});
+  const [selectedDay, setSelectedDay] = useState(null);
 
   // ─── 시리즈물 감지 ───
   const isSeries = selectedBook ? selectedBook.type === "series" : false;
@@ -509,6 +510,27 @@ useEffect(() => {
       return [selectedBook, ...sliced.slice(0, 4)];
     }
     return sliced;
+  };
+
+  // ─── 캘린더용: 이번 달 대화한 날짜 + 날짜별 기록 ───
+  const getMonthActivity = () => {
+    const now = new Date();
+    const year = now.getFullYear();
+    const month = now.getMonth() + 1;
+    const days = new Set();
+    const records = {};
+    polaroids.forEach(p => {
+      if (!p.date) return;
+      const match = p.date.match(/(\d+)\D+(\d+)\D+(\d+)/);
+      if (!match) return;
+      const py = Number(match[1]), pm = Number(match[2]), pd = Number(match[3]);
+      if (py === year && pm === month) {
+        days.add(pd);
+        if (!records[pd]) records[pd] = [];
+        records[pd].push(p);
+      }
+    });
+    return { year, month, days, records };
   };
 
   const getChachaEmoji = () => {
@@ -1229,6 +1251,7 @@ setShowFreeText(false); setFreeTextInput("");
   {selectedBook?.seriesTitle ? `${selectedBook.seriesTitle} ${selectedBook.title}` : selectedBook?.title}
 </div>
         </div>
+        <button onClick={() => setScreen("calendar")} style={{ background: "none", border: "none", fontSize: 18, cursor: "pointer" }}>📅</button>
         <button onClick={copyReport} style={{ background: "none", border: "none", fontSize: 18, cursor: "pointer" }}>📋</button>
       </div>
       <div style={S.body}>
@@ -1317,6 +1340,103 @@ setShowFreeText(false); setFreeTextInput("");
       </div>
     </div>
   );
+
+  // ══ CALENDAR ══
+  if (screen === "calendar") {
+    const { year, month, days, records } = getMonthActivity();
+    const firstDay = new Date(year, month - 1, 1).getDay();
+    const daysInMonth = new Date(year, month, 0).getDate();
+    const goal = 20;
+    const count = days.size;
+    const percent = Math.min(100, Math.round((count / goal) * 100));
+    const todayDate = new Date().getDate();
+    const cells = [];
+    for (let i = 0; i < firstDay; i++) cells.push(null);
+    for (let d = 1; d <= daysInMonth; d++) cells.push(d);
+
+    return (
+      <div style={S.app}>
+        <div style={S.hdr}>
+          <span style={{ fontSize: 24 }}>📅</span>
+          <div style={{ flex: 1 }}>
+            <div style={{ fontSize: 15, fontWeight: 800, color: dark }}>{childName ? `${childName}의 ` : ""}독서 캘린더</div>
+            <div style={{ fontSize: 11, color: "#795548" }}>{year}년 {month}월</div>
+          </div>
+          <button onClick={() => { setSelectedDay(null); setScreen("report"); }} style={{ background: "none", border: "none", fontSize: 18, cursor: "pointer" }}>✕</button>
+        </div>
+        <div style={S.body}>
+          <div style={{ ...S.card("linear-gradient(135deg,#FFF9C4,#FFF3E0)"), border: `2px solid ${warm}`, textAlign: "center" }}>
+            <div style={{ fontSize: 12, color: "#795548", marginBottom: 4 }}>🗨️ 이번 달 대화한 날</div>
+            <div style={{ fontSize: 24, fontWeight: 800, color: dark }}>
+              {count}일 <span style={{ fontSize: 13, color: "#aaa" }}>/ 목표 {goal}일</span>
+            </div>
+            <div style={{ marginTop: 10, height: 8, background: "#FFE082", borderRadius: 6, overflow: "hidden" }}>
+              <div style={{ width: `${percent}%`, height: "100%", background: warm, borderRadius: 6, transition: "width 0.4s ease" }}></div>
+            </div>
+            <div style={{ fontSize: 11, color: "#aaa", marginTop: 6 }}>진행률 {percent}%</div>
+          </div>
+
+          <div style={S.card()}>
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(7,1fr)", textAlign: "center", marginBottom: 8 }}>
+              {["일", "월", "화", "수", "목", "금", "토"].map(d => (
+                <div key={d} style={{ fontSize: 11, color: "#aaa", fontWeight: 700, padding: "4px 0" }}>{d}</div>
+              ))}
+            </div>
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(7,1fr)", gap: 4 }}>
+              {cells.map((d, i) => {
+                const hasRecord = d && days.has(d);
+                const isSelected = d && selectedDay === d;
+                return (
+                  <div key={i}
+                    onClick={() => hasRecord && setSelectedDay(isSelected ? null : d)}
+                    style={{
+                      height: 42, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center",
+                      borderRadius: 10, cursor: hasRecord ? "pointer" : "default",
+                      background: isSelected ? "#FFE082" : (d === todayDate ? "#FFF3E0" : "transparent"),
+                      border: d === todayDate ? `1px solid ${warm}` : "1px solid transparent",
+                    }}>
+                    {d && (
+                      <>
+                        <div style={{ fontSize: 11, color: dark, fontWeight: d === todayDate || isSelected ? 800 : 400 }}>{d}</div>
+                        <div style={{ fontSize: 10, color: warm, marginTop: 2, height: 12 }}>{hasRecord ? "●" : ""}</div>
+                      </>
+                    )}
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+
+          {selectedDay && records[selectedDay] && (
+            <div style={S.card("#FFF8E1")}>
+              <div style={{ fontSize: 12, color: "#FF8F00", fontWeight: 800, marginBottom: 10 }}>
+                📖 {month}월 {selectedDay}일의 기록
+              </div>
+              {records[selectedDay].map((p, i) => (
+                <div key={i} style={{
+                  background: "#fff", borderRadius: 12, padding: 12,
+                  marginBottom: i < records[selectedDay].length - 1 ? 8 : 0,
+                  boxShadow: "0 2px 8px rgba(0,0,0,0.06)"
+                }}>
+                  <div style={{ fontSize: 11, color: "#795548", fontWeight: 700, marginBottom: 6 }}>📚 {p.book}</div>
+                  <div style={{ fontSize: 13, color: dark, fontStyle: "italic", lineHeight: 1.6, marginBottom: 6 }}>"{p.text}"</div>
+                  {p.action_guide && (
+                    <div style={{ fontSize: 11, color: "#aaa", lineHeight: 1.5 }}>💬 {p.action_guide}</div>
+                  )}
+                </div>
+              ))}
+            </div>
+          )}
+
+          <div style={{ fontSize: 11, color: "#aaa", textAlign: "center", marginTop: 8 }}>
+            ● 표시는 {childName || "아이"}와 대화한 날이에요 — 눌러보면 그날의 기록을 볼 수 있어요
+          </div>
+
+          <button onClick={() => { setSelectedDay(null); setScreen("report"); }} style={{ ...S.btn("#f5f5f5", "#666"), marginTop: 16 }}>리포트로 돌아가기</button>
+        </div>
+      </div>
+    );
+  }
 
   return null;
 }
