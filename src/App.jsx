@@ -449,6 +449,7 @@ const [freeTextInput, setFreeTextInput] = useState("");
   const [flippedHome, setFlippedHome] = useState({});
   const [flippedReport, setFlippedReport] = useState({});
   const [selectedDay, setSelectedDay] = useState(null);
+  const [copyFeedback, setCopyFeedback] = useState(false);
 
   // ─── 시리즈물 감지 ───
   const isSeries = selectedBook ? selectedBook.type === "series" : false;
@@ -737,7 +738,12 @@ setShowFreeText(false); setFreeTextInput("");
   const copyReport = () => {
     if (!report) return;
     const text = `📚 리딩차차 오늘의 리포트\n━━━━━━━━━━━━━\n📖 ${selectedBook?.title}\n\n🐱 오늘의 반짝 문장\n"${report.child_quote}"\n\n💡 차차의 발견\n${report.discovery_insight}\n\n💬 오늘 저녁 한마디\n"${report.action_guide}"`;
-    navigator.clipboard.writeText(text).catch(() => {});
+    navigator.clipboard.writeText(text)
+      .then(() => {
+        setCopyFeedback(true);
+        setTimeout(() => setCopyFeedback(false), 1500);
+      })
+      .catch(() => {});
   };
 
   // ─── STYLES ───
@@ -1252,7 +1258,16 @@ setShowFreeText(false); setFreeTextInput("");
 </div>
         </div>
         <button onClick={() => setScreen("calendar")} style={{ background: "none", border: "none", fontSize: 18, cursor: "pointer" }}>📅</button>
-        <button onClick={copyReport} style={{ background: "none", border: "none", fontSize: 18, cursor: "pointer" }}>📋</button>
+        <div style={{ position: "relative" }}>
+          <button onClick={copyReport} style={{ background: "none", border: "none", fontSize: 18, cursor: "pointer" }}>{copyFeedback ? "✅" : "📤"}</button>
+          {copyFeedback && (
+            <div style={{
+              position: "absolute", top: "100%", right: 0, marginTop: 4,
+              background: "#1a1a2e", color: "#fff", fontSize: 11, fontWeight: 700,
+              padding: "6px 10px", borderRadius: 8, whiteSpace: "nowrap", zIndex: 10
+            }}>클립보드에 복사완료</div>
+          )}
+        </div>
       </div>
       <div style={S.body}>
         <div style={{ ...S.card("linear-gradient(135deg,#FFF9C4,#FFF3E0)"), border: `2px solid ${warm}`, textAlign: "center" }}>
