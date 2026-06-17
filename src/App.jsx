@@ -880,7 +880,7 @@ setShowFreeText(false); setFreeTextInput("");
         )}
 
       </div>
-  <style>{`@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}`}</style>
+  <style>{`@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}} @keyframes spin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}`}</style>
     </div>
   );
 
@@ -1143,7 +1143,7 @@ setShowFreeText(false); setFreeTextInput("");
     )}
   </div>
 )}
-     <style>{`@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}`}</style>
+     <style>{`@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}} @keyframes spin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}`}</style>
     </div>
   );
 
@@ -1240,7 +1240,10 @@ setShowFreeText(false); setFreeTextInput("");
           "나 이제 낮잠 자러 갈게냥! Zzz"
         </div>
         {loading ? (
-          <div style={{ fontSize: 13, color: "#aaa", marginTop: 24 }}>{loadingMsg}</div>
+          <div style={{ fontSize: 13, color: "#aaa", marginTop: 24 }}>
+            <div style={{ fontSize: 36, display: "inline-block", animation: "spin 1.5s linear infinite" }}>⏳</div>
+            <div style={{ marginTop: 8 }}>{loadingMsg}</div>
+          </div>
         ) : (
           <div style={{ marginTop: 24, display: "flex", flexDirection: "column", gap: 12 }}>
             {report && (
