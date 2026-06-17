@@ -810,6 +810,7 @@ setShowFreeText(false); setFreeTextInput("");
           <div style={{ fontSize: 18, fontWeight: 800, color: dark }}>🧀 리딩차차</div>
           <div style={{ fontSize: 11, color: "#795548" }}>차차를 깨워봐!</div>
         </div>
+        <button onClick={() => setScreen("charoom")} style={{ background: "none", border: "none", fontSize: 20, cursor: "pointer" }}>🐱</button>
         <button onClick={() => setPinScreen(true)} style={{ background: "none", border: "none", fontSize: 20, cursor: "pointer" }}>🔒</button>
       </div>
 
@@ -875,42 +876,67 @@ setShowFreeText(false); setFreeTextInput("");
         </div>
         <div style={{ fontSize: 11, color: "#aaa" }}>5번 탭하면 차차가 깨어나요</div>
 
-        {inventory.length > 0 && (
-          <div style={{ marginTop: 20, padding: "12px 16px", background: "#FFF8E1", borderRadius: 16, border: "2px dashed #FFE082" }}>
+      </div>
+  <style>{`@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}`}</style>
+    </div>
+  );
+
+  // ══ CHAROOM (차차의 방) ══
+  if (screen === "charoom") return (
+    <div style={S.app}>
+      <div style={S.hdr}>
+        <span style={{ fontSize: 24 }}>🐱</span>
+        <div style={{ flex: 1 }}>
+          <div style={{ fontSize: 15, fontWeight: 800, color: dark }}>차차의 방</div>
+          <div style={{ fontSize: 11, color: "#795548" }}>수집한 기억들이 여기 있다냥</div>
+        </div>
+        <button onClick={() => setScreen("home")} style={{ background: "none", border: "none", fontSize: 18, cursor: "pointer" }}>✕</button>
+      </div>
+      <div style={S.body}>
+        {inventory.length > 0 ? (
+          <div style={{ ...S.card("#FFF8E1"), border: "2px dashed #FFE082" }}>
             <div style={{ fontSize: 12, color: "#795548", fontWeight: 700, marginBottom: 8 }}>🗃️ 차차의 다락방</div>
             <div style={{ display: "flex", flexWrap: "wrap", gap: 6, justifyContent: "center" }}>
-              {inventory.slice(-10).map((item, i) => (
+              {inventory.map((item, i) => (
                 <div key={i} title={item.name} style={{ fontSize: 22 }}>{item.emoji}</div>
               ))}
             </div>
-            <div style={{ fontSize: 10, color: "#aaa", marginTop: 6 }}>총 {inventory.length}개 수집</div>
+            <div style={{ fontSize: 10, color: "#aaa", marginTop: 8 }}>총 {inventory.length}개 수집</div>
+          </div>
+        ) : (
+          <div style={{ ...S.card("#FFF8E1"), border: "2px dashed #FFE082", textAlign: "center" }}>
+            <div style={{ fontSize: 12, color: "#795548", fontWeight: 700, marginBottom: 8 }}>🗃️ 차차의 다락방</div>
+            <div style={{ fontSize: 28, marginBottom: 6 }}>📦</div>
+            <div style={{ fontSize: 12, color: "#aaa" }}>아직 아이템이 없다냥…</div>
           </div>
         )}
 
         {polaroids.length === 0 ? (
-          <div style={{ marginTop: 16, padding: "16px", background: "#FFF8E1", borderRadius: 16, border: "2px dashed #FFE082" }}>
-            <div style={{ fontSize: 20, marginBottom: 6 }}>🖼</div>
+          <div style={{ ...S.card("#FFF8E1"), border: "2px dashed #FFE082", textAlign: "center" }}>
+            <div style={{ fontSize: 12, color: "#795548", fontWeight: 700, marginBottom: 8 }}>🖼 차차의 서재</div>
+            <div style={{ fontSize: 28, marginBottom: 6 }}>🖼</div>
             <div style={{ fontSize: 12, color: "#aaa" }}>아직 기억이 쌓이는 중이다냥…</div>
           </div>
         ) : (
-          <div style={{ marginTop: 16 }}>
+          <div style={S.card()}>
             <div style={{ fontSize: 12, color: "#795548", fontWeight: 700, marginBottom: 10 }}>🖼 차차의 서재</div>
-            <div style={{ display: "flex", gap: 10, overflowX: "auto", paddingBottom: 8, justifyContent: "center" }}>
-           {polaroids.map((p, i) => (
+            <div style={{ display: "flex", gap: 10, overflowX: "auto", paddingBottom: 8 }}>
+              {polaroids.map((p, i) => (
                 <div key={i}
                   onClick={() => setFlippedHome(prev => ({ ...prev, [i]: !prev[i] }))}
                   style={{ minWidth: 130, height: 160, perspective: 600, cursor: "pointer", flexShrink: 0 }}>
                   <div style={{
                     width: "100%", height: "100%", position: "relative",
                     transformStyle: "preserve-3d", WebkitTransformStyle: "preserve-3d",
-                    transition: "transform 0.5s ease", WebkitTransition: "-webkit-transform 0.5s ease",
+                    transition: "transform 0.5s ease",
                     transform: flippedHome[i] ? "rotateY(180deg)" : "rotateY(0deg)",
                     WebkitTransform: flippedHome[i] ? "rotateY(180deg)" : "rotateY(0deg)",
                   }}>
                     <div style={{
                       position: "absolute", inset: 0, background: "#fff", borderRadius: 12,
                       padding: 12, boxShadow: "0 2px 8px rgba(0,0,0,0.1)",
-                      backfaceVisibility: "hidden", display: "flex", flexDirection: "column", justifyContent: "space-between", WebkitBackfaceVisibility: "hidden"
+                      backfaceVisibility: "hidden", WebkitBackfaceVisibility: "hidden",
+                      display: "flex", flexDirection: "column", justifyContent: "space-between"
                     }}>
                       <div style={{ fontSize: 12, color: dark, fontStyle: "italic", lineHeight: 1.5, fontWeight: 600 }}>"{p.text}"</div>
                       <div>
@@ -921,8 +947,9 @@ setShowFreeText(false); setFreeTextInput("");
                     <div style={{
                       position: "absolute", inset: 0, background: "#1a1a2e", borderRadius: 12,
                       padding: 12, boxShadow: "0 2px 8px rgba(0,0,0,0.1)",
-                      backfaceVisibility: "hidden", transform: "rotateY(180deg)",
-                      display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", WebkitBackfaceVisibility: "hidden"
+                      backfaceVisibility: "hidden", WebkitBackfaceVisibility: "hidden",
+                      transform: "rotateY(180deg)",
+                      display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center"
                     }}>
                       <div style={{ fontSize: 10, color: warm, fontWeight: 800, marginBottom: 8, textAlign: "center" }}>💬 그날의 한마디</div>
                       <div style={{ fontSize: 11, color: "#fff", fontStyle: "italic", lineHeight: 1.6, textAlign: "center" }}>"{p.action_guide || '기록 없음'}"</div>
@@ -933,8 +960,9 @@ setShowFreeText(false); setFreeTextInput("");
             </div>
           </div>
         )}
+
+        <button onClick={() => setScreen("home")} style={{ ...S.btn("#f5f5f5", "#666"), marginTop: 8 }}>돌아가기</button>
       </div>
-  <style>{`@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}`}</style>
     </div>
   );
 
