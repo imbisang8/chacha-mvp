@@ -364,7 +364,7 @@ ${convText}
 JSON만 반환. 설명 없이:
 {
 "child_quote": "아이 실제 발화 또는 선택을 그대로 기록한다. 수정·요약·의역 금지. 그 순간성이 가장 강한 것 1개만 선택한다. 비밀 우체통 쪽지가 있으면 최우선으로 사용한다.",
-"discovery_insight": "형식: '오늘 {이름}은 [아이의 실제 발화나 선택]. [조심스러운 해석 한 줄 — 관찰이 충분하면 생략 가능].' 최대 2문장. 말투: ~했어요 / ~보였어요 / ~것 같아요 체로 끝낼 것. 보고서체 절대 금지. 해석은 관찰에서 한 발만. 아이를 성격이나 능력으로 정의하지 말 것.",
+"discovery_insight": "오늘 {이름}이 실제로 한 말이나 선택 하나를 그대로 담아 1~2문장으로 쓴다. '~했어요'로 끝낸다. 분석·해석·의미 부여 금지. '~을 보면' '~한 것 같아요' '~라는 것을 알 수 있어요' 같은 분석체 표현 절대 금지. 관찰만.",
 "action_guide": "오늘 저녁 한마디는 오늘 아이가 실제로 한 말에서 시작해야 하며, 그 말을 하지 않았다면 나올 수 없는 질문이어야 한다. 아래 유형 중 하나를 골라 만들되, 매번 다른
 "chacha_memo": "차차 말투로 작성한다. 오늘 아이가 실제로 한 행동 또는 실제 발화 1개를 반드시 포함한다. 추상적인 표현이나 일반적인 칭찬은 사용하지 않는다.",
 "polaroid_text": "차차가 오늘 가장 기억에 남은 아이의 실제 말이나 행동 하나를 떠올리며 남기는 한 줄 메모. 관찰하거나 기억하는 느낌으로 작성하고, 아이를 놀리거나 섭섭해하거나 평가하는 말투는 사용하지 않는다. 차차다운 귀엽고 가벼운 말투를 사용하며, 실제 대화 내용을 바탕으로 매번 다르게 작성한다. 반드시 '~냥'으로 끝낸다.",
@@ -894,7 +894,7 @@ setShowFreeText(false); setFreeTextInput("");
   if (screen === "charoom") return (
     <div style={S.app}>
       <div style={S.hdr}>
-        <img src="/chacha/chacha_window.png" alt="차차" style={{ width: 36, height: 36, objectFit: "contain" }} />
+        <img src="/chacha/chacha_face.png" alt="차차" style={{ width: 36, height: 36, objectFit: "contain" }} />
         <div style={{ flex: 1 }}>
           <div style={{ fontSize: 15, fontWeight: 800, color: dark }}>차차의 방</div>
           <div style={{ fontSize: 11, color: "#795548" }}>수집한 기억들이 여기 있다냥</div>
@@ -979,7 +979,7 @@ setShowFreeText(false); setFreeTextInput("");
   if (screen === "setup") return (
     <div style={S.app}>
       <div style={S.hdr}>
-        <img src="/chacha/chacha_reading_cushion.png" alt="차차" style={{ width: 36, height: 36, objectFit: "contain" }} />
+        <img src="/chacha/chacha_face.png" alt="차차" style={{ width: 36, height: 36, objectFit: "contain" }} />
         <div>
           <div style={{ fontSize: 15, fontWeight: 800, color: dark }}>앗 깜짝이야!</div>
           <div style={{ fontSize: 11, color: "#795548" }}>어떤 책 읽었어?</div>
@@ -1099,7 +1099,7 @@ setShowFreeText(false); setFreeTextInput("");
     <div key={i} style={{ display: "flex", gap: 8, marginBottom: 8, animation: "fadeIn 0.3s ease" }}>
       <img src={
         roundNum <= 1 ? "/chacha/chacha_hello.png" :
-        roundNum <= 2 ? "/chacha/chacha_reading.png" :
+        roundNum <= 2 ? "/chacha/chacha_reading_new.png" :
         roundNum <= 3 ? "/chacha/chacha_wondering.png" :
         roundNum <= 4 ? "/chacha/chacha_surprised.png" :
         "/chacha/chacha_dream_bubble.png"
@@ -1430,7 +1430,7 @@ setShowFreeText(false); setFreeTextInput("");
     return (
       <div style={S.app}>
         <div style={S.hdr}>
-          <img src="/chacha/chacha_magnify.png" alt="차차" style={{ width: 36, height: 36, objectFit: "contain" }} />
+          <img src="/chacha/chacha_face.png" alt="차차" style={{ width: 36, height: 36, objectFit: "contain" }} />
           <div style={{ flex: 1 }}>
             <div style={{ fontSize: 15, fontWeight: 800, color: dark }}>{childName ? `${childName}의 ` : ""}독서 캘린더</div>
             <div style={{ fontSize: 11, color: "#795548" }}>{year}년 {month}월</div>
