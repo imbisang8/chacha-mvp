@@ -815,7 +815,7 @@ setShowFreeText(false); setFreeTextInput("");
     <div style={S.app}>
       <div style={S.hdr}>
         <div style={{ flex: 1 }}>
-          <div style={{ fontSize: 18, fontWeight: 800, color: dark }}>🧀 리딩차차</div>
+          <div style={{ fontSize: 18, fontWeight: 800, color: dark }}>🐟 리딩차차</div>
           <div style={{ fontSize: 11, color: "#795548" }}>차차를 깨워봐!</div>
         </div>
         <button onClick={() => setScreen("charoom")} style={{ background: "none", border: "none", fontSize: 20, cursor: "pointer" }}>🐱</button>
@@ -886,7 +886,7 @@ setShowFreeText(false); setFreeTextInput("");
         )}
 
       </div>
-  <style>{`@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}} @keyframes spin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}`}</style>
+  <style>{`@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}} @keyframes spin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}} @keyframes dotBounce{0%,80%,100%{transform:scale(0.6);opacity:0.4}40%{transform:scale(1.2);opacity:1}}`}</style>
     </div>
   );
 
@@ -894,7 +894,7 @@ setShowFreeText(false); setFreeTextInput("");
   if (screen === "charoom") return (
     <div style={S.app}>
       <div style={S.hdr}>
-        <span style={{ fontSize: 24 }}>🐱</span>
+        <img src="/chacha/chacha_window.png" alt="차차" style={{ width: 36, height: 36, objectFit: "contain" }} />
         <div style={{ flex: 1 }}>
           <div style={{ fontSize: 15, fontWeight: 800, color: dark }}>차차의 방</div>
           <div style={{ fontSize: 11, color: "#795548" }}>수집한 기억들이 여기 있다냥</div>
@@ -915,7 +915,7 @@ setShowFreeText(false); setFreeTextInput("");
         ) : (
           <div style={{ ...S.card("#FFF8E1"), border: "2px dashed #FFE082", textAlign: "center" }}>
             <div style={{ fontSize: 12, color: "#795548", fontWeight: 700, marginBottom: 8 }}>🗃️ 차차의 다락방</div>
-            <div style={{ fontSize: 28, marginBottom: 6 }}>📦</div>
+            <img src="/chacha/chacha_rolling_eyes.png" alt="차차" style={{ width: 60, height: 60, objectFit: "contain", marginBottom: 6 }} />
             <div style={{ fontSize: 12, color: "#aaa" }}>아직 아이템이 없다냥…</div>
           </div>
         )}
@@ -923,7 +923,7 @@ setShowFreeText(false); setFreeTextInput("");
         {polaroids.length === 0 ? (
           <div style={{ ...S.card("#FFF8E1"), border: "2px dashed #FFE082", textAlign: "center" }}>
             <div style={{ fontSize: 12, color: "#795548", fontWeight: 700, marginBottom: 8 }}>🖼 차차의 서재 (탭하면 뒤집혀요)</div>
-            <div style={{ fontSize: 28, marginBottom: 6 }}>🖼</div>
+            <img src="/chacha/chacha_embarrassed.png" alt="차차" style={{ width: 60, height: 60, objectFit: "contain", marginBottom: 6 }} />
             <div style={{ fontSize: 12, color: "#aaa" }}>아직 기억이 쌓이는 중이다냥…</div>
           </div>
         ) : (
@@ -979,7 +979,7 @@ setShowFreeText(false); setFreeTextInput("");
   if (screen === "setup") return (
     <div style={S.app}>
       <div style={S.hdr}>
-        <span style={{ fontSize: 28 }}>🐱</span>
+        <img src="/chacha/chacha_reading_cushion.png" alt="차차" style={{ width: 36, height: 36, objectFit: "contain" }} />
         <div>
           <div style={{ fontSize: 15, fontWeight: 800, color: dark }}>앗 깜짝이야!</div>
           <div style={{ fontSize: 11, color: "#795548" }}>어떤 책 읽었어?</div>
@@ -1097,7 +1097,13 @@ setShowFreeText(false); setFreeTextInput("");
        {messages.map((m, i) => (
   m.role === "chacha" ? (
     <div key={i} style={{ display: "flex", gap: 8, marginBottom: 8, animation: "fadeIn 0.3s ease" }}>
-      <span style={{ fontSize: 24, alignSelf: "flex-end", flexShrink: 0 }}>🐱</span>
+      <img src={
+        roundNum <= 1 ? "/chacha/chacha_hello.png" :
+        roundNum <= 2 ? "/chacha/chacha_reading.png" :
+        roundNum <= 3 ? "/chacha/chacha_wondering.png" :
+        roundNum <= 4 ? "/chacha/chacha_surprised.png" :
+        "/chacha/chacha_dream_bubble.png"
+      } alt="차차" style={{ width: 36, height: 36, objectFit: "contain", alignSelf: "flex-end", flexShrink: 0 }} />
       <div style={S.bubble}>{m.text}</div>
     </div>
   ) : (
@@ -1108,7 +1114,7 @@ setShowFreeText(false); setFreeTextInput("");
 ))}
        {loading && (
           <div style={{ display: "flex", gap: 8, marginBottom: 8 }}>
-            <span style={{ fontSize: 24 }}>🐱</span>
+            <img src="/chacha/chacha_thinking_bubble.png" alt="차차" style={{ width: 36, height: 36, objectFit: "contain", alignSelf: "flex-end", flexShrink: 0 }} />
             <div style={{ ...S.bubble, color: "#aaa" }}>생각 중이다냥...</div>
           </div>
         )}
@@ -1149,7 +1155,7 @@ setShowFreeText(false); setFreeTextInput("");
     )}
   </div>
 )}
-     <style>{`@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}} @keyframes spin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}`}</style>
+     <style>{`@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}} @keyframes spin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}} @keyframes dotBounce{0%,80%,100%{transform:scale(0.6);opacity:0.4}40%{transform:scale(1.2);opacity:1}}`}</style>
     </div>
   );
 
@@ -1199,7 +1205,7 @@ setShowFreeText(false); setFreeTextInput("");
   if (screen === "mailbox") return (
     <div style={{ ...S.app, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", minHeight: "100vh" }}>
       <div style={{ textAlign: "center", padding: 32, width: "100%", maxWidth: 340 }}>
-        <div style={{ fontSize: 48, marginBottom: 16 }}>📮</div>
+        <img src="/chacha/chacha_pencil.png" alt="차차" style={{ width: 80, height: 80, objectFit: "contain", marginBottom: 16 }} />
         <div style={{ fontSize: 16, fontWeight: 800, color: dark, marginBottom: 8 }}>차차 우체통</div>
         <div style={{ fontSize: 13, color: "#888", marginBottom: 24 }}>"하고 싶은 말이 있으면 넣어도 된다냥!"</div>
         {!showMailbox ? (
@@ -1247,11 +1253,19 @@ setShowFreeText(false); setFreeTextInput("");
         </div>
         {loading ? (
           <div style={{ fontSize: 13, color: "#aaa", marginTop: 24 }}>
-            <div style={{ fontSize: 36, display: "inline-block", animation: "spin 1.5s linear infinite" }}>⏳</div>
-            <div style={{ marginTop: 8 }}>{loadingMsg}</div>
+            <div style={{ display: "flex", justifyContent: "center", gap: 8, marginBottom: 12 }}>
+              {[0, 1, 2].map(i => (
+                <div key={i} style={{
+                  width: 12, height: 12, borderRadius: "50%", background: warm,
+                  animation: `dotBounce 1.2s ease-in-out ${i * 0.2}s infinite`
+                }} />
+              ))}
+            </div>
+            <div>{loadingMsg}</div>
           </div>
         ) : (
-          <div style={{ marginTop: 24, display: "flex", flexDirection: "column", gap: 12 }}>
+          <div style={{ marginTop: 24, display: "flex", flexDirection: "column", gap: 12, alignItems: "center" }}>
+            <img src="/chacha/chacha_happy.png" alt="차차" style={{ width: 80, height: 80, objectFit: "contain", marginBottom: 4 }} />
             {report && (
               <button onClick={() => { setPinScreen(true); }} style={S.btn(warm, dark)}>
                 🔒 부모님 리포트 보기
@@ -1284,7 +1298,10 @@ setShowFreeText(false); setFreeTextInput("");
   // ══ REPORT ══
   if (screen === "report" && !report) return (
     <div style={{ ...S.app, display: "flex", alignItems: "center", justifyContent: "center", minHeight: "100vh" }}>
-      <div style={{ textAlign: "center", color: "#aaa", fontSize: 13 }}>리포트 불러오는 중이다냥... 🐾</div>
+      <div style={{ textAlign: "center", color: "#aaa", fontSize: 13 }}>
+        <img src="/chacha/chacha_lamp_reading.png" alt="차차" style={{ width: 100, height: 100, objectFit: "contain", marginBottom: 12 }} />
+        <div>리포트 불러오는 중이다냥... 🐾</div>
+      </div>
     </div>
   );
   if (screen === "report" && report) return (
@@ -1328,6 +1345,28 @@ setShowFreeText(false); setFreeTextInput("");
           </div>
         </div>
 
+        {(() => {
+          const bookDetail = BOOKS_DETAIL.find(d => 
+            d.title === (selectedBook?.seriesTitle || selectedBook?.title)
+          );
+          const similar = bookDetail?.similar?.slice(0, 3) || [];
+          if (similar.length === 0) return null;
+          return (
+            <div style={{ ...S.card("#FFF9F0"), border: "1px solid #FFE082", marginTop: 8 }}>
+              <div style={{ fontSize: 11, color: "#FF8F00", fontWeight: 800, marginBottom: 10 }}>📚 다음엔 이런 책 어때요?</div>
+              {similar.map((title, i) => {
+                const b = BOOKS.find(b => b.title === title);
+                return (
+                  <div key={i} style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "8px 0", borderBottom: i < similar.length - 1 ? "1px solid #FFE082" : "none" }}>
+                    <div style={{ fontSize: 13, color: "#5D4037", fontWeight: 600 }}>{title}</div>
+                    {b && <div style={{ fontSize: 11, color: "#aaa" }}>AR {b.ar}</div>}
+                  </div>
+                );
+              })}
+            </div>
+          );
+        })()}
+
         {polaroids.length > 0 && (
   <div style={{ marginTop: 8 }}>
     <div style={{ fontSize: 12, color: "#795548", fontWeight: 700, marginBottom: 12 }}>📸 차차의 서재 — {childName}의 생각 흔적</div>
@@ -1369,28 +1408,6 @@ setShowFreeText(false); setFreeTextInput("");
     </div>
   </div>
 )}
-
-        {(() => {
-          const bookDetail = BOOKS_DETAIL.find(d => 
-            d.title === (selectedBook?.seriesTitle || selectedBook?.title)
-          );
-          const similar = bookDetail?.similar?.slice(0, 3) || [];
-          if (similar.length === 0) return null;
-          return (
-            <div style={{ ...S.card("#FFF9F0"), border: "1px solid #FFE082", marginTop: 8 }}>
-              <div style={{ fontSize: 11, color: "#FF8F00", fontWeight: 800, marginBottom: 10 }}>📚 다음엔 이런 책 어때요?</div>
-              {similar.map((title, i) => {
-                const b = BOOKS.find(b => b.title === title);
-                return (
-                  <div key={i} style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "8px 0", borderBottom: i < similar.length - 1 ? "1px solid #FFE082" : "none" }}>
-                    <div style={{ fontSize: 13, color: "#5D4037", fontWeight: 600 }}>{title}</div>
-                    {b && <div style={{ fontSize: 11, color: "#aaa" }}>AR {b.ar}</div>}
-                  </div>
-                );
-              })}
-            </div>
-          );
-        })()}
         <button onClick={reset} style={{ ...S.btn("#f5f5f5", "#666"), marginTop: 16 }}>차차 방으로 돌아가기</button>
       </div>
     </div>
@@ -1412,7 +1429,7 @@ setShowFreeText(false); setFreeTextInput("");
     return (
       <div style={S.app}>
         <div style={S.hdr}>
-          <span style={{ fontSize: 24 }}>📅</span>
+          <img src="/chacha/chacha_magnify.png" alt="차차" style={{ width: 36, height: 36, objectFit: "contain" }} />
           <div style={{ flex: 1 }}>
             <div style={{ fontSize: 15, fontWeight: 800, color: dark }}>{childName ? `${childName}의 ` : ""}독서 캘린더</div>
             <div style={{ fontSize: 11, color: "#795548" }}>{year}년 {month}월</div>
