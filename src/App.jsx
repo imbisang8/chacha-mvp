@@ -850,10 +850,18 @@ setShowFreeText(false); setFreeTextInput("");
           onMouseUp={e => e.currentTarget.style.transform = "scale(1)"}>
           <span style={{ fontSize: 80, userSelect: "none", cursor: "pointer" }}>{getChachaEmoji()}</span>
         </div>
-        {wakeMsg && <div style={{ fontSize: 15, fontWeight: 700, color: dark, marginTop: 8 }}>{wakeMsg}</div>}
+
+        <div style={{ display: "flex", justifyContent: "center", gap: 6, marginTop: 12, marginBottom: 4 }}>
+          {[1, 2, 3, 4, 5].map(i => (
+            <div key={i} style={{ width: 8, height: 8, borderRadius: "50%", background: i <= tapCount ? warm : "#ddd", transition: "background 0.2s" }} />
+          ))}
+        </div>
+        <div style={{ fontSize: 11, color: "#aaa", marginBottom: 16 }}>5번 탭하면 차차가 깨어나요</div>
+
+        {wakeMsg && <div style={{ fontSize: 15, fontWeight: 700, color: dark, marginBottom: 8 }}>{wakeMsg}</div>}
 
         {dailyMsg && (
-          <div style={{ marginTop: 16, padding: "12px 16px", background: "#fff", borderRadius: 16, boxShadow: "0 2px 8px rgba(0,0,0,0.08)", fontSize: 13, color: dark, lineHeight: 1.6 }}>
+          <div style={{ padding: "12px 16px", background: "#fff", borderRadius: 16, boxShadow: "0 2px 8px rgba(0,0,0,0.08)", fontSize: 13, color: dark, lineHeight: 1.6 }}>
             🐱 {dailyMsg}
             {smalltalk && !showSmalltalk && (
               <div onClick={() => setShowSmalltalk(true)} style={{ marginTop: 8, fontSize: 12, color: warm, cursor: "pointer", fontWeight: 700 }}>
@@ -868,13 +876,6 @@ setShowFreeText(false); setFreeTextInput("");
             )}
           </div>
         )}
-
-        <div style={{ display: "flex", justifyContent: "center", gap: 6, marginTop: 16, marginBottom: 20 }}>
-          {[1, 2, 3, 4, 5].map(i => (
-            <div key={i} style={{ width: 8, height: 8, borderRadius: "50%", background: i <= tapCount ? warm : "#ddd", transition: "background 0.2s" }} />
-          ))}
-        </div>
-        <div style={{ fontSize: 11, color: "#aaa" }}>5번 탭하면 차차가 깨어나요</div>
 
       </div>
   <style>{`@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}`}</style>
