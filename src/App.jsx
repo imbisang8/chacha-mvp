@@ -549,8 +549,10 @@ useEffect(() => {
       setChachaMsg(msgs[n - 1] || msgs[0]);
     } else {
       setWakeMsg(CHACHA_WAKE[Math.floor(Math.random() * CHACHA_WAKE.length)]);
-      setTapCount(0);
-      setTimeout(() => setScreen("setup"), 900);
+      setTimeout(() => {
+        setTapCount(0);
+        setScreen("setup");
+      }, 900);
     }
   };
 
