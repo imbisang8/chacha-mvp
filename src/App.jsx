@@ -830,7 +830,7 @@ setShowFreeText(false); setFreeTextInput("");
         </div>
       )}
 
-      <div style={{ ...S.body, textAlign: "center", paddingTop: 8 }}>
+      <div style={{ ...S.body, textAlign: "center", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", minHeight: "80vh" }}>
         {showSpecialDay && (
           <div style={{ background: "linear-gradient(135deg,#FFE082,#FFB300)", borderRadius: 16, padding: "12px 16px", marginBottom: 8, position: "relative" }}>
             <div style={{ fontSize: 13, fontWeight: 800, color: "#5D4037" }}>{specialDayMsg}</div>
