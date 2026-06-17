@@ -818,7 +818,7 @@ setShowFreeText(false); setFreeTextInput("");
           <div style={{ fontSize: 18, fontWeight: 800, color: dark }}>🐟 리딩차차</div>
           <div style={{ fontSize: 11, color: "#795548" }}>차차를 깨워봐!</div>
         </div>
-        <button onClick={() => setScreen("charoom")} style={{ background: "none", border: "none", fontSize: 20, cursor: "pointer" }}>🐱</button>
+        <button onClick={() => setScreen("charoom")} style={{ background: "none", border: "none", cursor: "pointer", padding: 0 }}><img src="/chacha/chacha_face.png" alt="차차" style={{ width: 28, height: 28, objectFit: "contain" }} /></button>
         <button onClick={() => setPinScreen(true)} style={{ background: "none", border: "none", fontSize: 20, cursor: "pointer" }}>🔒</button>
       </div>
 
@@ -1084,7 +1084,7 @@ setShowFreeText(false); setFreeTextInput("");
   if (screen === "dialog") return (
     <div style={S.app}>
       <div style={S.hdr}>
-        <span style={{ fontSize: 28 }}>🐱</span>
+        <img src="/chacha/chacha_face.png" alt="차차" style={{ width: 36, height: 36, objectFit: "contain" }} />
         <div style={{ flex: 1 }}>
           <div style={{ fontSize: 13, fontWeight: 800, color: dark }}>차차</div>
           <div style={{ fontSize: 10, color: "#795548" }}>
@@ -1308,7 +1308,7 @@ setShowFreeText(false); setFreeTextInput("");
   if (screen === "report" && report) return (
     <div style={S.app}>
       <div style={S.hdr}>
-        <span style={{ fontSize: 24 }}>🐱</span>
+        <img src="/chacha/chacha_face.png" alt="차차" style={{ width: 36, height: 36, objectFit: "contain" }} />
         <div style={{ flex: 1 }}>
           <div style={{ fontSize: 15, fontWeight: 800, color: dark }}>차차의 관찰 노트</div>
           <div style={{ fontSize: 11, color: "#795548" }}>
