@@ -830,20 +830,20 @@ setShowFreeText(false); setFreeTextInput("");
         </div>
       )}
 
-      <div style={{ ...S.body, textAlign: "center", paddingTop: 32 }}>
+      <div style={{ ...S.body, textAlign: "center", paddingTop: 8 }}>
         {showSpecialDay && (
-          <div style={{ background: "linear-gradient(135deg,#FFE082,#FFB300)", borderRadius: 16, padding: "12px 16px", marginBottom: 16, position: "relative" }}>
+          <div style={{ background: "linear-gradient(135deg,#FFE082,#FFB300)", borderRadius: 16, padding: "12px 16px", marginBottom: 8, position: "relative" }}>
             <div style={{ fontSize: 13, fontWeight: 800, color: "#5D4037" }}>{specialDayMsg}</div>
             <button onClick={() => setShowSpecialDay(false)} style={{ position: "absolute", top: 8, right: 12, background: "none", border: "none", fontSize: 16, cursor: "pointer" }}>✕</button>
           </div>
         )}
 
-        <div style={{ fontSize: 11, color: "#aaa", marginBottom: 4 }}>
+        <div style={{ fontSize: 11, color: "#aaa", marginBottom: 2 }}>
           {getRoomStage(inventory).emoji} {getRoomStage(inventory).name}
           {streak > 1 && <span style={{ marginLeft: 8, color: warm }}>🔥 {streak}일 연속</span>}
         </div>
 
-        <div style={{ fontSize: 13, color: "#888", marginBottom: 12, minHeight: 20 }}>{chachaMsg}</div>
+        <div style={{ fontSize: 13, color: "#888", marginBottom: 4, minHeight: 20 }}>{chachaMsg}</div>
         <div onClick={tapChacha}
           style={{ display: "inline-block", transition: "transform 0.1s" }}
           onMouseDown={e => e.currentTarget.style.transform = "scale(0.9)"}
@@ -851,12 +851,12 @@ setShowFreeText(false); setFreeTextInput("");
           <span style={{ fontSize: 80, userSelect: "none", cursor: "pointer" }}>{getChachaEmoji()}</span>
         </div>
 
-        <div style={{ display: "flex", justifyContent: "center", gap: 6, marginTop: 12, marginBottom: 4 }}>
+        <div style={{ display: "flex", justifyContent: "center", gap: 6, marginTop: 6, marginBottom: 2 }}>
           {[1, 2, 3, 4, 5].map(i => (
             <div key={i} style={{ width: 8, height: 8, borderRadius: "50%", background: i <= tapCount ? warm : "#ddd", transition: "background 0.2s" }} />
           ))}
         </div>
-        <div style={{ fontSize: 11, color: "#aaa", marginBottom: 16 }}>5번 탭하면 차차가 깨어나요</div>
+        <div style={{ fontSize: 11, color: "#aaa", marginBottom: 8 }}>5번 탭하면 차차가 깨어나요</div>
 
         {wakeMsg && <div style={{ fontSize: 15, fontWeight: 700, color: dark, marginBottom: 8 }}>{wakeMsg}</div>}
 
@@ -914,13 +914,13 @@ setShowFreeText(false); setFreeTextInput("");
 
         {polaroids.length === 0 ? (
           <div style={{ ...S.card("#FFF8E1"), border: "2px dashed #FFE082", textAlign: "center" }}>
-            <div style={{ fontSize: 12, color: "#795548", fontWeight: 700, marginBottom: 8 }}>🖼 차차의 서재</div>
+            <div style={{ fontSize: 12, color: "#795548", fontWeight: 700, marginBottom: 8 }}>🖼 차차의 서재 (탭하면 뒤집혀요)</div>
             <div style={{ fontSize: 28, marginBottom: 6 }}>🖼</div>
             <div style={{ fontSize: 12, color: "#aaa" }}>아직 기억이 쌓이는 중이다냥…</div>
           </div>
         ) : (
           <div style={S.card()}>
-            <div style={{ fontSize: 12, color: "#795548", fontWeight: 700, marginBottom: 10 }}>🖼 차차의 서재</div>
+            <div style={{ fontSize: 12, color: "#795548", fontWeight: 700, marginBottom: 10 }}>🖼 차차의 서재 (탭하면 뒤집혀요)</div>
             <div style={{ display: "flex", gap: 10, overflowX: "auto", paddingBottom: 8 }}>
               {polaroids.map((p, i) => (
                 <div key={i}
