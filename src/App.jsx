@@ -534,6 +534,12 @@ useEffect(() => {
     return { year, month, days, records };
   };
 
+  const getChachaImg = () => {
+    if (tapCount <= 1) return "/chacha/chacha_sleep.png";
+    if (tapCount <= 3) return "/chacha/chacha_thinking_bubble.png";
+    return "/chacha/chacha_excited_jump.png";
+  };
+
   const getChachaEmoji = () => {
     if (tapCount <= 1) return "😴";
     if (tapCount <= 3) return "🐱";
@@ -779,7 +785,7 @@ setShowFreeText(false); setFreeTextInput("");
   if (showFakeDoor) return (
     <div style={{ ...S.app, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", minHeight: "100vh" }}>
       <div style={{ textAlign: "center", padding: 32, maxWidth: 320 }}>
-        <span style={{ fontSize: 60 }}>🐱</span>
+        <img src="/chacha/chacha_hello.png" alt="차차" style={{ width: 100, height: 100, objectFit: "contain" }} />
         <div style={{ fontSize: 16, fontWeight: 800, color: dark, marginTop: 16, marginBottom: 8 }}>앗! 차차가 아직 준비 중이래요 ㅠㅠ</div>
         <div style={{ fontSize: 14, color: "#795548", fontStyle: "italic", marginBottom: 16 }}>"조금만 더 단장하고 꼭 다시 만나고 싶다냥!"</div>
         <div style={{ fontSize: 13, color: "#666", lineHeight: 1.7, marginBottom: 20 }}>
@@ -850,7 +856,7 @@ setShowFreeText(false); setFreeTextInput("");
           style={{ display: "inline-block", transition: "transform 0.1s" }}
           onMouseDown={e => e.currentTarget.style.transform = "scale(0.9)"}
           onMouseUp={e => e.currentTarget.style.transform = "scale(1)"}>
-          <span style={{ fontSize: 80, userSelect: "none", cursor: "pointer" }}>{getChachaEmoji()}</span>
+          <img src={getChachaImg()} alt="차차" style={{ width: 120, height: 120, objectFit: "contain", userSelect: "none" }} />
         </div>
 
         <div style={{ display: "flex", justifyContent: "center", gap: 6, marginTop: 6, marginBottom: 2 }}>
@@ -1151,7 +1157,7 @@ setShowFreeText(false); setFreeTextInput("");
   if (screen === "reward") return (
     <div style={{ ...S.app, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", minHeight: "100vh" }}>
       <div style={{ textAlign: "center", padding: 32 }}>
-        <span style={{ fontSize: 80 }}>🐱</span>
+        <img src="/chacha/chacha_star_eyes.png" alt="차차" style={{ width: 120, height: 120, objectFit: "contain" }} />
         <div style={{ fontSize: 16, fontWeight: 800, color: dark, marginTop: 16, marginBottom: 8 }}>
           {churuReaction || "으아앙! 네 덕분에 오늘 츄르값 벌었다냥!"}
         </div>
@@ -1232,7 +1238,7 @@ setShowFreeText(false); setFreeTextInput("");
   if (screen === "handback") return (
     <div style={{ ...S.app, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", minHeight: "100vh" }}>
       <div style={{ textAlign: "center", padding: 40 }}>
-        <span style={{ fontSize: 80 }}>🐱</span>
+        <img src="/chacha/chacha_sleep_book.png" alt="차차" style={{ width: 120, height: 120, objectFit: "contain" }} />
         <div style={{ fontSize: 16, fontWeight: 800, color: dark, marginTop: 16, marginBottom: 8 }}>
           "어휴 하얗게 불태웠다냥..."
         </div>
