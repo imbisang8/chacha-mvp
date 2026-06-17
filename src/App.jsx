@@ -1292,6 +1292,7 @@ setShowFreeText(false); setFreeTextInput("");
           </div>
         </div>
       )}
+      <style>{`@keyframes dotBounce{0%,80%,100%{transform:scale(0.6);opacity:0.4}40%{transform:scale(1.2);opacity:1}}`}</style>
     </div>
   );
 
